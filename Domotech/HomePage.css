@@ -29,7 +29,9 @@ footer ul{
 .login{
   background-color: #E0E2E5;
   width: 350px;
-  height: 260px;
+  height: 280px;
+  min-width: 350px;
+  min-height: 280px;
 }
 
 .titre{
@@ -110,9 +112,11 @@ button:hover {
 }
 
 /* The "Forgot password" text */
+span.su{
+  float: right;
+}
 span.psw {
     float: right;
-    padding-top: 16px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
