@@ -1,5 +1,5 @@
 <?php
-    $dbname = "Utilisateurs";
+    $dbname = "Domotech";
     $host='localhost';
     $user='root';
     $pass='';
