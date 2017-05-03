@@ -21,7 +21,7 @@
         </p>
     </section>
 
-<?php include("footer.php"); ?>
+<?php include("Vue/footer.html"); ?>
 
   </body>
 </html>
