@@ -8,8 +8,9 @@
   <body>
     <header>
     <h1 class="titre">Domotech</h1>
+    <?php include ('Controleur/session-manager.php'); ?>
 
-<?php include('Vue/login.php'); ?>
+
 
 </header>
 
