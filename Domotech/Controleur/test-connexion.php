@@ -16,6 +16,8 @@
                 if(md5($_POST['psw'])!=$ligne['mdp']){ // Le mot de passe entré ne correspond pas à celui stocké dans la base de données
                     $erreur = "Mot de passe incorrect";
                     echo($erreur);
+                    echo(md5($_POST['psw']));
+                    echo($ligne['mdp']);
                     //include("Vue/connexion_erreur.php");
                 } else { // mot de passe correct, on affiche la page d'accueil
                     $_SESSION["userID"] = $ligne['id'];
