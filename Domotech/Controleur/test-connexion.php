@@ -13,7 +13,8 @@
               echo($erreur);
             } else { // utilisateur trouvé dans la base de données
                 $ligne = $reponse->fetch();
-                if(md5($_POST['psw'])!=$ligne['mdp']){ // Le mot de passe entré ne correspond pas à celui stocké dans la base de données
+                if(md5($_POST['psw'])!=$ligne['mdp']){ //md5(code): fonction qui hash le code utilisant le md5
+                  //faire les fonctions encrypt et decrypt avec hashing + salting
                     $erreur = "Mot de passe incorrect";
                     echo($erreur);
                     echo(md5($_POST['psw']));
