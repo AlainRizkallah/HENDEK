@@ -10,15 +10,20 @@
 
             if($reponse->rowcount()==0){  // L'utilisateur n'a pas été trouvé dans la base de données
                 $erreur = "Utilisateur inconnu";
-                //include("Vue/connexion_erreur.php");
+              echo($erreur);
             } else { // utilisateur trouvé dans la base de données
                 $ligne = $reponse->fetch();
-                if(md5($_POST['psw'])!=$ligne['mdp']){ // Le mot de passe entré ne correspond pas à celui stocké dans la base de données
+                if(md5($_POST['psw'])!=$ligne['mdp']){ //md5(code): fonction qui hash le code utilisant le md5
+                  //faire les fonctions encrypt et decrypt avec hashing + salting
                     $erreur = "Mot de passe incorrect";
+                    echo($erreur);
+                    echo(md5($_POST['psw']));
+                    echo($ligne['mdp']);
                     //include("Vue/connexion_erreur.php");
                 } else { // mot de passe correct, on affiche la page d'accueil
                     $_SESSION["userID"] = $ligne['id'];
                     //include("Vue/accueil.php");
+                    echo("connecté");
                 }
             }
         } else { // L'utilisateur n'a pas rempli tous les champs du formulaire
