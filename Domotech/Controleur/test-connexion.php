@@ -23,7 +23,9 @@
                 } else { // mot de passe correct, on affiche la page d'accueil
                     $_SESSION["userID"] = $ligne['id'];
                     $_SESSION["name"]=$_POST['userName'];
-
+                    //refresh la page
+                    header('Location: '.$_SERVER['PHP_SELF']);
+                    die;
                     echo("connecté");
                 }
             }

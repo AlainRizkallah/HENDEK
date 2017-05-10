@@ -1,8 +1,8 @@
 <div class="logged">
   <form method="POST">
       <div class="container">
-        <?php echo($_SESSION["name"]) ?>
-        <label><b>Password</b></label>
+        <label>Bienvenue: <b><?php echo($_SESSION["name"]) ?></b></label>
+
         <button type="submit" name="btnDeco">Disconnect</button>
       </div>
     </form>

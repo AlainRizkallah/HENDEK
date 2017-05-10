@@ -16,6 +16,9 @@
                   }
                     // Détruit toutes les variables de session
                   session_destroy();
+                  //refresh la page
+                  header('Location: '.$_SERVER['PHP_SELF']);
+                  die;
               }
                 //include("Vue/non_connecte.php");/A changer: recharger la page sans être connecté
             }
