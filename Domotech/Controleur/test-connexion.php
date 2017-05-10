@@ -17,8 +17,6 @@
                   //faire les fonctions encrypt et decrypt avec hashing + salting
                     $erreur = "Mot de passe incorrect";
                     echo($erreur);
-                    echo(md5($_POST['psw']));
-                    echo($ligne['mdp']);
                     //include("Vue/connexion_erreur.php");
                 } else { // mot de passe correct, on affiche la page d'accueil
                     $_SESSION["userID"] = $ligne['id'];
