@@ -9,9 +9,9 @@
         <label><b>E-mail</b></label>
         <input type="text" placeholder="someone@example.com" name="email" required>
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="userName" required>
+        <input type="text" placeholder="Enter Username" name="regUserName" required>
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="regMdp" required>
         <button type="submit" name="btnRegister">Create Account</button>
       </div>
     </form>
