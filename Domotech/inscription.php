@@ -9,21 +9,13 @@
     <header>
     <h1 class="titre">Domotech</h1>
     <?php include ('Controleur/session-manager.php'); ?>
-
-
-
 </header>
-
     <?php include("Vue/barremenu.php");?>
-
     <section>
       <div class="center">
         <?php include ('Vue/register.php');?>
-
       </div>
     </section>
-
 <?php include("Vue/footer.html"); ?>
-
   </body>
 </html>

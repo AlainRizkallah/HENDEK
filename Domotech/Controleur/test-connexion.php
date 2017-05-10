@@ -22,8 +22,7 @@
                     //include("Vue/connexion_erreur.php");
                 } else { // mot de passe correct, on affiche la page d'accueil
                     $_SESSION["userID"] = $ligne['id'];
-                    $_SESSION["name"]=$_POST['userName'];
-
+                    //include("Vue/accueil.php");
                     echo("connecté");
                 }
             }
