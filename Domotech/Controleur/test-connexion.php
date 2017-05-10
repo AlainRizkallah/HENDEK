@@ -2,7 +2,7 @@
     // Controleur pour gérer le formulaire de connexion des utilisateurs
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') { // L'utilisateur vient de valider le formulaire de connexion
-        if(isset($_POST['btnLogin']) && !empty($_POST['userName']) && !empty($_POST['psw'])){
+    if(isset($_POST['btnLogin']) && !empty($_POST['userName']) && !empty($_POST['psw'])){
             include("Modele/db-get-login.php");
 
 

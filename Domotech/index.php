@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="Styles/HomePage.css" >
+  <link rel="stylesheet" href="Styles/style.css" >
   <title>Domotech</title>
 </head>
   <body>

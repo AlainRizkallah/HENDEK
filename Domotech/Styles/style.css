@@ -24,7 +24,11 @@ footer ul{
   list-style-type: none;
   padding-left: 0px;
 }
-
+.center{
+  margin:auto;
+  padding: auto;
+  width: 50%;
+}
 
 .login{
   background-color: #E0E2E5;
