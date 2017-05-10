@@ -7,7 +7,7 @@
         <input type="password" placeholder="Enter Password" name="psw" required>
         <button type="submit" name="btnLogin">Login</button>
         <input type="checkbox" checked="checked"> Remember me<br>
-        <span class="su"><a href="">S'inscrire</a></span><br>
+        <span class="su"><a href="inscription.php">S'inscrire</a></span><br>
         <span class="psw"><a href="#">Mot de passe oublié?</a></span>
       </div>
     </form>
