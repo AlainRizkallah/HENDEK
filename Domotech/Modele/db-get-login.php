@@ -13,16 +13,16 @@
         return $reponse;
     }
 
-    function userExist($db,$identifiant,$emil){
-      $reponse = $db->query('SELECT COUNT(*) FROM Utilisateurs WHERE identifiant="'.$identifiant.'"' AND email="'.$email.'");
+    function userExist($db,$identifiant){
+      $reponse = $db->query('SELECT COUNT(*) FROM Utilisateurs WHERE identifiant="'.$identifiant.'"');
 
       return $reponse;
       }
 
 
-    function addUser($db,$identifiant,$mdp,$email,$Nom,$Prenom){
+    function addUser($db,$identifiant,$mdp,$email,$nom,$prenom,$tel){
       try{
-      $db->query('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`,`email`,`Nom`,`Prenom`) VALUES ("'.$identifiant.'", MD5("'.$mdp.'"), NULL,"'.$email.'","'.$Nom.'","'.$Prenom.'") ') or die(print_r($db->errorInfo(), true));
+      $db->query('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`,`email`,`nom`,`prenom`,`tel`) VALUES ("'.$identifiant.'", MD5("'.$mdp.'"), NULL,"'.$email.'","'.$nom.'","'.$prenom.'","'.$tel.'") ') or die(print_r($db->errorInfo(), true));
       $res="fait";
     }
     catch (Exception $e)

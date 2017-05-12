@@ -2,18 +2,19 @@
     // Controleur pour gérer le formulaire de connexion des utilisateurs
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') { // L'utilisateur vient de valider le formulaire de connexion
-    if(isset($_POST['btnRegister']) && !empty($_POST['userName']) && !empty($_POST['psw']) && !empty($_POST['email']) && !empty($_POST['Nom']) && !empty($_POST['Prenom'])){
+    if(isset($_POST['btnRegister']) && !empty($_POST['regUserName']) && !empty($_POST['regMdp'])){
             include("Modele/db-get-login.php");
 
-            //$reponse = userExist($db,$_POST['userName']);
-            $reponse = userExist($db,$_POST['userName'],$_POST['email']);
+
+            $reponse = userExist($db,$_POST['regUserName']);
             $donne = $reponse->fetch();
             if($donne[0]==0){
 
-              $resultat = addUser($db,$_POST['userName'],$_POST['psw'],$_POST['email'],$_POST['Nom'],$_POST['Prenom']);
+              $resultat = addUser($db,$_POST['regUserName'],$_POST['regMdp'],$_POST['email'],$_POST['nom'],$_POST['prenom'],$_POST['tel']);
               echo ($resultat);
 
             } else { // utilisateur trouvé dans la base de données
+              //ajouter vérif email existe déjà
               $erreur = "Utilisateur existe déjà";
             echo($erreur);
             }

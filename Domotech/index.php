@@ -2,12 +2,12 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="Styles/style.css" >
+  <link rel="stylesheet" href="Styles/style1.css" >
   <title>Domotech</title>
 </head>
   <body>
     <header>
-    <h1 class="titre">Domotech</h1>
+    <a href=index.php> <h1 class="titre">Domotech</h1> </a>
     <?php include ('Controleur/session-manager.php'); ?>
 
 
