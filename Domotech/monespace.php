@@ -2,22 +2,31 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="Styles/HomePage.css" >
+  <link rel="stylesheet" href="Styles/style1.css" >
   <title>Domotech</title>
 </head>
   <body>
     <header>
-    <h1 class="titre">Domotech</h1>
+
+    <a href=index.php> <h1 class="titre">Domotech</h1> </a>
     <?php include ('Controleur/session-manager.php'); ?>
 
 
 
 </header>
 
+<<<<<<< HEAD
      <?php //include("Vue/barremenu.php");?> 
     <?php include("Vue/menuclient.php");?> <!-- pour tester affichage sur une page random -->
 
+=======
+    <?php include("Vue/barremenu.php");?>
+    <?php include("Vue/menuclient.php");?>
+>>>>>>> origin/master
 
+<section>
+Bienvenue sur votre espace  <br><br>
+</section>
 
 <?php include("Vue/footer.html"); ?>
 
