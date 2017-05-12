@@ -15,14 +15,11 @@
 
 </header>
 
-<<<<<<< HEAD
-     <?php //include("Vue/barremenu.php");?> 
+     <?php //include("Vue/barremenu.php");?>
     <?php include("Vue/menuclient.php");?> <!-- pour tester affichage sur une page random -->
 
-=======
     <?php include("Vue/barremenu.php");?>
     <?php include("Vue/menuclient.php");?>
->>>>>>> origin/master
 
 <section>
 Bienvenue sur votre espace  <br><br>
