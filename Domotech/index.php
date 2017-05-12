@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="Styles/style1.css" >
-  <title>Domotech</title>
+  <title>Domotech testalain</title>
 </head>
   <body>
     <header>
