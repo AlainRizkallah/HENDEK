@@ -13,12 +13,12 @@ header{
   display: flex;
   justify-content: space-between;
 }
-
-
 footer{
+  font-family: 'SB';
   display: inline-flex;
   width: 100%;
   background-color: #D1D4D9;
+  color: #5680A6;
 }
 footer ul{
   width: 33%;
@@ -26,7 +26,11 @@ footer ul{
   list-style-type: none;
   padding-left: 0px;
 }
-
+.center{
+  margin:auto;
+  padding: auto;
+  width: 50%;
+}
 
 .login{
   background-color: #E0E2E5;
@@ -38,9 +42,10 @@ footer ul{
 }
 
 .titre{
-  padding-left:80px;
+  padding-left:120px;
+ padding-right:120px;
   float: left;
-  padding-top: 70px;
+  padding-top: 50px;
   width:100%-250px;
   margin: 0px;
   color: #5680A6;
@@ -68,19 +73,6 @@ footer ul{
 .barremenu li:hover{
   background-color: #D1D4D9;
 }
-.image1{
-  text-align: center;
-  padding-left: 80px;
-  padding-right: 80px;
-}
-.texte1{
-  text-align: left;
-  padding-left: 80px;
-  padding-right: 80px;
-}
-
-
-
 li a{
   color: #5680A6;
   text-decoration: none;
@@ -140,7 +132,6 @@ button:hover {
 /* The "Forgot password" text */
 span.su{
   float: right;
-
 }
 span.psw {
     float: right;
