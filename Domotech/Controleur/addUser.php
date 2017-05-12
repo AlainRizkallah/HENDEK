@@ -5,7 +5,7 @@
     if(isset($_POST['btnRegister']) && !empty($_POST['regUserName']) && !empty($_POST['regMdp'])){
             include("Modele/db-get-login.php");
 
-            //$reponse = userExist($db,$_POST['userName']);
+
             $reponse = userExist($db,$_POST['regUserName']);
             $donne = $reponse->fetch();
             if($donne[0]==0){
@@ -14,6 +14,7 @@
               echo ($resultat);
 
             } else { // utilisateur trouvé dans la base de données
+              //ajouter vérif email existe déjà
               $erreur = "Utilisateur existe déjà";
             echo($erreur);
             }
