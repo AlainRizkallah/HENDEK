@@ -7,7 +7,7 @@
 </head>
   <body>
     <header>
-    <h1 class="titre">Domotech</h1>
+    <a href=index.php> <h1 class="titre">Domotech</h1> </a>
     <?php include ('Controleur/session-manager.php'); ?>
 
 
