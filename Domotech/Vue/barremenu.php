@@ -1,8 +1,8 @@
 <?php
 if(isset($_SESSION["userID"])){ // est connecté
 echo('
-<link rel="stylesheet" href="Styles/monespace.css" >
-<ul class="menuclient">
+
+<ul class="barremenu">
         <li> <a href ="monespace/mamaison.php" > Ma Maison </a> </li>
         <li> <a href ="monespace/capteurs.php" > Capteurs </a> </li>
         <li> <a href ="monespace/ajoutcapteurs.php" > Ajouter des capteurs </a> </li>
