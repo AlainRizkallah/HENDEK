@@ -1,14 +1,14 @@
 <?php
     session_start();
     //require("Modele/connexion.php");
-
+include('Vue/login.php');
 
     if(!isset($_SESSION["userID"])){ // L'utilisateur n'est pas connecté
         include("Controleur/test-connexion.php");
-        include('Vue/login.php');
+
     } else {
 
-                include('Vue/logged.php');
+              //include('Vue/logged.php');
               if(isset($_POST['btnDeco']) ){
                 $_SESSION = array();
                   if (isset($_COOKIE[session_name()])) {

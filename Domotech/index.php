@@ -2,7 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+<<<<<<< HEAD
   <link rel="stylesheet" href="Styles/style1.css" >
+=======
+  <link rel="stylesheet" href="Vue/Styles/style1.css" >
+>>>>>>> master
   <title>Domotech</title>
 </head>
   <body>

@@ -3,9 +3,13 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') { // L'utilisateur vient de valider le formulaire de connexion
     if(isset($_POST['btnRegister']) && !empty($_POST['regUserName']) && !empty($_POST['regMdp'])){
-            include("Modele/db-get-login.php");
+            include("Modele/db-utilisateur-manager.php");
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
             $reponse = userExist($db,$_POST['regUserName']);
             $donne = $reponse->fetch();
             if($donne[0]==0){
