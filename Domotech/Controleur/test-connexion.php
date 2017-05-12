@@ -22,7 +22,7 @@
                     $_SESSION["userID"] = $ligne['id'];
                     $_SESSION["name"]=$_POST['userName'];
                     //refresh la page
-                    header('Location: '.$_SERVER['PHP_SELF']);
+                    header('Location:monespace.php ');
                     die;
                     echo("connecté");
                 }

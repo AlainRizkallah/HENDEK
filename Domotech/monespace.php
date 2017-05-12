@@ -14,7 +14,7 @@
 
 </header>
 
-    <?php include("Vue/barremenu.php");?>
+     <?php //include("Vue/barremenu.php");?> 
     <?php include("Vue/menuclient.php");?> <!-- pour tester affichage sur une page random -->
 
 
