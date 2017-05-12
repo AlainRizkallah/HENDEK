@@ -18,7 +18,9 @@
     <?php include("Vue/barremenu.php");?>
     <?php include("Vue/menuclient.php");?>
 
-
+<section>
+Bienvenue sur votre espace  <br><br>
+</section>
 
 <?php include("Vue/footer.html"); ?>
 
