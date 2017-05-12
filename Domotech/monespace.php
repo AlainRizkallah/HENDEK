@@ -9,8 +9,15 @@
     <header>
 
     <a href=index.php> <h1 class="titre">Domotech</h1> </a>
-    <?php include ('Controleur/session-manager.php'); ?>
-    
+    <?php include ('Controleur/session-manager.php');
+
+    if(!isset($_SESSION["userID"])){
+      header('Location:login.php ');
+      die;
+    }
+
+      ?>
+
 
 
 </header>

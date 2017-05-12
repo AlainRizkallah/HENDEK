@@ -19,7 +19,7 @@
                 } else { // mot de passe correct, on affiche la page d'accueil
                     $_SESSION["userID"] = $ligne['id'];
                     $_SESSION["name"]=$_POST['userName'];
-                    //refresh la page
+                    //rredirige vers la page mon esapce
                     header('Location:monespace.php ');
                     die;
                     echo("connecté");
