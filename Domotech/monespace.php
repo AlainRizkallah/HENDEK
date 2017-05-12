@@ -10,7 +10,7 @@
 
     <a href=index.php> <h1 class="titre">Domotech</h1> </a>
     <?php include ('Controleur/session-manager.php'); ?>
-
+    
 
 
 </header>
@@ -19,7 +19,7 @@
 
 
 <section>
-  
+
 Bienvenue sur votre espace  <br><br>
 </section>
 

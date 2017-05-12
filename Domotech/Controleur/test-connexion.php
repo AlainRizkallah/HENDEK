@@ -3,9 +3,7 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') { // L'utilisateur vient de valider le formulaire de connexion
     if(isset($_POST['btnLogin']) && !empty($_POST['userName']) && !empty($_POST['psw'])){
-            include("Modele/db-get-login.php");
-
-
+            include("Modele/db-utilisateur-manager.php");
             $reponse = mdp($db,$_POST['userName']);
 
             if($reponse->rowcount()==0){  // L'utilisateur n'a pas été trouvé dans la base de données
