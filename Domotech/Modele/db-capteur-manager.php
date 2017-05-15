@@ -9,20 +9,20 @@
 
 
     function getCapteursList($db,$idSalle){
-        $reponse = $db->query('SELECT type FROM capteur WHERE idSalle="'.$idSale.'"');
+        $reponse = $db->query('SELECT type FROM capteur WHERE idSalle="'.$idSalle.'"');
         return $reponse;
     }
 
     function capterExist($db,$identifiant){
-      $reponse = $db->query('SELECT COUNT(*) FROM capteur WHERE identifiant="'.$ID.'"');
+      $reponse = $db->query('SELECT COUNT(*) FROM capteur WHERE ID="'.$identifiant.'"');
 
       return $reponse;
       }
 
 
       function addCapteur($db,$idSalle,$idMaison,$type){
-        try{
-        $db->query('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`,`email`,`nom`,`prenom`,`tel`) VALUES ("'.$identifiant.'", MD5("'.$mdp.'"), NULL,"'.$email.'","'.$nom.'","'.$prenom.'","'.$tel.'") ') or die(print_r($db->errorInfo(), true));$res="fait";
+        try{//TODO: ajouter le champs nom ?
+        $db->query('INSERT INTO `capteur` (`idSalle`, `idHabitation`,`type`) VALUES ("'.$idSalle.'","'.$idMaison.'","'.$type.'") ') or die(print_r($db->errorInfo(), true));$res="fait";
     }
     catch (Exception $e)
 {
