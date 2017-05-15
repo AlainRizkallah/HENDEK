@@ -47,7 +47,7 @@
           include("Vue/non_connecte.php");
       }
   } else { // affichage par défaut
-          Bienvenue sur votre espace  <br><br>
+        echo  ("Bienvenue sur votre espace <br><br>");
   }
   ?>
 
