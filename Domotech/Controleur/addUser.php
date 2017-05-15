@@ -2,16 +2,17 @@
     // Controleur pour gérer le formulaire de connexion des utilisateurs
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') { // L'utilisateur vient de valider le formulaire de connexion
-    if(isset($_POST['btnRegister']) && !empty($_POST['regUserName']) && !empty($_POST['regMdp'])){
+      if(isset($_POST['btnRegister'])){
+    if(!empty($_POST['regUserName']) && !empty($_POST['regMdp'])){
             include("Modele/db-utilisateur-manager.php");
 
 
             $reponse = userExist($db,$_POST['regUserName']);
-            $donne = $reponse->fetch();
-            if($donne[0]==0){
+              $donne = $reponse->fetch();
+              if($donne[0]==0){
 
-              $resultat = addUser($db,$_POST['regUserName'],$_POST['regMdp']);
-              echo ($resultat);
+                $resultat = addUser($db,$_POST['regUserName'],$_POST['regMdp'],$_POST['email'],$_POST['nom'],$_POST['prenom'],$_POST['tel']);
+                echo ($resultat);
 
             } else { // utilisateur trouvé dans la base de données
               //ajouter vérif email existe déjà
@@ -22,7 +23,6 @@
             $erreur = "Veuillez remplir tous les champs";
             echo($erreur);//include("Vue/connexion_erreur.php");
         }
-    } else { // La page de connexion par défaut
-        //include("Vue/non_connecte.php");
+      }
     }
 ?>

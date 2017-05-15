@@ -18,7 +18,7 @@
 
     <section>
       <div class="center">
-        <?php include ('Vue/connection.php');?>
+        <?php include ('Vue/register.php');?>
 
       </div>
     </section>

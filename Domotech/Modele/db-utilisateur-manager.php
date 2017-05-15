@@ -20,10 +20,9 @@
       }
 
 
-    function addUser($db,$identifiant,$mdp){
-      try{
-      $db->query('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`) VALUES ("'.$identifiant.'", MD5("'.$mdp.'"), NULL) ') or die(print_r($db->errorInfo(), true));
-      $res="fait";
+      function addUser($db,$identifiant,$mdp,$email,$nom,$prenom,$tel){
+        try{
+        $db->query('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`,`email`,`nom`,`prenom`,`tel`) VALUES ("'.$identifiant.'", MD5("'.$mdp.'"), NULL,"'.$email.'","'.$nom.'","'.$prenom.'","'.$tel.'") ') or die(print_r($db->errorInfo(), true));$res="fait";
     }
     catch (Exception $e)
 {

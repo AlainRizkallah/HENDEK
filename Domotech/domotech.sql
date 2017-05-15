@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  jeu. 11 mai 2017 à 15:13
+-- Client :  127.0.0.1
+-- Généré le :  Lun 15 Mai 2017 à 10:03
 -- Version du serveur :  10.1.21-MariaDB
--- Version de PHP :  7.1.2
+-- Version de PHP :  7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -152,18 +150,23 @@ CREATE TABLE `salle` (
 CREATE TABLE `utilisateurs` (
   `identifiant` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `mdp` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `tel` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'normal'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `utilisateurs`
+-- Contenu de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`) VALUES
-('alain', 'a', 1);
+INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`) VALUES
+('alain', '0cc175b9c0f1b6a831c399e269772661', 0, '4568', 'alain.riz@isep.fr', 'alain', '', 'normal');
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -175,15 +178,14 @@ ALTER TABLE `utilisateurs`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

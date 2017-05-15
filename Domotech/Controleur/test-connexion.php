@@ -1,8 +1,10 @@
 <?php
     // Controleur pour gérer le formulaire de connexion des utilisateurs
 
-    if($_SERVER['REQUEST_METHOD'] === 'POST') { // L'utilisateur vient de valider le formulaire de connexion
-    if(isset($_POST['btnLogin']) && !empty($_POST['userName']) && !empty($_POST['psw'])){
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+       // L'utilisateur vient de valider le formulaire de connexion
+if(isset($_POST['btnLogin'])){
+    if(!empty($_POST['userName']) && !empty($_POST['psw'])){
             include("Modele/db-utilisateur-manager.php");
             $reponse = mdp($db,$_POST['userName']);
 
@@ -29,7 +31,6 @@
             $erreur = "Veuillez remplir tous les champs";
             echo($erreur);//include("Vue/connexion_erreur.php");
         }
-    } else { // La page de connexion par défaut
-        //include("Vue/non_connecte.php");
+      }
     }
 ?>
