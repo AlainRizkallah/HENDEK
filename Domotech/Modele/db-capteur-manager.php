@@ -2,25 +2,25 @@
     require_once("connexion.php");
 
 
-    function mdp($db,$identifiant){
-        $reponse = $db->query('SELECT id, mdp FROM Utilisateurs WHERE identifiant="'.$identifiant.'"');
+    function getCapteur($db,$ID){
+        $reponse = $db->query('SELECT type,valeur, etat FROM capteur WHERE ID="'.$ID.'"');
         return $reponse;
     }
 
 
-    function utilisateurs($db){
-        $reponse = $db->query('SELECT identifiant FROM Utilisateurs');
+    function getCapteursList($db,$idSalle){
+        $reponse = $db->query('SELECT type FROM capteur WHERE idSalle="'.$idSale.'"');
         return $reponse;
     }
 
-    function userExist($db,$identifiant){
-      $reponse = $db->query('SELECT COUNT(*) FROM Utilisateurs WHERE identifiant="'.$identifiant.'"');
+    function capterExist($db,$identifiant){
+      $reponse = $db->query('SELECT COUNT(*) FROM capteur WHERE identifiant="'.$ID.'"');
 
       return $reponse;
       }
 
 
-      function addUser($db,$identifiant,$mdp,$email,$nom,$prenom,$tel){
+      function addCapteur($db,$idSalle,$idMaison,$type){
         try{
         $db->query('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`,`email`,`nom`,`prenom`,`tel`) VALUES ("'.$identifiant.'", MD5("'.$mdp.'"), NULL,"'.$email.'","'.$nom.'","'.$prenom.'","'.$tel.'") ') or die(print_r($db->errorInfo(), true));$res="fait";
     }
