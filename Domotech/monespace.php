@@ -22,17 +22,21 @@
      <?php include("Vue/barremenu.php");?>
 
 <section>
-  <?php if(isset($_GET['cible'])) { // on regarde la page où il veut aller
-      if($_GET['cible'] == 'mon-espace/ma-maison'){// Changer les cibles
+  <?php
+
+
+  if(isset($_GET['cible'])) { // on regarde la page où il veut aller
+      if($_GET['cible'] == '/mon-espace/ma-maison'){// Changer les cibles /mon-espace/ma-maison
           include("Vue/login.php");
 
+/*
+          if (preg_match('#monespace-([0-9-]+)\.php#isU', $_SERVER['REDIRECT_URL'], $match)) {
+            //TODO $_SERVER['REDIRECT_URL'] pas reconnu
+	           // Modification du code retour, pour que les moteurs de recherche indexent nos pages !
+	            header("Status: 200 OK", false, 200);
 
-            //modification du code retour
-            header("Status: 200 OK", false, 200);
-            //alimentation du paramètre GET
-            $_GET['cible'] = "teste";
-            $_REQUEST['cible'] = "teste2";
-
+	             
+    }*/
 
 
       } else if ($_GET['cible'] == "etape1"){
@@ -47,15 +51,7 @@
           include("Vue/etape2.php");
       } else if ($_GET['cible'] == "etape3"){
           include("Vue/etape3.php");
-     } else if ($_GET['cible'] == "deconnexion"){
-          // Détruit toutes les variables de session
-          $_SESSION = array();
-          if (isset($_COOKIE[session_name()])) {
-              setcookie(session_name(), '', time()-42000, '/');
-          }
-          session_destroy();
-          include("Vue/non_connecte.php");
-      }
+     }
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");
   }
