@@ -21,7 +21,7 @@ footer{
   background-color: #D1D4D9;
   color: #5680A6;
 
-  margin-top: 5%;
+  margin-top: 2%;
 }
 footer ul{
   width: 33%;
@@ -165,10 +165,12 @@ section{
 h1{
 }
 .conteneur-section{
-
+  margin-top: 15px;
+padding-top: 15px;
 border-style: solid;
 border-radius: 3px;
 border-color: #D1D4D9;
+padding-bottom: 15px;
 }
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
