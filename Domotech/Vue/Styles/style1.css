@@ -87,6 +87,22 @@ width: 14%;
  float: left;
 }
 
+.titreFormCapteurs {
+
+  background-color:#5680A6;
+  border-style: solid;
+  color: #D1D4D9;
+  border-color:#E0E2E5;
+  display:inline-block;
+}
+
+.formCapteurs {
+  padding-left:120px;
+  padding-right:70%;
+  font-size:20px;
+  text-align:center;
+}
+
 
 /* Bordered form */
 form {
