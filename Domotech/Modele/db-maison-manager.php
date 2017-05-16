@@ -3,7 +3,9 @@
 
 
     function getMaison($db,$ID){
-        $reponse = $db->query('SELECT type,valeur, etat FROM habitation WHERE ID="'.$ID.'"');
+        $reponse = $db->prepare('SELECT type,valeur, etat FROM habitation WHERE ID=:ID');
+        $reponse->bindParam(':ID',$ID);
+        $reponse->execute();
         return $reponse;
     }
     //TODO use prepare
@@ -11,12 +13,16 @@
 
 
     function getHabitationsList($db,$idSalle){
-      //$reponse = $db->query('SELECT type FROM habitation WHERE idSalle="'.$idSale.'"');
+      $reponse = $db->prepare('SELECT type FROM habitation WHERE idSalle= :idSalle');
+      $reponse->bindParam(':idSalle',$idSalle);
+      $reponse->execute();
         return $reponse;
     }
 
     function capterExist($db,$identifiant){
-      $reponse = $db->query('SELECT COUNT(*) FROM habitation WHERE ID="'.$identifiant.'"');
+      $reponse = $db->prepare('SELECT COUNT(*) FROM habitation WHERE ID=:identifiant');
+      $reponse->bindParam(':identifiant',$identifiant);
+      $reponse->execute();
 
       return $reponse;
       }
@@ -24,7 +30,13 @@
 
       function addHabitation($db,$adresse,$nbSalle,$superficie){
         try{
-          $db->query('INSERT INTO `habitation` (`adresse`, `nbSalle`,`superficie`) VALUES ("'.$iadresse.'","'.$nbSalle.'","'.$superficie.'") ') or die(print_r($db->errorInfo(), true));$res="fait";
+          $stmt = $db->prepare('INSERT INTO `habitation` (`adresse`, `nbSalle`,`superficie`) VALUES (:adresse,:nbSalle,:superficie) ')
+          $stmt->bindParam(':adresse',$iadresse);
+          $stmt->bindParam(':nbSalle',$nbSalle);
+          $stmt->bindParam(':superficie',$superficie);
+          $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+          res="fait";
+
       }
     catch (Exception $e)
 {

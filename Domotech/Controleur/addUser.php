@@ -9,14 +9,14 @@
 
             $reponse = userExist($db,$_POST['regUserName']);
               $donne = $reponse->fetch();
-              if($donne[0]==0){
+              if($donne[0]=="0"){
 
                 $resultat = addUser($db,$_POST['regUserName'],$_POST['regMdp'],$_POST['email'],$_POST['nom'],$_POST['prenom'],$_POST['tel']);
                 echo ($resultat);
 
             } else { // utilisateur trouvé dans la base de données
               //ajouter vérif email existe déjà
-              $erreur = "Utilisateur existe déjà";
+              $erreur = $_POST['regUserName']." existe déjà";
             echo($erreur);
             }
         } else { // L'utilisateur n'a pas rempli tous les champs du formulaire

@@ -3,18 +3,26 @@
 
 
     function getCapteur($db,$ID){
-        $reponse = $db->query('SELECT type,valeur, etat FROM capteur WHERE ID="'.$ID.'"');
+
+
+        $reponse = $db->prepare('SELECT type,valeur, etat FROM capteur WHERE ID=:ID');
+        $reponse->bindParam(':ID',$ID);
+        $reponse->execute();
         return $reponse;
     }
 
 
     function getCapteursList($db,$idSalle){
-        $reponse = $db->query('SELECT type FROM capteur WHERE idSalle="'.$idSalle.'"');
+        $reponse = $db->prepare('SELECT type FROM capteur WHERE idSalle=:idSalle');
+        $reponse->bindParam(':idSalle',$idSalle);
+        $reponse->execute();
         return $reponse;
     }
 
     function capterExist($db,$identifiant){
-      $reponse = $db->query('SELECT COUNT(*) FROM capteur WHERE ID="'.$identifiant.'"');
+      $reponse = $db->prepare('SELECT COUNT(*) FROM capteur WHERE ID=:ID');
+      $reponse->bindParam(':ID',$ID);
+      $reponse->execute();
 
       return $reponse;
       }
@@ -22,7 +30,12 @@
 
       function addCapteur($db,$idSalle,$idMaison,$type){
         try{//TODO: ajouter le champs nom ?
-        $db->query('INSERT INTO `capteur` (`idSalle`, `idHabitation`,`type`) VALUES ("'.$idSalle.'","'.$idMaison.'","'.$type.'") ') or die(print_r($db->errorInfo(), true));$res="fait";
+        $stmt = $db->prepare('INSERT INTO `capteur` (`idSalle`, `idHabitation`,`type`) VALUES (:idSalle,idMaison,:type) ')
+        $stmt->bindParam(':idSalle',$idSalle);
+        $stmt->bindParam(':idMaison',$idMaison);
+        $stmt->bindParam(':type',$type);
+        $stmt->execute() or die(print_r($db->errorInfo(), true));
+        $res="fait";
     }
     catch (Exception $e)
 {
