@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1
+-- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Lun 15 Mai 2017 à 10:03
--- Version du serveur :  10.1.21-MariaDB
--- Version de PHP :  7.1.1
+-- Host: localhost
+-- Generation Time: May 16, 2017 at 08:11 AM
+-- Server version: 5.7.11
+-- PHP Version: 5.6.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `domotech`
+-- Database: `domotech`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `actionneur`
+-- Table structure for table `actionneur`
 --
 
 CREATE TABLE `actionneur` (
@@ -36,7 +36,7 @@ CREATE TABLE `actionneur` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `administrateur`
+-- Table structure for table `administrateur`
 --
 
 CREATE TABLE `administrateur` (
@@ -49,7 +49,7 @@ CREATE TABLE `administrateur` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `capteur`
+-- Table structure for table `capteur`
 --
 
 CREATE TABLE `capteur` (
@@ -64,7 +64,7 @@ CREATE TABLE `capteur` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comportement`
+-- Table structure for table `comportement`
 --
 
 CREATE TABLE `comportement` (
@@ -76,7 +76,7 @@ CREATE TABLE `comportement` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `données`
+-- Table structure for table `données`
 --
 
 CREATE TABLE `données` (
@@ -88,20 +88,21 @@ CREATE TABLE `données` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `habitation`
+-- Table structure for table `habitation`
 --
 
 CREATE TABLE `habitation` (
   `ID` int(40) NOT NULL,
   `adresse` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `nbSalle` int(10) NOT NULL,
-  `superficie` int(40) NOT NULL
+  `superficie` int(40) NOT NULL,
+  `idClient` int(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message`
+-- Table structure for table `message`
 --
 
 CREATE TABLE `message` (
@@ -116,7 +117,7 @@ CREATE TABLE `message` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `messagerie`
+-- Table structure for table `messagerie`
 --
 
 CREATE TABLE `messagerie` (
@@ -130,7 +131,7 @@ CREATE TABLE `messagerie` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `salle`
+-- Table structure for table `salle`
 --
 
 CREATE TABLE `salle` (
@@ -144,7 +145,7 @@ CREATE TABLE `salle` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateurs`
+-- Table structure for table `utilisateurs`
 --
 
 CREATE TABLE `utilisateurs` (
@@ -159,18 +160,19 @@ CREATE TABLE `utilisateurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `utilisateurs`
+-- Dumping data for table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 0, '4568', 'alain.riz@isep.fr', 'alain', '', 'normal');
+('aaa', '47bce5c74f589f4867dbd57e9ca9f808', 2, '0', '', '', '', 'normal'),
+('gay', '6e11873b9d9d94a44058bef5747735ce', 7, '+33 677728222', 'alina', 'alain', 'alain', 'normal');
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `utilisateurs`
+-- Indexes for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`id`) USING BTREE,
@@ -178,14 +180,14 @@ ALTER TABLE `utilisateurs`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `utilisateurs`
+-- AUTO_INCREMENT for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
