@@ -12,8 +12,8 @@
     <?php include ('Controleur/session-manager.php');
 
     if(!isset($_SESSION["userID"])){
-      header('Location:login.php ');
-      die;
+      //header('Location:login.php ');
+      //die;
     }
       ?>
 
@@ -24,10 +24,11 @@
 <section>
   <?php
 
-
   if(isset($_GET['cible'])) { // on regarde la page où il veut aller
+
+
       if($_GET['cible'] == '/mon-espace/ma-maison'){// Changer les cibles /mon-espace/ma-maison
-          include("Vue/login.php");
+
 
 /*
           if (preg_match('#monespace-([0-9-]+)\.php#isU', $_SERVER['REDIRECT_URL'], $match)) {
@@ -35,7 +36,7 @@
 	           // Modification du code retour, pour que les moteurs de recherche indexent nos pages !
 	            header("Status: 200 OK", false, 200);
 
-	             
+
     }*/
 
 

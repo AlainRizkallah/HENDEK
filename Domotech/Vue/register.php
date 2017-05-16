@@ -10,11 +10,11 @@
           <input type="text" placeholder="someone@example.com" name="email" required>
           <label><b>Téléphone</b></label>
           <input type="text" placeholder="votre numéro de téléphone" name="tel" required>
-          <label><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="regUserName" required>
-          <label><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="regMdp" required>
-          <button type="submit" name="btnRegister">Create Account</button>
+          <label><b>Identifiant</b></label>
+          <input type="text" placeholder="Identifiant" name="regUserName" required>
+          <label><b>Mot de Passe</b></label>
+          <input type="password" placeholder="Mot de Passe" name="regMdp" required>
+          <button type="submit" name="btnRegister">Créer le compte</button>
         </div>
       </form>
     </div>

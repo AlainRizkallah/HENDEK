@@ -6,11 +6,12 @@
   font-family: "SB";
   src:url('FORCED SQUARE.ttf');
 }
-html{
-
+body{
+  margin: 0;
 }
 header{
   display: flex;
+  width:100%;
   justify-content: space-between;
 }
 footer{
@@ -19,6 +20,8 @@ footer{
   width: 100%;
   background-color: #D1D4D9;
   color: #5680A6;
+
+  margin-top: 5%;
 }
 footer ul{
   width: 33%;
@@ -28,7 +31,6 @@ footer ul{
 }
 .center{
   margin:auto;
-  padding: auto;
   width: 50%;
 }
 
@@ -37,8 +39,11 @@ footer ul{
   width: 300px;
   height: 200px;
   min-width: 200px;
+  margin-right: 30px;
   min-height: 200px;
-  font-size:2em;
+  border-style: solid;
+  border-radius: 3px;
+  border-color: #D1D4D9;
 }
 
 .titre{
@@ -63,20 +68,25 @@ footer ul{
   width: 100%;
 }
 .barremenu li{
+list-style-type: none;
+width: 14%;
+}
+.barremenu a:hover{
+  background-color: #D1D4D9;
+}
+
+.barre-menu-element{
+  color: #5680A6;
+  text-decoration: none;
   background-color: #E0E2E5;
   padding: 15px;
   border-style: solid;
   border-color: #D1D4D9;
-  list-style-type: none;
-  width: 14%;
+  width:100%;
+  display: block;
+ float: left;
 }
-.barremenu li:hover{
-  background-color: #D1D4D9;
-}
-li a{
-  color: #5680A6;
-  text-decoration: none;
-}
+
 
 /* Bordered form */
 form {
@@ -103,9 +113,21 @@ button {
     cursor: pointer;
     width: 40%;
 }
+.boutton{
+  background-color: #5680A6;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px;
+  border: none;
+  cursor: pointer;
+
+}
 
 /* Add a hover effect for buttons */
 button:hover {
+    opacity: 0.8;
+}
+.boutton:hover {
     opacity: 0.8;
 }
 
@@ -116,7 +138,7 @@ button:hover {
 }
 .container label{
   font-family: 'SB';
-  font-size: 12px;
+  font-size: 2em;
   color: #1D4C5C;
 }
 
@@ -132,11 +154,22 @@ button:hover {
 /* The "Forgot password" text */
 span.su{
   float: right;
-}
-span.psw {
-    float: right;
-}
+  font-size: 1.8em;
 
+
+
+}
+section{
+    font-family: 'SB';
+}
+h1{
+}
+.conteneur-section{
+
+border-style: solid;
+border-radius: 3px;
+border-color: #D1D4D9;
+}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {

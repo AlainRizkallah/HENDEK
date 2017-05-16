@@ -3,12 +3,19 @@
     //require("Modele/connexion.php");
 include('Vue/login.php');
 
+//TODO a supprimer en production
+header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+//TODO sert pour le débug du css
+
     if(!isset($_SESSION["userID"])){ // L'utilisateur n'est pas connecté
         include("Controleur/test-connexion.php");
 
     } else {
 
-              //include('Vue/logged.php');
               if(isset($_POST['btnDeco']) ){
                 $_SESSION = array();
                   if (isset($_COOKIE[session_name()])) {
@@ -20,5 +27,4 @@ include('Vue/login.php');
                   header('Location: index.php');
                   die;
               }
-                //include("Vue/non_connecte.php");/A changer: recharger la page sans être connecté
             }

@@ -17,8 +17,22 @@
     <?php include("Vue/barremenu.php");?>
 
     <section>
-      <div class="center">
-        <?php include ('Vue/login.php');?>
+
+      <div class="conteneur-section center">
+        <div class="center">
+          <h2>Il faut être connecté pour accéder à votre espace</h2>
+          <?php
+
+           include ('Vue/login.php');
+
+           ?>
+
+           <p>
+             Si vous n'avez pas de compte, vous pouvez en créer un
+             </p>
+
+               <a class="boutton" href="inscription.php">Créer un compte</a>
+        </div>
 
       </div>
     </section>
