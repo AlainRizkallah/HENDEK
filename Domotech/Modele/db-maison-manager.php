@@ -6,6 +6,8 @@
         $reponse = $db->query('SELECT type,valeur, etat FROM habitation WHERE ID="'.$ID.'"');
         return $reponse;
     }
+    //TODO use prepare
+  //  prepare('SELECT * FROM users where username = :username');
 
 
     function getHabitationsList($db,$idSalle){

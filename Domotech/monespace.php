@@ -27,8 +27,8 @@
 
 <section>
   <?php if(isset($_GET['cible'])) { // on regarde la page où il veut aller
-      if($_GET['cible'] == 'accueil'){// Changer les cibles
-          include("Vue/accueil.php");
+      if($_GET['cible'] == 'mon-espace/ma-maison'){// Changer les cibles
+          include("Vue/login.php");
       } else if ($_GET['cible'] == "etape1"){
           include("Modele/utilisateurs.php");
           $reponse = utilisateurs($db);

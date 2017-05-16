@@ -35,10 +35,10 @@ footer ul{
 .login{
   background-color: #E0E2E5;
   width: 300px;
-  height: 300px;
+  height: 200px;
   min-width: 200px;
   min-height: 200px;
-  font-size:1em;
+  font-size:2em;
 }
 
 .titre{

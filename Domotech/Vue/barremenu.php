@@ -3,13 +3,13 @@ if(isset($_SESSION["userID"])){ // est connecté
 echo('
 
 <ul class="barremenu">
-        <li> <a href ="Vue/monespace/mamaison.php" > Ma Maison </a> </li>
-        <li> <a href ="Vue/monespace/capteurs.php" > Capteurs </a> </li>
-        <li> <a href ="Vue/monespace/ajoutcapteurs.php" > Ajouter des capteurs </a> </li>
-        <li> <a href ="Vue/monespace/consommation.php" > Consommation </a> </li>
-        <li> <a href ="Vue/monespace/utilisateurs.php" > Utilisateurs </a> </li>
-        <li> <a href ="Vue/monespace/piece.php" > Pièce </a> </li>
-        <li> <a href ="Vue/monespace/effecteurs.php" > Effecteurs </a> </li>
+        <li> <a href ="?cible=mon-espace/ma-maison" > Ma Maison </a> </li>
+        <li> <a href ="monespace/capteurs.php" > Capteurs </a> </li>
+        <li> <a href ="monespace/ajoutcapteurs.php" > Ajouter des capteurs </a> </li>
+        <li> <a href ="monespace/consommation.php" > Consommation </a> </li>
+        <li> <a href ="monespace/utilisateurs.php" > Utilisateurs </a> </li>
+        <li> <a href ="monespace/piece.php" > Pièce </a> </li>
+        <li> <a href ="monespace/effecteurs.php" > Effecteurs </a> </li>
       </ul>');
 } else {
 echo('
