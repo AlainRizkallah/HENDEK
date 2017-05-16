@@ -1,4 +1,0 @@
-AddDefaultCharset UTF-8;
-
-RewriteEngine On
-ewriteRule ^mon-espace/([A-Za-z0-9-]+)/?$ monespace.php?cible=$1 [NC,L]
