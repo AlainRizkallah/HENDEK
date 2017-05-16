@@ -15,20 +15,17 @@
       header('Location:login.php ');
       die;
     }
-
       ?>
-
-
 
 </header>
 
      <?php include("Vue/barremenu.php");?>
 
-
 <section>
   <?php if(isset($_GET['cible'])) { // on regarde la page où il veut aller
       if($_GET['cible'] == 'mon-espace/ma-maison'){// Changer les cibles
           include("Vue/login.php");
+
 
             //modification du code retour
             header("Status: 200 OK", false, 200);
@@ -42,6 +39,10 @@
           include("Modele/utilisateurs.php");
           $reponse = utilisateurs($db);
           include("Vue/etape1.php");
+
+      } else if ($_GET['cible'] == "monespace/capteurs.php"){
+          include("Vue/monespace/capteurs.php");
+
       } else if ($_GET['cible'] == "etape2"){
           include("Vue/etape2.php");
       } else if ($_GET['cible'] == "etape3"){
