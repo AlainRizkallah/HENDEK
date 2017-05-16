@@ -8,7 +8,7 @@
   <body>
     <header>
 
-    <a href=index.php> <h1 class="titre">mushroom</h1> </a>
+    <a href=index.php> <h1 class="titre">Domotech</h1> </a>
     <?php include ('Controleur/session-manager.php');
 
     if(!isset($_SESSION["userID"])){
