@@ -12,8 +12,8 @@
     <?php include ('Controleur/session-manager.php');
 
     if(!isset($_SESSION["userID"])){
-      //header('Location:login.php ');
-      //die;
+      header('Location:login.php ');
+      die;
     }
       ?>
 
