@@ -37,10 +37,10 @@ footer ul{
 .login{
   background-color: #E0E2E5;
   width: 300px;
-  height: 200px;
+  height: 230px;
   min-width: 200px;
   margin-right: 30px;
-  min-height: 200px;
+  min-height: 230px;
   border-style: solid;
   border-radius: 3px;
   border-color: #D1D4D9;
@@ -68,18 +68,26 @@ footer ul{
   width: 100%;
 }
 .barremenu li{
+width: 100%;
 list-style-type: none;
-width: 14%;
+
+
 }
 .barremenu a:hover{
   background-color: #D1D4D9;
 }
 
+.barremenu a{
+  text-align: center;
+}
+
 .barre-menu-element{
+  width: 14%;
   color: #5680A6;
   text-decoration: none;
   background-color: #E0E2E5;
-  padding: 15px;
+  padding-top:  15px;
+  padding-bottom:  15px;
   border-style: solid;
   border-color: #D1D4D9;
   width:100%;
@@ -166,14 +174,16 @@ button:hover {
   margin: 8px 0;
 
 }
-
+.rmb{
+  font-family: "SB";
+  font-size: 2em;
+}
 /* The "Forgot password" text */
 span.su{
+  font-family: 'SB';
   float: right;
-  font-size: 1.8em;
-
-
-
+  padding: 3px;
+  font-size: 2em;
 }
 section{
     font-family: 'SB';
