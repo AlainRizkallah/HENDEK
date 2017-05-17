@@ -6,7 +6,7 @@ if(isset($_SESSION["userID"])){
 echo('
 
 
-        <label>Bienvenue: <b>'.$_SESSION["name"].'</label>
+        <label>Bienvenue: <b>'.$_SESSION["name"].'</b></label>
 
         <button type="submit" name="btnDeco">Disconnect</button>
 ');
@@ -20,8 +20,8 @@ echo('
           <label><b>Mot de passe</b></label>
           <input type="password" placeholder="Mot de passe" name="psw" required>
           <button type="submit" name="btnLogin">Connexion</button>
-          <input type="checkbox" checked="checked"> Remember me<br>
-          <span class="su"><a href="inscription.php">S\'inscrire</a> <a href="#">Mot de passe oublié?</a></span>
+          <span class="rmb"><input type="checkbox" checked="checked"> Remember me<br></span>
+          <span class="su"> <a href="#">Mot de passe oublié?</a><br><a href="inscription.php">S\'inscrire</a></span>
 
 
   ');
