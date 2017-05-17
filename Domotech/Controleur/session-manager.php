@@ -1,6 +1,5 @@
 <?php
     session_start();
-    //require("Modele/connexion.php");
 include('Vue/login.php');
 
 //TODO a supprimer en production

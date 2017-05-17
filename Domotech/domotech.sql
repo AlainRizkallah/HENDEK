@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 16, 2017 at 08:11 AM
--- Server version: 5.7.11
--- PHP Version: 5.6.18
+-- Client :  127.0.0.1
+-- Généré le :  Jeu 18 Mai 2017 à 01:00
+-- Version du serveur :  10.1.21-MariaDB
+-- Version de PHP :  7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `domotech`
+-- Base de données :  `domotech`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `actionneur`
+-- Structure de la table `actionneur`
 --
 
 CREATE TABLE `actionneur` (
@@ -36,7 +36,7 @@ CREATE TABLE `actionneur` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrateur`
+-- Structure de la table `administrateur`
 --
 
 CREATE TABLE `administrateur` (
@@ -49,7 +49,7 @@ CREATE TABLE `administrateur` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `capteur`
+-- Structure de la table `capteur`
 --
 
 CREATE TABLE `capteur` (
@@ -58,13 +58,21 @@ CREATE TABLE `capteur` (
   `idSalle` int(11) NOT NULL,
   `type` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `valeur` float NOT NULL,
-  `etat` tinyint(1) NOT NULL
+  `etat` tinyint(1) NOT NULL DEFAULT '0',
+  `temps` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `capteur`
+--
+
+INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`, `temps`) VALUES
+(0, 0, 0, 'Température', 42, 1, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comportement`
+-- Structure de la table `comportement`
 --
 
 CREATE TABLE `comportement` (
@@ -76,7 +84,7 @@ CREATE TABLE `comportement` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `données`
+-- Structure de la table `données`
 --
 
 CREATE TABLE `données` (
@@ -88,21 +96,20 @@ CREATE TABLE `données` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `habitation`
+-- Structure de la table `habitation`
 --
 
 CREATE TABLE `habitation` (
   `ID` int(40) NOT NULL,
   `adresse` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `nbSalle` int(10) NOT NULL,
-  `superficie` int(40) NOT NULL,
-  `idClient` int(40) NOT NULL
+  `superficie` int(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `message`
+-- Structure de la table `message`
 --
 
 CREATE TABLE `message` (
@@ -117,7 +124,7 @@ CREATE TABLE `message` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messagerie`
+-- Structure de la table `messagerie`
 --
 
 CREATE TABLE `messagerie` (
@@ -131,7 +138,7 @@ CREATE TABLE `messagerie` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `salle`
+-- Structure de la table `salle`
 --
 
 CREATE TABLE `salle` (
@@ -145,7 +152,7 @@ CREATE TABLE `salle` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilisateurs`
+-- Structure de la table `utilisateurs`
 --
 
 CREATE TABLE `utilisateurs` (
@@ -160,19 +167,25 @@ CREATE TABLE `utilisateurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `utilisateurs`
+-- Contenu de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`) VALUES
-('aaa', '47bce5c74f589f4867dbd57e9ca9f808', 2, '0', '', '', '', 'normal'),
-('gay', '6e11873b9d9d94a44058bef5747735ce', 7, '+33 677728222', 'alina', 'alain', 'alain', 'normal');
+('alain', '0cc175b9c0f1b6a831c399e269772661', 0, '4568', 'alain.riz@isep.fr', 'alain', '', 'normal');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables exportées
 --
 
 --
--- Indexes for table `utilisateurs`
+-- Index pour la table `capteur`
+--
+ALTER TABLE `capteur`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ID` (`ID`);
+
+--
+-- Index pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`id`) USING BTREE,
@@ -180,14 +193,19 @@ ALTER TABLE `utilisateurs`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
--- AUTO_INCREMENT for table `utilisateurs`
+-- AUTO_INCREMENT pour la table `capteur`
+--
+ALTER TABLE `capteur`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
