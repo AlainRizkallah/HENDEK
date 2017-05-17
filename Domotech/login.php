@@ -1,7 +1,7 @@
 <?php include("Vue/header.php");?>
 
     <section>
-      <h2 class=center>Il faut être connecté pour accéder à votre espace</h2>
+      <h2 class=center>Connectez-vous</h2>
 
       <div class="conteneur-section center">
         <div class="center">
