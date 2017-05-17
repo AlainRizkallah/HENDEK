@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,6 +21,9 @@
 </header>
 
      <?php include("Vue/barremenu.php");?>
+
+<?php include("Vue/header.php");?>
+
 
 <section>
   <?php
