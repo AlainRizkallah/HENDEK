@@ -49,10 +49,10 @@
       } else if ($_GET['cible'] == "monespace/capteurs.php"){
           include("Vue/monespace/capteurs.php");
 
-      } else if ($_GET['cible'] == "etape2"){
-          include("Vue/etape2.php");
-      } else if ($_GET['cible'] == "etape3"){
-          include("Vue/etape3.php");
+      } else if ($_GET['cible'] == "monespace/ajoutcapteurs.php"){
+          include("Vue/monespace/ajoutcapteurs.php");
+      } else if ($_GET['cible'] == "monespace/piece.php"){
+          include("Vue/monespace/piece.php");
      }
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");

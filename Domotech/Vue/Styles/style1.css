@@ -137,6 +137,11 @@ input[type=text], input[type=password], input[type=email], input[type=tel]  {
     border: 2px solid #ccc;
     box-sizing: border-box;
 }
+.inputpiece input[type=text]{
+  width:50%;
+  margin-top:0.5px;
+  padding-top:0.5px;
+}
 
 /* Set a style for all buttons */
 button {
