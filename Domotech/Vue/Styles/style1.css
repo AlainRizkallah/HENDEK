@@ -96,6 +96,7 @@ list-style-type: none;
 }
 
 .titreFormCapteurs {
+  font-size:20px;
   padding-top:4px;
   padding-bottom:4px;
   background-color:#5680A6;
@@ -106,7 +107,6 @@ list-style-type: none;
 }
 
 .formCapteurs {
-  font-size:20px;
   float:left;
   text-align:center;
   width:50%;
@@ -115,10 +115,22 @@ list-style-type: none;
 .pCapteurs{
   margin-left:51%;
   width:48%;
-
-
-
 }
+
+.addCapteurs{
+  text-align:center;
+}
+
+.textegauche{
+  float:left;
+  width:50%;
+}
+
+.textedroite{
+  float:right;
+  width:50%;
+}
+
 /* Bordered form */
 form {
 
