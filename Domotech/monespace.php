@@ -22,9 +22,6 @@
 
      <?php include("Vue/barremenu.php");?>
 
-<?php include("Vue/header.php");?>
-
-
 <section>
   <?php
 
