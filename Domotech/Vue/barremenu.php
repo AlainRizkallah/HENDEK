@@ -2,7 +2,7 @@
 if(isset($_SESSION["userID"])){ // est connecté
 echo('
 <div class="barremenu">
-        <a class="barre-menu-element" href ="index.php" > Acceuil </a>
+        <a class="barre-menu-element" href ="index.php" > Accueil </a>
          <a class="barre-menu-element" href ="?cible=mon-espace/ma-maison" > Ma Maison </a>
          <a class="barre-menu-element" href ="?cible=monespace/capteurs.php" > Capteurs </a>
          <a class="barre-menu-element" href ="?cible=monespace/ajoutcapteurs.php" > Ajouter des capteurs </a>
