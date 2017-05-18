@@ -71,6 +71,8 @@
         <option value="">Sélectionnez une Salle:</option>
         <option value="0">Salle 0</option>
         <option value="1">Salle 1</option>
+        <option value="2">Salle 2</option>
+        <option value="3">Salle 3</option>
     </select>
 </form>
 
