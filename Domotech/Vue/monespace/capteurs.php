@@ -63,7 +63,6 @@
         xmlhttp.open("POST", "Controleur/display-capteur.php" , true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("salle="+salle);
-        return salle;
     }
 </script>
 

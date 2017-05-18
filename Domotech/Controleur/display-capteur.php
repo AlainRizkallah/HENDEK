@@ -5,7 +5,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     include("../Modele/db-capteur-manager.php");
 
 
-
     showAll($db,$_POST['salle']);
   }
 }
