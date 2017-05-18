@@ -16,7 +16,6 @@ function showAll($db,$salle){
     $result = getCapteursList($db,$salle);
 
 
-    var_dump($result);
     echo"<table border='1'>
     <tr>
     <th>Capteur</th>
@@ -29,7 +28,7 @@ function showAll($db,$salle){
       //DO::FETCH_ASSOC met le résultat dans un tableau associatif
       //TODO Changer la mise en forme du résultat ?
 
-        while ($row = $response->fetch(PDO::FETCH_ASSOC)) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr>";
             echo "<td>" . $row['type'] . "</td>";
             $unit="";

@@ -13,7 +13,9 @@
 
 
     function getCapteursList($db,$idSalle){
-        $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');
+      //  $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');
+$reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');
+
         $reponse->bindParam(':idSalle',$idSalle);
         $reponse->execute();
         return $reponse;
