@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 18 Mai 2017 à 01:00
+-- Généré le :  Jeu 18 Mai 2017 à 18:12
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.1
 
@@ -185,6 +185,13 @@ ALTER TABLE `capteur`
   ADD UNIQUE KEY `ID` (`ID`);
 
 --
+-- Index pour la table `salle`
+--
+ALTER TABLE `salle`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ID` (`ID`);
+
+--
 -- Index pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
@@ -200,7 +207,12 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `salle`
+--
+ALTER TABLE `salle`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
