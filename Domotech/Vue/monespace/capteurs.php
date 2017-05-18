@@ -82,7 +82,7 @@
 
 <form class ="formCapteurs "method="post" action=""> <!-- insérer dans le champs action la page vers laquelle est redirigé l'utilisateur lors de l'envoi du formulaire -->
    <p>
-      <div class="titreFormCapteurs" <label for="capteur">&nbsp Selectionnez un capteur &nbsp</label><br /> </div>
+      <div class="boxtitle" <label for="capteur">&nbsp Selectionnez un capteur &nbsp</label><br /> </div>
        <br><br>
 
        <select name="capteur" id="capteur">

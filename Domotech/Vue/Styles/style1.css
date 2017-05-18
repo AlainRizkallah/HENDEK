@@ -89,7 +89,7 @@ header .login{
 
 }
 
-.titreFormCapteurs {
+.boxtitle {
   font-size:20px;
   padding-top:4px;
   padding-bottom:4px;
@@ -111,7 +111,7 @@ header .login{
   width:48%;
 }
 
-.addCapteurs{
+.textecentre{
   text-align:center;
 }
 

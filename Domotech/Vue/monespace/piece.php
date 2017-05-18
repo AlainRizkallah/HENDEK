@@ -1,5 +1,7 @@
-<div class=addCapteurs>
-  <p class="titreFormCapteurs">
+<!-- TODO ajouter ici liste des pièces présente dans la BDD -->
+
+<div class=textecentre>
+  <p class="boxtitle">
     &nbsp Ajouter une pièce à ma maison &nbsp
   </p>
   <form method="post" action="Controleur/addSalle.php">

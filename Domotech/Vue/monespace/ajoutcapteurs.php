@@ -1,5 +1,7 @@
-<div class=addCapteurs>
-  <p class="titreFormCapteurs">
+<!-- TODO ajouter ici liste des capteurs présents dans la BDD -->
+
+<div class=textecentre>
+  <p class="boxtitle">
     &nbsp Ajouter un capteur &nbsp
   </p>
   <form method="post" action="Controleur/addCapteur.php">
