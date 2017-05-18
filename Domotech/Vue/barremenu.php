@@ -14,7 +14,8 @@ echo('
 } else {
 echo('
 <div class="barremenu">
-      <a class="barre-menu-element" href ="index.php" > Acceuil </a>
+
+    <a class="barre-menu-element" href ="index.php" > Accueil </a>
     <a class="barre-menu-element" href ="monespace.php" > Mon espace </a>
     <a class="barre-menu-element" href =".html" > Offres </a>
     <a class="barre-menu-element" href =".html" > Solutions </a>

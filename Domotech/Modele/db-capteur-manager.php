@@ -32,11 +32,11 @@ $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSall
 
       function addCapteur($db,$idSalle,$idMaison,$type){
         try{//TODO: ajouter le champs nom ?
-        $stmt = $db->prepare('INSERT INTO `capteur` (`idSalle`, `idHabitation`,`type`) VALUES (:idSalle,idMaison,:type) ');
+        $stmt = $db->prepare('INSERT INTO `capteur` (`idSalle`, `idHabitation`,`type`) VALUES (:idSalle,:idMaison,:type) ');
         $stmt->bindParam(':idSalle',$idSalle);
         $stmt->bindParam(':idMaison',$idMaison);
         $stmt->bindParam(':type',$type);
-        $stmt->execute() or die(print_r($db->errorInfo(), true));
+        $stmt->execute() or die(print_r($stmt->errorInfo(), true));
         $res="fait";
     }
     catch (Exception $e)
