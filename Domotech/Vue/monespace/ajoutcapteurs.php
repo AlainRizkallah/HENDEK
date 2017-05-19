@@ -16,11 +16,16 @@ while ($donnees = $reponse->fetch()) {
 <?php  }
         if ($donnees['idHabitation']==1) {
           ?>secondaire n.1
-<?php  }
-?>
+<?php  } ?>
+<form method="post" action="Controleur/delCapteur.php">
+  <input type="checkbox" name="capteur" />
+
   <br> <?php }
+
 $reponse->closeCursor();
 ?>
+ <input type="submit" value="Supprimer" name=delCapteur />
+</form>
 <br><br><br>
 
   <p class="boxtitle">
