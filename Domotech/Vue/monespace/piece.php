@@ -21,7 +21,7 @@ while ($donnees = $reponse->fetch()) {
   <br> <?php }
 $reponse->closeCursor();
 ?>
-
+<br><br><br>
 
   <p class="boxtitle">
     &nbsp Ajouter une pièce à ma maison &nbsp
