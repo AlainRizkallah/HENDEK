@@ -21,6 +21,26 @@ while ($donnees = $reponse->fetch()) {
   <br> <?php }
 $reponse->closeCursor();
 ?>
+
+<?php
+$reponse = $db->query('SELECT * FROM salle');
+$donnees = $reponse->fetch(); ?>
+
+ <form method="post" action="Controleur/delSalle.php">
+  <p>
+      <label>Choisissez la pièce à supprimer</label><br />
+
+      <select name="salle">
+        <?php  while ($donnees = $reponse->fetch()) {?>
+          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?>, Maison <?php echo($donnees['idHabitation'])?></option>
+      <?php  }
+      $reponse->closeCursor(); ?>
+      <input type="submit" value="supprimer" name=delCapteur />
+ </form>
+
+      </select>
+  </p>
+
 <br><br><br>
 
   <p class="boxtitle">
