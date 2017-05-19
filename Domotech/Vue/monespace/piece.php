@@ -23,6 +23,26 @@ $reponse->closeCursor();
 ?>
 <br><br><br>
 
+<?php
+$reponse = $db->query('SELECT * FROM salle');
+$donnees = $reponse->fetch(); ?>
+
+ <form method="post" action="Controleur/delSalle.php">
+  <p>
+      <label>Choisissez la pièce à supprimer</label><br />
+
+      <select name="salle">
+        <?php  while ($donnees = $reponse->fetch()) {?>
+          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?>, Maison <?php echo($donnees['idHabitation'])?></option>
+      <?php  }
+      $reponse->closeCursor(); ?>
+      <input type="submit" value="supprimer" name=delCapteur />
+ </form>
+
+      </select>
+  </p>
+
+
   <p class="boxtitle">
     &nbsp Ajouter une pièce à ma maison &nbsp
   </p>

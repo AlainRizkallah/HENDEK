@@ -50,19 +50,20 @@ $reponse = $db->prepare('SELECT nom,nbCapteur,nbActionneur,temps FROM salle WHER
     }
 
     function delSalle($db,$idSalle){
-         try{//TODO: ajouter le champs nom ?
-         $stmt = $db->prepare('DELETE FROM `salle` WHERE `ID`=:idSalle');
-         $stmt->bindParam(':idSalle',$idSalle);
-         $stmt->execute() or die(print_r($stmt->errorInfo(), true));
-         $res="fait";
-     }
-     catch (Exception $e)
-   {
-         die('Erreur : ' . $e->getMessage());
-         $res= $e->getMessage();
-   }
-       return $res;
-     }
+      try{//TODO: ajouter le champs nom ?
+      $stmt = $db->prepare('DELETE FROM `salle` WHERE `ID`=:idSalle');
+      $stmt->bindParam(':idSalle',$idSalle);
+      $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+      $res="fait";
+  }
+  catch (Exception $e)
+{
+      die('Erreur : ' . $e->getMessage());
+      $res= $e->getMessage();
+}
+    return $res;
+  }
+
 
 
 ?>
