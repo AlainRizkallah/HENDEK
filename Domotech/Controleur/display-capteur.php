@@ -15,17 +15,17 @@ function showAll($db,$salle){
     $result = getCapteursList($db,$salle);
 
 
-    echo"<table>
-    <tr class='tableTitre'>
-    <td>Capteur</td>
-    <td>Valeur</td>
-    <td>Etat</td>
-    <td>Date</td>
-    </tr>";
+
 
     if ($result->rowcount()>0) {
       //DO::FETCH_ASSOC met le résultat dans un tableau associatif
-      //TODO Changer la mise en forme du résultat ?
+      echo"<table>
+      <tr class='tableTitre'>
+      <td>Capteur</td>
+      <td>Valeur</td>
+      <td>Etat</td>
+      <td>Date</td>
+      </tr>";
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr>";
@@ -53,7 +53,7 @@ function showAll($db,$salle){
         }
         echo "</table>";
     } else {
-        echo "0 results";
+        echo "Pas encore de capteurs installés";
     }
 
   }
