@@ -16,13 +16,13 @@ while ($donnees = $reponse->fetch()) {
         if ($donnees['idHabitation']==1) {
           ?>secondaire n.1
 <?php  }
-?> 
+?>
 
   <br> <?php }
 $reponse->closeCursor();
 ?>
 
-<div class=textecentre>
+
   <p class="boxtitle">
     &nbsp Ajouter une pièce à ma maison &nbsp
   </p>
@@ -38,10 +38,9 @@ $reponse->closeCursor();
      <p class="textedroite">
          <label for="nom">Nommez votre pièce</label><br />
          <input type="text" name="nom" />
-     </p>
-     <input type="submit" value="ajouter la pièce" name=addSalle />
+     </p> 
      </div>
-
+<input type="submit" value="ajouter la pièce" name=addSalle />
   </form>
 
 </div>
