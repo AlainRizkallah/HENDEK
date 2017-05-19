@@ -1,8 +1,44 @@
+<!-- <script>
+    function showCapteurs(capteur)
+    {
+        if (capteur == "")
+        {
+            //return;
+        }
+        if (window.XMLHttpRequest) {
+            xmlhttp= new XMLHttpRequest();
+        } else {
+            if (window.ActiveXObject)
+                try {
+                    xmlhttp= new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        return NULL;
+                    }
+                }
+        }
+
+        xmlhttp.onreadystatechange = function ()
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+            {
+              //document.getElementById("resultat").innerHTML = xmlhttp.responseText;
+
+            }
+        }
+        xmlhttp.open("POST", "Controleur/delCapteur.php" , true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("capteur=");
+    }
+</script> -->
+
 <!-- TODO ajouter option retirer capteur -->
 <div class=textecentre>
 
 <p class="boxtitle">
-  &nbsp Liste des capteurs &nbsp
+  &nbsp; Liste des capteurs &nbsp;
 </p><br>
 
 <?php
@@ -17,19 +53,38 @@ while ($donnees = $reponse->fetch()) {
         if ($donnees['idHabitation']==1) {
           ?>secondaire n.1
 <?php  } ?>
-<form method="post" action="Controleur/delCapteur.php">
-  <input type="checkbox" name="<?php ?>" />
 
   <br> <?php }
-
+//TODO menu déroulant + checkbox
 $reponse->closeCursor();
-?>
- <input type="submit" value="Supprimer" name=delCapteur />
-</form>
+ ?><?php
+ $reponse = $db->query('SELECT * FROM capteur');
+ $donnees = $reponse->fetch(); ?>
+
+  <form method="post" action="Controleur/delCapteur.php">
+   <p>
+       <label>Choisissez le capteur à supprimer</label><br />
+
+       <select name="maison">
+         <?php  while ($donnees = $reponse->fetch()) {?>
+           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['type'])?> , Pièce <?php echo($donnees['idSalle'])?> , Maison <?php echo($donnees['idHabitation'])?></option>
+       <?php  }
+       $reponse->closeCursor(); ?>
+       <input type="submit" value="supprimer" name=delCapteur />
+  </form>
+
+       </select>
+   </p>
+
+
+
+
+<!-- <button type="submit" name="delCapteur" />Supprimer</button> -->
+
 <br><br><br>
 
   <p class="boxtitle">
-    &nbsp Ajouter un capteur &nbsp
+    &nbsp; Ajouter un capteur &nbsp;
   </p>
   <form method="post" action="Controleur/addCapteur.php">
     <p>

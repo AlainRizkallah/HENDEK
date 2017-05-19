@@ -56,7 +56,7 @@ $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSall
 
     function delCapteur($db,$idCapteur){
       try{//TODO: ajouter le champs nom ?
-      $stmt = $db->prepare('DELETE FROM `capteur` WHERE `id`=:idCapteur');
+      $stmt = $db->prepare('DELETE FROM `capteur` WHERE `ID`=:idCapteur');
       $stmt->bindParam(':idCapteur',$idCapteur);
       $stmt->execute() or die(print_r($stmt->errorInfo(), true));
       $res="fait";
