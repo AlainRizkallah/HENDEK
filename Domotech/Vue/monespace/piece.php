@@ -1,4 +1,19 @@
-<!-- TODO ajouter ici liste des pièces présente dans la BDD -->
+<div class=textecentre>
+
+<p class="boxtitle">
+  &nbsp Liste des pièces &nbsp
+</p><br>
+
+<?php
+include("Modele/db-salle-manager.php");
+$reponse = $db->query('SELECT * FROM salle');
+$donnees = $reponse->fetch();
+while ($donnees = $reponse->fetch()) {
+  echo $donnees['nom'];?> dans la maison <?php echo $donnees['idHabitation'] ?>
+
+  <br> <?php }
+$reponse->closeCursor();
+?>
 
 <div class=textecentre>
   <p class="boxtitle">

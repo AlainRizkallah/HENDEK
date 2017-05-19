@@ -1,4 +1,4 @@
-<!-- TODO ajouter ici liste des capteurs présents dans la BDD -->
+<!-- TODO ajouter option retirer capteur -->
 <div class=textecentre>
 
 <p class="boxtitle">
