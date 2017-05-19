@@ -67,7 +67,7 @@ $reponse->closeCursor();
 
        <select name="maison">
          <?php  while ($donnees = $reponse->fetch()) {?>
-           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['type'])?>, Pièce <?php echo($donnees['idSalle'])?>, Maison <?php echo($donnees['idHabitation'])?></option>
+           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['type'])?> , Pièce <?php echo($donnees['idSalle'])?> , Maison <?php echo($donnees['idHabitation'])?></option>
        <?php  }
        $reponse->closeCursor(); ?>
        <input type="submit" value="supprimer" name=delCapteur />
@@ -95,20 +95,14 @@ $reponse->closeCursor();
         </select>
     </p>
      <p class="textegauche">
-
-       <?php
-       $reponse = $db->query('SELECT * FROM salle');
-       $donnees = $reponse->fetch(); ?>
-
          <label for="piece">Choisissez une pièce</label><br />
          <select name="piece">
-           <?php  while ($donnees = $reponse->fetch()) {?>
-             <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?> </option>
-           <?php  } ?>
-
-
+             <option value="0">Salle 0</option>
+             <option value="1">Salle 1</option>
+             <option value="2">Salle 2</option>
+             <option value="3">Salle 3</option>
+             <option value="4">Salle 4</option>
          </select>
-         <?php $reponse->closeCursor(); ?>
      </p>
      <p class="textedroite">
          <label for="type">Choisissez un type de capteur</label><br />
