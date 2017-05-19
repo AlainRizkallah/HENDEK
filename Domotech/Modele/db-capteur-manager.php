@@ -21,6 +21,14 @@ $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSall
         return $reponse;
     }
 
+    function getCapteursMaisonList($db,$idMaison){
+            $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idHabitation=:idMaison');
+
+            $reponse->bindParam(':idMaison',$idMaison);
+            $reponse->execute();
+            return $reponse;
+        }
+
     function capterExist($db,$identifiant){
       $reponse = $db->prepare('SELECT COUNT(*) FROM capteur WHERE ID=:ID');
       $reponse->bindParam(':ID',$ID);
