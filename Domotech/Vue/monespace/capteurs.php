@@ -36,38 +36,35 @@
         xmlhttp.send("salle="+salle);
     }
 </script>
+<div class="dropdown left" >
+      <button class="boutton">Sélectionnez une Salle:</button>
+
+        <div class="dropdown-content">
+          <button onclick="showCapteurs(1)" class="boutton">Salle 1</button>
+          <button onclick="showCapteurs(2)" class="boutton">Salle 2</button>
+          <button onclick="showCapteurs(3)" class="boutton">Salle 3</button>
+        </div>
+
+</div>
 <div class=" center">
-    <div class="dropdown" >
-          <button class="boutton">Sélectionnez une Salle:</button>
-
-            <div class="dropdown-content">
-              <button onclick="showCapteurs(0)"  class="boutton">Salle 0</button>
-              <button onclick="showCapteurs(1)" class="boutton">Salle 1</button>
-              <button onclick="showCapteurs(2)" class="boutton">Salle 2</button>
-              <button onclick="showCapteurs(3)" class="boutton">Salle 3</button>
-            </div>
-
-
-
-
-  </div>
-    <div id="resultat"></div>
+    <h2 id="nomSalle"></h2>
+    <div id="resultat" ></div>
 </div>
 
 
 
 
-<form class ="formCapteurs "method="post" action=""> <!-- insérer dans le champs action la page vers laquelle est redirigé l'utilisateur lors de l'envoi du formulaire -->
+<!--<form class ="formCapteurs "method="post" action="">  <!--insérer dans le champs action la page vers laquelle est redirigé l'utilisateur lors de l'envoi du formulaire -
    <p>
-      <div class="boxtitle" <label for="capteur">&nbsp Selectionnez un capteur &nbsp</label><br /> </div>
+      <div class="boxtitle" <label for="capteur"> Selectionnez un capteur</label><br /> </div>
        <br><br>
 
        <select name="capteur" id="capteur">
-           <optgroup label="Chambre">  <!-- ASSOCIER ID 1 A LA PREMIERE OPTION dans la BDD -->
+           <optgroup label="Chambre">  <!--ASSOCIER ID 1 A LA PREMIERE OPTION dans la BDD
                <option value="lum1">Luminosité</option>
                <option value="temp1">Température</option>
            </optgroup>
-           <optgroup label="Bureau"> <!-- ASSOCIER ID 2 A LA PREMIERE OPTION dans la BDD -->
+           <optgroup label="Bureau"> <!-- ASSOCIER ID 2 A LA PREMIERE OPTION dans la BDD
              <option value="vid2">Vidéosurveillance</option>
              <option value="lum2">Luminosité</option>
              <option value="pres2">Présence</option>
@@ -96,7 +93,4 @@
        </select>
    </p>
 </form>
-
-<p class=pCapteurs>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.
-</p>
+-->

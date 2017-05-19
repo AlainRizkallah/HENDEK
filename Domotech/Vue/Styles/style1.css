@@ -236,6 +236,7 @@ padding-bottom: 15px;
     position: absolute;
     width: 100%;
     z-index: 1;
+    margin-bottom: 30px;
 }
 
 /* Links inside the dropdown */
@@ -255,25 +256,29 @@ padding-bottom: 15px;
     display: block;
 }
 
-.table{
-  width:100%;
-  border-collapse: collapse;
-  color:#6b6b6b;
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: black 2px solid;
+
+
+
 }
-  tr{
-    width:100%;
-    background:#f6f3f7;
-    border-bottom:black 1px solid;
-       height:50px;
+.left{
+  float:left;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
 
-  }
 
-  td{
-    box-sizing:border-box;
-    text-align: center;
-    padding: 20px;
+}
 
-  }
+
+tr {
+    border-bottom: black 2px solid;
+
+}
 
   .tableTitre{
     font-family:'Lato';
