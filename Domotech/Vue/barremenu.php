@@ -3,13 +3,13 @@ if(isset($_SESSION["userID"])){ // est connecté
 echo('
 <div class="barremenu">
           <a class="barre-menu-element" href ="index.php" > Accueil </a>
-         <a class="barre-menu-element" href ="?cible=monespace/mamaison.php" > Ma Maison </a>
-         <a class="barre-menu-element" href ="?cible=monespace/capteurs.php" > Capteurs </a>
-         <a class="barre-menu-element" href ="?cible=monespace/ajoutcapteurs.php" > Ajouter des capteurs </a>
-         <a class="barre-menu-element" href ="?cible=monespace/consommation.php" > Consommation </a>
-         <a class="barre-menu-element" href ="?cible=monespace/utilisateurs.php" > Utilisateurs </a>
-         <a class="barre-menu-element" href ="?cible=monespace/piece.php" > Pièce </a>
-         <a class="barre-menu-element" href ="?cible=monespace/effecteurs.php" > Effecteurs </a>
+         <a class="barre-menu-element" href ="monespace.php?cible=monespace/mamaison.php" > Ma Maison </a>
+         <a class="barre-menu-element" href ="monespace.php?cible=monespace/capteurs.php" > Etat des capteurs</a>
+         <a class="barre-menu-element" href ="monespace.php?cible=monespace/ajoutcapteurs.php" > Gérer mes capteurs </a>
+         <a class="barre-menu-element" href ="monespace.php?cible=monespace/consommation.php" > Consommation </a>
+         <a class="barre-menu-element" href ="monespace.php?cible=monespace/utilisateurs.php" > Utilisateurs </a>
+         <a class="barre-menu-element" href ="monespace.php?cible=monespace/piece.php" > Pièce </a>
+         <a class="barre-menu-element" href ="monespace.php?cible=monespace/effecteurs.php" > Effecteurs </a>
       </div>');
 } else {
 echo('

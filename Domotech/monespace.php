@@ -3,26 +3,41 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="Vue/Styles/style1.css" >
+  <link rel="stylesheet" href="Vue/Styles/style-monespace.css" >
   <title>Domotech</title>
 </head>
   <body>
     <header>
 
     <a href=index.php> <h1 class="titre">Domotech</h1> </a>
-    <?php include ('Controleur/session-manager.php');
+
+
+
+
+
+</header>
+
+<aside>
+  <div class="conteneur">
+      <?php include ('Controleur/session-manager.php');
+
+
 
     if(!isset($_SESSION["userID"])){
       header('Location:login.php ');
       die;
     }
       ?>
+      <?php include("Vue/barremenu.php");?>
+  </div>
 
-</header>
 
-     <?php include("Vue/barremenu.php");?>
+</aside>
 
 <section>
+  <div class="conteneur-section">
+
+
   <?php
 
   if(isset($_GET['cible'])) { // on regarde la page où il veut aller
@@ -58,6 +73,7 @@
         echo  ("Bienvenue sur votre espace <br><br>");
   }
   ?>
+    </div>
 
 </section>
 
