@@ -39,7 +39,7 @@ $reponse->closeCursor();
          <label for="nom">Nommez votre pièce</label><br />
          <input type="text" name="nom" required />
      </p>
-     </div>
+   </div>&nbsp<br>
 <input type="submit" value="ajouter la pièce" name=addSalle />
   </form>
 
