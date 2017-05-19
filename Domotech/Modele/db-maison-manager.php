@@ -28,14 +28,14 @@
       }
 
 
-      function addHabitation($db,$adresse,$nbSalle,$superficie){
+      function addHabitation($db,$adresse,$nom,$superficie){
         try{
-          $stmt = $db->prepare('INSERT INTO `habitation` (`adresse`, `nbSalle`,`superficie`) VALUES (:adresse,:nbSalle,:superficie) ')
-          $stmt->bindParam(':adresse',$iadresse);
-          $stmt->bindParam(':nbSalle',$nbSalle);
+          $stmt = $db->prepare('INSERT INTO `habitation` (`adresse`, `nom`,`superficie`) VALUES (:adresse,:nom,:superficie) ');
+          $stmt->bindParam(':adresse',$adresse);
+          $stmt->bindParam(':nom',$nom);
           $stmt->bindParam(':superficie',$superficie);
           $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
-          res="fait";
+          $res="fait";
 
       }
     catch (Exception $e)
@@ -48,5 +48,20 @@
 
       return $res;
     }
+    function delHabitation($db,$idHabitation){
+      try{//TODO: ajouter le champs nom ?
+      $stmt = $db->prepare('DELETE FROM `habitation` WHERE `ID`=:idHabitation');
+      $stmt->bindParam(':idHabitation',$idHabitation);
+      $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+      $res="fait";
+    }
+    catch (Exception $e)
+    {
+      die('Erreur : ' . $e->getMessage());
+      $res= $e->getMessage();
+    }
+    return $res;
+    }
+
 
 ?>

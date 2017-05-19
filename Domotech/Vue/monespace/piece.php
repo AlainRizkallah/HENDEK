@@ -35,7 +35,7 @@ $donnees = $reponse->fetch(); ?>
           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?>, Maison <?php echo($donnees['idHabitation'])?></option>
       <?php  }
       $reponse->closeCursor(); ?>
-      <input type="submit" value="supprimer" name=delCapteur />
+      <input type="submit" value="supprimer" name=delSalle />
  </form>
 
       </select>
