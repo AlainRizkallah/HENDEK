@@ -36,18 +36,24 @@
         xmlhttp.send("salle="+salle);
     }
 </script>
+<div class=" center">
+    <div class="dropdown" >
+          <button class="boutton">Sélectionnez une Salle:</button>
 
-<form>
-    <select name="users" onchange="showCapteurs(this.value)">
-        <option value="">Sélectionnez une Salle:</option>
-        <option value="0">Salle 0</option>
-        <option value="1">Salle 1</option>
-        <option value="2">Salle 2</option>
-        <option value="3">Salle 3</option>
-    </select>
-</form>
+            <div class="dropdown-content">
+              <button onclick="showCapteurs(0)"  class="boutton">Salle 0</button>
+              <button onclick="showCapteurs(1)" class="boutton">Salle 1</button>
+              <button onclick="showCapteurs(2)" class="boutton">Salle 2</button>
+              <button onclick="showCapteurs(3)" class="boutton">Salle 3</button>
+            </div>
 
-  <div id="resultat"><b>Person info will be listed here.</b></div>
+
+
+
+  </div>
+    <div id="resultat"></div>
+</div>
+
 
 
 

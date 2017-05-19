@@ -15,12 +15,12 @@ function showAll($db,$salle){
     $result = getCapteursList($db,$salle);
 
 
-    echo"<table border='1'>
-    <tr>
-    <th>Capteur</th>
-    <th>Valeur</th>
-    <th>Etat</th>
-    <th>Date</th>
+    echo"<table>
+    <tr class='tableTitre'>
+    <td>Capteur</td>
+    <td>Valeur</td>
+    <td>Etat</td>
+    <td>Date</td>
     </tr>";
 
     if ($result->rowcount()>0) {
