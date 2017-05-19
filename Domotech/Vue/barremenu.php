@@ -22,6 +22,7 @@ echo('
     <a class="barre-menu-element" href =".html" > Actualités </a>
     <a class="barre-menu-element" href =".html" > Nous contacter </a>
     <a class="barre-menu-element" href  =".html" > Qui sommes nous? </a>
+    <a class="barre-menu-element" href  ="inscription.php" > S&apos;inscrire </a>
    </div>');
 }
 
