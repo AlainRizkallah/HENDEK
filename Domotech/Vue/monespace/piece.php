@@ -8,11 +8,15 @@
 include("Modele/db-salle-manager.php");
 $reponse = $db->query('SELECT * FROM salle');
 $donnees = $reponse->fetch();
-$rep = $db->query('SELECT * FROM habitation');
-$do = $rep->fetch();
 while ($donnees = $reponse->fetch()) {
-  echo $donnees['nom'];?> dans la maison <?php echo $do['nom'];?>
-
+  echo $donnees['nom'];?> dans la maison
+  <?php if ($donnees['idHabitation']==0) {
+          ?>principale
+<?php  }
+        if ($donnees['idHabitation']==1) {
+          ?>secondaire n.1
+<?php  }
+?>
 
   <br> <?php }
 $reponse->closeCursor();
@@ -28,7 +32,7 @@ $donnees = $reponse->fetch(); ?>
 
       <select name="salle">
         <?php  while ($donnees = $reponse->fetch()) {?>
-          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?>, Maison : <?php echo($do['nom'])?></option>
+          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?>, Maison <?php echo($donnees['idHabitation'])?></option>
       <?php  }
       $reponse->closeCursor(); ?>
       <input type="submit" value="supprimer" name=delSalle />
@@ -42,15 +46,12 @@ $donnees = $reponse->fetch(); ?>
   <p class="boxtitle">
     &nbsp Ajouter une pièce à ma maison &nbsp
   </p>
-  
   <form method="post" action="Controleur/addSalle.php">
      <p class="textegauche">
          <label for="maison">Choisissez une maison</label><br />
          <select name="maison">
-           <?php  while ($do = $rep->fetch()) {?>
-           <option value=<?php echo($do['ID'])?>><?php echo($do['nom'])?> </option>
-         <?php  } ?>
-
+             <option value="0">Maison principale</option>
+             <option value="1">Maison secondaire n.1</option>
          </select>
      </p>
      <div class="inputpiece">
