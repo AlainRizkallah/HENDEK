@@ -45,21 +45,19 @@
 include("Modele/db-capteur-manager.php");
 $reponse = $db->query('SELECT * FROM capteur');
 $donnees = $reponse->fetch();
+$rep = $db->query('SELECT * FROM habitation');
+$do = $rep->fetch();
 while ($donnees = $reponse->fetch()) {
-  echo $donnees['type'];?> dans la salle <?php echo $donnees['idSalle']?> de la maison
-  <?php if ($donnees['idHabitation']==0) {
-          ?>principale
- <?php  }
-        if ($donnees['idHabitation']==1) {
-          ?>secondaire n.1
-<?php  } ?>
+  echo $donnees['type'];?> dans la salle <?php echo $donnees['idSalle']?> de la maison <?php echo $do['nom']?>
+
 
   <br> <?php }
 //TODO menu déroulant + checkbox
 $reponse->closeCursor();
  ?><?php
  $reponse = $db->query('SELECT * FROM capteur');
- $donnees = $reponse->fetch(); ?>
+ $donnees = $reponse->fetch();
+ ?>
 
   <form method="post" action="Controleur/delCapteur.php">
    <p>
@@ -67,7 +65,7 @@ $reponse->closeCursor();
 
        <select name="maison">
          <?php  while ($donnees = $reponse->fetch()) {?>
-           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['type'])?> , Pièce <?php echo($donnees['idSalle'])?> , Maison <?php echo($donnees['idHabitation'])?></option>
+           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['type'])?>, Pièce <?php echo($donnees['idSalle'])?>, Maison <?php echo($donnees['idHabitation'])?></option>
        <?php  }
        $reponse->closeCursor(); ?>
        <input type="submit" value="supprimer" name=delCapteur />
@@ -79,30 +77,43 @@ $reponse->closeCursor();
 
 
 
-<!-- <button type="submit" name="delCapteur" />Supprimer</button> -->
+<!--  -->
 
 <br><br><br>
 
   <p class="boxtitle">
     &nbsp; Ajouter un capteur &nbsp;
   </p>
+  <?php $reponse = $db->query('SELECT * FROM habitation');
+  $donnees = $reponse->fetch(); ?>
   <form method="post" action="Controleur/addCapteur.php">
     <p>
         <label for="maison">Choisissez votre maison</label><br />
         <select name="maison">
-            <option value="0">Maison principale</option>
-            <option value="1">Maison secondaire n.1</option>
+          <?php  while ($donnees = $reponse->fetch()) {?>
+            <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?> </option>
+          <?php  } $reponse->closeCursor();?>
         </select>
     </p>
      <p class="textegauche">
+
+       <?php
+       $reponse = $db->query('SELECT * FROM salle');
+       $donnees = $reponse->fetch();
+       $rep = $db->query('SELECT * FROM habitation');
+       $do = $rep->fetch(); ?>
+
          <label for="piece">Choisissez une pièce</label><br />
          <select name="piece">
-             <option value="0">Salle 0</option>
-             <option value="1">Salle 1</option>
-             <option value="2">Salle 2</option>
-             <option value="3">Salle 3</option>
-             <option value="4">Salle 4</option>
+           <?php  while ($do = $rep->fetch()) {?>
+             <optgroup label=<?php echo($do['nom'])?>>
+               <?php  while ($donnees = $reponse->fetch()) {?>
+                 <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?> </option>
+           <?php  } }?>
+
+
          </select>
+         <?php $reponse->closeCursor(); ?>
      </p>
      <p class="textedroite">
          <label for="type">Choisissez un type de capteur</label><br />

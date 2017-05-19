@@ -28,8 +28,8 @@
   if(isset($_GET['cible'])) { // on regarde la page où il veut aller
 
 
-      if($_GET['cible'] == '/mon-espace/ma-maison'){// Changer les cibles /mon-espace/ma-maison
-
+    if($_GET['cible'] == 'monespace/mamaison.php'){// Changer les cibles /mon-espace/ma-maison
+      include("Vue/monespace/mamaison.php");
 
 /*
           if (preg_match('#monespace-([0-9-]+)\.php#isU', $_SERVER['REDIRECT_URL'], $match)) {
