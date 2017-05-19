@@ -1,35 +1,4 @@
-<!-- MODE AVEC DEUX FORMULAIRES
-<ul>
 
-  <li>
-<form method="post" action="">
-   <p>
-       <label for="piece">Choisissez une pièce</label><br />
-       <select name="piece" id="piece">
-           <option value="piece1">Chambre enfants</option>
-           <option value="piece2">Chambre parentale</option>
-           <option value="piece3">Salle de bain</option>
-           <option value="piece4">Cusine</option>
-       </select>
-   </p>
-</form>
- </li>
-
- <li>
-<form method="post" action="">
-  <p>
-      <label for="capteur">Choisissez un capteur</label><br />
-      <select name="capteur" id="capteur">
-          <option value="temp">Temperature</option>
-          <option value="humidite">Humidité</option>
-      </select>
-  </p>
-</form>
-</li>
-
-</ul>
-
--->
 <script>
     function showCapteurs(salle)
     {
@@ -51,7 +20,9 @@
                     }
                 }
         }
-
+        if(salle==0){
+          salle='0';
+        }
         xmlhttp.onreadystatechange = function ()
         {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
@@ -63,7 +34,6 @@
         xmlhttp.open("POST", "Controleur/display-capteur.php" , true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("salle="+salle);
-        return salle;
     }
 </script>
 

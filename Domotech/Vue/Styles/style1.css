@@ -162,7 +162,7 @@ button {
   margin: 8px;
   border: none;
   cursor: pointer;
-
+  width:  100%;
 }
 
 /* Add a hover effect for buttons */
@@ -212,7 +212,7 @@ h1{
   margin-top: 15px;
 padding-top: 15px;
 border-style: solid;
-border-radius: 3px;
+border-radius: 9px;
 border-color: #D1D4D9;
 padding-bottom: 15px;
 }
