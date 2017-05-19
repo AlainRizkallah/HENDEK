@@ -13,12 +13,12 @@ while ($donnees = $reponse->fetch()) {
   echo $donnees['type'];?> dans la salle <?php echo $donnees['idSalle']?> de la maison
   <?php if ($donnees['idHabitation']==0) {
           ?>principale
-<?php  }
+ <?php  }
         if ($donnees['idHabitation']==1) {
           ?>secondaire n.1
 <?php  } ?>
 <form method="post" action="Controleur/delCapteur.php">
-  <input type="checkbox" name="capteur" />
+  <input type="checkbox" name="<?php ?>" />
 
   <br> <?php }
 
