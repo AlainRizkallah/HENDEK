@@ -10,8 +10,14 @@ include("Modele/db-capteur-manager.php");
 $reponse = $db->query('SELECT * FROM capteur');
 $donnees = $reponse->fetch();
 while ($donnees = $reponse->fetch()) {
-  echo $donnees['type'];?> dans la salle <?php echo $donnees['idSalle'] ?>
-
+  echo $donnees['type'];?> dans la salle <?php echo $donnees['idSalle']?> de la maison
+  <?php if ($donnees['idHabitation']==0) {
+          ?>principale
+<?php  }
+        if ($donnees['idHabitation']==1) {
+          ?>secondaire n.1
+<?php  }
+?>
   <br> <?php }
 $reponse->closeCursor();
 ?>

@@ -9,7 +9,14 @@ include("Modele/db-salle-manager.php");
 $reponse = $db->query('SELECT * FROM salle');
 $donnees = $reponse->fetch();
 while ($donnees = $reponse->fetch()) {
-  echo $donnees['nom'];?> dans la maison <?php echo $donnees['idHabitation'] ?>
+  echo $donnees['nom'];?> dans la maison
+  <?php if ($donnees['idHabitation']==0) {
+          ?>principale
+<?php  }
+        if ($donnees['idHabitation']==1) {
+          ?>secondaire n.1
+<?php  }
+?> 
 
   <br> <?php }
 $reponse->closeCursor();
