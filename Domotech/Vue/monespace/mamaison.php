@@ -40,7 +40,7 @@
 
 <!-- AJOUTER UNE MAISON -->
 
-  <div class="inputpiece">
+
 <p class="boxtitle">
   Ajouter une maison
 </p>
@@ -60,6 +60,6 @@
      <label class=formLabel for="superficie">Entrez la superficie de votre maison (en m²)</label><br /><br />
      <input type="text" name="superficie" required />
    </p>
- </div>
+
 <input type="submit" value="ajouter la maison"/>
 </form>
