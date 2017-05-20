@@ -1,61 +1,65 @@
-<div class=textecentre>
   <p class="boxtitle">
-
-    &nbsp; Liste de vos maisons &nbsp;
+    Liste de vos maisons
   </p><br>
 
   <?php
   include("Modele/db-maison-manager.php");
-  $reponse = $db->query('SELECT * FROM habitation');
-  $donnees = $reponse->fetch();
-  while ($donnees = $reponse->fetch()) {
-    echo $donnees['nom'];?> de superficie <?php echo $donnees['superficie'];?>m² à l'adresse <?php echo $donnees['adresse'];?>
 
-    <br> <?php }
-  $reponse->closeCursor();
-  ?>
+  // SUPPRIMER UNE MAISON
 
-  <?php
   $reponse = $db->query('SELECT * FROM habitation');
   $donnees = $reponse->fetch(); ?>
 
    <form method="post" action="Controleur/delMaison.php">
-    <p>
-        <label>Choisissez la maison à supprimer</label><br />
+    <p class=textedroite>
+        <label class=formLabel>Choisissez la maison à supprimer</label><br /><br />
 
-        <select name="habitation">
+        <select name="delHabitation">
           <?php  while ($donnees = $reponse->fetch()) {?>
             <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
         <?php  }
         $reponse->closeCursor(); ?>
-        <input type="submit" value="supprimer" name=delHabitation />
+        <input type="submit" value="supprimer"/>
    </form>
 
         </select>
     </p>
+<?php
+
+// LISTE DES MAISONS
+
+  $reponse = $db->query('SELECT * FROM habitation');
+  $donnees = $reponse->fetch();
+  while ($donnees = $reponse->fetch()) {
+    echo $donnees['nom'];?> de superficie <?php echo $donnees['superficie'];?>m² à l'adresse <?php echo $donnees['adresse'];?>
+    <br> <?php }
+  $reponse->closeCursor();
+  ?>
 
   <br><br><br>
 
+<!-- AJOUTER UNE MAISON -->
 
   <div class="inputpiece">
 <p class="boxtitle">
-  &nbsp Ajouter une pièce à ma maison &nbsp
+  Ajouter une maison
 </p>
 <form method="post" action="Controleur/addMaison.php">
    <p class="textegauche">
-     <label for="adresse">Entrez l'adresse de votre maison</label><br />
+     <label class=formLabel for="adresse">Entrez l'adresse de votre maison</label><br /><br />
      <input type="text" name="adresse" required />
        </select>
    </p>
 
    <p class="textedroite">
-       <label for="nom">Nommez votre maison</label><br />
+       <label class=formLabel for="nom">Nommez votre maison</label><br /><br />
        <input type="text" name="nom" required />
    </p>
-   <p>
-     <label for="superficie">Entrez la superficie de votre maison</label><br />
+ <br><br><br><br><br>
+   <p >
+     <label class=formLabel for="superficie">Entrez la superficie de votre maison (en m²)</label><br /><br />
      <input type="text" name="superficie" required />
    </p>
- </div>&nbsp<br>
-<input type="submit" value="ajouter la pièce" name=addSalle />
+ </div>
+<input type="submit" value="ajouter la maison"/>
 </form>

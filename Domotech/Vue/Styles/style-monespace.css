@@ -5,6 +5,12 @@
   font-family: 'Telemarine';
   src:url('telemarinesbold1.ttf');
 }
+
+@font-face{
+  font-family: "SB";
+  src:url('FORCED SQUARE.ttf');
+}
+
 .titre{
   margin-left: 80px;
   float: left;
@@ -191,8 +197,38 @@ input[type="text"]:focus {
   color: #5680A6;
 
 }
+.boxtitle {
+  font-family: "SB";
+  font-size:22px;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding:5px;
+  background-color:#5680A6;
+  border-style: solid;
+  color: #E0E2E5;
+  border-color:#D1D4D9;
+  display:inline-block;
+}
 
 
+.formLabel {
+
+  padding:5px;
+  color: #5680A6;
+  background-color:#E0E2E5;
+  border-style: solid;
+  border-color:#D1D4D9;
+}
+
+.textegauche{
+  float:left;
+
+}
+
+.textedroite{
+  float:right;
+  width:50%;
+}
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
