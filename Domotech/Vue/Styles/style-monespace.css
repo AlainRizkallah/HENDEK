@@ -238,6 +238,8 @@ box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
     font-size: 1.5em;
     padding-left:  50px;
+    text-align: center;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -252,8 +254,7 @@ box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
 
 /* Links inside the dropdown */
 .dropdown-content button {
-  text-align: center;
-    text-decoration: none;
+      text-decoration: none;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
     margin-top: 10px;
     display: block;

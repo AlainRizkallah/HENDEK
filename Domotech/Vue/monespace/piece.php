@@ -7,7 +7,7 @@ include("Modele/db-salle-manager.php");
 
 // SUPPR SALLE
 
-$reponse = $db->query('SELECT * FROM salle'); ?>
+$reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal FROM habitation , salle WHERE idHabitation=habitation.ID'); ?>
 
  <form method="post" action="Controleur/delSalle.php">
   <p class=textedroite>
@@ -15,7 +15,7 @@ $reponse = $db->query('SELECT * FROM salle'); ?>
 
       <select name="salle">
         <?php  while ($donnees = $reponse->fetch()) {?>
-          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?>, Maison <?php echo($donnees['idHabitation'])?></option>
+          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
       <?php  }
       $reponse->closeCursor(); ?>
       <input type="submit" value="supprimer"/>

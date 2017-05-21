@@ -1,10 +1,21 @@
+
 <!-- TODO ajouter option retirer capteur -->
+
+
+
+<p class="boxtitle">
+   Liste des capteurs
+</p><br>
+
+
 <?php
 include("Modele/db-capteur-manager.php");
 
 // SUPPR CAPTEUR
 
-$reponse = $db->query('SELECT * FROM capteur'); ?>
+$reponse = $db->query('SELECT habitation.nom hab , salle.nom sal , capteur.type capt , capteur.ID ID FROM habitation
+JOIN salle ON habitation.ID=salle.idHabitation
+JOIN capteur ON salle.ID=capteur.idSalle'); ?>
 
  <form method="post" action="Controleur/delCapteur.php">
   <p class=textedroite>
@@ -12,7 +23,7 @@ $reponse = $db->query('SELECT * FROM capteur'); ?>
 
       <select name="maison">
         <?php  while ($donnees = $reponse->fetch()) {?>
-          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['type'])?>, Maison <?php echo($donnees['idHabitation'])?> Salle <?php echo($donnees['idSalle'])?></option>
+          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['capt'])?> - <?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
       <?php  }
       $reponse->closeCursor(); ?>
       <input type="submit" value="supprimer"/>
@@ -21,9 +32,6 @@ $reponse = $db->query('SELECT * FROM capteur'); ?>
       </select>
   </p>
 
-<p class="boxtitle">
-   Liste des capteurs
-</p><br>
 
 <!-- LISTE CAPTEURS -->
 
