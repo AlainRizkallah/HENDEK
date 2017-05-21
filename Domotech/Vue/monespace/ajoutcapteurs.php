@@ -52,7 +52,7 @@ JOIN capteur ON salle.ID=capteur.idSalle');
   </p>
   <form method="post" action="Controleur/addCapteur.php">
     <p>
-        <label for="maison">Choisissez votre maison</label><br />
+        <label class=formLabel for="maison">Choisissez votre maison</label><br /><br />
         <select name="maison">
 
           <?php $reponse = $db->query('SELECT * FROM habitation');
@@ -64,7 +64,7 @@ JOIN capteur ON salle.ID=capteur.idSalle');
         </select>
     </p>
      <p class="textegauche">
-         <label for="piece">Choisissez une pièce</label><br />
+         <label class=formLabel for="piece">Choisissez une pièce</label><br /><br />
          <select name="piece">
            <?php $reponse = $db->query('SELECT * FROM salle');
 
@@ -74,7 +74,7 @@ JOIN capteur ON salle.ID=capteur.idSalle');
          </select>
      </p>
      <p class="textedroite">
-         <label for="type">Choisissez un type de capteur</label><br />
+         <label class=formLabel for="type">Choisissez un type de capteur</label><br /><br />
          <select name="type">
              <option value="Vidéosurveillance">Vidéosurveillance</option>
              <option value="Luminosité">Luminosité</option>
