@@ -26,7 +26,7 @@ img {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #ebebeb;
+  background: #0000;
   padding-top: 20px;
   margin: 0;
 
@@ -143,6 +143,7 @@ input[type="text"]:focus {
 }
 
 .barremenu{
+  font-family: "SB";
   background-color: #E0E2E5;
   float:left;
   margin-left:  250px;
@@ -307,30 +308,6 @@ tr {
 
 }
 
-.formCapteurs {
-  float:left;
-  text-align:center;
-  width:50%;
-}
-
-.pCapteurs{
-  margin-left:51%;
-  width:48%;
-}
-
-.textecentre{
-  text-align:center;
-}
-
-.textegauche{
-  float:left;
-  width:50%;
-}
-
-.textedroite{
-  float:right;
-  width:50%;
-}
 
   .tableTitre{
     font-family:'Lato';
