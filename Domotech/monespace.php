@@ -9,8 +9,7 @@
   <body>
     <header>
 
-    <a href=index.php> <h1 class="titre">Domotech</h1> </a>
-
+    <a href=index.php> <h1 class="titre">Domotech <img src=Vue/Image/logo-domotech.png width=15%></img></h1> </a>
 
 
 
