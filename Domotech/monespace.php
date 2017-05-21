@@ -68,7 +68,11 @@
           include("Vue/monespace/ajoutcapteurs.php");
       } else if ($_GET['cible'] == "monespace/piece.php"){
           include("Vue/monespace/piece.php");
-     }
+     }  else if ($_GET['cible'] == "monespace/accueilclient.php"){
+         include("Vue/monespace/accueilclient.php");
+    }
+
+
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");
   }

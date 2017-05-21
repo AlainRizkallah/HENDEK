@@ -18,14 +18,15 @@
       $reponse->execute();
         return $reponse;
     }
-
+/*
     function capterExist($db,$identifiant){
       $reponse = $db->prepare('SELECT COUNT(*) FROM habitation WHERE ID=:identifiant');
       $reponse->bindParam(':identifiant',$identifiant);
       $reponse->execute();
 
       return $reponse;
-      }
+    }
+    */
 
 
       function addHabitation($db,$adresse,$nom,$superficie){
