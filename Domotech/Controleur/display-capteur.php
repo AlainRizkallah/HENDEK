@@ -19,13 +19,7 @@ function showAll($db,$salle){
 
     if ($result->rowcount()>0) {
       //DO::FETCH_ASSOC met le résultat dans un tableau associatif
-    /*  echo"<table>
-      <tr class='tableTitre'>
-      <td>Capteur</td>
-      <td>Valeur</td>
-      <td>Etat</td>
-      <td>Date</td>
-      </tr>";*/
+
       echo '<h2>Salle '.$salle.'</h2>';
       echo "<div class='boxCapteur'>";
 
