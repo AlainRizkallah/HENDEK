@@ -7,8 +7,7 @@ include("Modele/db-salle-manager.php");
 
 // SUPPR SALLE
 
-$reponse = $db->query('SELECT * FROM salle');
-$donnees = $reponse->fetch(); ?>
+$reponse = $db->query('SELECT * FROM salle'); ?>
 
  <form method="post" action="Controleur/delSalle.php">
   <p class=textedroite>
@@ -26,28 +25,20 @@ $donnees = $reponse->fetch(); ?>
   </p>
 
 <!-- LISTE SALLES -->
-
 <?php
-$reponse = $db->query('SELECT * FROM salle');
-$donnees = $reponse->fetch();
 
-while ($donnees = $reponse->fetch()) {
-  echo $donnees['nom'];?> dans la maison
+$resultat=$db->query('SELECT habitation.nom hab , salle.nom sal FROM habitation , salle WHERE idHabitation=habitation.ID');
+  while ($liste=$resultat->fetch()){
+    echo ($liste['sal']);?> dans <?php echo ($liste['hab']);?> <br>
+<?php  } $resultat->closeCursor();?>
 
-<?php  }
-?>
 
-  <br> <?php
-$reponse->closeCursor();
-
-?>
 <br><br><br>
 
 
 <!-- AJOUTER UNE PIÈCE -->
 
-<?php $reponse = $db->query('SELECT * FROM habitation');
-$donnees = $reponse->fetch(); ?>
+<?php $reponse = $db->query('SELECT * FROM habitation');?>
 
   <p class="boxtitle">
     Ajouter une pièce à ma maison
@@ -63,10 +54,10 @@ $donnees = $reponse->fetch(); ?>
      </p>
      <p class="textedroite">
          <label class=formLabel for="nom">Nommez votre pièce</label><br /><br />
-         <input cltype="text" name="nom" required />
+         <input type="text" name="nom" required />
      </p>
     <br><br><br><br><br>
 <input type="submit" value="ajouter la pièce"/>
   </form>
-
+<?php $reponse->closeCursor(); ?>
 </div>

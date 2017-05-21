@@ -7,8 +7,7 @@
 
   // SUPPRIMER UNE MAISON
 
-  $reponse = $db->query('SELECT * FROM habitation');
-  $donnees = $reponse->fetch(); ?>
+  $reponse = $db->query('SELECT * FROM habitation'); ?>
 
    <form method="post" action="Controleur/delMaison.php">
     <p class=textedroite>
@@ -29,7 +28,6 @@
 // LISTE DES MAISONS
 
   $reponse = $db->query('SELECT * FROM habitation');
-  $donnees = $reponse->fetch();
   while ($donnees = $reponse->fetch()) {
     echo $donnees['nom'];?> de superficie <?php echo $donnees['superficie'];?>m² à l'adresse <?php echo $donnees['adresse'];?>
     <br> <?php }
