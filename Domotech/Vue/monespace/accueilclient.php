@@ -21,13 +21,7 @@
 
 
 </br>
-<?php
-  $reponse = $db->query('SELECT * FROM habitation');
-  while ($donnees = $reponse->fetch()) {
-    echo $donnees['nom'];?> de superficie <?php echo $donnees['superficie'];?>m² à l'adresse <?php echo $donnees['adresse'];?>
-    <br> <?php }
-  $reponse->closeCursor();
-  ?>
+    <?php include('Vue/listemaisons.php');?>
 
   <br><br>
 
@@ -41,11 +35,7 @@
   </div>
 
   <br>
-  <?php
-  $resultat=$db->query('SELECT habitation.nom hab , salle.nom sal FROM habitation , salle WHERE idHabitation=habitation.ID');
-    while ($liste=$resultat->fetch()){
-      echo ($liste['sal']);?> dans <?php echo ($liste['hab']);?> <br>
-  <?php  } $resultat->closeCursor();?>
+    <?php include('Vue/listepieces.php');?>
 
   <br><br>
 
@@ -59,12 +49,4 @@
   </div>
 
   <br>
-  <?php
-  //jointure de 3 tables
-  $resultat=$db->query('SELECT habitation.nom hab , salle.nom sal , capteur.type capt FROM habitation
-  JOIN salle ON habitation.ID=salle.idHabitation
-  JOIN capteur ON salle.ID=capteur.idSalle');
-
-    while ($liste=$resultat->fetch()){
-      echo ($liste['capt']);?> dans <?php echo ($liste['sal']);?> dans <?php echo ($liste['hab']);?> <br>
-  <?php  } $resultat->closeCursor();?>
+  <?php include('Vue/listecapteurs.php');?>

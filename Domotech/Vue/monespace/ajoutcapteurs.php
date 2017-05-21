@@ -35,15 +35,7 @@ JOIN capteur ON salle.ID=capteur.idSalle'); ?>
 
 <!-- LISTE CAPTEURS -->
 
-<?php
-//jointure de 3 tables
-$resultat=$db->query('SELECT habitation.nom hab , salle.nom sal , capteur.type capt FROM habitation
-JOIN salle ON habitation.ID=salle.idHabitation
-JOIN capteur ON salle.ID=capteur.idSalle');
-
-  while ($liste=$resultat->fetch()){
-    echo ($liste['capt']);?> dans <?php echo ($liste['sal']);?> dans <?php echo ($liste['hab']);?> <br>
-<?php  } $resultat->closeCursor();?>
+<?php include ('Vue/listecapteurs.php') ?>
 
 <br><br><br>
 
