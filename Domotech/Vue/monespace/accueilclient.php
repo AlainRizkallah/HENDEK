@@ -15,7 +15,7 @@
 </p>
 <div class=textedroite></br></br>
   <p class=center>
-    <a class="barre-menu-element" href ="monespace.php?cible=monespace/mamaison.php" >ajouter/supprimer des maisons</a>
+    <a class="boutton" href ="monespace.php?cible=monespace/mamaison.php" >ajouter/supprimer des maisons</a>
   </p>
 </div>
 
@@ -30,7 +30,7 @@
   </p>
   <div class=textedroite></br></br>
     <p class=center>
-      <a class="barre-menu-element" href ="monespace.php?cible=monespace/piece.php" >ajouter/supprimer des pièces</a>
+      <a class="boutton" href ="monespace.php?cible=monespace/piece.php" >ajouter/supprimer des pièces</a>
     </p>
   </div>
 
@@ -44,7 +44,7 @@
   </p>
   <div class=textedroite></br></br>
     <p class=center>
-      <a class="barre-menu-element" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des capteurs</a>
+      <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des capteurs</a>
     </p>
   </div>
 
