@@ -19,17 +19,26 @@ function showAll($db,$salle){
 
     if ($result->rowcount()>0) {
       //DO::FETCH_ASSOC met le résultat dans un tableau associatif
-      echo"<table>
+    /*  echo"<table>
       <tr class='tableTitre'>
       <td>Capteur</td>
       <td>Valeur</td>
       <td>Etat</td>
       <td>Date</td>
-      </tr>";
+      </tr>";*/
+      echo '<h2>Salle '.$salle.'</h2>';
+      echo "<div class='boxCapteur'>";
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr>";
-            echo "<td>" . $row['type'] . "</td>";
+          if($row['etat']==1){
+            echo "<div class='boxCapteurElement boxElementMarche'>";
+            echo "<p>Actif</p>";
+          }else{
+            echo "<div class='boxCapteurElement boxElementArret'>";
+            echo "<p>Inactif</p>";
+          }
+
+            echo "<p>" . $row['type'] . "</p>";
             $unit="";
             switch ($row['type']) {
               case 'Température':
@@ -41,17 +50,13 @@ function showAll($db,$salle){
                   $unit = "";
                 break;
             }
-            echo "<td>" . $row['valeur'] .$unit. "</td>";
-            if($row['etat']==1){
-              echo "<td>Actif</td>";
-            }else{
-              echo "<td>Inactif</td>";
-            }
+            echo "<p>" . $row['valeur'] .$unit. "</p>";
 
-            echo "<td>" . $row['temps'] . "</td>";
-            echo "</tr>";
+
+            echo "<p>" . $row['temps'] . "</p>";
+            echo "</div>";
         }
-        echo "</table>";
+        echo "</div>";
     } else {
         echo "Pas encore de capteurs installés";
     }

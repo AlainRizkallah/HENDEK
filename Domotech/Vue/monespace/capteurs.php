@@ -1,7 +1,7 @@
 
 <script  async defer src="js/showElement.js"></script>
 <div class="dropdown left" >
-      <button class="boutton">Salle:</button>
+      <button class="boutton">Sélection de la Salle:</button>
 
         <div class="dropdown-content">
           <button onclick="showCapteurs(1,'Controleur/display-capteur.php')" class="boutton">Salle 1</button>
