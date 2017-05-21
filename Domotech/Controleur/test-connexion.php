@@ -22,7 +22,7 @@ if(isset($_POST['btnLogin'])){
                     $_SESSION["userID"] = $ligne['id'];
                     $_SESSION["name"]=$_POST['userName'];
                     //rredirige vers la page mon esapce
-                    header('Location:monespace.php ');
+                    header('Location:monespace.php?cible=monespace/accueilclient.php ');
                     die;
                     echo("connecté");
                 }
