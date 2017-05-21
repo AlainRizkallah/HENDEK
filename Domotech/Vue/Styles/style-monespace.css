@@ -64,7 +64,7 @@ header{
   display: inline-block;
 }
 aside,section{
-    margin-left: 10%;
+    margin-left: 2%;
 }
 .left{
   float:left;
