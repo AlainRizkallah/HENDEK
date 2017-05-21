@@ -1,48 +1,12 @@
 
-<script>
-    function showCapteurs(salle)
-    {
-        if (salle == "")
-        {
-            return;
-        }
-        if (window.XMLHttpRequest) {
-            xmlhttp= new XMLHttpRequest();
-        } else {
-            if (window.ActiveXObject)
-                try {
-                    xmlhttp= new ActiveXObject("Msxml2.XMLHTTP");
-                } catch (e) {
-                    try {
-                        xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
-                    } catch (e) {
-                        return NULL;
-                    }
-                }
-        }
-        if(salle==0){
-          salle='0';
-        }
-        xmlhttp.onreadystatechange = function ()
-        {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-            {
-              document.getElementById("resultat").innerHTML = xmlhttp.responseText;
-
-            }
-        }
-        xmlhttp.open("POST", "Controleur/display-capteur.php" , true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send("salle="+salle);
-    }
-</script>
+<script  async defer src="js/showElement.js"></script>
 <div class="dropdown left" >
-      <button class="boutton">Sélectionnez une Salle:</button>
+      <button class="boutton">Salle:</button>
 
         <div class="dropdown-content">
-          <button onclick="showCapteurs(1)" class="boutton">Salle 1</button>
-          <button onclick="showCapteurs(2)" class="boutton">Salle 2</button>
-          <button onclick="showCapteurs(3)" class="boutton">Salle 3</button>
+          <button onclick="showCapteurs(1,'Controleur/display-capteur.php')" class="boutton">Salle 1</button>
+          <button onclick="showCapteurs(2,'Controleur/display-capteur.php')" class="boutton">Salle 2</button>
+          <button onclick="showCapteurs(3,'Controleur/display-capteur.php')" class="boutton">Salle 3</button>
         </div>
 
 </div>

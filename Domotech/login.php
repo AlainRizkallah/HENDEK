@@ -15,14 +15,7 @@
            <p>
              Si vous n'avez pas de compte, vous pouvez en créer un
              </p>
-
-             <p>
-
-
-                <a class="boutton" href="inscription.php">Créer un compte</a>
-
-             </p>
-
+<a class="boutton" href="inscription.php">Créer un compte</a>
         </div>
 
       </div>
