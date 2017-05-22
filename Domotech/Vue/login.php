@@ -8,7 +8,7 @@ echo('
 
         <label>Bienvenue: <b>'.$_SESSION["name"].'</b></label>
 
-        <button class="boutton" type="submit" name="btnDeco">Disconnect</button>
+        <button class="boutton" type="submit" name="btnDeco">Déconnexion</button>
 ');
 
 }else{

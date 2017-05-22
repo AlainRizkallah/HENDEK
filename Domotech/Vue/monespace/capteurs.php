@@ -1,12 +1,20 @@
+<?php
+include("Modele/db-maison-manager.php");
+include("Modele/db-salle-manager.php");
 
+ ?>
 <script  async defer src="js/showElement.js"></script>
 <div class="dropdown left" >
       <button class="boutton">Sélection de la Salle:</button>
 
         <div class="dropdown-content">
-          <button onclick="showCapteurs(1,'Controleur/display-capteur.php')" class="boutton">Salle 1</button>
-          <button onclick="showCapteurs(2,'Controleur/display-capteur.php')" class="boutton">Salle 2</button>
-          <button onclick="showCapteurs(3,'Controleur/display-capteur.php')" class="boutton">Salle 3</button>
+
+          <?php
+          $resultat=$db->query('SELECT habitation.nom hab , salle.nom sal,salle.ID id  FROM habitation , salle WHERE idHabitation=habitation.ID');
+            while ($liste=$resultat->fetch()){?>
+              <button onclick= showCapteurs(<?php echo($liste['id']);?>,'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
+          <?php } $resultat->closeCursor();?>
+
         </div>
 
 </div>
@@ -14,6 +22,9 @@
     <h2 id="nomSalle"></h2>
     <div id="resultat" ></div>
 </div>
+
+
+
 
 
 
