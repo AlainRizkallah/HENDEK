@@ -42,7 +42,7 @@ JOIN capteur ON salle.ID=capteur.idSalle'); ?>
   <p class="boxtitle">
   Ajouter un capteur
   </p>
-  <form method="post" action="Controleur/addCapteur.php">
+  <form method="post" action="Controleur/capteur-manager.php">
     <p>
         <label class=formLabel for="maison">Choisissez votre maison</label><br /><br />
         <select name="maison">
