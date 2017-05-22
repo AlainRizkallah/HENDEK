@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 21 mai 2017 à 19:50
+-- Généré le :  lun. 22 mai 2017 à 09:23
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -69,7 +69,9 @@ CREATE TABLE `capteur` (
 --
 
 INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`, `temps`) VALUES
-(7, 5, 9, 'Présence', 0, 0, NULL);
+(12, 8, 1, 'Présence', 0, 0, NULL),
+(13, 8, 2, 'Vidéosurveillance', 0, 1, NULL),
+(14, 8, 3, 'Luminosité', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -113,7 +115,7 @@ CREATE TABLE `habitation` (
 --
 
 INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`) VALUES
-(5, '10 rue de Jupiter, Mars', 120, 'Home');
+(8, '10 rue de Jupiter, Mars', 120, 'Home');
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,9 @@ CREATE TABLE `salle` (
 --
 
 INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
-(9, 5, 'Chambre');
+(1, 8, 'Chambre'),
+(2, 8, 'Salle de Bain'),
+(3, 8, 'Bureau');
 
 -- --------------------------------------------------------
 
@@ -185,7 +189,7 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 0, '4568', 'alain.riz@isep.fr', 'alain', '', 'normal');
+('alain', '0cc175b9c0f1b6a831c399e269772661', 0, '0677729222', 'alain.riz@isep.fr', 'Rizkallah', 'Alain', 'normal');
 
 --
 -- Index pour les tables déchargées
@@ -227,22 +231,22 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
 ALTER TABLE `salle`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
