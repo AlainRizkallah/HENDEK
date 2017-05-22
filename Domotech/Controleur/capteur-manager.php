@@ -2,14 +2,11 @@
 
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-   if(isset($_POST['addCapteur'])){
-     include("../Modele/db-capteur-manager.php");
+
+   if(isset($_POST['btnAddCapteur'])){
      dispAddCapteur();
-
-
-
-
   }
+
 }
 
 function dispAddCapteur(){
@@ -18,5 +15,8 @@ function dispAddCapteur(){
   echo ($resultat);
   header ("Location: $_SERVER[HTTP_REFERER]" );
 }
-//submitAddCapteur
+function dispSuppCapteur(){
+
+}
+
 ?>

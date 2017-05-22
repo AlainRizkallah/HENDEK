@@ -75,7 +75,7 @@ JOIN capteur ON salle.ID=capteur.idSalle'); ?>
              <option value="Température">Température</option>
          </select>
      </p><br><br><br><br><br>
-     <input type="submit" value="ajouter un capteur"/>
+     <input name="btnAddCapteur" type="submit" value="ajouter un capteur"/>
   </form>
 
 </div>

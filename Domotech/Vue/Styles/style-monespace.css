@@ -77,7 +77,7 @@ header{
   display: inline-block;
 }
 aside,section{
-    margin-left: 2%;
+    margin-left: 10%;
 }
 .left{
   float:left;
@@ -345,4 +345,10 @@ footer ul{
   text-align: center;
   list-style-type: none;
   padding-left: 0px;
+}
+
+@media screen and (max-width: 1200px){
+  aside,section{
+      margin-left: 2%;
+  }
 }
