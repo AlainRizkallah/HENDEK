@@ -7,6 +7,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
      dispAddCapteur();
   }
 
+  if(isset($_POST['btnSuppCapteur'])){
+    dispSuppCapteur();
+ }
+
 }
 
 function dispAddCapteur(){
@@ -17,6 +21,12 @@ function dispAddCapteur(){
 }
 function dispSuppCapteur(){
 
+  include("../Modele/db-capteur-manager.php");
+
+  $resultat = delCapteur($db, $_POST['maison']) ;
+  echo ($resultat);
+
+  header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
 }
 
 ?>

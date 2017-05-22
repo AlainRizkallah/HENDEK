@@ -17,7 +17,7 @@ $reponse = $db->query('SELECT habitation.nom hab , salle.nom sal , capteur.type 
 JOIN salle ON habitation.ID=salle.idHabitation
 JOIN capteur ON salle.ID=capteur.idSalle'); ?>
 
- <form method="post" action="Controleur/delCapteur.php">
+ <form method="post" action="Controleur/capteur-manager.php">
   <p class=textedroite>
       <label class=formLabel>Choisissez le capteur à supprimer</label><br /><br />
 
@@ -26,7 +26,7 @@ JOIN capteur ON salle.ID=capteur.idSalle'); ?>
           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['capt'])?> - <?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
       <?php  }
       $reponse->closeCursor(); ?>
-      <input type="submit" value="supprimer"/>
+      <input name="btnSuppCapteur" type="submit" value="supprimer"/>
  </form>
 
       </select>
