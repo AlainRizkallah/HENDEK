@@ -3,7 +3,7 @@
 
     <section>
         <p>
-           Some text
+           
            <div class="image1">
           <img src="http://nsa37.casimages.com/img/2017/05/05/170505124535648744.png" width="100%"/>
            <br />
