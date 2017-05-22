@@ -347,7 +347,7 @@ footer ul{
   padding-left: 0px;
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1400px){
   aside,section{
       margin-left: 2%;
   }
