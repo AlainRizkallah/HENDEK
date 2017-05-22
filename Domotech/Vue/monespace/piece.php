@@ -9,7 +9,7 @@ include("Modele/db-salle-manager.php");
 
 $reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal FROM habitation , salle WHERE idHabitation=habitation.ID'); ?>
 
- <form method="post" action="Controleur/delSalle.php">
+ <form method="post" action="Controleur/salle-manager.php">
   <p class=textedroite>
       <label class=formLabel>Choisissez la pièce à supprimer</label><br /><br />
 
@@ -18,7 +18,7 @@ $reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal F
           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
       <?php  }
       $reponse->closeCursor(); ?>
-      <input type="submit" value="supprimer"/>
+      <input name="btnSuppSalle" type="submit" value="supprimer"/>
  </form>
 
       </select>
@@ -39,7 +39,7 @@ $reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal F
   <p class="boxtitle">
     Ajouter une pièce à ma maison
   </p>
-  <form method="post" action="Controleur/addSalle.php">
+  <form method="post" action="Controleur/salle-manager.php">
      <p class="textegauche">
          <label class=formLabel for="maison">Choisissez une maison</label><br /><br />
          <select name="maison">
@@ -53,7 +53,7 @@ $reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal F
          <input type="text" name="nom" required />
      </p>
     <br><br><br><br><br>
-<input type="submit" value="ajouter la pièce"/>
+<input name="btnAddSalle" type="submit" value="ajouter la pièce"/>
   </form>
 <?php $reponse->closeCursor(); ?>
 </div>

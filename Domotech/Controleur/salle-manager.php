@@ -4,11 +4,11 @@
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    if(isset($_POST['btnAddSalle'])){
-     dispAddCapteur();
+     dispAddSalle();
   }
 
   if(isset($_POST['btnSuppSalle'])){
-    dispSuppCapteur();
+    dispSuppSalle();
  }
 
 }
