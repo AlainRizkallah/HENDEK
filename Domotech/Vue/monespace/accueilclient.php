@@ -5,7 +5,7 @@
 ?>
 
 <div class=center>
-<p class="boxtitle"> BIENVENUE SUR VOTRE ACCUEIL
+<p class="boxtitle"> BIENVENUE SUR VOTRE ESPACE
 </p></div>
 
 
