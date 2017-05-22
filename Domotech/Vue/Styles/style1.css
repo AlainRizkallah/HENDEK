@@ -99,9 +99,11 @@ width: 100%;
 }
 
 .boxtitle {
-  font-size:20px;
+  font-family: "SB";
+  font-size:22px;
   padding-top:4px;
   padding-bottom:4px;
+  padding:5px;
   background-color:#5680A6;
   border-style: solid;
   color: #E0E2E5;
