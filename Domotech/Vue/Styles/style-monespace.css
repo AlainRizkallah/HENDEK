@@ -351,4 +351,7 @@ footer ul{
   aside,section{
       margin-left: 2%;
   }
+.barremenu a {
+  padding:15px;
+}
 }
