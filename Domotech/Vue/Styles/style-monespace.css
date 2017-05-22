@@ -12,11 +12,23 @@
 }
 
 .titre{
-  margin-left: 80px;
-  float: left;
+  text-decoration: none;
+  text-align: center;
   color: #5680A6;
   font-size: 6em;
   font-family: 'Telemarine';
+  width: 100%;
+}
+.titre a{
+  text-decoration: none;
+  text-decoration-color: none;
+  color: #5680A6;
+
+}
+.logo{
+  height: 8%;
+  width: 8%;
+
 }
 img {
   max-width: 100%;
@@ -61,6 +73,7 @@ button {
   width: 50%;
 }
 header{
+  width: 100%;
   display: inline-block;
 }
 aside,section{
@@ -199,7 +212,6 @@ input[type="text"]:focus {
     color:   #E0E2E5;
     background-color: #5680A6;
 }
-
 .barremenu [class*="icon-"] {
   font-size: 2em;
   margin-bottom: 5px;
