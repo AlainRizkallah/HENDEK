@@ -58,7 +58,7 @@ JOIN capteur ON salle.ID=capteur.idSalle'); ?>
      <p class="textegauche">
          <label class=formLabel for="piece">Choisissez une pièce</label><br /><br />
          <select name="piece">
-           <?php $reponse = $db->query('SELECT * FROM salle');
+           <?php $reponse = $db->query('SELECT salle.ID ID , salle.nom nom FROM salle , habitation WHERE salle.idHabitation=habitation.ID');
 
            while ($donnees = $reponse->fetch()) {?>
              <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
