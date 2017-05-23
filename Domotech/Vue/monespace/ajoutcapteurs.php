@@ -10,6 +10,7 @@
 
 <?php
 include("Modele/db-capteur-manager.php");
+include("Modele/db-maison-manager.php");
 
 // SUPPR CAPTEUR
 
@@ -47,7 +48,7 @@ JOIN capteur ON salle.ID=capteur.idSalle'); ?>
         <label class=formLabel for="maison">Choisissez votre maison</label><br /><br />
         <select name="maison">
 
-          <?php $reponse = $db->query('SELECT * FROM habitation');
+          <?php $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
 
           while ($donnees = $reponse->fetch()) {?>                                       <!-- affiche les maisons presente dans la BDD -->
             <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
