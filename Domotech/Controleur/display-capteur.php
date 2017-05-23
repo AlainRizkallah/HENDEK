@@ -14,9 +14,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 function showAll($db,$salle){
     $result = getCapteursList($db,$salle);
 
-
-
-
     if ($result->rowcount()>0) {
       //DO::FETCH_ASSOC met le résultat dans un tableau associatif
 

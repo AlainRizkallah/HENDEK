@@ -12,9 +12,9 @@
   //  prepare('SELECT * FROM users where username = :username');
 
 
-    function getHabitationsList($db,$idSalle){
-      $reponse = $db->prepare('SELECT type FROM habitation WHERE idSalle= :idSalle');
-      $reponse->bindParam(':idSalle',$idSalle);
+    function getHabitationsList($db,$idGroupe){
+      $reponse = $db->prepare('SELECT type FROM habitation WHERE idGroupe= :idGroupe');
+      $reponse->bindParam(':idGroupe',$idGroupe);
       $reponse->execute();
         return $reponse;
     }
@@ -29,12 +29,13 @@
     */
 
 
-      function addHabitation($db,$adresse,$nom,$superficie){
+      function addHabitation($db,$adresse,$nom,$superficie,$idGroupe){
         try{
-          $stmt = $db->prepare('INSERT INTO `habitation` (`adresse`, `nom`,`superficie`) VALUES (:adresse,:nom,:superficie) ');
+          $stmt = $db->prepare('INSERT INTO `habitation` (`adresse`, `nom`,`superficie`,`idGroupe`) VALUES (:adresse,:nom,:superficie,:idGroupe) ');
           $stmt->bindParam(':adresse',$adresse);
           $stmt->bindParam(':nom',$nom);
           $stmt->bindParam(':superficie',$superficie);
+          $stmt->bindParam(':idGroupe',$idGroupe);
           $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
           $res="fait";
 

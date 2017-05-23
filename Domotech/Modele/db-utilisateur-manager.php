@@ -3,7 +3,7 @@
 
 
     function mdp($db,$identifiant){
-        $reponse = $db->prepare('SELECT id, mdp FROM Utilisateurs WHERE identifiant= :identifiant');
+        $reponse = $db->prepare('SELECT id,idGroupe, mdp FROM Utilisateurs WHERE identifiant= :identifiant');
         $reponse->bindParam(':identifiant',$identifiant);
         $reponse->execute();
       return   $reponse;
@@ -47,5 +47,10 @@
 
       return $res;
     }
-
+    function updateGroup($db,$id,$idGroupe){
+      $stmt = $db->prepare('UPDATE `utilisateurs` SET idGroupe = :idGroupe WHERE id = :id');
+      $stmt ->bindParam(':id',$id);
+      $stmt ->bindParam(':idGroupe',$idGroupe);
+      $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+    }
 ?>
