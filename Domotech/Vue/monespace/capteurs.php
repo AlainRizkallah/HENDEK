@@ -10,10 +10,10 @@ include("Modele/db-salle-manager.php");
         <div class="dropdown-content">
 
           <?php
-          $resultat=$db->query('SELECT salle.nom sal,salle.ID id  FROM habitation , salle WHERE idHabitation=habitation.ID');
+          $resultat=getSalleList($db, $_SESSION['idGroupe']);
           //$resultat = getSallesList($db,$idHabitation);
             while ($liste=$resultat->fetch()){?>
-              <button onclick= showCapteurs(<?php echo($liste['id']);?>,'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
+              <button onclick= showCapteurs(<?php echo($liste['ID']);?>,'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
           <?php } $resultat->closeCursor();?>
 
         </div>
