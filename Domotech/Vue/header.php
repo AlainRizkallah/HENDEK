@@ -10,7 +10,8 @@
 
 
     <a href=index.php> <h1 class="titre">Domotech</h1> </a>
-<?php include ('Controleur/session-manager.php'); ?>
+<?php include ('Controleur/session-manager.php');
+include('Vue/login.php');?>
 
 </header>
   <?php include("Vue/barremenu.php");?>

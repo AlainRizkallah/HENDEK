@@ -1,6 +1,6 @@
 <?php
     session_start();
-include('Vue/login.php');
+
 
 //TODO a supprimer en production
 header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
