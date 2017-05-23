@@ -7,7 +7,7 @@
 
   // SUPPRIMER UNE MAISON
 
-  $reponse = $db->query('SELECT * FROM habitation WHERE '); ?>
+  $reponse = $db->query('SELECT * FROM habitation'); ?>
 
    <form method="post" action="Controleur/delMaison.php">
     <p class=textedroite>
