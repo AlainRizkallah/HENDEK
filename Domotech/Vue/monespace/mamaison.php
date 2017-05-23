@@ -19,6 +19,9 @@
         <?php  }
         $reponse->closeCursor(); ?>
         <input type="submit" value="supprimer"/>
+        <?php echo($_SESSION["idGroupe"]);
+      echo($_SESSION["userID"]);
+        ?>
    </form>
 
         </select>

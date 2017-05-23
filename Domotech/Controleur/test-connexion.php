@@ -21,10 +21,11 @@ if(isset($_POST['btnLogin'])){
                 } else { // mot de passe correct, on affiche la page d'accueil
                     $_SESSION["userID"] = $ligne['id'];
                     $_SESSION["name"]=$_POST['userName'];
-                    $_SESSION["idGroupe"] = $ligne['idGroupe'];
-                    if( empty($_SESSION["idGroupe"])){
+
+                    if(!isset($_SESSION["idGroupe"])){
                       updateGroup($db,$_SESSION["userID"],$_SESSION["userID"]);
                       $_SESSION["idGroupe"] = $ligne['id'];
+
                     }
                     //rredirige vers la page mon esapce
                     header('Location:monespace.php?cible=monespace/accueilclient.php ');
