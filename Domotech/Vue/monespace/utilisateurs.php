@@ -1,4 +1,33 @@
-<h2>Liste des utilisateurs</h2><br>
+<h2>
+   Liste des utilisateurs
+</h2><br>
+<?php
+// SUPPR CAPTEUR
+include_once("Modele/db-utilisateur-manager.php");
+$reponse = getUserList($db,  $_SESSION["idGroupe"]); ?>
+
+ <form method="post" action="Controleur/userSec-manager.php">
+  <p class=textedroite>
+      <label class=formLabel>Choisissez le compte secondaire à supprimer</label><br /><br />
+
+      <select name="delUserSec">
+        <?php  $donnees=$reponse->fetch(); // ligne pour ne pas afficher l'utilisateur principal dans le menu déroulant
+        while ($donnees = $reponse->fetch()) {?>
+          <option value=<?php echo($donnees['id'])?>><?php echo($donnees['identifiant'])?></option>
+      <?php  }
+      $reponse->closeCursor(); ?>
+      <input name="btnDelUserSec" type="submit" value="supprimer"/>
+ </form>
+
+      </select>
+  </p>
+
+
+<!-- LISTE CAPTEURS -->
+
+<?php include ('Vue/listeusers.php') ?>
+
+<br><br><br>
 
 <!-- TODO LISTE + SUPPRIMER UTILISATEUR -->
 

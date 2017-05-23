@@ -73,4 +73,29 @@
       $stmt ->bindParam(':idGroupe',$idGroupe);
       $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
     }
+
+    function getUserList($db,$idGroupe){
+
+    $reponse=$db->prepare('SELECT * FROM utilisateurs
+    WHERE idGroupe=:idGroupe');
+    $reponse->bindParam(':idGroupe', $idGroupe);
+    $reponse->execute();
+    return $reponse;
+    }
+
+    function delUserSec($db,$id){
+      try{
+          $stmt = $db->prepare('DELETE FROM `utilisateurs` WHERE id=:id');
+          $stmt->bindParam(':id',$id);
+          $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+          $res="fait";
+        }
+        catch (Exception $e)
+        {
+          die('Erreur : ' . $e->getMessage());
+          $res= $e->getMessage();
+        }
+        return $res;
+        }
+
 ?>

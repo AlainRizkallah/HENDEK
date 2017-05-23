@@ -19,6 +19,14 @@ include("../Modele/db-utilisateur-manager.php");
   echo ($resultat);
   header ("Location: $_SERVER[HTTP_REFERER]" );
 }
+function dispDelUserSec(){
+  include("../Modele/db-utilisateur-manager.php");
+
+  $resultat = delUserSec($db, $_POST['btnDelUserSec']) ;
+  echo ($resultat);
+
+  header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
+}
 
 
 ?>
