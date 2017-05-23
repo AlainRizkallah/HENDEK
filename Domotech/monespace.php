@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+<?php require_once("Modele/connexion.php"); ?>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
