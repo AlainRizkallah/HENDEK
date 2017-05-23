@@ -10,23 +10,20 @@
     <header>
 
      <h1 class="titre"><a href=.>Domotech</a> <img src=Vue/Image/logo-domotech.png class="logo"></img></h1>
-
+<?php include("Vue/barremenu.php");?>
 
 
 </header>
 
 <aside>
   <div class="conteneur">
+
       <?php include ('Controleur/session-manager.php');
-
-
-
     if(!isset($_SESSION["userID"])){
       header('Location:login.php ');
       die;
     }
       ?>
-      <?php include("Vue/barremenu.php");?>
   </div>
 
 
