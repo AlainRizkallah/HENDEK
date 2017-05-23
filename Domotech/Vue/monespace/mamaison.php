@@ -7,7 +7,9 @@
 
   // SUPPRIMER UNE MAISON
 
+
   $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]) ?>
+
 
    <form method="post" action="Controleur/maison-manager.php">
     <p class=textedroite>
