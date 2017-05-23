@@ -1,7 +1,7 @@
 <?php
     require_once("connexion.php");
 
-
+/*
     function getSalle($db,$ID){
 
 
@@ -9,8 +9,16 @@
         $reponse->bindParam(':ID',$ID);
         $reponse->execute();
         return $reponse;
-    }
+    } */
 
+    function getSalle($db,$idGroupe){
+
+    $reponse=$db->prepare('SELECT salle.ID ID , habitation.nom hab , salle.nom sal FROM habitation
+    JOIN salle ON idHabitation=habitation.ID WHERE idGroupe=:idGroupe');
+    $reponse->bindParam(':idGroupe', $idGroupe);
+    $reponse->execute();
+    return $reponse;
+    }
 
     function getSallesList($db,$idHabitation){
       //  $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');

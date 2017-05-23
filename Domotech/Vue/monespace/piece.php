@@ -7,7 +7,7 @@ include("Modele/db-salle-manager.php");
 include("Modele/db-maison-manager.php");
 // SUPPR SALLE
 
-$reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal FROM habitation , salle WHERE idHabitation=habitation.ID'); ?>
+$reponse = getSalle($db,  $_SESSION["idGroupe"]); ?>
 
  <form method="post" action="Controleur/salle-manager.php">
   <p class=textedroite>
