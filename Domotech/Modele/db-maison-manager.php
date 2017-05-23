@@ -13,7 +13,7 @@
 
 
     function getHabitationsList($db,$idGroupe){
-      $reponse = $db->prepare('SELECT type FROM habitation WHERE idGroupe= :idGroupe');
+      $reponse = $db->prepare('SELECT * FROM habitation WHERE idGroupe= :idGroupe');
       $reponse->bindParam(':idGroupe',$idGroupe);
       $reponse->execute();
         return $reponse;

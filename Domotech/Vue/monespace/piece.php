@@ -4,7 +4,7 @@
 
 <?php
 include("Modele/db-salle-manager.php");
-
+include("Modele/db-maison-manager.php");
 // SUPPR SALLE
 
 $reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal FROM habitation , salle WHERE idHabitation=habitation.ID'); ?>
@@ -34,7 +34,7 @@ $reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal F
 
 <!-- AJOUTER UNE PIÈCE -->
 
-<?php $reponse = $db->query('SELECT * FROM habitation');?>
+<?php $reponse = getHabitationsList($db, $_SESSION["idGroupe"])?>
 
   <h2>
     Ajouter une pièce à ma maison
