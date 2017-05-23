@@ -43,10 +43,30 @@
         die('Erreur : ' . $e->getMessage());
         $res= $e->getMessage();
 }
-
-
       return $res;
     }
+
+    function addUserSec($db,$identifiant,$mdp,$status,$idGroupe){
+      try{
+    $stmt =   $db->prepare('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `status`,`idGroupe`) VALUES (:identifiant, :mdp, :status, :idGroupe) ');
+    $mdp = MD5($mdp);
+    $stmt ->bindParam(':identifiant',$identifiant);
+    $stmt ->bindParam(':mdp',$mdp);
+    $stmt ->bindParam(':status',$status);
+    $stmt ->bindParam(':idGroupe',$idGroupe);
+
+    $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+    $res="fait";
+  }
+  catch (Exception $e)
+{
+
+      die('Erreur : ' . $e->getMessage());
+      $res= $e->getMessage();
+}
+    return $res;
+  }
+
     function updateGroup($db,$id,$idGroupe){
       $stmt = $db->prepare('UPDATE `utilisateurs` SET idGroupe = :idGroupe WHERE id = :id');
       $stmt ->bindParam(':id',$id);

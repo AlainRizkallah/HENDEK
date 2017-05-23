@@ -283,7 +283,10 @@ input[type="password"]:focus {
 
 }
 
+.textecentre{
+  text-align: center;
 
+}
 
 .textedroite{
   float:right;
