@@ -1,5 +1,5 @@
 <?php
-
+    require_once("connexion.php");
 
 
     function getCapteur($db,$ID){

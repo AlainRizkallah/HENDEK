@@ -1,4 +1,5 @@
 <?php
+    require_once("connexion.php");
 
 
     function mdp($db,$identifiant){
