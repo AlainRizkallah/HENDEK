@@ -1,8 +1,8 @@
 <?php
 //  $reponse = $db->query('SELECT * FROM habitation');
 $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
-  while ($donnees = $reponse->fetch()) {
-    echo $donnees['nom'];?> de superficie <?php echo $donnees['superficie'];?>m² à l'adresse <?php echo $donnees['adresse'];?>
+  while ($donnees = $reponse->fetch()) {?>
+  <b>  <?php echo $donnees['nom'];?> </b> de superficie <b><?php echo $donnees['superficie'];?>m²</b> à l'adresse<b> <?php echo $donnees['adresse'];?></b>
     <br> <?php }
   $reponse->closeCursor();
   ?>

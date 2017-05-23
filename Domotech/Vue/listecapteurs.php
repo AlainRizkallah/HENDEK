@@ -6,6 +6,6 @@ JOIN capteur ON salle.ID=capteur.idSalle');
 */
 
 $resultat=getCapteurList($db,  $_SESSION["idGroupe"]);
-  while ($liste=$resultat->fetch()){
-    echo ($liste['capt']);?> dans <?php echo ($liste['sal']);?> dans <?php echo ($liste['hab']);?> <br>
+  while ($liste=$resultat->fetch()){?>
+    <b><?php echo ($liste['capt']);?></b> dans <b><?php echo ($liste['sal']);?></b> dans <b><?php echo ($liste['hab']);?> </b><br>
 <?php  } $resultat->closeCursor();?>
