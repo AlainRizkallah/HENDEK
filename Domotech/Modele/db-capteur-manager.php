@@ -11,6 +11,16 @@
         return $reponse;
     }
 
+    function getCapteurList($db,$idGroupe){
+
+    $reponse=$db->prepare('SELECT habitation.nom hab , salle.nom sal , capteur.type capt , capteur.ID ID FROM habitation
+    JOIN salle ON habitation.ID=salle.idHabitation
+    JOIN capteur ON salle.ID=capteur.idSalle WHERE idGroupe=:idGroupe');
+    $reponse->bindParam(':idGroupe', $idGroupe);
+    $reponse->execute();
+    return $reponse;
+    }
+
 
     function getCapteursList($db,$idSalle){
       //  $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');

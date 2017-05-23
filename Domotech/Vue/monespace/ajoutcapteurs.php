@@ -11,12 +11,10 @@
 <?php
 include("Modele/db-capteur-manager.php");
 include("Modele/db-maison-manager.php");
-
+include("Modele/db-salle-manager.php");
 // SUPPR CAPTEUR
 
-$reponse = $db->query('SELECT habitation.nom hab , salle.nom sal , capteur.type capt , capteur.ID ID FROM habitation
-JOIN salle ON habitation.ID=salle.idHabitation
-JOIN capteur ON salle.ID=capteur.idSalle'); ?>
+$reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>
 
  <form method="post" action="Controleur/capteur-manager.php">
   <p class=textedroite>
@@ -59,10 +57,10 @@ JOIN capteur ON salle.ID=capteur.idSalle'); ?>
      <p class="textegauche">
          <label class=formLabel for="piece">Choisissez une pièce</label><br /><br />
          <select name="piece">
-           <?php $reponse = $db->query('SELECT salle.ID ID , salle.nom nom FROM salle , habitation WHERE salle.idHabitation=habitation.ID');
+           <?php $reponse = getSalleList($db,$_SESSION['idGroupe']);
 
            while ($donnees = $reponse->fetch()) {?>
-             <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
+             <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['sal'])?></option>
           <?php } $reponse->closeCursor();?>
          </select>
      </p>
