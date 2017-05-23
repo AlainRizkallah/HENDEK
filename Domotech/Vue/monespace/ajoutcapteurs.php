@@ -5,13 +5,13 @@
 
 <h2>
    Liste des capteurs
-</h2><br>
+</h2>
 
 
 <?php
-include("Modele/db-capteur-manager.php");
-include("Modele/db-maison-manager.php");
-include("Modele/db-salle-manager.php");
+include_once("Modele/db-capteur-manager.php");
+include_once("Modele/db-maison-manager.php");
+include_once("Modele/db-salle-manager.php");
 // SUPPR CAPTEUR
 
 $reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>

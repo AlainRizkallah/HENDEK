@@ -1,10 +1,10 @@
 <?php
-include("Modele/db-maison-manager.php");
-include("Modele/db-salle-manager.php");
+include_once("Modele/db-maison-manager.php");
+include_once("Modele/db-salle-manager.php");
 
  ?>
 <script  async defer src="js/showElement.js"></script>
-<?php   $resultat=getSalleList($db, $_SESSION['idGroupe']);
+<?php   $resultat=getSalleList($db, $_SESSION['idGroupe']);//Mettre idMaison
 ?>
 <div class="dropdown left" >
       <button class="boutton">Sélection de la Salle:</button>

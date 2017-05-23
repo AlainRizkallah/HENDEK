@@ -3,8 +3,8 @@
 </h2><br>
 
 <?php
-include("Modele/db-salle-manager.php");
-include("Modele/db-maison-manager.php");
+include_once("Modele/db-salle-manager.php");
+include_once("Modele/db-maison-manager.php");
 // SUPPR SALLE
 
 $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>

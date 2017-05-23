@@ -3,7 +3,7 @@
   </h2><br>
 
   <?php
-  include("Modele/db-maison-manager.php");
+  include_once("Modele/db-maison-manager.php");
 
   // SUPPRIMER UNE MAISON
 

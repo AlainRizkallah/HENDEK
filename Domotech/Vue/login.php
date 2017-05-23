@@ -10,6 +10,7 @@ echo('
 
         <button class="boutton" type="submit" name="btnDeco">Déconnexion</button>
 ');
+include_once 'Vue/menu/selecteur-maison.php';
 
 }else{
   echo('
