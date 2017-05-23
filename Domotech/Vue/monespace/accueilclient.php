@@ -1,4 +1,6 @@
-<?php include("Modele/db-maison-manager.php"); ?>
+<?php include("Modele/db-maison-manager.php");
+include("Modele/db-salle-manager.php");
+include("Modele/db-capteur-manager.php");?>
 
 <div class=center>
 <p class="boxtitle"> BIENVENUE SUR VOTRE ESPACE
