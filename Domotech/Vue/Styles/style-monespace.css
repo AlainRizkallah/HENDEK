@@ -76,6 +76,23 @@ button {
 
 
 }
+select {
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  background-color: #E0E2E5;
+
+  padding: 12px;
+  font-family: 'Montserrat', tahoma;
+  font-size: 16px;
+  font-weight: bold;
+  color:  #5680A6;
+  text-align: center;
+  border-radius: 9px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
 
 .center{
   margin:auto;
