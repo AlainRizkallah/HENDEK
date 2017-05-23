@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  lun. 22 mai 2017 à 09:23
+-- Client :  127.0.0.1
+-- Généré le :  Mar 23 Mai 2017 à 10:05
 -- Version du serveur :  10.1.21-MariaDB
--- Version de PHP :  7.1.2
+-- Version de PHP :  7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -64,15 +62,6 @@ CREATE TABLE `capteur` (
   `temps` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Déchargement des données de la table `capteur`
---
-
-INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`, `temps`) VALUES
-(12, 8, 1, 'Présence', 0, 0, NULL),
-(13, 8, 2, 'Vidéosurveillance', 0, 1, NULL),
-(14, 8, 3, 'Luminosité', 0, 0, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -107,15 +96,9 @@ CREATE TABLE `habitation` (
   `ID` int(40) NOT NULL,
   `adresse` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `superficie` int(40) NOT NULL,
-  `nom` text COLLATE utf8_unicode_ci NOT NULL
+  `nom` text COLLATE utf8_unicode_ci NOT NULL,
+  `idGroupe` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Déchargement des données de la table `habitation`
---
-
-INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`) VALUES
-(8, '10 rue de Jupiter, Mars', 120, 'Home');
 
 -- --------------------------------------------------------
 
@@ -159,13 +142,11 @@ CREATE TABLE `salle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `salle`
+-- Contenu de la table `salle`
 --
 
 INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
-(1, 8, 'Chambre'),
-(2, 8, 'Salle de Bain'),
-(3, 8, 'Bureau');
+(3, 1, 'salle de bain');
 
 -- --------------------------------------------------------
 
@@ -181,18 +162,19 @@ CREATE TABLE `utilisateurs` (
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'normal'
+  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'normal',
+  `idGroupe` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `utilisateurs`
+-- Contenu de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 0, '0677729222', 'alain.riz@isep.fr', 'Rizkallah', 'Alain', 'normal');
+INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`) VALUES
+('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '158885554', 'zaea.eaz@ere.fr', 'alain', 'al', 'normal', 1);
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -224,30 +206,29 @@ ALTER TABLE `utilisateurs`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
 ALTER TABLE `salle`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
