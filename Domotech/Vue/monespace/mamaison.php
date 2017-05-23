@@ -1,6 +1,6 @@
-  <p class="boxtitle">
+  <h2>
     Liste de vos maisons
-  </p><br>
+  </h2><br>
 
   <?php
   include("Modele/db-maison-manager.php");
@@ -33,26 +33,28 @@
 
 <!-- AJOUTER UNE MAISON -->
 
-
-<p class="boxtitle">
+<h2>
   Ajouter une maison
-</p>
-<form method="post" action="Controleur/addMaison.php">
-   <p class="textegauche">
-     <label class=formLabel for="adresse">Entrez l'adresse de votre maison</label><br /><br />
-     <input type="text" name="adresse" required />
-       </select>
-   </p>
+</h2></br>
 
-   <p class="textedroite">
+<form method="post" action="Controleur/addMaison.php">
+
+   <p class="textegauche">
        <label class=formLabel for="nom">Nommez votre maison</label><br /><br />
        <input type="text" name="nom" required />
    </p>
- <br><br><br><br><br>
-   <p >
+   <p class="textedroite">
      <label class=formLabel for="superficie">Entrez la superficie de votre maison (en m²)</label><br /><br />
      <input type="text" name="superficie" required />
    </p>
+    <br><br><br><br><br>
+   <p>
+     <label class=formLabel for="adresse">Entrez l'adresse de votre maison</label><br /><br />
+     <input type="text" name="adresse" required />
+
+   </p>
+
+
 
 <input type="submit" value="ajouter la maison"/>
 </form>

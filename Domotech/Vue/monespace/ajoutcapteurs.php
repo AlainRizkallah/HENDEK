@@ -3,9 +3,9 @@
 
 
 
-<p class="boxtitle">
+<h2>
    Liste des capteurs
-</p><br>
+</h2><br>
 
 
 <?php
@@ -39,9 +39,9 @@ JOIN capteur ON salle.ID=capteur.idSalle'); ?>
 
 <br><br><br>
 
-  <p class="boxtitle">
+  <h2>
   Ajouter un capteur
-  </p>
+</h2>
   <form method="post" action="Controleur/capteur-manager.php">
     <p>
         <label class=formLabel for="maison">Choisissez votre maison</label><br /><br />

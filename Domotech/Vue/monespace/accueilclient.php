@@ -10,9 +10,9 @@
 
 
 
-  <p class="boxtitle">
+  <h2>
   Liste de vos maisons
-</p>
+</h2>
 <div class=textedroite></br></br>
   <p class=center>
     <a class="boutton" href ="monespace.php?cible=monespace/mamaison.php" >ajouter/supprimer des maisons</a>
@@ -25,9 +25,9 @@
 
   <br><br>
 
-  <p class="boxtitle">
+  <h2>
     Liste de vos pièces
-  </p>
+  </h2>
   <div class=textedroite></br></br>
     <p class=center>
       <a class="boutton" href ="monespace.php?cible=monespace/piece.php" >ajouter/supprimer des pièces</a>
@@ -39,9 +39,9 @@
 
   <br><br>
 
-  <p class="boxtitle">
+  <h2>
     Liste de vos capteurs
-  </p>
+  </h2>
   <div class=textedroite></br></br>
     <p class=center>
       <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des capteurs</a>

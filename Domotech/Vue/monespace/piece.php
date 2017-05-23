@@ -1,6 +1,6 @@
-<p class="boxtitle">
+<h2>
   Liste des pièces
-</p><br>
+</h2><br>
 
 <?php
 include("Modele/db-salle-manager.php");
@@ -36,9 +36,9 @@ $reponse = $db->query('SELECT salle.ID ID , habitation.nom hab , salle.nom sal F
 
 <?php $reponse = $db->query('SELECT * FROM habitation');?>
 
-  <p class="boxtitle">
+  <h2>
     Ajouter une pièce à ma maison
-  </p>
+  </h2>
   <form method="post" action="Controleur/salle-manager.php">
      <p class="textegauche">
          <label class=formLabel for="maison">Choisissez une maison</label><br /><br />
