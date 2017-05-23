@@ -7,9 +7,9 @@
 
   // SUPPRIMER UNE MAISON
 
-  $reponse = $db->query('SELECT * FROM habitation WHERE '); ?>
+  $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]) ?>
 
-   <form method="post" action="Controleur/delMaison.php">
+   <form method="post" action="Controleur/maison-manager.php">
     <p class=textedroite>
         <label class=formLabel>Choisissez la maison à supprimer</label><br /><br />
 
@@ -18,7 +18,7 @@
             <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
         <?php  }
         $reponse->closeCursor(); ?>
-        <input type="submit" value="supprimer"/>
+        <input name="btnSuppMaison" type="submit" value="supprimer"/>
 
    </form>
 
@@ -38,7 +38,7 @@
   Ajouter une maison
 </h2></br>
 
-<form method="post" action="Controleur/addMaison.php">
+<form method="post" action="Controleur/maison-manager.php">
 
    <p class="textegauche">
        <label class=formLabel for="nom">Nommez votre maison</label><br /><br />
@@ -57,5 +57,5 @@
 
 
 
-<input type="submit" value="ajouter la maison"/>
+<input name="btnAddMaison" type="submit" value="ajouter la maison"/>
 </form>
