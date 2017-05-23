@@ -11,6 +11,14 @@
   src:url('FORCED SQUARE.ttf');
 }
 
+h2 {
+  font-family: "SB";
+  font-size:35px;
+  text-decoration:underline;
+  padding-left:4px;
+  color: #5680A6;
+}
+
 .titre{
   text-decoration: none;
   text-align: center;
@@ -167,9 +175,9 @@ button:hover {
 
 
 input[type="text"] {
-  width: 100%;
+  width: 80%;
   border: 1px solid #cfcfcf;
-  background: #ebebeb;
+  background: #EFF2F5;
   height: 28px;
   font-size: 0.75em;
   padding: 5px;
@@ -181,6 +189,13 @@ input[type="text"] {
 
 input[type="text"]:focus {
   background: #f0f0f0;
+}
+
+.textegauche input[type="text"]{
+  width : 150px;
+}
+.textedroite input[type="text"]{
+  width : 150px;
 }
 
 .checkbox {
@@ -235,13 +250,17 @@ input[type="text"]:focus {
   color: #5680A6;
   background-color:#E0E2E5;
   border-style: solid;
-  border-color:#D1D4D9;
+  border-width: thin;
+  border-color:#5680A6;
+
 }
 
 .textegauche{
   float:left;
 
 }
+
+
 
 .textedroite{
   float:right;
@@ -350,4 +369,5 @@ aside{
 .barremenu a {
   padding:15px;
 }
+
 }
