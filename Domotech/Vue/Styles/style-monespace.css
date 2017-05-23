@@ -254,6 +254,7 @@ input[type="text"]:focus {
   border-style: solid;
   border-width: thin;
   border-color:#5680A6;
+  border-radius: 5px;
 
 }
 
