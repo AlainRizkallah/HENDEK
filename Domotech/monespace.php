@@ -67,9 +67,11 @@
          include("Vue/monespace/accueilclient.php");
     }
         else if ($_GET['cible'] == "monespace/utilisateurs.php"){
-        include("Vue/monespace/utilisateurs.php");
+          include("Vue/monespace/utilisateurs.php");
     }
-
+        else if ($_GET['cible'] == "monespace/effecteurs.php"){
+          include("Vue/monespace/effecteurs.php");
+    }
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");
   }
