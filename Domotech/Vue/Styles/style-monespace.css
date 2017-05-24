@@ -50,6 +50,7 @@ body {
   background: #0000;
   padding-top: 20px;
   margin: 0;
+  overflow: hidden;
 
 }
 
@@ -392,10 +393,9 @@ footer ul{
   padding-left: 0px;
 }
 aside{
-  position: absolute;
+  float: left;
   margin: 0px;
   width: 10%;
-  z-index: -1;
 }
 .conteneur-section{
   margin-top: 0px;
@@ -405,7 +405,7 @@ aside{
 @media screen and (max-width: 1400px){
   aside,section{
     display: block;
-    padding-top: 60px;
+    padding-top: 0px;
       margin-left: 2%;
   }
 .barremenu a {
