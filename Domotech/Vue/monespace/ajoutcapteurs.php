@@ -16,20 +16,19 @@ include_once("Modele/db-salle-manager.php");
 
 $reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>
 
- <form method="post" action="Controleur/capteur-manager.php">
-  <p class=textedroite>
-      <label class=formLabel>Choisissez le capteur à supprimer</label><br /><br />
 
-      <select name="maison">
-        <?php  while ($donnees = $reponse->fetch()) {?>
-          <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['capt'])?> - <?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
-      <?php  }
-      $reponse->closeCursor(); ?>
-      <input name="btnSuppCapteur" type="submit" value="supprimer"/>
- </form>
+    <form method="post" action="Controleur/capteur-manager.php">
+     <p class=textedroite>
+         <select name="maison">
+           <option class=formLabel>Choisissez le capteur à supprimer</option>
 
-      </select>
-  </p>
+           <?php  while ($donnees = $reponse->fetch()) {?>
+               <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['capt'])?> - <?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
+         <?php  }
+         $reponse->closeCursor(); ?>
+         </select>
+         <input class="boutton" name="btnSuppCapteur" type="submit" value="supprimer"/>
+    </form>
 
 
 <!-- LISTE CAPTEURS -->

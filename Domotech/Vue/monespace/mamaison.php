@@ -10,22 +10,19 @@
 
   $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]) ?>
 
+    <form method="post" action="Controleur/maison-manager.php">
+     <p class=textedroite>
+         <select name="delHabitation">
+           <option class=formLabel>Choisissez la maison à supprimer</option>
 
-   <form method="post" action="Controleur/maison-manager.php">
-    <p class=textedroite>
-        <label class=formLabel>Choisissez la maison à supprimer</label><br /><br />
+           <?php  while ($donnees = $reponse->fetch()) {?>
+               <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
+         <?php  }
+         $reponse->closeCursor(); ?>
+         </select>
+         <input class="boutton" name="btnSuppMaison" type="submit" value="supprimer"/>
+    </form>
 
-        <select name="delHabitation">
-          <?php  while ($donnees = $reponse->fetch()) {?>
-            <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
-        <?php  }
-        $reponse->closeCursor(); ?>
-        <input name="btnSuppMaison" type="submit" value="supprimer"/>
-
-   </form>
-
-        </select>
-    </p>
 <?php
 
 // LISTE DES MAISONS

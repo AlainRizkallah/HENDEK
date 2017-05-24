@@ -10,12 +10,8 @@ $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
         <div class="dropdown-content">
 
           <?php
-            while ($liste=$reponse->fetch()){
-              if(!isset( $_SESSION["idMaison"])){
-                $_SESSION["idMaison"] = $liste['ID'];
-              }
-              ?>
-              <button onclick= envoiePhP("maisonId",<?php echo($liste['ID']);?>,'Controleur/maison-manager.php') class="boutton"><?php echo($liste['nom']);?></button>
+            while ($liste=$reponse->fetch()){?>
+              <button onclick= showCapteurs(<?php //echo($liste['ID']);?>,'Controleur/display-capteur.php') class="boutton"><?php echo($liste['nom']);?></button>
           <?php } $reponse->closeCursor();?>
 
         </div>
