@@ -85,7 +85,7 @@
 
     function delUserSec($db,$id){
       try{
-          $stmt = $db->prepare('DELETE FROM `utilisateurs` WHERE id=:id');
+          $stmt = $db->prepare('DELETE FROM `utilisateurs` WHERE `id`=:id');
           $stmt->bindParam(':id',$id);
           $stmt->execute() or die(print_r($stmt->errorInfo(), true));
           $res="fait";

@@ -14,7 +14,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 function dispAddUserSec(){
-include("../Modele/db-utilisateur-manager.php");
+  include("../Modele/db-utilisateur-manager.php");
+  session_start();
   $resultat = addUserSec($db, $_POST['username'] ,$_POST['mdp'],$_POST['statut'], $_SESSION['idGroupe']);
   echo ($resultat);
   header ("Location: $_SERVER[HTTP_REFERER]" );
@@ -22,7 +23,7 @@ include("../Modele/db-utilisateur-manager.php");
 function dispDelUserSec(){
   include("../Modele/db-utilisateur-manager.php");
 
-  $resultat = delUserSec($db, $_POST['btnDelUserSec']) ;
+  $resultat = delUserSec($db, $_POST['delUserSec']) ;
   echo ($resultat);
 
   header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
