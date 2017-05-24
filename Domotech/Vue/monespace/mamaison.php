@@ -20,7 +20,7 @@
          <?php  }
          $reponse->closeCursor(); ?>
          </select>
-         <input class="boutton" name="btnSuppMaison" type="submit" value="supprimer"/>
+        &nbsp; <input class="bouttonBis" name="btnSuppMaison" type="submit" value="supprimer"/>
     </form>
 
 <?php
@@ -55,6 +55,6 @@
    </p>
 
 
-
-<input name="btnAddMaison" type="submit" value="ajouter la maison"/>
+<p class=center>
+<input class=bouttonBis name="btnAddMaison" type="submit" value="ajouter la maison"/></p>
 </form>

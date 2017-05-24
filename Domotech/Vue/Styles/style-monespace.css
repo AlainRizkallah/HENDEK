@@ -77,15 +77,28 @@ button {
   cursor: pointer;
 }
 
+.bouttonBis {
+  font-size:16px;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 9px;
+  border: none;
+  background-color: #5680A6;
+  color: #E0E2E5;
+  text-decoration: none;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
 select {
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
 
   background-color: #E0E2E5;
-
+  height:35px;
   padding: 12px;
   font-family: 'Montserrat', tahoma;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   color:  #5680A6;
   text-align: center;
   border-radius: 9px;

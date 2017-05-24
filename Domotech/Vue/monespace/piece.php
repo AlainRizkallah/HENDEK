@@ -20,7 +20,7 @@ $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>
       <?php  }
       $reponse->closeCursor(); ?>
       </select>
-      <input class="boutton" name="btnSuppSalle" type="submit" value="supprimer"/>
+      &nbsp;<input class="bouttonBis" name="btnSuppSalle" type="submit" value="supprimer"/>
  </form>
 
 
@@ -54,8 +54,8 @@ $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>
          <label class=formLabel for="nom">Nommez votre pièce</label><br /><br />
          <input type="text" name="nom" required />
      </p>
-    <br><br><br><br><br>
-<input class="boutton" name="btnAddSalle" type="submit" value="ajouter la pièce"/>
+    <br><br><br><br><br><p class=center>
+<input class="bouttonBis" name="btnAddSalle" type="submit" value="ajouter la pièce"/></p>
   </form>
 <?php $reponse->closeCursor(); ?>
 </div>
