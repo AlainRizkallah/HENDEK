@@ -11,7 +11,7 @@ include_once("Modele/db-capteur-manager.php");?>
   <h2>
   Liste de vos maisons
 </h2>
-<div class=textedroite></br></br>
+<div class=textedroite></br>
   <p class=center>
     <a class="boutton" href ="monespace.php?cible=monespace/mamaison.php" >ajouter/supprimer des maisons</a>
   </p>
@@ -26,7 +26,7 @@ include_once("Modele/db-capteur-manager.php");?>
   <h2>
     Liste de vos pièces
   </h2>
-  <div class=textedroite></br></br>
+  <div class=textedroite></br>
     <p class=center>
       <a class="boutton" href ="monespace.php?cible=monespace/piece.php" >ajouter/supprimer des pièces</a>
     </p>
@@ -40,7 +40,7 @@ include_once("Modele/db-capteur-manager.php");?>
   <h2>
     Liste de vos capteurs
   </h2>
-  <div class=textedroite></br></br>
+  <div class=textedroite></br>
     <p class=center>
       <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des capteurs</a>
     </p>
