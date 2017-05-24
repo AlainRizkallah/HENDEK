@@ -54,7 +54,7 @@ $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>
          <label class=formLabel for="nom">Nommez votre pièce</label><br /><br />
          <input type="text" name="nom" required />
      </p>
-    <br><br><br><br><br><p class=center>
+    <br><br><br><br><br><br><br><p class=center>
 <input class="bouttonBis" name="btnAddSalle" type="submit" value="ajouter la pièce"/></p>
   </form>
 <?php $reponse->closeCursor(); ?>
