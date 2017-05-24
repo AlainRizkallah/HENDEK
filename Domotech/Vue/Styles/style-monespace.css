@@ -53,19 +53,6 @@ body {
   overflow: hidden;
 
 }
-
-.boutton {
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 9px;
-    background-color: #E0E2E5;
-  color: #5680A6;
-  font-size: 0.8125em;
-  text-decoration: none;
-  box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-
-  cursor: pointer;
-}
 button {
     background-color: #E0E2E5;;
     color: white;
@@ -77,6 +64,17 @@ button {
 
 
 }
+.boutton {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 9px;
+  background-color: #E0E2E5;
+  color: #5680A6;
+  text-decoration: none;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
 select {
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
 
@@ -136,14 +134,14 @@ padding-bottom: 15px;
   margin-bottom: 40px;
   border-radius: 9px;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding:8px;
 }
 .login .boutton{
-  background-color: #5680A6;
-  color: white;
-  border: none;
-  border-radius: 9px;
-  cursor: pointer;
+border-radius: 5px;
+  width:  100%;
+}
+.login .dropdown{
+margin-top: 20px;
+
   width:  100%;
 }
 .barremenu{
@@ -317,7 +315,7 @@ input[type="password"]:focus {
 .dropdown-content button {
       text-decoration: none;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
-    margin-top: 10px;
+    margin-top: 4px;
     display: block;
 }
 

@@ -5,8 +5,10 @@
 if(isset($_SESSION["userID"])){
 echo('
 
+        <div class="conteneur">
+          <label>Bienvenue: <b>'.$_SESSION["name"].'</b></label>
+        </div>
 
-        <label>Bienvenue: <b>'.$_SESSION["name"].'</b></label>
 
         <button class="boutton" type="submit" name="btnDeco">Déconnexion</button>
 ');
