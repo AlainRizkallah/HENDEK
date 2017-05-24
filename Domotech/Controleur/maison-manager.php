@@ -2,7 +2,11 @@
 
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+  session_start();
+ if(isset($_POST['maisonId'])){
+   $_SESSION["idMaison"] = $_POST['maisonId'];
+   header('Location:'.$_SERVER['PHP_SELF']);
+ }
    if(isset($_POST['btnAddMaison'])){
      dispAddMaison();
   }

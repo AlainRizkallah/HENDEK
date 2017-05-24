@@ -1,6 +1,6 @@
-function showCapteurs(salle,page)
+function envoiePhP(variable,valeur,page)
 {
-    if (salle == "")
+    if (valeur === "")
     {
         return;
     }
@@ -29,5 +29,5 @@ function showCapteurs(salle,page)
     }
     xmlhttp.open("POST", page , true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send("salle="+salle);
+    xmlhttp.send(variable+"="+valeur);
 }

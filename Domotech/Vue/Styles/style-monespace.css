@@ -67,6 +67,7 @@ button {
   display: inline-block;
   padding: 6px 14px;
   border-radius: 9px;
+  border: none;
   background-color: #E0E2E5;
   color: #5680A6;
   text-decoration: none;
@@ -104,14 +105,15 @@ header{
   align-content:center;
 }
 aside,section{
-    margin-left: 10%;
-    margin-top: 60px;
 }
 .left{
   float:left;
 }
 section{
   margin-top: 50px;
+}
+secion .dropdown{
+  font-size: 2em;
 }
 .conteneur{
   margin-top: 15px;
@@ -295,7 +297,6 @@ input[type="password"]:focus {
     position: relative;
     display: inline-block;
     margin-bottom: 30px;
-    font-size: 1.5em;
     text-align: center;
 
 }
@@ -387,22 +388,22 @@ footer ul{
   width: 33%;
   text-align: center;
   list-style-type: none;
-  padding-left: 0px;
+  padding-left: 0;
 }
 aside{
   float: left;
-  margin: 0px;
+  margin: 0;
   width: 10%;
 }
 .conteneur-section{
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 @media screen and (max-width: 1400px){
   aside,section{
     display: block;
-    padding-top: 0px;
+    padding-top: 0;
       margin-left: 2%;
   }
 .barremenu a {
