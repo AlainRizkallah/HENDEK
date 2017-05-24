@@ -26,7 +26,7 @@ function envoiePhP(variable,valeur,page)
           document.getElementById("resultat").innerHTML = xmlhttp.responseText;
 
         }
-    }
+    };
     xmlhttp.open("POST", page , true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(variable+"="+valeur);

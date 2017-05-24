@@ -53,13 +53,15 @@ body {
 
 }
 button {
-    background-color: #E0E2E5;;
-    color: white;
-    padding: 8px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 9px;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 9px;
+  border: none;
+  background-color: #E0E2E5;
+  color: #5680A6;
+  text-decoration: none;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 
 
 }
@@ -104,8 +106,7 @@ h1{
 header{
   align-content:center;
 }
-aside,section{
-}
+
 .left{
   float:left;
 }
@@ -185,7 +186,8 @@ margin-top: 20px;
 
 /* Add a hover effect for buttons */
 button:hover {
-    opacity: 0.8;
+  color:   #E0E2E5;
+  background-color: #5680A6;
 }
 .boutton:hover {
   color:   #E0E2E5;
@@ -312,11 +314,9 @@ input[type="password"]:focus {
 }
 
 /* Links inside the dropdown */
-.dropdown-content button {
-      text-decoration: none;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+.dropdown-content .boutton {
+width: 100%;
     margin-top: 4px;
-    display: block;
 }
 
 
