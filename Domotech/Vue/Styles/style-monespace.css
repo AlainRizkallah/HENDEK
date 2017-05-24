@@ -206,7 +206,10 @@ button:hover {
   color:   #E0E2E5;
   background-color: #5680A6;
 }
-
+.bouttonBis:hover {
+  color:   #5680A6;
+  background-color: #E0E2E5;
+}
 
 input[type="text"] {
   width: 80%;
