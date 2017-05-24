@@ -17,7 +17,9 @@ if(isset($_SESSION['idMaison'])){
 
           <?php
             while ($liste=$resultat->fetch()){
-                $params = "salle=".$liste['ID'];
+                $nom =  str_replace(" ","_",$liste['sal']);
+                $params = "salle=".$liste['ID']."&salleNom=".$nom;
+              
               ?>
               <button onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
           <?php } $resultat->closeCursor();?>

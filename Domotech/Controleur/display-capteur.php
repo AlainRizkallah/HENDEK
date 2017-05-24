@@ -5,19 +5,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     include("../Modele/db-capteur-manager.php");
 
 
-    showAll($db,$_POST['salle']);
+    showAll($db,$_POST['salle'],$_POST['salleNom']);
   }
 }
 
 
 
-function showAll($db,$salle){
+function showAll($db,$salle,$nomSalle){
     $result = getCapteursList($db,$salle);
-
+  $nomSalle = str_replace("_"," ",$nomSalle);
     if ($result->rowcount()>0) {
       //DO::FETCH_ASSOC met le résultat dans un tableau associatif
 
-      echo '<h2>Salle '.$salle.'</h2>';
+      echo '<h2>'.$nomSalle.'</h2>';
       echo "<div class='boxCapteur'>";
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
