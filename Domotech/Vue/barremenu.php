@@ -1,3 +1,4 @@
+
 <?php
 if(isset($_SESSION["userID"])){ // est connecté
 echo('
@@ -28,3 +29,9 @@ echo('
 
 //<input  class="barre-menu-element" type="search" placeholder="Recherche">
 ?>
+<script>
+
+$(".barremenu .barre-menu-element").on('click', function() {
+    $(this).addClass('active').siblings().removeClass('active')
+});
+</script>

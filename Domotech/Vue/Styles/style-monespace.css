@@ -44,7 +44,9 @@ img{
   height: auto;
   vertical-align: sub;
 }
-
+.active{
+  background-color: red;
+}
 body {
   font-family: 'Montserrat', sans-serif;
   background: #0000;
@@ -168,7 +170,6 @@ margin-top: 20px;
   background-color: #E0E2E5;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: 9px;
 }
 .barremenu a {
