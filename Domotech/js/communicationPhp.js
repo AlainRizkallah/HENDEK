@@ -1,4 +1,4 @@
-function envoiePhP(variable,valeur,page)
+function envoiePhP(valeur,page)
 {
     if (valeur === "")
     {
@@ -29,5 +29,5 @@ function envoiePhP(variable,valeur,page)
     };
     xmlhttp.open("POST", page , true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send(variable+"="+valeur);
+    xmlhttp.send(valeur);
 }

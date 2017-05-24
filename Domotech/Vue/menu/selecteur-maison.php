@@ -5,7 +5,7 @@ $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
 //TODO personnaliser la fonction dans le onClick
  ?>
 <div class="dropdown" >
-      <button class="boutton">Choix de la Maison:</button>
+      <button class="boutton">Choix de la Maison ▼</button>
 
         <div class="dropdown-content">
 
@@ -14,8 +14,9 @@ $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
               if(!isset( $_SESSION["idMaison"])){
                 $_SESSION["idMaison"] = $liste['ID'];
               }
+              $params = "maisonId=".$liste['ID'];
               ?>
-              <button onclick= envoiePhP("maisonId",<?php echo($liste['ID']);?>,'Controleur/maison-manager.php') class="boutton"><?php echo($liste['nom']);?></button>
+              <button onclick= envoiePhP("<?php echo($params);?>",'Controleur/maison-manager.php') class="boutton"><?php echo($liste['nom']);?></button>
           <?php } $reponse->closeCursor();?>
 
         </div>

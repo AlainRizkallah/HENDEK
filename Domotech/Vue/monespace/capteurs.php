@@ -11,13 +11,15 @@ if(isset($_SESSION['idMaison'])){
 
 ?>
 <div class="dropdown left" >
-      <button class="boutton">Sélection de la Salle:</button>
+      <button class="boutton">Sélection de la Salle ▼</button>
 
         <div class="dropdown-content">
 
           <?php
-            while ($liste=$resultat->fetch()){?>
-              <button onclick= envoiePhP("salle",<?php echo($liste['ID']);?>,'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
+            while ($liste=$resultat->fetch()){
+                $params = "salle=".$liste['ID'];
+              ?>
+              <button onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
           <?php } $resultat->closeCursor();?>
 
         </div>
