@@ -25,8 +25,8 @@ $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>
 
 
   </p>
-  
 
+test
 <!-- LISTE SALLES -->
 
 <?php include ('Vue/listepieces.php') ?>
