@@ -9,8 +9,8 @@ $reponse = getUserList($db,  $_SESSION["idGroupe"]); ?>
  <form method="post" action="Controleur/userSec-manager.php">
   <p class=textedroite>
 
-      <select name="delUserSec">
-        <option class=formLabel>Choisissez le compte à supprimer</option>
+      <select name="delUserSec" required>
+        <option class=formLabel value="" disabled selected>Choisissez le compte à supprimer</option>
 
         <?php  $donnees=$reponse->fetch(); // ligne pour ne pas afficher l'utilisateur principal dans le menu déroulant
         while ($donnees = $reponse->fetch()) {?>
@@ -42,8 +42,8 @@ $reponse = getUserList($db,  $_SESSION["idGroupe"]); ?>
     <label class=formLabel>Mot de Passe</label>
     <input type="password" placeholder="Mot de Passe" name="mdp" required> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-  <select name="statut">
-      <option class=formLabel>Statut</option>
+  <select name="statut" required>
+      <option class=formLabel value="" disabled selected>Statut</option>
         <option value="Utilisateur secondaire">Utilisateur secondaire</option>
         <option value="Enfant">Enfant</option>
         <option value="">...</option></br><br><br>

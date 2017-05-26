@@ -19,8 +19,8 @@ $reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>
 
     <form method="post" action="Controleur/capteur-manager.php">
      <p class=textedroite>
-         <select name="maison">
-           <option class=formLabel>Choisissez le capteur à supprimer</option>
+         <select name="maison" required>
+           <option class=formLabel value="" disabled selected>Choisissez le capteur à supprimer</option>
 
            <?php  while ($donnees = $reponse->fetch()) {?>
                <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['capt'])?> - <?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
@@ -43,8 +43,8 @@ $reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>
   <form method="post" action="Controleur/capteur-manager.php">
     <p class=textegauche>
 
-        <select name="maison">
-          <option class=formLabel>Choisissez votre maison</option>
+        <select name="maison" required>
+          <option class=formLabel value="" disabled selected>Choisissez votre maison</option>
           <?php $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
 
           while ($donnees = $reponse->fetch()) {?>                                       <!-- affiche les maisons presente dans la BDD -->
@@ -55,8 +55,8 @@ $reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>
     </p>
      <p class="textedroite">
 
-         <select name="piece">
-           <option class=formLabel>Choisissez une pièce</option>
+         <select name="piece" required>
+           <option class=formLabel value="" disabled selected>Choisissez une pièce</option>
            <?php $reponse = getSalleList($db,$_SESSION['idGroupe']);
 
            while ($donnees = $reponse->fetch()) {?>
@@ -65,8 +65,8 @@ $reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>
          </select>
      </p></br><br><br><br>
      <p class="textegauche">
-         <select name="type">
-            <option class=formLabel>Choisissez un type de capteur</option>
+         <select name="type" required>
+            <option class=formLabel value="" disabled selected>Choisissez un type de capteur</option>
              <option value="Vidéosurveillance">Vidéosurveillance</option>
              <option value="Luminosité">Luminosité</option>
              <option value="Présence">Présence</option>

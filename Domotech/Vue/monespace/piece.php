@@ -12,8 +12,8 @@ $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>
  <form method="post" action="Controleur/salle-manager.php">
   <p class=textedroite>
 
-      <select name="salle">
-        <option class=formLabel>Choisissez la pièce à supprimer</option>
+      <select name="salle" required>
+        <option class=formLabel value="" disabled selected>Choisissez la pièce à supprimer</option>
 
         <?php  while ($donnees = $reponse->fetch()) {?>
           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
@@ -43,8 +43,8 @@ $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>
   </h2>
   <form method="post" action="Controleur/salle-manager.php">
      <p class="textegauche">
-         <select name="maison">
-           <option class=formLabel for="maison">Choisissez une maison</option>
+         <select name="maison" required>
+           <option class=formLabel value="" disabled selected>Choisissez une maison</option>
            <?php while ($donnees = $reponse->fetch()) {?>                                       <!-- affiche les maisons presente dans la BDD -->
              <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
           <?php }?>

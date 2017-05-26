@@ -12,8 +12,8 @@
 
     <form method="post" action="Controleur/maison-manager.php">
      <p class=textedroite>
-         <select name="delHabitation">
-           <option class=formLabel>Choisissez la maison à supprimer</option>
+         <select name="delHabitation" required>
+           <option class=formLabel value="" disabled selected>Choisissez la maison à supprimer</option>
 
            <?php  while ($donnees = $reponse->fetch()) {?>
                <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
