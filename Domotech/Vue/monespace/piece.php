@@ -25,6 +25,7 @@ $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>
 
 
   </p>
+  
 
 <!-- LISTE SALLES -->
 
