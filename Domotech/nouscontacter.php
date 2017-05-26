@@ -2,7 +2,7 @@
 
     <section>
       <div class="center">
-        <?php include ('Vue/contact.php');?>
+        <?php include ('Vue/register.php');?>
 
       </div>
     </section>
