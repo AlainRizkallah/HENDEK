@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 21 mai 2017 à 19:50
+-- Généré le :  lun. 29 mai 2017 à 21:13
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -64,13 +64,6 @@ CREATE TABLE `capteur` (
   `temps` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Déchargement des données de la table `capteur`
---
-
-INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`, `temps`) VALUES
-(7, 5, 9, 'Présence', 0, 0, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -105,44 +98,57 @@ CREATE TABLE `habitation` (
   `ID` int(40) NOT NULL,
   `adresse` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `superficie` int(40) NOT NULL,
-  `nom` text COLLATE utf8_unicode_ci NOT NULL
+  `nom` text COLLATE utf8_unicode_ci NOT NULL,
+  `idGroupe` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `habitation`
 --
 
-INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`) VALUES
-(5, '10 rue de Jupiter, Mars', 120, 'Home');
+INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALUES
+(1, 'd', 0, 'BLOC', 2);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message`
+-- Structure de la table `messageext`
 --
 
-CREATE TABLE `message` (
-  `texte` text NOT NULL,
-  `date` date NOT NULL,
-  `id` int(11) NOT NULL,
-  `type` int(11) NOT NULL,
-  `idSender` int(11) NOT NULL,
-  `idDest` int(11) NOT NULL
+CREATE TABLE `messageext` (
+  `nom` varchar(30) NOT NULL,
+  `prenom` varchar(30) NOT NULL,
+  `mail` text NOT NULL,
+  `tel` int(11) NOT NULL,
+  `objet` varchar(30) NOT NULL,
+  `message` text NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `messagerie`
+-- Structure de la table `messageint`
 --
 
-CREATE TABLE `messagerie` (
-  `idSender` int(11) NOT NULL,
+CREATE TABLE `messageint` (
   `idDest` int(11) NOT NULL,
-  `message` text COLLATE utf8_unicode_ci NOT NULL,
-  `date` varchar(9) COLLATE utf8_unicode_ci NOT NULL,
-  `type` varchar(40) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `idSend` int(11) NOT NULL,
+  `objet` varchar(30) NOT NULL,
+  `message` text NOT NULL,
+  `date` date NOT NULL,
+  `ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `messageint`
+--
+
+INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`) VALUES
+(2, 2, 'bonjour', 'Bonjour Thibault, nous testons ici quelque chose.', '0000-00-00', 11),
+(2, 2, 'deuxieme message', 'Bonjour, ceci est le deuxieme message', '0000-00-00', 12),
+(3, 2, 'bonjour fiston', 'salut fiston bienvenue ici !', '0000-00-00', 13),
+(2, 2, 'v', 'v', '0000-00-00', 14);
 
 -- --------------------------------------------------------
 
@@ -161,7 +167,8 @@ CREATE TABLE `salle` (
 --
 
 INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
-(9, 5, 'Chambre');
+(3, 1, 'salle de bain'),
+(4, 1, 'minibloc');
 
 -- --------------------------------------------------------
 
@@ -177,15 +184,18 @@ CREATE TABLE `utilisateurs` (
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'normal'
+  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'normal',
+  `idGroupe` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 0, '4568', 'alain.riz@isep.fr', 'alain', '', 'normal');
+INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`) VALUES
+('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '158885554', 'zaea.eaz@ere.fr', 'alain', 'al', 'utilisateur principal', 1),
+('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 'tibo', 'tibo', 'utilisateur principal', 2),
+('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3);
 
 --
 -- Index pour les tables déchargées
@@ -203,6 +213,13 @@ ALTER TABLE `capteur`
 --
 ALTER TABLE `habitation`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `messageint`
+--
+ALTER TABLE `messageint`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `idMessage` (`ID`);
 
 --
 -- Index pour la table `salle`
@@ -227,22 +244,27 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT pour la table `messageint`
+--
+ALTER TABLE `messageint`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
 ALTER TABLE `salle`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
