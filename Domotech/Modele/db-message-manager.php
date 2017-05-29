@@ -48,7 +48,9 @@ return $res;
 function getMessagesList($db , $idDest){
 $reponse = $db->prepare('SELECT messageint.ID ID , messageint.objet objet , messageint.message message , utilisateurs.nom nom FROM `messageint`
   JOIN utilisateurs ON utilisateurs.id=messageint.idSend
-  WHERE idDest = :idDest');
+  WHERE idDest = :idDest
+  ORDER BY ID DESC'
+);
 $reponse->bindParam(':idDest', $idDest);
 $reponse->execute();
   return $reponse;
