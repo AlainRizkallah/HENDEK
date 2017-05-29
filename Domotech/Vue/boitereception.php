@@ -14,10 +14,6 @@ function toggle_div(bouton, id) { // On déclare la fonction toggle_div qui pren
 }
 </script>
 
-
-</body>
-</html>
-
 <?php
 $resultat = getMessagesList($db , $_SESSION['userID']);
   while ($donnees = $resultat->fetch()){?>
