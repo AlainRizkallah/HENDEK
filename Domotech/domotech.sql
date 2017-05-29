@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
--- Client :  localhost
--- Généré le :  Lun 29 Mai 2017 à 09:10
--- Version du serveur :  5.7.11
--- Version de PHP :  5.6.18
+-- Hôte : localhost
+-- Généré le :  Dim 21 mai 2017 à 19:50
+-- Version du serveur :  10.1.21-MariaDB
+-- Version de PHP :  7.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -62,6 +64,13 @@ CREATE TABLE `capteur` (
   `temps` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Déchargement des données de la table `capteur`
+--
+
+INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`, `temps`) VALUES
+(7, 5, 9, 'Présence', 0, 0, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -96,39 +105,44 @@ CREATE TABLE `habitation` (
   `ID` int(40) NOT NULL,
   `adresse` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `superficie` int(40) NOT NULL,
-  `nom` text COLLATE utf8_unicode_ci NOT NULL,
-  `idGroupe` int(11) NOT NULL
+  `nom` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Déchargement des données de la table `habitation`
+--
+
+INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`) VALUES
+(5, '10 rue de Jupiter, Mars', 120, 'Home');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message ext`
+-- Structure de la table `message`
 --
 
-CREATE TABLE `message ext` (
-  `nom` varchar(30) NOT NULL,
-  `prenom` varchar(30) NOT NULL,
-  `mail` text NOT NULL,
-  `tel` int(11) NOT NULL,
-  `objet` varchar(30) NOT NULL,
-  `message` text NOT NULL,
-  `date` date NOT NULL
+CREATE TABLE `message` (
+  `texte` text NOT NULL,
+  `date` date NOT NULL,
+  `id` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `idSender` int(11) NOT NULL,
+  `idDest` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message int`
+-- Structure de la table `messagerie`
 --
 
-CREATE TABLE `message int` (
+CREATE TABLE `messagerie` (
+  `idSender` int(11) NOT NULL,
   `idDest` int(11) NOT NULL,
-  `idSend` int(11) NOT NULL,
-  `objet` varchar(30) NOT NULL,
-  `message` text NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `message` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` varchar(9) COLLATE utf8_unicode_ci NOT NULL,
+  `type` varchar(40) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -143,11 +157,11 @@ CREATE TABLE `salle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `salle`
+-- Déchargement des données de la table `salle`
 --
 
 INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
-(3, 1, 'salle de bain');
+(9, 5, 'Chambre');
 
 -- --------------------------------------------------------
 
@@ -163,19 +177,18 @@ CREATE TABLE `utilisateurs` (
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'normal',
-  `idGroupe` int(11) DEFAULT NULL
+  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'normal'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `utilisateurs`
+-- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '158885554', 'zaea.eaz@ere.fr', 'alain', 'al', 'normal', 1);
+INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`) VALUES
+('alain', '0cc175b9c0f1b6a831c399e269772661', 0, '4568', 'alain.riz@isep.fr', 'alain', '', 'normal');
 
 --
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
@@ -207,29 +220,30 @@ ALTER TABLE `utilisateurs`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
 ALTER TABLE `salle`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
