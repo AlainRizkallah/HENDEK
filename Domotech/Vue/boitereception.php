@@ -23,9 +23,9 @@ $resultat = getMessagesList($db , $_SESSION['userID']);
   while ($donnees = $resultat->fetch()){?>
   <u><i>  <?php echo $donnees['objet']; ?></i> de <b><?php echo $donnees['nom'];?></b></u>
 
-<button type="button" onclick="toggle_div(this,'contenu');">afficher le message</button>
+<button class="bouttonMSG" onclick="toggle_div(this, '<?php echo "".$donnees['ID']?>');">afficher le message</button>
 <br><br>
-<div id='contenu' style="display:none;">
+<div id='<?php echo "".$donnees['ID']?>' style="display:none;">
   <?php echo ($donnees['message'])?><br><br><br>
 </div>
   <br><?php
