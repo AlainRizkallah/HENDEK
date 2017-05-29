@@ -4,7 +4,7 @@ require_once("connexion.php");
 
   function sendMessageExt($db,$mail,$message,$nom, $prenom, $tel, $objet){
     try{
-  $stmt =   $db->prepare('INSERT INTO `message ext` (`mail`,`message`,`nom`, `prenom`, `tel`, `objet`) VALUES (:mail,:message, :nom, :prenom, :tel, :objet) ');
+  $stmt =   $db->prepare('INSERT INTO `messageext` (`mail`,`message`,`nom`, `prenom`, `tel`, `objet`) VALUES (:mail,:message, :nom, :prenom, :tel, :objet) ');
 
   $stmt ->bindParam(':nom',$nom);
   $stmt ->bindParam(':prenom',$prenom);
@@ -26,7 +26,7 @@ catch (Exception $e)
 
 function sendMessageInt($db,$idSend, $idDest , $objet, $message){
 	try{
-$stmt =   $db->prepare('INSERT INTO `message int` (`idSend`,`idDest`,`objet`, `message`) VALUES (:idSend, :idDest, :objet, :message) ');
+$stmt =   $db->prepare('INSERT INTO `messageint` (`idSend`,`idDest`,`objet`, `message`) VALUES (:idSend, :idDest, :objet, :message) ');
 
 
 $stmt ->bindParam(':idSend',$idSend);
@@ -45,6 +45,12 @@ catch (Exception $e)
 return $res;
 }
 
-
-
+function getMessagesList($db , $idDest){
+$reponse = $db->prepare('SELECT messageint.objet objet , messageint.message message , utilisateurs.nom nom FROM `messageint`
+  JOIN utilisateurs ON utilisateurs.id=messageint.idSend
+  WHERE idDest = :idDest');
+$reponse->bindParam(':idDest', $idDest);
+$reponse->execute();
+  return $reponse;
+}
 ?>
