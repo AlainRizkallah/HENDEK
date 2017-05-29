@@ -202,15 +202,17 @@ margin-top: 20px;
 .barre-menu-element{
   text-align: center;
   float:left;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 1px;
+  margin-right: 1px;
   padding:20px;
   border-radius: 9px;
   text-decoration: none;
   font-size: 1.5em;
   color: #5680A6;
 }
-
+.n8{
+    width: 14%;
+}
 /* Add a hover effect for buttons */
 button:hover {
   color:   #E0E2E5;
