@@ -5,9 +5,12 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="Vue/Styles/style-monespace.css" >
   <title>Domotech</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
   <body>
     <header>
+
   <?php include ('Controleur/session-manager.php');?>
      <h1 class="titre"><a href=.>Domotech</a> <img src=Vue/Image/logo-domotech.png class="logo"></img></h1>
 <?php include("Vue/barremenu.php");?>
@@ -84,6 +87,12 @@
 </section>
 
 <?php include("Vue/footer.html"); ?>
+<script>
 
+$('.barre-menu-element').click(function (e) {
+$(this).addClass('active').siblings().removeClass('active');
+
+});
+</script>
   </body>
 </html>

@@ -161,13 +161,14 @@ margin-top: 20px;
 
   width:  100%;
 }
+
 .barremenu{
+  background-color: #E0E2E5;
   margin-top: 20px;
   display: inline-flex;
   width: 100%;
   float: left;
   font-family: "SB";
-  background-color: #E0E2E5;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
   border-radius: 9px;
@@ -193,7 +194,6 @@ margin-top: 20px;
   padding:20px;
   border-radius: 9px;
   text-decoration: none;
-  background-color: #E0E2E5;
   font-size: 1.5em;
   color: #5680A6;
 }
@@ -416,6 +416,8 @@ aside{
   margin-top: 0;
   padding-top: 0;
 }
+
+
 
 @media screen and (max-width: 1400px){
   aside,section{
