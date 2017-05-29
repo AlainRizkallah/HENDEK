@@ -6,7 +6,7 @@ include_once("Modele/db-salle-manager.php");
 <script  async defer src="js/communicationPhp.js"></script>
 <?php
 if(isset($_SESSION['idMaison'])){
-  $resultat=getSalleList($db, $_SESSION['idMaison']);
+  $resultat=getSallesList($db, $_SESSION['idMaison']);
 }
 
 ?>
@@ -19,7 +19,7 @@ if(isset($_SESSION['idMaison'])){
             while ($liste=$resultat->fetch()){
                 $nom =  str_replace(" ","_",$liste['sal']);
                 $params = "salle=".$liste['ID']."&salleNom=".$nom;
-              
+
               ?>
               <button onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
           <?php } $resultat->closeCursor();?>
