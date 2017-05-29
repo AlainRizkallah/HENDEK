@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1
+-- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Mar 23 Mai 2017 à 10:05
--- Version du serveur :  10.1.21-MariaDB
--- Version de PHP :  7.1.1
+-- Client :  localhost
+-- Généré le :  Lun 29 Mai 2017 à 09:10
+-- Version du serveur :  5.7.11
+-- Version de PHP :  5.6.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -103,31 +103,32 @@ CREATE TABLE `habitation` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message`
+-- Structure de la table `message ext`
 --
 
-CREATE TABLE `message` (
-  `texte` text NOT NULL,
-  `date` date NOT NULL,
-  `id` int(11) NOT NULL,
-  `type` int(11) NOT NULL,
-  `idSender` int(11) NOT NULL,
-  `idDest` int(11) NOT NULL
+CREATE TABLE `message ext` (
+  `nom` varchar(30) NOT NULL,
+  `prenom` varchar(30) NOT NULL,
+  `mail` text NOT NULL,
+  `tel` int(11) NOT NULL,
+  `objet` varchar(30) NOT NULL,
+  `message` text NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `messagerie`
+-- Structure de la table `message int`
 --
 
-CREATE TABLE `messagerie` (
-  `idSender` int(11) NOT NULL,
+CREATE TABLE `message int` (
   `idDest` int(11) NOT NULL,
-  `message` text COLLATE utf8_unicode_ci NOT NULL,
-  `date` varchar(9) COLLATE utf8_unicode_ci NOT NULL,
-  `type` varchar(40) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `idSend` int(11) NOT NULL,
+  `objet` varchar(30) NOT NULL,
+  `message` text NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -218,7 +219,7 @@ ALTER TABLE `capteur`
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --

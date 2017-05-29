@@ -1,13 +1,13 @@
 <div class="contact">
-  <?php  include("Controleur/traiterMessage.php"); ?>
-  <form method="POST">
+
+  <form method="POST" action= 'Controleur/traiterMessage.php'>
       <div class="container">
         <label><b>Nom</b></label>
         <input type="text" placeholder="Nom" id="nom" name="nom" required>
         <label><b>Prénom</b></label>
         <input type="text" placeholder="Prénom" id="prenom" name="prenom" required>
         <label><b>E-mail</b></label>
-        <input type="email" placeholder="someone@example.com" id="email" name="email" required>
+        <input type="email" placeholder="someone@example.com" id="mail" name="mail" required>
         <label><b>Téléphone</b></label>
         <input type="tel" placeholder="votre numéro de téléphone" id="tel" name="tel" >
         <label><b>Message</b></label>
