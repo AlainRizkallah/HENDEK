@@ -75,9 +75,6 @@
         else if ($_GET['cible'] == "monespace/effecteurs.php"){
           include("Vue/monespace/effecteurs.php");
     }
-        else if ($_GET['cible'] == "monespace/messagerie.php"){
-          include("Vue/monespace/messagerie.php");
-}
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");
   }
@@ -88,11 +85,14 @@
 
 <?php include("Vue/footer.html"); ?>
 <script>
-
-$('.barre-menu-element').click(function (e) {
-$(this).addClass('active').siblings().removeClass('active');
-
+currpage = $(location).attr('href');
+$('.barre-menu-element').each(function(){
+  lien  = $(this).attr('href');
+  if (currpage.indexOf(lien) >= 0){
+    $(this).addClass('active');
+  }
 });
+
 </script>
   </body>
 </html>
