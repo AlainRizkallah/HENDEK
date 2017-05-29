@@ -225,6 +225,19 @@ input[type="text"] {
   transition: background .3s ease;
 }
 
+textarea {
+  width: 80%;
+  border: 1px solid #cfcfcf;
+  background: #EFF2F5;
+  height: 150px;
+  font-size: 0.75em;
+  padding: 5px;
+  outline: none;
+  border-radius: 3px;
+  margin-bottom: 7px;
+  transition: background .3s ease;
+}
+
 input[type="text"]:focus {
   background: #f0f0f0;
 }
