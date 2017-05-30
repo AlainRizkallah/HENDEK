@@ -27,7 +27,7 @@ $reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>
          <?php  }
          $reponse->closeCursor(); ?>
          </select>
-        &nbsp; <input class="bouttonBis" name="btnSuppCapteur" type="submit" value="supprimer"/>
+        &nbsp; <input class="bouttonBis" name="btnSuppCapteur" type="submit" onclick="if(!confirm('êtes vous sur de vouloir supprimer ce capteur ? cette action sera définitive.')) return false;" value="supprimer"/>
     </form>
 
 

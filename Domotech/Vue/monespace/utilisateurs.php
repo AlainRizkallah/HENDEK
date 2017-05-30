@@ -19,7 +19,7 @@ $reponse = getUserList($db,  $_SESSION["idGroupe"]); ?>
       $reponse->closeCursor(); ?>
 
             </select>
-    &nbsp;<input class=bouttonBis name="btnDelUserSec" type="submit" value="supprimer"/>
+    &nbsp;<input class=bouttonBis name="btnDelUserSec" type="submit" onclick="if(!confirm('êtes vous sur de vouloir supprimer cet utilisateur ? cette action sera définitive.')) return false;" value="supprimer"/>
  </form>
 
   </p>

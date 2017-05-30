@@ -20,7 +20,7 @@
          <?php  }
          $reponse->closeCursor(); ?>
          </select>
-        &nbsp; <input class="bouttonBis" name="btnSuppMaison" type="submit" value="supprimer"/>
+        &nbsp; <input class="bouttonBis" name="btnSuppMaison" type="submit" onclick="if(!confirm('êtes vous sur de vouloir supprimer cette maison ? cette action sera définitive.')) return false;" value="supprimer"/>
     </form>
 
 <?php
