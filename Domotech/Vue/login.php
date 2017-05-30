@@ -13,7 +13,7 @@ echo('
         <button class="boutton" type="submit" name="btnDeco">Déconnexion</button>
 ');
 include_once 'Vue/menu/selecteur-maison.php';?>
-<a class=boutton href=monespace.php?cible=monespace/messagerie.php > Messagerie privée </a>
+<div class="dropdown" ><a class=bouttonBis href=monespace.php?cible=monespace/messagerie.php >✉ Messagerie privée </a></div>
 
 <?php
 }else{

@@ -106,7 +106,8 @@ button {
   cursor: pointer;
 }
 
-.grosBouton { /* FAIRE EN SORTE QU'IL SOIT CENTRÉ SUR LA PAGE - RESPONSIVENESS */ 
+
+.grosBouton { /* FAIRE EN SORTE QU'IL SOIT CENTRÉ SUR LA PAGE - RESPONSIVENESS */
   font-family: "SB";
   font-size:100%;
   color: #5680A6;
