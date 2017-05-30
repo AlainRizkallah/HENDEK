@@ -45,7 +45,7 @@ img{
   vertical-align: sub;
 }
 .active{
-  background-color: red;
+  background-color: rgb(7, 139, 91);
 }
 body {
   font-family: 'Montserrat', sans-serif;
