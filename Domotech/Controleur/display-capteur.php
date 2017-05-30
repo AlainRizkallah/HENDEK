@@ -17,7 +17,7 @@ function showAll($db,$salle,$nomSalle){
     if ($result->rowcount()>0) {
       //DO::FETCH_ASSOC met le résultat dans un tableau associatif
 
-      echo '<h2>'.$nomSalle.'</h2>';
+      echo '<span class=boxtitle>'.$nomSalle.'</span class=boxtitle> <br><br>';
       echo "<div class='boxCapteur'>";
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {

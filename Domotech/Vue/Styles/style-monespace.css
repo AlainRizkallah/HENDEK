@@ -19,6 +19,7 @@ h2 {
   color: #5680A6;
 }
 
+
 .titre{
   text-decoration: none;
   text-align: center;
@@ -100,6 +101,21 @@ button {
   border: none;
   background-color: #5680A6;
   color: #E0E2E5;
+  text-decoration: none;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.grosBouton { /* FAIRE EN SORTE QU'IL SOIT CENTRÉ SUR LA PAGE - RESPONSIVENESS */ 
+  font-family: "SB";
+  font-size:100%;
+  color: #5680A6;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 9px;
+  border-style:solid;
+  border-width:1px;
+  background-color: #E0E2E5;
   text-decoration: none;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -277,6 +293,7 @@ input[type="password"]:focus {
 
 .boxCapteur{
   padding:10px;
+
 
 }
 .boxElementMarche{

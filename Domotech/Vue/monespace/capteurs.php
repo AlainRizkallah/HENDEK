@@ -9,9 +9,9 @@ if(isset($_SESSION['idMaison'])){
   $resultat=getSallesList($db, $_SESSION['idMaison']);
 }
 
-?>
+?><section>
 <div class="dropdown left" >
-      <button class="boutton">Sélection de la Salle ▼</button>
+    <h2> <span class=center> <button class="grosBouton">▼ Sélectionnez une salle pour en afficher ses capteurs ▼</button> </span></h2>
 
         <div class="dropdown-content">
 
@@ -25,9 +25,9 @@ if(isset($_SESSION['idMaison'])){
           <?php } $resultat->closeCursor();?>
 
         </div>
-
 </div>
-<div class=" center">
-    <h2 id="nomSalle"></h2>
+<div class="center">
+    <h3 id="nomSalle"></h3>
     <div id="resultat" ></div>
 </div>
+</section>
