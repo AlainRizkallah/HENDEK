@@ -20,7 +20,7 @@ $reponse = getSalleList($db,  $_SESSION["idGroupe"]); ?>
       <?php  }
       $reponse->closeCursor(); ?>
       </select>
-      &nbsp;<input class="bouttonBis" name="btnSuppSalle" type="submit" onclick="if(!confirm('êtes vous sur de vouloir supprimer cette pièce ? cette action sera définitive.')) return false;" value="supprimer"/>
+      &nbsp;<input class="bouttonBis" name="btnSuppSalle" type="submit" onclick="if(!confirm('Êtes vous sur de vouloir supprimer cette pièce ?\nCette action sera définitive.')) return false;" value="supprimer"/>
  </form>
 
 
