@@ -302,10 +302,10 @@ input[type="password"]:focus {
 }
 
 .textegauche input[type="text"]{
-  width : 150px;
+  width : 100%;
 }
 .textedroite input[type="text"]{
-  width : 150px;
+  width : 75%;
 }
 
 .checkbox {
@@ -371,6 +371,12 @@ input[type="password"]:focus {
   float:left;
 
 }
+
+.textegauche .formLabel {
+  width: 100%;
+
+}
+
 
 .textecentre{
   text-align: center;
