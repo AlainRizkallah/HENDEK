@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
      dispAddMaison();
   }
 
-  if(isset($_POST['btnSuppMaison'])){
+  if( (isset($_POST['btnSuppMaison'])) or isset($_POST['delHabitation'])  ){
     dispSuppMaison();
  }
 
