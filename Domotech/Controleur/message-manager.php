@@ -42,6 +42,6 @@ function supprInt(){
   include("../Modele/db-message-manager.php");
   $resultat = delMessageInt($db , $_POST['delMsgInt']);
   echo ($resultat);
-  //header ("Location: $_SERVER[HTTP_REFERER]" );
+  header ("Location: $_SERVER[HTTP_REFERER]" );
 }
 ?>

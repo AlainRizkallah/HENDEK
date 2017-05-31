@@ -5,7 +5,7 @@ $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
 //TODO personnaliser la fonction dans le onClick
  ?>
 <div class="dropdown" >
-      <button class="boutton">Choix de la Maison ▼</button>
+      <button class="boutton">▼ Choix de la Maison ▼</button>
 
         <div class="dropdown-content">
 
