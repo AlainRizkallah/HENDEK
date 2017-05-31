@@ -27,7 +27,7 @@ if(isset($_SESSION['idMaison'])){
         </div>
 </div>
 <div class="center">
-    <h3 id="nomSalle"></h3>
+    <h4 id="nomSalle"></h4>
     <div id="resultat" ></div>
 </div>
 </section>
