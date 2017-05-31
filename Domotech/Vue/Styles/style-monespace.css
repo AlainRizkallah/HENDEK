@@ -268,7 +268,7 @@ button:hover {
 }
 
 
-input[type="text"] {
+input[type="text"] , input[type=password] {
   width: 80%;
   border: 1px solid #cfcfcf;
   background: #EFF2F5;
@@ -314,7 +314,7 @@ input[type="password"]:focus {
   transition: background .3s ease;
   box-shadow: none;
 
-  
+
 }
 
 .textegauche input[type="text"]{

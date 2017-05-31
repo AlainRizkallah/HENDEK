@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
      dispAddUserSec();
   }
 
-  if(isset($_POST['btnDelUserSec'])){
+  if((isset($_POST['btnDelUserSec'])) or (isset($_POST['delUserSec'])) ){
     dispDelUserSec();
  }
 

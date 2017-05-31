@@ -1,55 +1,39 @@
+<div class=textedroite>
 <h2>
-   Liste des utilisateurs
+   Liste des utilisateurs secondaires
 </h2><br>
 <?php
 // SUPPR CAPTEUR
 include_once("Modele/db-utilisateur-manager.php");
-$reponse = getUserList($db,  $_SESSION["idGroupe"]); ?>
-
- <form method="post" action="Controleur/userSec-manager.php">
-  <p class=textedroite>
-
-      <select name="delUserSec" required>
-        <option class=formLabel value="" disabled selected>Choisissez le compte à supprimer</option>
-
-        <?php  $donnees=$reponse->fetch(); // ligne pour ne pas afficher l'utilisateur principal dans le menu déroulant
-        while ($donnees = $reponse->fetch()) {?>
-          <option value=<?php echo($donnees['id'])?>><?php echo($donnees['identifiant'])?></option>
-      <?php  }
-      $reponse->closeCursor(); ?>
-
-            </select>
-    &nbsp;<input class=bouttonBis name="btnDelUserSec" type="submit" onclick="if(!confirm('Êtes vous sur de vouloir supprimer cet utilisateur ?\nCette action sera définitive.')) return false;" value="supprimer"/>
- </form>
-
-  </p>
-
-
-<!-- LISTE CAPTEURS -->
-
-<?php include ('Vue/listeusers.php') ?>
+include ('Vue/listeusers.php') ?>
 
 <br><br><br>
+</div>
 
 <!-- TODO LISTE + SUPPRIMER UTILISATEUR -->
+<div class=textegauche>
+<h2>Ajouter un utilisateur</h2>
 
-<h2>Ajouter un utilisateur</h2><br>
 
-<div class=register>
   <form method="post" action="Controleur/userSec-manager.php">
-    <label class=formLabel>Identifiant</label>
-    <input type="text" placeholder="Identifiant" name="username" required> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <label class=formLabel>Mot de Passe</label>
-    <input type="password" placeholder="Mot de Passe" name="mdp" required> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p>
+    <p class=formLabel><label for=username>Identifiant</label></p>
+      <input type="text" name="username" required></p>
+<p>
+    <p class=formLabel><label for=mdp>Mot de Passe</label></p>
+    <input type="password" name="mdp" required></p>
 
+<p>
+  <p class=formLabel><label for=statut>Statut</label></p>
   <select name="statut" required>
-      <option class=formLabel value="" disabled selected>Statut</option>
+      <option class=formLabel value="" disabled selected></option>
         <option value="Utilisateur secondaire">Utilisateur secondaire</option>
         <option value="Enfant">Enfant</option>
         <option value="">...</option></br><br><br>
-   </select>
-</div>
+   </select></p>
+
 
       <p class=textecentre>  <input class=bouttonBis name="btnAddUserSec" type="submit" value="ajouter l'utilisateur"/></p>
 
 </form>
+</div>
