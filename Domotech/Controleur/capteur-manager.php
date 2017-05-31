@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
      dispAddCapteur();
   }
 
-  if(isset($_POST['btnSuppCapteur'])){
+  if((isset($_POST['btnSuppCapteur']) or (isset($_POST['maison'])))){
     dispSuppCapteur();
  }
 
@@ -15,7 +15,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 function dispAddCapteur(){
   include("../Modele/db-capteur-manager.php");
-  $resultat = addCapteur($db,$_POST['piece'],$_POST['maison'],$_POST['type']);
+  session_start();
+  $resultat = addCapteur($db,$_POST['piece'],$_SESSION['idMaison'],$_POST['type']);
   echo ($resultat);
   header ("Location: $_SERVER[HTTP_REFERER]" );
 }

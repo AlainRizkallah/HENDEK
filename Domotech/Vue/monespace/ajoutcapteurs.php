@@ -1,80 +1,57 @@
-
-<!-- TODO ajouter option retirer capteur -->
-
-
-
-<h2>
-   Liste des capteurs
-</h2>
-
-
-<?php
-include_once("Modele/db-capteur-manager.php");
-include_once("Modele/db-maison-manager.php");
-include_once("Modele/db-salle-manager.php");
-// SUPPR CAPTEUR
-
-$reponse = getCapteurList($db,  $_SESSION["idGroupe"]); ?>
-
-
-    <form method="post" action="Controleur/capteur-manager.php">
-     <p class=textedroite>
-         <select name="maison" required>
-           <option class=formLabel value="" disabled selected>Choisissez le capteur à supprimer</option>
-
-           <?php  while ($donnees = $reponse->fetch()) {?>
-               <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['capt'])?> - <?php echo($donnees['sal'])?> - <?php echo($donnees['hab'])?></option>
-         <?php  }
-         $reponse->closeCursor(); ?>
-         </select>
-        &nbsp; <input class="bouttonBis" name="btnSuppCapteur" type="submit" onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce capteur ?\nCette action sera définitive.')) return false;" value="supprimer"/>
-    </form>
-
-
-<!-- LISTE CAPTEURS -->
-
-<?php include ('Vue/listecapteurs.php') ?>
-
-<br><br><br>
-
+<div class=textedroite>
   <h2>
-  Ajouter un capteur
+     Liste des capteurs
+  </h2><br>
+
+  <?php
+  include_once("Modele/db-capteur-manager.php");
+  include_once("Modele/db-maison-manager.php");
+  include_once("Modele/db-salle-manager.php");
+
+
+include ('Vue/listecapteurs.php') ?>
+
+  <br><br><br>
+
+</div>
+
+<div class=textegauche>
+<h2>
+Ajouter un capteur
 </h2>
-  <form method="post" action="Controleur/capteur-manager.php">
-    <p class=textegauche>
 
-        <select name="maison" required>
-          <option class=formLabel value="" disabled selected>Choisissez votre maison</option>
-          <?php $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
+<script  async defer src="js/communicationPhp.js"></script>
+<?php
+if(isset($_SESSION['idMaison'])){
+}
 
-          while ($donnees = $reponse->fetch()) {?>                                       <!-- affiche les maisons presente dans la BDD -->
-            <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
-         <?php } $reponse->closeCursor();?>
+?>
+<form method="post" action="Controleur/capteur-manager.php">
+   <p>
+<p class=formLabel><label for=piece>Piece</label></p>
+       <select name="piece" required>
+         <option class=formLabel value="" disabled selected></option>
+         <?php $reponse=getSallesList($db, $_SESSION['idMaison']);
 
-        </select>
-    </p>
-     <p class="textedroite">
+         while ($donnees = $reponse->fetch()) {?>
+           <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['sal'])?></option>
+        <?php } $reponse->closeCursor();?>
+       </select>
+   </p>
+   <p>
+     <p class=formLabel><label for=type>Type</label></p>
+       <select name="type" required>
+          <option class=formLabel value="" disabled selected></option>
+           <option value="Vidéosurveillance">Vidéosurveillance</option>
+           <option value="Luminosité">Luminosité</option>
+           <option value="Présence">Présence</option>
+           <option value="Humidité">Humidité</option>
+           <option value="Température">Température</option>
+       </select></p>
+       <p class=textedroite>
+   <input class=bouttonBis name="btnAddCapteur" type="submit" value="ajouter le capteur"/></p>
+</form>
 
-         <select name="piece" required>
-           <option class=formLabel value="" disabled selected>Choisissez une pièce</option>
-           <?php $reponse = getSalleList($db,$_SESSION['idGroupe']);
 
-           while ($donnees = $reponse->fetch()) {?>
-             <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['sal'])?></option>
-          <?php } $reponse->closeCursor();?>
-         </select>
-     </p></br><br><br><br>
-     <p class="textegauche">
-         <select name="type" required>
-            <option class=formLabel value="" disabled selected>Choisissez un type de capteur</option>
-             <option value="Vidéosurveillance">Vidéosurveillance</option>
-             <option value="Luminosité">Luminosité</option>
-             <option value="Présence">Présence</option>
-             <option value="Humidité">Humidité</option>
-             <option value="Température">Température</option>
-         </select></p>
-         <p class=textedroite>
-     <input class=bouttonBis name="btnAddCapteur" type="submit" value="ajouter le capteur"/></p>
-  </form>
 
 </div>
