@@ -4,16 +4,19 @@
 $resultat = getMessagesList($db , $_SESSION['userID']);?>
   <form method="post" action="Controleur/message-manager.php">
 <?php  while ($donnees = $resultat->fetch()){?>
+
+  <button class="boutonFantome" type="submit" name=delMsgInt
+  onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce message ?\nCette action sera définitive.')) return false;"
+  value='<?php echo "".$donnees['ID']?>'/><img src=Vue/Image/domotech_suppr.png width=20px></button>
+
   <u><b>  <?php echo $donnees['objet']; ?></b></u> de <b><?php echo $donnees['nom'];?></b>
 
 
 
 
     <button class="bouttonMSG" type=button onclick="toggle_div(this, '<?php echo "".$donnees['ID']?>');">afficher le message</button>
-    <span class=textedroite>
-      <button class="boutonFantome" type="submit" name=delMsgInt
-      onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce message ?\nCette action sera définitive.')) return false;" 
-      value='<?php echo "".$donnees['ID']?>'/>❌ supprimer le message</button></span>
+
+
   </form>
 
 <br><br>
