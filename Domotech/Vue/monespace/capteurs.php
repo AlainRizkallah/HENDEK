@@ -11,7 +11,7 @@ if(isset($_SESSION['idMaison'])){
 
 ?><section>
 <div class="dropdown left" >
-    <h2> <span class=center> <button class="grosBouton">▼ Sélectionnez une salle pour en afficher ses capteurs ▼</button> </span></h2>
+    <h2> <span class=center> <button class="boutton gros">▼ Sélectionnez une salle pour en afficher ses capteurs ▼</button> </span></h2>
 
         <div class="dropdown-content">
 
