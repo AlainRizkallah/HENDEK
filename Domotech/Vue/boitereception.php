@@ -1,18 +1,4 @@
-
-
-<!-- Le JS... -->
-<script type="text/javascript">
-function toggle_div(bouton, id) { // On déclare la fonction toggle_div qui prend en param le bouton et un id
-  var div = document.getElementById(id); // On récupère le div ciblé grâce à l'id
-  if(div.style.display=="none") { // Si le div est masqué...
-    div.style.display = "block"; // ... on l'affiche...
-    bouton.innerHTML = "masquer le message"; // ... et on change le contenu du bouton.
-  } else { // S'il est visible...
-    div.style.display = "none"; // ... on le masque...
-    bouton.innerHTML = "afficher le message" // ... et on change le contenu du bouton.
-  }
-}
-</script>
+<script type="text/javascript" src="js/afficherdiv.js"></script>
 
 <?php
 $resultat = getMessagesList($db , $_SESSION['userID']);
@@ -26,6 +12,7 @@ $resultat = getMessagesList($db , $_SESSION['userID']);
 </div>
   <br><?php
 
+  //
 
   }
   $resultat->closeCursor();
