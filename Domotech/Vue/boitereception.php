@@ -1,4 +1,11 @@
 <script type="text/javascript" src="js/afficherdiv.js"></script>
+<script>
+
+function rep(dest , objet){
+
+ document.getElementById("destinataire").value = dest ;
+}
+  </script>
 
 <?php
 $resultat = getMessagesList($db , $_SESSION['userID']);?>
@@ -22,8 +29,10 @@ $resultat = getMessagesList($db , $_SESSION['userID']);?>
 <br>
 <div id='<?php echo "".$donnees['ID']?>' style="display:none;">
   <i><?php echo ($donnees['message'])?></i><br><br>
+
+  <button class="bouttonBis" type=button onclick="rep('<?php echo $donnees['nom'];?>')">répondre</button>
 </div>
-  <br><?php
+  <br><br><?php
 
   //
 
