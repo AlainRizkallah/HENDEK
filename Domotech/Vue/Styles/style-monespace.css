@@ -80,6 +80,7 @@ button {
   cursor: pointer;
 }
 
+
 .bouttonBis {
   outline:none;
   font-size:16px;
@@ -123,7 +124,7 @@ button {
 
 }
 
-.grosBouton { /* FAIRE EN SORTE QU'IL SOIT CENTRÉ SUR LA PAGE - RESPONSIVENESS */
+.grosBouton {
   outline:none;
   font-family: "SB";
   font-size:100%;
