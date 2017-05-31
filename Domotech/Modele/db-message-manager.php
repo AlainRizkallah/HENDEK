@@ -55,4 +55,20 @@ $reponse->bindParam(':idDest', $idDest);
 $reponse->execute();
   return $reponse;
 }
+
+
+function delMessageInt($db,$idMessage){
+    try{
+      $stmt = $db->prepare('DELETE FROM `messageint` WHERE `ID`=:idMessage');
+      $stmt->bindParam(':idMessage',$idMessage);
+      $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+      $res="fait";
+    }
+    catch (Exception $e)
+    {
+      die('Erreur : ' . $e->getMessage());
+      $res= $e->getMessage();
+    }
+    return $res;
+    }
 ?>

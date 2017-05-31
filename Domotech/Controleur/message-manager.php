@@ -9,7 +9,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if(isset($_POST['messageInt'])){
       sendInt();
   }
-
+  if(isset($_POST['delMsgInt'])){
+      supprInt();
+  }
 }
 
 
@@ -36,4 +38,10 @@ function sendInt(){
   header ("Location: $_SERVER[HTTP_REFERER]" );
 }
 
+function supprInt(){
+  include("../Modele/db-message-manager.php");
+  $resultat = delMessageInt($db , $_POST['delMsgInt']);
+  echo ($resultat);
+  //header ("Location: $_SERVER[HTTP_REFERER]" );
+}
 ?>

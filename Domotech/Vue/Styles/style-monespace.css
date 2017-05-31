@@ -56,6 +56,7 @@ body {
 
 }
 button {
+  outline:none;
   display: inline-block;
   padding: 6px 14px;
   border-radius: 9px;
@@ -69,6 +70,7 @@ button {
 
 }
 .boutton {
+  outline:none;
   display: inline-block;
   padding: 6px 14px;
   border-radius: 9px;
@@ -81,6 +83,7 @@ button {
 }
 
 .bouttonBis {
+  outline:none;
   font-size:16px;
   display: inline-block;
   padding: 6px 14px;
@@ -104,10 +107,26 @@ button {
   text-decoration: none;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  outline:none;
 }
 
+.boutonFantome{
+  outline:none;
+  font-size:10px;
+  display: inline-block;
+  padding: 2px 2px;
+  border-radius: 9px;
+  border: none;
+  background-color:inherit;
+  text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  color:red;
+
+}
 
 .grosBouton { /* FAIRE EN SORTE QU'IL SOIT CENTRÉ SUR LA PAGE - RESPONSIVENESS */
+  outline:none;
   font-family: "SB";
   font-size:100%;
   color: #5680A6;
@@ -243,6 +262,11 @@ button:hover {
   color:   #5680A6;
   background-color: #E0E2E5;
 }
+.boutonFantome:hover{
+  background-color:inherit;
+  color:red;
+}
+
 
 input[type="text"] {
   width: 80%;
