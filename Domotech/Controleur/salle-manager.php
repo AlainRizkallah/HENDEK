@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
      dispAddSalle();
   }
 
-  if(isset($_POST['btnSuppSalle'])){
+  if ( (isset($_POST['btnSuppSalle'])) or (isset($_POST['salle'])) ){
     dispSuppSalle();
  }
 
