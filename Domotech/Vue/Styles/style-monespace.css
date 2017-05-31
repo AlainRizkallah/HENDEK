@@ -45,9 +45,7 @@ img{
   height: auto;
   vertical-align: sub;
 }
-.active{
-  background-color: rgb(7, 139, 91);
-}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: #0000;
@@ -231,7 +229,11 @@ margin-top: 20px;
 
   text-align: center;
 }
-.barremenu a:hover {
+.barremenu a:hover{
+    color:   #E0E2E5;
+    background-color: #5680A6;
+}
+.barremenu .active{
     color:   #E0E2E5;
     background-color: #5680A6;
 }
@@ -505,7 +507,9 @@ aside{
   padding-top: 0;
 }
 
-
+.active{
+  background-color: rgb(23, 193, 30);
+}
 
 @media screen and (max-width: 1400px){
   aside,section{
