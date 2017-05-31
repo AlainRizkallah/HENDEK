@@ -19,6 +19,19 @@ h2 {
   color: #5680A6;
 }
 
+h3 {
+  font-family: "SB";
+  font-size:25px;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding:5px;
+  background-color:#5680A6;
+  border-style: solid;
+  color: #E0E2E5;
+  border-color:#D1D4D9;
+  display: inline-block;
+}
+
 
 .titre{
   text-decoration: none;
