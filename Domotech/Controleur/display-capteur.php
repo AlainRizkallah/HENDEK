@@ -22,10 +22,10 @@ function showAll($db,$salle,$nomSalle){
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
           if($row['etat']==1){
-            echo "<div class='boxCapteurElement boxElementMarche'>";
+            echo "<a class='boxCapteurElement boxElementMarche' href='#'>";
             echo "<p>Actif</p>";
           }else{
-            echo "<div class='boxCapteurElement boxElementArret'>";
+            echo "<a class='boxCapteurElement boxElementArret' href='#'>";
             echo "<p>Inactif</p>";
           }
 
@@ -45,7 +45,7 @@ function showAll($db,$salle,$nomSalle){
 
 
             echo "<p>" . $row['temps'] . "</p>";
-            echo "</div>";
+            echo "</a>";
         }
         echo "</div>";
     } else {

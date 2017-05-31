@@ -13,7 +13,7 @@ if(!isset($_SESSION["nomMaison"])){
  ?>
 <div class="dropdown" >
 
-      <button class="boutton"><?php echo $nomMaison ?></button>
+      <button class="boutton"> <?php echo $nomMaison ?> ▼</button>
 
 
         <div class="dropdown-content">

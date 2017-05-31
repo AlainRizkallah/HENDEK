@@ -126,7 +126,7 @@ button {
 
 .gros {
 
-  font-size:1em;
+  font-size:0.7em;
 
 }
 
@@ -195,7 +195,6 @@ border-radius: 5px;
   width:  100%;
 }
 .login .dropdown{
-margin-top: 20px;
 
   width:  100%;
 }
@@ -240,7 +239,7 @@ margin-top: 20px;
   color: #5680A6;
 }
 .n8{
-    width: 14%;
+    width: 14.38%;
 }
 /* Add a hover effect for buttons */
 button:hover {
@@ -339,6 +338,7 @@ input[type="password"]:focus {
 
 }
 .boxCapteurElement{
+  text-decoration: none;
   background-color: #E0E2E5;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: 9px;
@@ -350,16 +350,17 @@ input[type="password"]:focus {
   color: #5680A6;
   text-align: center;
 }
+.boxCapteurElement:hover{
+  box-shadow: 0 0 20px rgba(20, 10, 120, 0.9), 0 2px 4px rgba(0, 0, 0, 0.5);
+
+}
 .boxtitle {
   font-family: "SB";
-  font-size:25px;
+  font-size:4em;
   padding-top:4px;
   padding-bottom:4px;
-  padding:5px;
-  background-color:#5680A6;
-  border-style: solid;
-  color: #E0E2E5;
-  border-color:#D1D4D9;
+  text-align: center;
+  color:#5680A6;
   display:inline-block;
 }
 

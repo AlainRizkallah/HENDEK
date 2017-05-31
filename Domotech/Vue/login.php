@@ -12,6 +12,9 @@ echo('
 
         <button class="boutton" type="submit" name="btnDeco">Déconnexion</button>
 ');
+echo '<p>
+Maison:
+</p>';
 include_once 'Vue/menu/selecteur-maison.php';?>
 <div class="dropdown" ><a class=bouttonBis href=monespace.php?cible=monespace/messagerie.php >✉ Messagerie privée </a></div>
 
