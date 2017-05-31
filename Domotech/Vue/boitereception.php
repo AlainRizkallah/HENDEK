@@ -5,9 +5,11 @@ function rep(dest , objet, message){
   var msg = "Message précédent : "
   var obj = "Réponse à : ";
   var guillemet = '"';
- document.getElementById("destinataire").value = dest ;
- document.getElementById("objet").value = obj + guillemet + objet + guillemet ;
- document.getElementById("message").value = msg + guillemet + message + guillemet ;
+
+  window.scrollTo(0,0);
+  document.getElementById("destinataire").value = dest ;
+  document.getElementById("objet").value = obj + guillemet + objet + guillemet ;
+  document.getElementById("message").value = msg + guillemet + message + guillemet ;
 }
   </script>
 
