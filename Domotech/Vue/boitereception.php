@@ -2,8 +2,9 @@
 <script>
 
 function rep(dest , objet){
-
+var obj = "Réponse à : ";
  document.getElementById("destinataire").value = dest ;
+ document.getElementById("objet").value = obj + objet ;
 }
   </script>
 
@@ -30,7 +31,7 @@ $resultat = getMessagesList($db , $_SESSION['userID']);?>
 <div id='<?php echo "".$donnees['ID']?>' style="display:none;">
   <i><?php echo ($donnees['message'])?></i><br><br>
 
-  <button class="bouttonBis" type=button onclick="rep('<?php echo $donnees['nom'];?>')">répondre</button>
+  <button class="bouttonBis" type=button onclick="rep('<?php echo $donnees['nom'];?>' , '<?php echo $donnees['objet'];?>')">répondre</button>
 </div>
   <br><br><?php
 
