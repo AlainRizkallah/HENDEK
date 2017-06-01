@@ -4,13 +4,9 @@
 <?php
 if(isset($_SESSION["userID"])){
 echo('
-
         <div class="conteneur">
           <label>Bienvenue: <b>'.$_SESSION["name"].'</b></label>
         </div>
-
-
-        <button class="boutton" type="submit" name="btnDeco">Déconnexion</button>
 ');
 
 ?>
@@ -18,7 +14,7 @@ echo('
 
 include_once 'Vue/menu/selecteur-maison.php';?>
 <div class="dropdown" ><a class=bouttonBis href=monespace.php?cible=monespace/messagerie.php >✉ Messagerie privée </a></div>
-
+<button class="boutton" type="submit" name="btnDeco">Déconnexion</button>
 <?php
 }else{
   echo('

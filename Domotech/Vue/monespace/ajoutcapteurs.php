@@ -15,7 +15,7 @@ include ('Vue/listecapteurs.php') ?>
 
 </div>
 
-<div class=textegauche>
+<div class="conteneurBloc n2">
 <h2>
 Ajouter un capteur
 </h2>
@@ -49,7 +49,7 @@ if(isset($_SESSION['idMaison'])){
            <option value="Température">Température</option>
        </select></p>
        <p class=textedroite>
-   <input class=bouttonBis name="btnAddCapteur" type="submit" value="ajouter le capteur"/></p>
+   <input class="bouttonBis" name="btnAddCapteur" type="submit" value="ajouter le capteur"/></p>
 </form>
 
 
