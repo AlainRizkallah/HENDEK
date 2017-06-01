@@ -11,7 +11,7 @@ include ('Vue/listeusers.php') ?>
 </div>
 
 <!-- TODO LISTE + SUPPRIMER UTILISATEUR -->
-<div class=textegauche>
+<div class="conteneurBloc n2">
 <h2>Ajouter un utilisateur</h2>
 
 

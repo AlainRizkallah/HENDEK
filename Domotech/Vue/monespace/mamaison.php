@@ -16,7 +16,7 @@ include_once("Modele/db-maison-manager.php");
 </div>
 
 <!-- AJOUTER UNE MAISON -->
-<div class=textegauche>
+<div class="conteneurBloc n2">
 <h2>
 Ajouter une maison
 </h2>

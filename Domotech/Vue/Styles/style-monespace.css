@@ -299,7 +299,9 @@ input[type="text"]:focus {
 input[type="password"]:focus {
   background: #f0f0f0;
 }
-
+.conteneurBloc {
+  float:left;
+}
 .conteneurBloc select {
   width: 80%;
   border: 1px solid #cfcfcf;
@@ -312,6 +314,7 @@ input[type="password"]:focus {
   margin-bottom: 7px;
   transition: background .3s ease;
   box-shadow: none;
+
 
 
 }
