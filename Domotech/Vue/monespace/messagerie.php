@@ -10,7 +10,7 @@ include_once("Modele/db-message-manager.php");
         <input type="text" placeholder="Objet" name="objet" id="objet" value="" required>
         <textarea id="message" placeholder="Votre message" name="message" tabindex="4" cols="120" rows="8"></textarea></br></br>
 
-        <button type="submit" name="messageInt">Envoyer</button>
+        <button class="boutton gros" type="submit" name="messageInt">Envoyer</button></br><br>
       </div>
     </form>
 

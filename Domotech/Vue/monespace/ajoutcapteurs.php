@@ -48,7 +48,7 @@ if(isset($_SESSION['idMaison'])){
            <option value="Humidité">Humidité</option>
            <option value="Température">Température</option>
        </select></p>
-       <p class=textedroite>
+       <p class=center>
    <input class="bouttonBis" name="btnAddCapteur" type="submit" value="ajouter le capteur"/></p>
 </form>
 
