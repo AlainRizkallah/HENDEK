@@ -331,7 +331,7 @@ input[type="password"]:focus {
 
 .boxCapteur{
   padding:10px;
-
+  cursor: pointer;
 
 }
 .boxElementMarche{

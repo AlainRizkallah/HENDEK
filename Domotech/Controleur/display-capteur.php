@@ -4,14 +4,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    if(!empty($_POST['salle'])){
     include("../Modele/db-capteur-manager.php");
     showAll($db,$_POST['salle'],$_POST['salleNom']);
-  }else if (!empty($_POST['detail'])){
+  }else if (!empty($_POST['detailId'])){
     include("../Modele/db-capteur-manager.php");
     showDetail($db,$_POST['detailId'],$_POST['capteurNom']);
 
   }
 }
 function showDetail($db,$id,$nomCapteur){
-echo($nomCapteur);
+  echo '<span class=boxtitle>'.$nomCapteur.'</span class=boxtitle> <br><br>';
+
 }
 
 
