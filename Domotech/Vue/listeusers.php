@@ -1,7 +1,7 @@
 <?php
 $resultat = getUserList($db,  $_SESSION["idGroupe"]);?>
 <form method="post" action="Controleur/userSec-manager.php">
-<?php  $liste=$resultat->fetch();         // POUR NE PAS QUE L'UTILISATEUR PRINCIPAL S'AFFICHE
+<?php          // POUR NE PAS QUE L'UTILISATEUR PRINCIPAL S'AFFICHE
    while ($liste=$resultat->fetch()){?>
 
         <button class="boutonFantome" type="submit" name="delUserSec"

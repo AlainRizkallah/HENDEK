@@ -1,24 +1,11 @@
-<div class=textedroite>
-<h2>
-  Liste des pièces
-</h2><br>
-
 <?php
 include_once("Modele/db-salle-manager.php");
 include_once("Modele/db-maison-manager.php");
-// SUPPR SALLE
-
-include ('Vue/listepieces.php') ?>
-
-
-<br><br><br>
-</div>
-
+ ?>
 <!-- AJOUTER UNE PIÈCE -->
 
 <?php $reponse = getHabitationsList($db, $_SESSION["idGroupe"])?>
 <div class="conteneurBloc n2">
-  <div>
   <h2>
     Ajouter une pièce à ma maison
   </h2>
@@ -40,4 +27,14 @@ include ('Vue/listepieces.php') ?>
 <input class="bouttonBis" name="btnAddSalle" type="submit" value="ajouter la pièce"/></p>
   </form>
 <?php $reponse->closeCursor(); ?>
+</div>
+<div class="conteneurBloc n2">
+<h2>
+  Liste des pièces
+</h2><br>
+
+<?php
+// SUPPR SALLE
+
+include ('Vue/listepieces.php') ?>
 </div>

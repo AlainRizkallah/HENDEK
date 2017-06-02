@@ -18,7 +18,7 @@
       <option class=formLabel value="" disabled selected></option>
         <option value="Utilisateur secondaire">Utilisateur secondaire</option>
         <option value="Enfant">Enfant</option>
-        <option value="">...</option></br><br><br>
+        <option value="">...</option>
    </select></p>
 
 
