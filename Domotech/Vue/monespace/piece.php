@@ -17,7 +17,8 @@ include ('Vue/listepieces.php') ?>
 <!-- AJOUTER UNE PIÈCE -->
 
 <?php $reponse = getHabitationsList($db, $_SESSION["idGroupe"])?>
-<div class=textegauche>
+<div class="conteneurBloc n2">
+  <div>
   <h2>
     Ajouter une pièce à ma maison
   </h2>

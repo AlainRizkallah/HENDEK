@@ -10,8 +10,8 @@ if(isset($_SESSION['idMaison'])){
 }
 
 ?><section>
-<div class="dropdown left" >
-    <h2> <span class=center> <button class="grosBouton">▼ Sélectionnez une salle pour en afficher ses capteurs ▼</button> </span></h2>
+<div class="dropdown" >
+    <span class=center> <button class="boutton gros">▼ Sélectionnez une salle pour en afficher ses capteurs ▼</button> </span>
 
         <div class="dropdown-content">
 
@@ -26,8 +26,8 @@ if(isset($_SESSION['idMaison'])){
 
         </div>
 </div>
-<div class="center">
-    <h3 id="nomSalle"></h3>
+<div class="conteneur center">
+    <h4 id="nomSalle"></h4>
     <div id="resultat" ></div>
 </div>
 </section>

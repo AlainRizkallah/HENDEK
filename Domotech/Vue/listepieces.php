@@ -1,6 +1,4 @@
 <?php
-//$resultat=$db->query('SELECT habitation.nom hab , salle.nom sal FROM habitation WHERE idGroupe=$_SESSION[idGroupe]
-//JOIN salle ON idHabitation=habitation.ID ');
 $resultat = getSalleList($db,  $_SESSION["idGroupe"]);?>
 <form method="post" action="Controleur/salle-manager.php">
   <?php while ($liste=$resultat->fetch()){?>

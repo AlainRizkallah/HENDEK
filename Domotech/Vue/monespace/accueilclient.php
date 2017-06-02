@@ -3,8 +3,8 @@ include_once("Modele/db-salle-manager.php");
 include_once("Modele/db-capteur-manager.php");?>
 
 <div class=center>
-<p class="boxtitle"> BIENVENUE SUR VOTRE ESPACE
-</p></div>
+<h3> BIENVENUE SUR VOTRE ESPACE
+</h3></div>
 
 
 

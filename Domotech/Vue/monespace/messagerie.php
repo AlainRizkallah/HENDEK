@@ -6,11 +6,11 @@ include_once("Modele/db-message-manager.php");
   <form method="POST" action= 'Controleur/message-manager.php'>
       <div class="container">
 
-        <input type="text" placeholder="Identifiant du destinataire" name="destinataire" required>
-        <input type="text" placeholder="Objet" name="objet" required>
+        <input type="text" placeholder="Identifiant du destinataire" name="destinataire" id=destinataire value="" required>
+        <input type="text" placeholder="Objet" name="objet" id="objet" value="" required>
         <textarea id="message" placeholder="Votre message" name="message" tabindex="4" cols="120" rows="8"></textarea></br></br>
 
-        <button type="submit" name="messageInt">Envoyer</button>
+        <button class="boutton gros" type="submit" name="messageInt">Envoyer</button></br><br>
       </div>
     </form>
 

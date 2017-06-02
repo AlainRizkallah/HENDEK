@@ -11,7 +11,7 @@ include ('Vue/listeusers.php') ?>
 </div>
 
 <!-- TODO LISTE + SUPPRIMER UTILISATEUR -->
-<div class=textegauche>
+<div class="conteneurBloc n2">
 <h2>Ajouter un utilisateur</h2>
 
 
@@ -33,7 +33,7 @@ include ('Vue/listeusers.php') ?>
    </select></p>
 
 
-      <p class=textecentre>  <input class=bouttonBis name="btnAddUserSec" type="submit" value="ajouter l'utilisateur"/></p>
+      <p class=center>  <input class=bouttonBis name="btnAddUserSec" type="submit" value="ajouter l'utilisateur"/></p>
 
 </form>
 </div>
