@@ -32,5 +32,5 @@
 </h2><br>
 <?php
 // SUPPR CAPTEUR
-include ('Vue/listeusers.php') ?>
+include ('Vue/Listes/listeusers.php') ?>
 </div>

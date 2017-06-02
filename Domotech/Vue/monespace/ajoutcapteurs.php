@@ -47,7 +47,7 @@ if(isset($_SESSION['idMaison'])){
   </h2><br>
 
   <?php
-include ('Vue/listecapteurs.php') ?>
+include ('Vue/Listes/listecapteurs.php') ?>
 
 
 </div>

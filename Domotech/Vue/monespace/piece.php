@@ -36,5 +36,5 @@ include_once("Modele/db-maison-manager.php");
 <?php
 // SUPPR SALLE
 
-include ('Vue/listepieces.php') ?>
+include ('Vue/Listes/listepieces.php') ?>
 </div>
