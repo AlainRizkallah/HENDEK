@@ -12,25 +12,20 @@ if(isset($_SESSION['idMaison'])){
       $titre = "▼ Salles de la maison: ".$_SESSION["nomMaison"];
   }
 
-
 }else{
   $resultat="";
-  if(!isset(($_SESSION["nomMaison"]))){
-    $titre = "▼ Salles de la maison: "."pas de maison";
-  }
 }
 
 
 ?><section>
   <div class="n2 left">
     <div class="dropdown " >
-
          <button class="boutton"><?php echo($titre); ?></button>
 
             <div class="dropdown-content">
 
               <?php
-
+              
               if(!empty($resultat)){
                 while ($liste=$resultat->fetch()){
                     $nom =  str_replace(" ","_",$liste['sal']);
