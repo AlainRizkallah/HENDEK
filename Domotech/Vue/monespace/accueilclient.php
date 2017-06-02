@@ -19,9 +19,7 @@ include_once("Modele/db-capteur-manager.php");?>
   </p>
 </div>
 
-<br><br><br>
-
-<div class="conteneurBloc n2 left"></br>
+<div style="clear:left;" class="conteneurBloc n2 left"></br>
   <h2>
     Liste de vos pièces
   </h2>
@@ -33,9 +31,7 @@ include_once("Modele/db-capteur-manager.php");?>
   </p>
 </div>
 
-  <br><br><br>
-
-<div class="conteneurBloc n2 left"><br>
+<div style="clear:left;" class="conteneurBloc n2 left"><br>
   <h2>
     Liste de vos capteurs
   </h2>
