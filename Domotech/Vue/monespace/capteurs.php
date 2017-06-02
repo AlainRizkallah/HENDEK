@@ -8,20 +8,18 @@ include_once("Modele/db-salle-manager.php");
 if(isset($_SESSION['idMaison'])){
   $resultat=getSallesList($db, $_SESSION['idMaison']);
   $titre = "Choisissez une maison";
-  if(isset(($_SESSION["nomMaison"]))){
+  if(isset($_SESSION["nomMaison"])){
       $titre = "▼ Salles de la maison: ".$_SESSION["nomMaison"];
   }
 
-
 }else{
   $resultat="";
-  if(!isset(($_SESSION["nomMaison"]))){
-    $titre = "▼ Salles de la maison: "."pas de maison";
+  if(!isset($_SESSION["nomMaison"])){
+    $titre="▼ Salles de la maison: "."pas de maison";
   }
 }
-
-
-?><section>
+?>
+<section>
   <div class="n2 left">
     <div class="dropdown " >
 
