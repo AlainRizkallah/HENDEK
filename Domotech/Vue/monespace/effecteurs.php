@@ -15,7 +15,7 @@ if(isset($_SESSION['idMaison'])){
   if(!isset(($_SESSION["nomMaison"]))){
    $titre = "▼ Salles de la maison: "."pas de maison";
   }
- 
+
 }
  ?>
 
@@ -24,12 +24,13 @@ if(isset($_SESSION['idMaison'])){
     <span class=center> <button class="boutton gros"><?php echo($titre); ?></button> </span>
         <div class="dropdown-content">
           <?php
+          if(!empty($resultat)){
             while ($liste=$resultat->fetch()){
                 $nom =  str_replace(" ","_",$liste['sal']);
                 $params = "salle=".$liste['ID']."&salleNom=".$nom;
               ?>
               <button onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
-          <?php } $resultat->closeCursor();?>
+          <?php } $resultat->closeCursor();}?>
         </div>
 </div>
 <div class="conteneur center">
