@@ -7,7 +7,7 @@ $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
 if(!isset($_SESSION["nomMaison"])){
   $nomMaison = "Choix de la Maison ▼";
 }else{
-    $nomMaison = $_SESSION["nomMaison"];
+  $nomMaison = $_SESSION["nomMaison"];
 }
 
  ?>

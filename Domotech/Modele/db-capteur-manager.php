@@ -2,16 +2,16 @@
     require_once("connexion.php");
 
 
-    function getCapteur($db,$ID){
+    function getCapteurHistorique($db,$ID){
 
 
-        $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE ID=:ID');
+        $reponse = $db->prepare('SELECT valeur,temps FROM capteurMesure WHERE ID=:ID');
         $reponse->bindParam(':ID',$ID);
         $reponse->execute();
         return $reponse;
     }
 
-    function getCapteurList($db,$idGroupe){
+    function getCapteurGroupList($db,$idGroupe){
 
     $reponse=$db->prepare('SELECT habitation.nom hab , salle.nom sal , capteur.type capt , capteur.ID ID FROM habitation
     JOIN salle ON habitation.ID=salle.idHabitation
@@ -24,7 +24,7 @@
 
     function getCapteursList($db,$idSalle){
       //  $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');
-$reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');
+$reponse = $db->prepare('SELECT type,valeur,etat,temps,id FROM capteur WHERE idSalle=:idSalle');
 
         $reponse->bindParam(':idSalle',$idSalle);
         $reponse->execute();

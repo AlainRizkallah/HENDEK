@@ -3,12 +3,16 @@
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
    if(!empty($_POST['salle'])){
     include("../Modele/db-capteur-manager.php");
-
-
     showAll($db,$_POST['salle'],$_POST['salleNom']);
+  }else if (!empty($_POST['detail'])){
+    include("../Modele/db-capteur-manager.php");
+    showDetail($db,$_POST['detailId'],$_POST['capteurNom']);
+
   }
 }
-
+function showDetail($db,$id,$nomCapteur){
+echo($nomCapteur);
+}
 
 
 function showAll($db,$salle,$nomSalle){
@@ -21,12 +25,14 @@ function showAll($db,$salle,$nomSalle){
       echo "<div class='boxCapteur'>";
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+          $params = "detailId=".$row['id']."&capteurNom=". $row['type'];
           if($row['etat']==1){
             echo "<a class='boxCapteurElement boxElementMarche' href='#'>";
+
             echo "<p>Actif</p>";
           }else{
-            echo "<a class='boxCapteurElement boxElementArret' href='#'>";
-            echo "<p>Inactif</p>";
+            ?><a class='boxCapteurElement boxElementArret' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
+            <?php echo "<p>Inactif</p>";
           }
 
             echo "<p>" . $row['type'] . "</p>";
