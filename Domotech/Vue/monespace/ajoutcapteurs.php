@@ -4,7 +4,7 @@ include_once("Modele/db-maison-manager.php");
 include_once("Modele/db-salle-manager.php");
  ?>
 
-<div class="conteneurBloc n2">
+<div class="conteneurBloc n2 left">
 <h2>
 Ajouter un capteur
 </h2>
@@ -41,7 +41,7 @@ if(isset($_SESSION['idMaison'])){
    <input class="bouttonBis" name="btnAddCapteur" type="submit" value="ajouter le capteur"/></p>
 </form>
 </div>
-<div class="conteneurBloc n2">
+<div class="conteneurBloc n2 right">
   <h2>
      Liste des capteurs
   </h2><br>

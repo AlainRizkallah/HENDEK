@@ -1,6 +1,6 @@
 <!-- TODO LISTE + SUPPRIMER UTILISATEUR -->
 <?php include_once("Modele/db-utilisateur-manager.php"); ?>
-<div class="conteneurBloc n2">
+<div class="conteneurBloc n2 left">
 <h2>Ajouter un utilisateur</h2>
 
 
@@ -26,7 +26,7 @@
 
 </form>
 </div>
-<div class="conteneurBloc n2">
+<div class="conteneurBloc n2 right">
 <h2>
    Liste des utilisateurs secondaires
 </h2><br>

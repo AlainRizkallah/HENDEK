@@ -297,9 +297,7 @@ input[type="text"]:focus {
 input[type="password"]:focus {
   background: #f0f0f0;
 }
-.conteneurBloc {
-  float:left;
-}
+
 .conteneurBloc select {
   width: 80%;
   border: 1px solid #cfcfcf;
@@ -438,6 +436,10 @@ table {
 }
 .left{
   float:left;
+}
+
+.right{
+  float:right;
 }
 th, td {
     text-align: left;

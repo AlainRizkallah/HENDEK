@@ -5,9 +5,9 @@ include_once("Modele/db-maison-manager.php");
 <!-- AJOUTER UNE PIÈCE -->
 
 <?php $reponse = getHabitationsList($db, $_SESSION["idGroupe"])?>
-<div class="conteneurBloc n2">
+<div class="conteneurBloc n2 left">
   <h2>
-    Ajouter une pièce à ma maison
+    Ajouter une pièce
   </h2>
   <form method="post" action="Controleur/salle-manager.php">
      <p>
@@ -28,7 +28,7 @@ include_once("Modele/db-maison-manager.php");
   </form>
 <?php $reponse->closeCursor(); ?>
 </div>
-<div class="conteneurBloc n2">
+<div class="conteneurBloc n2 right">
 <h2>
   Liste des pièces
 </h2><br>
