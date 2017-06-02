@@ -1,16 +1,5 @@
-<div class=textedroite>
-<h2>
-   Liste des utilisateurs secondaires
-</h2><br>
-<?php
-// SUPPR CAPTEUR
-include_once("Modele/db-utilisateur-manager.php");
-include ('Vue/listeusers.php') ?>
-
-<br><br><br>
-</div>
-
 <!-- TODO LISTE + SUPPRIMER UTILISATEUR -->
+<?php include_once("Modele/db-utilisateur-manager.php"); ?>
 <div class="conteneurBloc n2">
 <h2>Ajouter un utilisateur</h2>
 
@@ -29,11 +18,19 @@ include ('Vue/listeusers.php') ?>
       <option class=formLabel value="" disabled selected></option>
         <option value="Utilisateur secondaire">Utilisateur secondaire</option>
         <option value="Enfant">Enfant</option>
-        <option value="">...</option></br><br><br>
+        <option value="">...</option>
    </select></p>
 
 
       <p class=center>  <input class=bouttonBis name="btnAddUserSec" type="submit" value="ajouter l'utilisateur"/></p>
 
 </form>
+</div>
+<div class="conteneurBloc n2">
+<h2>
+   Liste des utilisateurs secondaires
+</h2><br>
+<?php
+// SUPPR CAPTEUR
+include ('Vue/listeusers.php') ?>
 </div>
