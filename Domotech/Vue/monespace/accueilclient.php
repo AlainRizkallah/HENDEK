@@ -11,40 +11,47 @@ include_once("Modele/db-capteur-manager.php");?>
   <h2>
   Liste de vos maisons
 </h2>
-<div class=textedroite></br>
-  <p class=center>
+<div class="conteneurBloc n2"></br>
+    <?php include('Vue/Listes/listemaisons.php');?>
+</div>
+
+    <div class="conteneurBloc n2"><br>
+      <p class=center>
     <a class="boutton" href ="monespace.php?cible=monespace/mamaison.php" >ajouter/supprimer des maisons</a>
   </p>
 </div>
 
 
 </br>
-    <?php include('Vue/listemaisons.php');?>
+
 
   <br><br>
 
   <h2>
     Liste de vos pièces
   </h2>
-  <div class=textedroite></br>
-    <p class=center>
+  <div class="conteneurBloc n2"></br>
+    <?php include('Vue/Listes/listepieces.php');?>
+  </div>
+    <div class="conteneurBloc n2"><br>
+      <p class=center>
       <a class="boutton" href ="monespace.php?cible=monespace/piece.php" >ajouter/supprimer des pièces</a>
     </p>
   </div>
 
   <br>
-    <?php include('Vue/listepieces.php');?>
+
 
   <br><br>
 
   <h2>
     Liste de vos capteurs
   </h2>
-  <div class=textedroite></br>
+  <div class="conteneurBloc n2"></br>
+    <?php include('Vue/Listes/listecapteurs.php');?>
+  </div>
+      <div class="conteneurBloc n2"><br>
     <p class=center>
       <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des capteurs</a>
     </p>
   </div>
-
-  <br>
-  <?php include('Vue/listecapteurs.php');?>

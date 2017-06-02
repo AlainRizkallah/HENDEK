@@ -1,4 +1,4 @@
-<div class=textedroite>
+<div class="conteneurBloc n2">
 <h2>
   Liste de vos maisons
 </h2><br>
@@ -9,7 +9,7 @@ include_once("Modele/db-maison-manager.php");
 // LISTE DES MAISONS ?>
 
 
-<?php include ('Vue/listemaisons.php') ?>
+<?php include ('Vue/Listes/listemaisons.php') ?>
 
 <br><br><br>
 
