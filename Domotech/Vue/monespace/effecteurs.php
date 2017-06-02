@@ -12,6 +12,10 @@ if(isset($_SESSION['idMaison'])){
 
 }else{
   $resultat="";
+  if(!isset(($_SESSION["nomMaison"]))){
+   $titre = "▼ Salles de la maison: "."pas de maison";
+  }
+ 
 }
  ?>
 
