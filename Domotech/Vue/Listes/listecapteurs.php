@@ -5,7 +5,7 @@ JOIN salle ON habitation.ID=salle.idHabitation
 JOIN capteur ON salle.ID=capteur.idSalle');
 */
 
-$resultat=getCapteurList($db,  $_SESSION["idGroupe"]);?>
+$resultat=getCapteurGroupList($db,  $_SESSION["idGroupe"]);?>
 <form method="post" action="Controleur/capteur-manager.php">
 <?php  while ($liste=$resultat->fetch()){?>
 

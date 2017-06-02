@@ -77,7 +77,10 @@
     }
       else if ($_GET['cible'] == "monespace/messagerie.php"){
         include("Vue/monespace/messagerie.php");
-}
+    }
+      else if ($_GET['cible'] == "monespace/detail-capteur.php"){
+      include("Vue/monespace/detail-capteur.php");
+  }
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");
   }
