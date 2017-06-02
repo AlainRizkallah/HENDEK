@@ -3,13 +3,21 @@
 include_once("Modele/db-maison-manager.php");
 include_once("Modele/db-salle-manager.php");
 
- if(isset($_SESSION['idMaison'])){
-   $resultat=getSallesList($db, $_SESSION['idMaison']);
- }?>
+if(isset($_SESSION['idMaison'])){
+  $resultat=getSallesList($db, $_SESSION['idMaison']);
+  $titre = "Choisissez une maison";
+  if(isset(($_SESSION["nomMaison"]))){
+      $titre = "▼ Salles de la maison: ".$_SESSION["nomMaison"];
+  }
+
+}else{
+  $resultat="";
+}
+ ?>
 
 <section>
 <div class="dropdown" >
-    <span class=center> <button class="boutton gros">▼ Sélectionnez une salle pour en afficher ses effecteurs ▼</button> </span>
+    <span class=center> <button class="boutton gros"><?php echo($titre); ?></button> </span>
         <div class="dropdown-content">
           <?php
             while ($liste=$resultat->fetch()){

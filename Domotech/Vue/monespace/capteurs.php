@@ -7,18 +7,25 @@ include_once("Modele/db-salle-manager.php");
 <?php
 if(isset($_SESSION['idMaison'])){
   $resultat=getSallesList($db, $_SESSION['idMaison']);
+  $titre = "Choisissez une maison";
+  if(isset(($_SESSION["nomMaison"]))){
+      $titre = "▼ Salles de la maison: ".$_SESSION["nomMaison"];
+  }
+
 }else{
-  $resultat = "";
+  $resultat="";
 }
+
 
 ?><section>
   <div class="n2 left">
     <div class="dropdown " >
-         <button class="boutton">▼ Sélectionnez une salle pour en afficher ses capteurs ▼</button>
+         <button class="boutton"><?php echo($titre); ?></button>
 
             <div class="dropdown-content">
 
               <?php
+              
               if(!empty($resultat)){
                 while ($liste=$resultat->fetch()){
                     $nom =  str_replace(" ","_",$liste['sal']);
@@ -26,7 +33,9 @@ if(isset($_SESSION['idMaison'])){
 
                   ?>
                   <button onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
-              <?php } $resultat->closeCursor();}?>
+              <?php } $resultat->closeCursor();}
+
+              ?>
 
             </div>
     </div>
