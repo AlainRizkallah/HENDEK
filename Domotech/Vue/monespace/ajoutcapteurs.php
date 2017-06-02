@@ -1,19 +1,8 @@
-<div class=textedroite>
-  <h2>
-     Liste des capteurs
-  </h2><br>
-
-  <?php
-  include_once("Modele/db-capteur-manager.php");
-  include_once("Modele/db-maison-manager.php");
-  include_once("Modele/db-salle-manager.php");
-
-
-include ('Vue/listecapteurs.php') ?>
-
-  <br><br><br>
-
-</div>
+<?php
+include_once("Modele/db-capteur-manager.php");
+include_once("Modele/db-maison-manager.php");
+include_once("Modele/db-salle-manager.php");
+ ?>
 
 <div class="conteneurBloc n2">
 <h2>
@@ -51,7 +40,14 @@ if(isset($_SESSION['idMaison'])){
        <p class=center>
    <input class="bouttonBis" name="btnAddCapteur" type="submit" value="ajouter le capteur"/></p>
 </form>
+</div>
+<div class="conteneurBloc n2">
+  <h2>
+     Liste des capteurs
+  </h2><br>
 
+  <?php
+include ('Vue/listecapteurs.php') ?>
 
 
 </div>
