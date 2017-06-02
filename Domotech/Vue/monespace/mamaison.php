@@ -1,7 +1,3 @@
-<div class="conteneurBloc n2">
-<h2>
-  Liste de vos maisons
-</h2><br>
 
 <?php
 include_once("Modele/db-maison-manager.php");
@@ -9,11 +5,6 @@ include_once("Modele/db-maison-manager.php");
 // LISTE DES MAISONS ?>
 
 
-<?php include ('Vue/Listes/listemaisons.php') ?>
-
-<br><br><br>
-
-</div>
 
 <!-- AJOUTER UNE MAISON -->
 <div class="conteneurBloc n2">
@@ -42,4 +33,14 @@ Ajouter une maison
 <p class=center>
 <input class=bouttonBis name="btnAddMaison" type="submit" value="ajouter la maison"/></p>
 </form>
+</div>
+
+
+<div class="conteneurBloc n2">
+<h2>
+  Liste de vos maisons
+</h2><br>
+<?php include ('Vue/Listes/listemaisons.php') ?>
+<br><br><br>
+
 </div>
