@@ -6,8 +6,11 @@ var obj = "Réponse à : " ;
 
 function rep(dest , objet, message){
 <<<<<<< HEAD
+<<<<<<< HEAD
   var msg = " \n __________ \n \n Message précédent : " ;
   var obj = "Réponse à : " ;
+=======
+>>>>>>> 87bf42a04159da702aded71193c6223488fa90c1
 =======
 >>>>>>> 87bf42a04159da702aded71193c6223488fa90c1
 
