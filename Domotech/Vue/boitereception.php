@@ -1,9 +1,10 @@
 <script type="text/javascript" src="js/afficherdiv.js"></script>
 <script>
 
+var msg = " \n __________ \n \n Message précédent : \n " ;
+var obj = "Réponse à : " ;
+
 function rep(dest , objet, message){
-  var msg = " \n __________ \n \n Message précédent : \n " ;
-  var obj = "Réponse à : " ;
 
   window.scrollTo(0,0);
   document.getElementById("destinataire").value = dest ;
@@ -11,6 +12,7 @@ function rep(dest , objet, message){
   document.getElementById("message").value = msg + message ;
 
 }
+
   </script>
 
 <?php
