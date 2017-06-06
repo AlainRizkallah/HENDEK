@@ -2,14 +2,14 @@
 <script>
 
 function rep(dest , objet, message){
-  var msg = "Message précédent : "
-  var obj = "Réponse à : ";
-  var guillemet = '"';
+  var msg = " \n __________ \n \n Message précédent : \n " ;
+  var obj = "Réponse à : " ;
 
   window.scrollTo(0,0);
   document.getElementById("destinataire").value = dest ;
-  document.getElementById("objet").value = obj + guillemet + objet + guillemet ;
-  document.getElementById("message").value = msg + guillemet + message + guillemet ;
+  document.getElementById("objet").value = obj + objet ;
+  document.getElementById("message").value = msg + message ;
+
 }
   </script>
 
@@ -34,7 +34,8 @@ $resultat = getMessagesList($db , $_SESSION['userID']);?>
 
 <br>
 <div id='<?php echo "".$donnees['ID']?>' style="display:none;">
-  <i><?php echo ($donnees['message'])?></i><br><br>
+  <?php $msg = nl2br($donnees['message'])?>
+  <i><?php echo ($msg);?></i><br><br>
 
   <button class="bouttonBis" type=button onclick="rep('<?php echo $donnees['nom'];?>' , '<?php echo $donnees['objet'];?>' ,'<?php echo $donnees['message'];?>' )">répondre</button>
 </div>
