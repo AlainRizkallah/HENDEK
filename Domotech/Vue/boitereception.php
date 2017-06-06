@@ -1,9 +1,15 @@
 <script type="text/javascript" src="js/afficherdiv.js"></script>
 <script>
 
+var msg = " \n __________ \n \n Message précédent : \n " ;
+var obj = "Réponse à : " ;
+
 function rep(dest , objet, message){
-  var msg = " \n __________ \n \n Message précédent : \n " ;
+<<<<<<< HEAD
+  var msg = " \n __________ \n \n Message précédent : " ;
   var obj = "Réponse à : " ;
+=======
+>>>>>>> 87bf42a04159da702aded71193c6223488fa90c1
 
   window.scrollTo(0,0);
   document.getElementById("destinataire").value = dest ;
@@ -11,6 +17,7 @@ function rep(dest , objet, message){
   document.getElementById("message").value = msg + message ;
 
 }
+
   </script>
 
 <?php
@@ -20,7 +27,7 @@ $resultat = getMessagesList($db , $_SESSION['userID']);?>
 <form method="post" action="Controleur/message-manager.php">
   <button class="boutonFantome" type="submit" name=delMsgInt
   onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce message ?\nCette action sera définitive.')) return false;"
-  value='<?php echo "".$donnees['ID']?>'/><img src=Vue/Image/domotech_suppr.png width=20px></button>
+  value='<?php echo "".$donnees['ID'];?>'/><img src=Vue/Image/domotech_suppr.png width=20px></button>
 
   <u><b>  <?php echo $donnees['objet']; ?></b></u> de <b><?php echo $donnees['nom'];?></b>
 
