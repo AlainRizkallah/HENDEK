@@ -5,7 +5,7 @@
     function getCapteurHistorique($db,$ID){
 
 
-        $reponse = $db->prepare('SELECT valeur,temps FROM capteurMesure WHERE ID=:ID');
+        $reponse = $db->prepare('SELECT data,temps FROM données WHERE idCapteur=:ID');
         $reponse->bindParam(':ID',$ID);
         $reponse->execute();
         return $reponse;
