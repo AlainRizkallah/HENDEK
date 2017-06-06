@@ -45,7 +45,6 @@ if(isset($_SESSION['idMaison'])){
   </div>
 
 <div class="conteneur center">
-    <h4 id="nomSalle"></h4>
     <div id="resultat" ></div>
 </div>
 </section>

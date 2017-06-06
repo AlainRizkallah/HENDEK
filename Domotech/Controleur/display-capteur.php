@@ -12,7 +12,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 function showDetail($db,$id,$nomCapteur){
   echo '<span class=boxtitle>'.$nomCapteur.'</span class=boxtitle> <br><br>';
+echo "<div class='boxCapteur'>";
 
+echo "</div>";
 }
 
 
