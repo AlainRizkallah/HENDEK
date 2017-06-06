@@ -97,5 +97,11 @@
         }
         return $res;
         }
+      function userAdmin($db,$id){
+          $stmt = $db->prepare('SELECT status FROM `utilisateurs` WHERE `id`=:id');
+          $stmt->bindParam(':id',$id);
+          $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+          return $stmt;
+      }
 
 ?>
