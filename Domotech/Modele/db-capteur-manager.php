@@ -23,9 +23,7 @@
 
 
     function getCapteursList($db,$idSalle){
-      //  $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');
-$reponse = $db->prepare('SELECT type,valeur,etat,temps,id FROM capteur WHERE idSalle=:idSalle');
-
+        $reponse = $db->prepare('SELECT type,valeur,etat,temps,id FROM capteur WHERE idSalle=:idSalle');
         $reponse->bindParam(':idSalle',$idSalle);
         $reponse->execute();
         return $reponse;
@@ -78,5 +76,10 @@ $reponse = $db->prepare('SELECT type,valeur,etat,temps,id FROM capteur WHERE idS
 }
     return $res;
   }
-
+function getData($db,$idCapteur){
+  $reponse = $db->prepare('SELECT data,temps FROM données WHERE idCapteur=:	idCapteur');
+  $reponse->bindParam(':idCapteur',$idCapteur);
+  $reponse->execute();
+  return $reponse;
+}
 ?>

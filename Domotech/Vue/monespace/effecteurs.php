@@ -29,7 +29,7 @@ if(isset($_SESSION['idMaison'])){
                 $nom =  str_replace(" ","_",$liste['sal']);
                 $params = "salle=".$liste['ID']."&salleNom=".$nom;
               ?>
-              <button onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton"><?php echo($liste['sal']);?></button>
+              <button onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-effecteur.php') class="boutton"><?php echo($liste['sal']);?></button>
           <?php } $resultat->closeCursor();}?>
         </div>
 </div>

@@ -47,7 +47,7 @@ function showAll($db,$salle,$nomSalle){
         }
         echo "</div>";
     } else {
-        echo "Pas encore de capteurs installés";
+        echo "Pas encore d'effecteurs installés";
     }
 
   }
