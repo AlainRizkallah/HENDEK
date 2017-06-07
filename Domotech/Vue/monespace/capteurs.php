@@ -3,7 +3,6 @@ include_once("Modele/db-maison-manager.php");
 include_once("Modele/db-salle-manager.php");
 
  ?>
-<script  async defer src="js/communicationPhp.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="js/drawCharts.js"> </script>
 
