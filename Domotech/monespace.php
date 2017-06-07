@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="Vue/Styles/style-monespace.css" >
   <title>Domotech</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script  async defer src="js/communicationPhp.js"></script>
+
 
 </head>
   <body>
