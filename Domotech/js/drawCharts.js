@@ -14,7 +14,7 @@ function dessin(titre){
 
     var options = {
       title: titre,
-      hAxis: {title: titre,  titleTextStyle: {color: '#333'}},
+      hAxis: {title: "date",  titleTextStyle: {color: '#333'}},
       vAxis: {minValue: 0}
     };
 

@@ -13,11 +13,13 @@
 
   <?php include ('Controleur/session-manager.php');?>
      <h1 class="titre"><a href=.>Domotech</a> <img src=Vue/Image/logo-domotech.png class="logo"></img></h1>
-<?php include("Vue/barremenu.php");?>
+
 
 
 </header>
-
+<nav>
+  <?php include("Vue/barremenu.php");?>
+</nav>
 <aside>
   <div class="conteneur">
 

@@ -27,7 +27,7 @@ if(isset($_POST['btnLogin'])){
                       $_SESSION["idGroupe"] = $ligne['id'];
 
                     }
-                    //rredirige vers la page mon esapce
+                    //redirige vers la page mon esapce
                     header('Location:monespace.php?cible=monespace/accueilclient.php ');
                     die;
                     echo("connecté");
