@@ -11,10 +11,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 function showDetail($db,$id,$nomCapteur){
-  echo '<span class=boxtitle>'.$nomCapteur.'</span class=boxtitle> <br><br>';
-echo "<div class='boxCapteur'>";
+  $result = getData($db,$id);
+$result = $result->fetch(PDO::FETCH_ASSOC);
 
-echo "</div>";
+echo '<span class=boxtitle>'.$nomCapteur.'</span class=boxtitle> <br><br>';
+?>
+<script type="text/javascript">
+    jsFunction();
+</script>
+
+<?php
 }
 
 
@@ -30,11 +36,19 @@ function showAll($db,$salle,$nomSalle){
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
           $params = "detailId=".$row['id']."&capteurNom=". $row['type'];
           if($row['etat']==1){
-            echo "<a class='boxCapteurElement boxElementMarche' href='#'>";
+            ?>
+            <button onclick= dessin("<?php echo($row['type']);?>") class="boutton"><?php echo($row['type']);?></button>
 
+            <?php
+          /*<a class='boxCapteurElement boxElementMarche' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
+          <a class='boxCapteurElement boxElementArret' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
+
+          */
             echo "<p>Actif</p>";
           }else{
-            ?><a class='boxCapteurElement boxElementArret' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
+            ?>
+            <div class='boxCapteurElement boxElementArret' onclick= dessin("<?php echo($row['type']);?>") class="boutton">
+
             <?php echo "<p>Inactif</p>";
           }
 
@@ -54,7 +68,7 @@ function showAll($db,$salle,$nomSalle){
 
 
             echo "<p>" . $row['temps'] . "</p>";
-            echo "</a>";
+            echo "</div>";
         }
         echo "</div>";
     } else {

@@ -4,6 +4,9 @@ include_once("Modele/db-salle-manager.php");
 
  ?>
 <script  async defer src="js/communicationPhp.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="js/drawCharts.js"> </script>
+
 <?php
 if(isset($_SESSION['idMaison'])){
   $resultat=getSallesList($db, $_SESSION['idMaison']);
@@ -20,8 +23,10 @@ if(isset($_SESSION['idMaison'])){
 }
 ?>
 <section>
+
+
   <div class="n2 left">
-    <div class="dropdown " >
+  <div class="dropdown " >
 
          <button class="boutton"><?php echo($titre); ?></button>
 
