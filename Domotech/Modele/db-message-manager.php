@@ -46,7 +46,7 @@ return $res;
 }
 
 function getMessagesList($db , $idDest){
-$reponse = $db->prepare('SELECT messageint.ID ID , messageint.objet objet , messageint.message message , utilisateurs.nom nom FROM `messageint`
+$reponse = $db->prepare('SELECT messageint.ID ID , messageint.objet objet , messageint.message message , utilisateurs.nom nom , lu FROM `messageint`
   JOIN utilisateurs ON utilisateurs.id=messageint.idSend
   WHERE idDest = :idDest
   ORDER BY ID DESC'
@@ -71,4 +71,24 @@ function delMessageInt($db,$idMessage){
     }
     return $res;
     }
+
+function unreadMsg($db , $idDest){
+  $reponse = $db->prepare('SELECT * FROM `messageint` WHERE idDest = :idDest AND `lu` = 0 ');
+  $reponse->bindParam(':idDest', $idDest);
+  $reponse->execute();
+  return $reponse;
+    }
+
+
+function setLuMessage($db , $idMessage){
+  $stmt = $db->prepare('UPDATE `messageint` SET lu = 1 WHERE `ID`=:idMessage');
+  $stmt->bindParam(':idMessage',$idMessage);
+  $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+}
+
+function setNonluMessage($db , $idMessage){
+  $stmt = $db->prepare('UPDATE `messageint` SET lu = 0 WHERE `ID`=:idMessage');
+  $stmt->bindParam(':idMessage',$idMessage);
+  $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+}
 ?>

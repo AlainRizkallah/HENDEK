@@ -134,8 +134,13 @@ button {
   text-decoration: none;
   box-shadow: none;
   cursor: pointer;
-  color:red;
+}
 
+.vert {
+  color:#13d827;
+}
+.rouge {
+  color:red;
 }
 
 .gros {
@@ -258,8 +263,17 @@ button:hover {
 }
 .boutonFantome:hover{
   background-color:inherit;
-  color:red;
+  font-weight:bold;
 }
+
+.vert:hover{
+  color:#13d827;
+}
+
+.rouge:hover{
+    color:red;
+}
+
 
 
 input[type="text"] , input[type=password] {

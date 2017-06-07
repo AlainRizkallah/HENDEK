@@ -12,6 +12,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if(isset($_POST['delMsgInt'])){
       supprInt();
   }
+  if(isset($_POST['nonlu'])){
+      markRead();
+  }
+  if(isset($_POST['lu'])){
+      markUnread();
+  }
 }
 
 
@@ -41,6 +47,20 @@ function sendInt(){
 function supprInt(){
   include("../Modele/db-message-manager.php");
   $resultat = delMessageInt($db , $_POST['delMsgInt']);
+  echo ($resultat);
+  header ("Location: $_SERVER[HTTP_REFERER]" );
+}
+
+function markRead(){
+  include("../Modele/db-message-manager.php");
+  $resultat = setLuMessage($db , $_POST['nonlu']);
+  echo ($resultat);
+  header ("Location: $_SERVER[HTTP_REFERER]" );
+}
+
+function markUnread(){
+  include("../Modele/db-message-manager.php");
+  $resultat = setNonluMessage($db , $_POST['lu']);
   echo ($resultat);
   header ("Location: $_SERVER[HTTP_REFERER]" );
 }

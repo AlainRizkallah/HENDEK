@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  lun. 29 mai 2017 à 21:13
+-- Généré le :  mer. 07 juin 2017 à 04:18
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -64,6 +64,28 @@ CREATE TABLE `capteur` (
   `temps` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Déchargement des données de la table `capteur`
+--
+
+INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`, `temps`) VALUES
+(1, 3, 6, 'Luminosité', 0, 0, NULL),
+(2, 2, 5, 'Présence', 0, 0, NULL),
+(3, 2, 5, 'Luminosité', 0, 0, NULL),
+(4, 2, 5, 'Température', 0, 0, NULL),
+(5, 2, 5, 'Luminosité', 0, 0, NULL),
+(6, 3, 7, 'Présence', 0, 0, NULL),
+(7, 3, 7, 'Luminosité', 0, 0, NULL),
+(8, 3, 7, 'Température', 0, 0, NULL),
+(12, 2, 11, 'Luminosité', 0, 0, NULL),
+(13, 2, 11, 'Vidéosurveillance', 0, 0, NULL),
+(14, 8, 14, 'Luminosité', 0, 0, NULL),
+(15, 2, 11, 'Présence', 0, 0, NULL),
+(16, 23, 30, 'Présence', 0, 0, NULL),
+(17, 23, 30, 'Luminosité', 0, 0, NULL),
+(18, 2, 15, 'Présence', 0, 0, NULL),
+(19, 2, 15, 'Vidéosurveillance', 0, 0, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -107,7 +129,22 @@ CREATE TABLE `habitation` (
 --
 
 INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALUES
-(1, 'd', 0, 'BLOC', 2);
+(2, 'Paris', 420, 'Maison', 1),
+(8, 'fds', 0, 'fds', 2),
+(9, 'aj', 0, 'aj', 2),
+(11, 'fqs', 0, 'ff', 2),
+(12, 'a', 0, 'AAA', 2),
+(13, 'aj', 0, 'a', 2),
+(14, 'zfa', 0, 'asf', 2),
+(15, 'faf', 0, 'asfa', 2),
+(16, 'dz', 0, 'ACID', 2),
+(17, 'sk', 0, 'bc', 2),
+(18, 's', 0, 's', 2),
+(19, 'v', 0, 'v', 2),
+(20, 'd', 0, 's', 2),
+(21, 'dsfs', 0, 'dsgq', 2),
+(22, 'dsfs', 0, 'fdgsf', 2),
+(23, 'aj', 0, 'ACID', 1);
 
 -- --------------------------------------------------------
 
@@ -137,18 +174,24 @@ CREATE TABLE `messageint` (
   `objet` varchar(30) NOT NULL,
   `message` text NOT NULL,
   `date` date NOT NULL,
-  `ID` int(11) NOT NULL
+  `ID` int(11) NOT NULL,
+  `lu` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `messageint`
 --
 
-INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`) VALUES
-(2, 2, 'bonjour', 'Bonjour Thibault, nous testons ici quelque chose.', '0000-00-00', 11),
-(2, 2, 'deuxieme message', 'Bonjour, ceci est le deuxieme message', '0000-00-00', 12),
-(3, 2, 'bonjour fiston', 'salut fiston bienvenue ici !', '0000-00-00', 13),
-(2, 2, 'v', 'v', '0000-00-00', 14);
+INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
+(2, 2, 'Salam', 'Salami', '0000-00-00', 34, 0),
+(2, 2, 'Réponse à : Salam', ' HEOHOHOHO\r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 35, 1),
+(2, 2, 'Réponse à : Salam ', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami ', '0000-00-00', 36, 0),
+(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 37, 0),
+(2, 2, 'Réponse à : Salam', 'Message précédent : Salami', '0000-00-00', 38, 0),
+(2, 2, 'Réponse à : Salam', ' __________ \r\n \r\n Message précédent :Salami', '0000-00-00', 39, 1),
+(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 40, 1),
+(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 41, 0),
+(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 42, 1);
 
 -- --------------------------------------------------------
 
@@ -168,7 +211,25 @@ CREATE TABLE `salle` (
 
 INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
 (3, 1, 'salle de bain'),
-(4, 1, 'minibloc');
+(4, 1, 'minibloc'),
+(6, 3, 'bnr'),
+(7, 3, 'Salle de bain'),
+(11, 2, 'Chambre'),
+(12, 8, 'ar'),
+(13, 9, 'aegz'),
+(14, 8, 'bbb'),
+(15, 2, 'AAA'),
+(16, 9, 'zrarar'),
+(18, 8, 'razrazrazrg'),
+(20, 8, 'fds'),
+(21, 8, 'sfq'),
+(23, 9, 'z'),
+(24, 9, 'z'),
+(25, 11, 'z'),
+(26, 11, 's'),
+(27, 11, 'v'),
+(29, 9, 'dfqfq'),
+(30, 23, 'dgdg');
 
 -- --------------------------------------------------------
 
@@ -184,7 +245,7 @@ CREATE TABLE `utilisateurs` (
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'normal',
+  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'utilisateur principal',
   `idGroupe` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -195,7 +256,9 @@ CREATE TABLE `utilisateurs` (
 INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`) VALUES
 ('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '158885554', 'zaea.eaz@ere.fr', 'alain', 'al', 'utilisateur principal', 1),
 ('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 'tibo', 'tibo', 'utilisateur principal', 2),
-('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3);
+('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3),
+('DanielGuichard', '4a8a08f09d37b73795649038408b5f33', 7, '0402030343', 'thibault@gmail.com', 'Guichard', 'Daniel', 'utilisateur principal', 7),
+('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8);
 
 --
 -- Index pour les tables déchargées
@@ -244,27 +307,27 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT pour la table `messageint`
 --
 ALTER TABLE `messageint`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
 ALTER TABLE `salle`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
