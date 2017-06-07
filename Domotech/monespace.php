@@ -81,6 +81,9 @@
       else if ($_GET['cible'] == "monespace/detail-capteur.php"){
       include("Vue/monespace/detail-capteur.php");
   }
+      else if ($_GET['cible'] == "monespace/monprofil.php"){
+      include("Vue/monprofil.php");
+}
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");
   }

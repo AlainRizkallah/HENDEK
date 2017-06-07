@@ -5,7 +5,8 @@
 if(isset($_SESSION["userID"])){
 echo('
         <div class="conteneur">
-          <label>Bienvenue: <b>'.$_SESSION["name"].'</b></label>
+          <label>Bienvenue: <b>'.$_SESSION["name"].'</b></label><br>
+          <a href="monespace.php?cible=monespace/monprofil.php">votre profil</a>
         </div>
 ');
 

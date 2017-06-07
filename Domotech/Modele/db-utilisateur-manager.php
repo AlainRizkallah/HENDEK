@@ -83,6 +83,16 @@
     return $reponse;
     }
 
+    function getUserInfos($db,$id){
+
+    $reponse=$db->prepare('SELECT * FROM utilisateurs
+    WHERE id=:id');
+    $reponse->bindParam(':id', $id);
+    $reponse->execute();
+    return $reponse;
+    }
+
+
     function delUserSec($db,$id){
       try{
           $stmt = $db->prepare('DELETE FROM `utilisateurs` WHERE `id`=:id');
@@ -104,4 +114,17 @@
           return $stmt;
       }
 
+      function setMail($db , $email , $id){
+        $stmt = $db->prepare('UPDATE `utilisateurs` SET email = :email WHERE `id`=:id');
+        $stmt->bindParam(':email',$email);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+      }
+
+      function setTel($db , $tel , $id){
+        $stmt = $db->prepare('UPDATE `utilisateurs` SET tel = :tel WHERE `id`=:id');
+        $stmt->bindParam(':tel',$tel);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+      }
 ?>
