@@ -1,4 +1,4 @@
-<script type="text/javascript" src="js/afficherdiv.js"></script>
+<script type="text/javascript" src="js/affichermsg.js"></script>
 <script>
 
 var msg = " \n __________ \n \n Message précédent : \n " ;
