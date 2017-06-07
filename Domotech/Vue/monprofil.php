@@ -58,4 +58,4 @@ if ($infos['status']=="utilisateur principal") {?>
 <?php echo $infos['status'];?>
 
 <p class=formLabel>Mot de passe</p>
-<?php echo $infos['mdp'];?>
+<?php echo $infos['mdp'];?> <!-- TODO modification mot de passe avec entrée de l'ancien mdp -->
