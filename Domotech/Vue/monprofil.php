@@ -58,4 +58,20 @@ if ($infos['status']=="utilisateur principal") {?>
 <?php echo $infos['status'];?>
 
 <p class=formLabel>Mot de passe</p>
-<?php echo $infos['mdp'];?> <!-- TODO modification mot de passe avec entrée de l'ancien mdp -->
+<?php echo ("<i> cette information est cryptée </i>");?> 
+
+<span class="conteneurBloc n2 right">
+  <button class="bouttonMSG" type=button onclick="toggle_div(this, 'modMdp');">modifier</button>
+</span>
+<div id='modMdp' style="display:none;">
+  <br>
+  <form method="post" action="Controleur/modifUser.php">
+    <label><b>Entrez votre ancien mot de passe</b></label>
+    <input type=password placeholder="ancien mot de passe" name=prevMdp required><br>
+    <label><b>Entrez votre nouveau mot de passe</b></label>
+    <input type=password placeholder="nouveau mot de passe" name=newMdp required><br>
+    <label><b>Confirmez votre nouveau mot de passe</b></label>
+    <input type=password placeholder="nouveau mot de passe" name=confNewMdp required><br>
+    <button type="submit" name="btnModMdp">modifier</button>
+  </form>
+</div>

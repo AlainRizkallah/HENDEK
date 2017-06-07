@@ -85,7 +85,7 @@
 
     function getUserInfos($db,$id){
 
-    $reponse=$db->prepare('SELECT * FROM utilisateurs
+    $reponse=$db->prepare('SELECT identifiant , nom , prenom , tel , email , mdp , status FROM utilisateurs
     WHERE id=:id');
     $reponse->bindParam(':id', $id);
     $reponse->execute();
@@ -124,6 +124,13 @@
       function setTel($db , $tel , $id){
         $stmt = $db->prepare('UPDATE `utilisateurs` SET tel = :tel WHERE `id`=:id');
         $stmt->bindParam(':tel',$tel);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+      }
+
+      function setMdp($db , $mdp , $id){
+        $stmt = $db->prepare('UPDATE `utilisateurs` SET mdp = :mdp WHERE `id`=:id');
+        $stmt->bindParam(':mdp',$mdp);
         $stmt->bindParam(':id',$id);
         $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
       }
