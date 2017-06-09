@@ -21,11 +21,9 @@
 </header>
 <nav>
   <?php include("Vue/barremenu.php");?>
-
 </nav>
-
 <aside>
-
+  <div class="conteneur">
 
       <?php include('Vue/login.php');
     if(!isset($_SESSION["userID"])){
@@ -33,11 +31,13 @@
       die;
     }
       ?>
+  </div>
+
 
 </aside>
 
 <section>
-
+  <div class="conteneur-section">
 
 
   <?php
@@ -92,7 +92,7 @@
         echo  ("Bienvenue sur votre espace <br><br>");
   }
   ?>
-
+    </div>
 
 </section>
 

@@ -53,6 +53,7 @@ header .login{
 }
 
 .titre{
+
   margin-left: 80px;
   float: left;
   padding-top: 40px;
@@ -60,9 +61,18 @@ header .login{
   font-size: 6em;
   font-family: 'Telemarine';
 }
+.logo{
+  height: 105px;
+  width: 100px;
+
+}
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: sub;
+}
 .barremenu{
   background-color: #E0E2E5;
-  margin-top: 20px;
   display: flex;
   justify-content: space-around;
   width: 100%;
