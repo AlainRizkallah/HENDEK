@@ -21,7 +21,7 @@ if(isset($_SESSION['idMaison'])){
   }
 }
 ?>
-<section>
+
 
 
   <div class="n2 left">
@@ -51,6 +51,3 @@ if(isset($_SESSION['idMaison'])){
   <div class="conteneur center">
       <div id="resultat" ></div>
   </div>
-
-
-</section>

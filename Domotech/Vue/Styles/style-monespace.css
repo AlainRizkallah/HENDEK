@@ -181,6 +181,10 @@ header{
 
 section{
   margin-top: 50px;
+  padding-top: 40px;
+  margin-left: 250px;
+  padding-bottom: 15px;
+
 }
 section .dropdown{
   font-size: 2em;
@@ -191,10 +195,7 @@ padding-top: 15px;
 padding-bottom: 15px;
 }
 .conteneur-section{
-margin-top: 15px;
-padding-top: 40px;
-margin-left: 250px;
-padding-bottom: 15px;
+  width: 100%;
 }
 .login{
   background-color: #E0E2E5;
@@ -508,10 +509,7 @@ aside{
   margin: 0;
   width: 10%;
 }
-.conteneur-section{
-  margin-top: 0;
-  padding-top: 0;
-}
+
 
 .active{
   background-color: rgb(23, 193, 30);

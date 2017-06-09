@@ -19,9 +19,9 @@
 
 
 </header>
-<nav>
+
   <?php include("Vue/barremenu.php");?>
-</nav>
+
 <aside>
   <div class="conteneur">
 
