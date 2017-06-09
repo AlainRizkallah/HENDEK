@@ -16,14 +16,13 @@ $result = $result->fetch(PDO::FETCH_ASSOC);
 
 echo '<span class=boxtitle>'.$nomCapteur.'</span class=boxtitle> <br><br>';
 ?>
-<script type="text/javascript">
 
-dessin("<?php echo("teste");?>")
-
+<script  type="text/javascript">
+alert("txtUsername");
 </script>
 
 <?php
- echo '<script> showMessage("txtUsername"); </script>';
+echo '<script type="text/javascript">document.write(myFunction(2,4))';
 }
 
 
@@ -40,7 +39,7 @@ function showAll($db,$salle,$nomSalle){
           $params = "detailId=".$row['id']."&capteurNom=". $row['type'];
           if($row['etat']==1){
             ?>
-            <button onclick= dessin("<?php echo($row['type']);?>") class="boutton"><?php echo($row['type']);?></button>
+            <div class='boxCapteurElement boxElementMarche' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton">
 
             <?php
           /*<a class='boxCapteurElement boxElementMarche' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
