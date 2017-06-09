@@ -16,15 +16,14 @@ $result = $result->fetch(PDO::FETCH_ASSOC);
 
 echo '<span class=boxtitle>'.$nomCapteur.'</span class=boxtitle> <br><br>';
 ?>
-<script type="text/javascript" src="js/drawCharts.js"> </script>
 <script type="text/javascript">
-jQuery(document).ready(function($) {
-dessin();
-}
+
+dessin("<?php echo("teste");?>")
+
 </script>
 
-
 <?php
+ echo '<script> showMessage("txtUsername"); </script>';
 }
 
 

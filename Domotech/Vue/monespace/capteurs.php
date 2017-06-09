@@ -4,6 +4,8 @@ include_once("Modele/db-salle-manager.php");
 
  ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="js/drawCharts.js"> </script>
+
 
 
 <!-- CAPTEURS -->
