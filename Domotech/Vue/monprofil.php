@@ -3,7 +3,10 @@
 <?php
 include_once("Modele/db-utilisateur-manager.php");
  ?>
-<br><br><br><br>
+ <div class="conteneurBloc center">
+ <h3> BIENVENUE SUR VOTRE PROFIL
+ </h3></div>
+<div class="conteneurBloc n3">
 
 <?php $res = getUserInfos($db, $_SESSION['userID']);
 $infos = $res->fetch();
@@ -74,4 +77,5 @@ if ($infos['status']=="utilisateur principal") {?>
     <input type=password placeholder="nouveau mot de passe" name=confNewMdp required><br>
     <button type="submit" name="btnModMdp">modifier</button>
   </form>
+</div>
 </div>
