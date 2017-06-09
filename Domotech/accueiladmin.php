@@ -8,7 +8,6 @@
   <body>
     <header>
 
-
     <a href=index.php> <h1 class="titre">Domotech <img src=Vue/Image/logo-domotech.png width=15%></img></h1> </a>
     <div class="barremenu">
 
@@ -17,6 +16,7 @@
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/news.php" >Ajouter une actualité</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/messagerie.php" >Messagerie</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/statistiques.php" >Statistiques</a>
+        <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/capteffect.php" >Capteurs et effecteurs disponibles</a>
        </div>
     </header>
 
