@@ -16,9 +16,13 @@ $result = $result->fetch(PDO::FETCH_ASSOC);
 
 echo '<span class=boxtitle>'.$nomCapteur.'</span class=boxtitle> <br><br>';
 ?>
+<script type="text/javascript" src="js/drawCharts.js"> </script>
 <script type="text/javascript">
-    jsFunction();
+jQuery(document).ready(function($) {
+dessin();
+}
 </script>
+
 
 <?php
 }
@@ -42,12 +46,13 @@ function showAll($db,$salle,$nomSalle){
             <?php
           /*<a class='boxCapteurElement boxElementMarche' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
           <a class='boxCapteurElement boxElementArret' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
-
+dessin("<?php echo($row['type']);?>")
           */
             echo "<p>Actif</p>";
           }else{
             ?>
-            <div class='boxCapteurElement boxElementArret' onclick= dessin("<?php echo($row['type']);?>") class="boutton">
+
+            <div class='boxCapteurElement boxElementArret' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton">
 
             <?php echo "<p>Inactif</p>";
           }
