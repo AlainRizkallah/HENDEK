@@ -26,7 +26,7 @@ if ($infos['status']=="utilisateur principal") {?>
   <p class=formLabel>Adresse email</p>
   <?php echo $infos['email'];?>
   <span class="conteneurBloc n2 right">
-    <button class="bouttonMSG" type=button onclick="toggle_div(this, 'modMail');">modifier</button>
+    <button class="bouttonMSG" type=button onclick="toggle_div(this, 'modMail');">modifier ✎</button>
   </span>
   <div id='modMail' style="display:none;">
     <br>
@@ -41,7 +41,7 @@ if ($infos['status']=="utilisateur principal") {?>
   <p class=formLabel>Téléphone</p>
   <?php echo $infos['tel'];?>
   <span class="conteneurBloc n2 right">
-    <button class="bouttonMSG" type=button onclick="toggle_div(this, 'modTel');">modifier</button>
+    <button class="bouttonMSG" type=button onclick="toggle_div(this, 'modTel');">modifier ✎</button>
   </span>
   <div id='modTel' style="display:none;">
     <br>
@@ -58,10 +58,10 @@ if ($infos['status']=="utilisateur principal") {?>
 <?php echo $infos['status'];?>
 
 <p class=formLabel>Mot de passe</p>
-<?php echo ("<i> cette information est cryptée </i>");?> 
+<?php echo ("<i> cette information est cryptée </i>");?>
 
 <span class="conteneurBloc n2 right">
-  <button class="bouttonMSG" type=button onclick="toggle_div(this, 'modMdp');">modifier</button>
+  <button class="bouttonMSG" type=button onclick="toggle_div(this, 'modMdp');">modifier ✎</button>
 </span>
 <div id='modMdp' style="display:none;">
   <br>

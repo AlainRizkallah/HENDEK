@@ -5,6 +5,6 @@ function toggle_div(bouton, id) { // On déclare la fonction toggle_div qui pren
     bouton.innerHTML = "réduire"; // ... et on change le contenu du bouton.
   } else { // S'il est visible...
     div.style.display = "none"; // ... on le masque...
-    bouton.innerHTML = "modifier" // ... et on change le contenu du bouton.
+    bouton.innerHTML = "modifier ✎" // ... et on change le contenu du bouton.
   }
 }
