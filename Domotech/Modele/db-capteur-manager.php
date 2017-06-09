@@ -37,6 +37,14 @@
             return $reponse;
         }
 
+        function getCapteursSalleList($db,$idSalle){
+                $reponse = $db->prepare('SELECT type,id FROM capteur WHERE idSalle=:idSalle');
+
+                $reponse->bindParam(':idMaison',$idMaison);
+                $reponse->execute();
+                return $reponse;
+            }
+
     function capterExist($db,$identifiant){
       $reponse = $db->prepare('SELECT COUNT(*) FROM capteur WHERE ID=:ID');
       $reponse->bindParam(':ID',$ID);

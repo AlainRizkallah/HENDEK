@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
      dispAddCapteur();
   }
 
-  if((isset($_POST['btnSuppCapteur']) or (isset($_POST['maison'])))){
+  if(isset($_POST['maison'])){
     dispSuppCapteur();
  }
 

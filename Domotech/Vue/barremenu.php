@@ -13,7 +13,7 @@ echo('
 
     <a class="barre-menu-element" href ="monespace.php?cible=monespace/mamaison.php" > Ma Maison </a>
          <a class="barre-menu-element n8 " href ="monespace.php?cible=monespace/capteurs.php" > Etat des capteurs</a>
-         <a class="barre-menu-element n8" href ="monespace.php?cible=monespace/ajoutcapteurs.php" > Gérer mes capteurs </a>
+         <a class="barre-menu-element n8" href ="monespace.php?cible=monespace/ajoutcapteurs.php" > Gérer mes capteurs/effecteurs </a>
          <a class="barre-menu-element n8" href ="monespace.php?cible=monespace/consommation.php" > Consommation </a>
          <a class="barre-menu-element n8" href ="monespace.php?cible=monespace/utilisateurs.php" > Utilisateurs </a>
          <a class="barre-menu-element n8" href ="monespace.php?cible=monespace/piece.php" > Pièce </a>
