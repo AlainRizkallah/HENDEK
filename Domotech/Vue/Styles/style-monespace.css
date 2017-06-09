@@ -180,11 +180,8 @@ header{
 }
 
 section{
-  margin-top: 50px;
-  padding-top: 40px;
-  margin-left: 250px;
+  margin-left: 10%;
   padding-bottom: 15px;
-
 }
 section .dropdown{
   font-size: 2em;
@@ -194,8 +191,9 @@ section .dropdown{
 padding-top: 15px;
 padding-bottom: 15px;
 }
-.conteneur-section{
-  width: 100%;
+.resultat{
+float:left;
+width: 100%;
 }
 .login{
   background-color: #E0E2E5;
@@ -506,8 +504,7 @@ footer ul{
 }
 aside{
   float: left;
-  margin: 0;
-  width: 10%;
+
 }
 
 

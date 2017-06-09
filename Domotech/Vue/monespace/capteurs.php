@@ -48,6 +48,6 @@ if(isset($_SESSION['idMaison'])){
     </div>
 
   </div>
-  <div class="conteneur center">
-      <div id="resultat" ></div>
+  <div class="center">
+      <div class="resultat" id="resultat" ></div>
   </div>
