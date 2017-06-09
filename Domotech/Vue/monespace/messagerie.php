@@ -1,6 +1,7 @@
 <?php
 include_once("Modele/db-message-manager.php");
 ?>
+<div class="conteneurBloc n3">
 <h2> Envoyer un message </h2>
 
 <form method="POST" action= 'Controleur/message-manager.php'>
@@ -18,3 +19,4 @@ include_once("Modele/db-message-manager.php");
 <h2> Boîte de reception </h2>
 
 <?php include('Vue/boitereception.php') ?>
+</div>
