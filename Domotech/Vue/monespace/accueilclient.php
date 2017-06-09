@@ -1,6 +1,7 @@
 <?php include_once("Modele/db-maison-manager.php");
 include_once("Modele/db-salle-manager.php");
-include_once("Modele/db-capteur-manager.php");?>
+include_once("Modele/db-capteur-manager.php");
+include_once("Modele/db-effecteur-manager.php");?>
 
 <div class="conteneurBloc n2 center">
 <h3> BIENVENUE SUR VOTRE ESPACE
@@ -33,7 +34,7 @@ include_once("Modele/db-capteur-manager.php");?>
 
 
 
-<div><br>
+<div class="conteneurBloc n2"><br>
   <h2>
     Liste de vos capteurs
   </h2>
@@ -44,3 +45,15 @@ include_once("Modele/db-capteur-manager.php");?>
   </p>
 </div>
   <?php include('Vue/Listes/listecapteurs.php');?>
+
+  <div class="conteneurBloc n2"><br>
+    <h2>
+      Liste de vos effecteurs
+    </h2>
+  </div>
+  <div class="conteneurBloc n2 right">
+    <p class=center>
+      <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des effecteurs</a>
+    </p>
+  </div>
+    <?php include('Vue/Listes/listeeffecteur.php');?>
