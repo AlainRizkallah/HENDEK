@@ -218,7 +218,7 @@ border-radius: 5px;
   background-color: #E0E2E5;
   margin-top: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   float: left;
   font-family: "SB";
@@ -239,9 +239,10 @@ border-radius: 5px;
   text-align: center;
   float:left;
   padding:20px;
-  border-radius: 9px;
+  border-radius: 4px;
   text-decoration: none;
   font-size: 1em;
+  width:100%;
   color: #5680A6;
 }
 .n8{
