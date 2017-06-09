@@ -39,11 +39,11 @@ function showAll($db,$salle,$nomSalle){
                   $unit = "";
                 break;
             }
-            echo "<p>" . $row['valeur'] .$unit. "</p>";
+//            echo "<p>" . $row['valeur'] .$unit. "</p>";
 
 
-            echo "<p>" . $row['temps'] . "</p>";
-            echo "</a>";
+//            echo "<p>" . $row['temps'] . "</p>";
+//            echo "</a>";
         }
         echo "</div>";
     } else {

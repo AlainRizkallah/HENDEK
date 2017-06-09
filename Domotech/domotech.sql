@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mer. 07 juin 2017 à 04:18
+-- Généré le :  ven. 09 juin 2017 à 18:49
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -31,9 +31,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `actionneur` (
   `ID` int(11) NOT NULL,
   `idSalle` int(11) NOT NULL,
-  `idCapteur` int(11) NOT NULL,
-  `etat` float NOT NULL
+  `etat` float NOT NULL,
+  `type` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `idMaison` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `actionneur`
+--
+
+INSERT INTO `actionneur` (`ID`, `idSalle`, `etat`, `type`, `idMaison`) VALUES
+(2, 15, 0, 'Lumiere', 2);
 
 -- --------------------------------------------------------
 
@@ -84,7 +92,8 @@ INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`
 (16, 23, 30, 'Présence', 0, 0, NULL),
 (17, 23, 30, 'Luminosité', 0, 0, NULL),
 (18, 2, 15, 'Présence', 0, 0, NULL),
-(19, 2, 15, 'Vidéosurveillance', 0, 0, NULL);
+(20, 2, 15, 'Luminosité', 0, 0, NULL),
+(21, 2, 15, 'Luminosité', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,7 +153,8 @@ INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALU
 (20, 'd', 0, 's', 2),
 (21, 'dsfs', 0, 'dsgq', 2),
 (22, 'dsfs', 0, 'fdgsf', 2),
-(23, 'aj', 0, 'ACID', 1);
+(23, 'aj', 0, 'ACID', 1),
+(24, '12 rue des ..', 230, 'Paris', 1);
 
 -- --------------------------------------------------------
 
@@ -191,7 +201,9 @@ INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`, 
 (2, 2, 'Réponse à : Salam', ' __________ \r\n \r\n Message précédent :Salami', '0000-00-00', 39, 1),
 (2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 40, 1),
 (2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 41, 0),
-(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 42, 1);
+(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 42, 1),
+(1, 1, 'gdgl', 'bonjour', '0000-00-00', 44, 1),
+(8, 1, 'Bonjour', 'eele', '0000-00-00', 45, 1);
 
 -- --------------------------------------------------------
 
@@ -214,7 +226,6 @@ INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
 (4, 1, 'minibloc'),
 (6, 3, 'bnr'),
 (7, 3, 'Salle de bain'),
-(11, 2, 'Chambre'),
 (12, 8, 'ar'),
 (13, 9, 'aegz'),
 (14, 8, 'bbb'),
@@ -265,6 +276,13 @@ INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `
 --
 
 --
+-- Index pour la table `actionneur`
+--
+ALTER TABLE `actionneur`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ID` (`ID`);
+
+--
 -- Index pour la table `capteur`
 --
 ALTER TABLE `capteur`
@@ -304,20 +322,25 @@ ALTER TABLE `utilisateurs`
 --
 
 --
+-- AUTO_INCREMENT pour la table `actionneur`
+--
+ALTER TABLE `actionneur`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT pour la table `messageint`
 --
 ALTER TABLE `messageint`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --

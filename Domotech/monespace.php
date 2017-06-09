@@ -91,6 +91,10 @@
       else if ($_GET['cible'] == "monespace/accessdenied.php"){
       include("Vue/monespace/accessdenied.php");
       }
+
+      else if ($_GET['cible'] == "monespace/consommation.php"){
+      include("Vue/monespace/consommation.php");
+      }
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");
   }

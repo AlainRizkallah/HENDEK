@@ -9,30 +9,29 @@ include_once("Modele/db-salle-manager.php");
 
 
 <!-- CAPTEURS -->
+<div class="conteneurBloc n2 left">
 <h2> Etat des capteurs </h2>
 
 <?php
 if(isset($_SESSION['idMaison'])){
   $resultat=getSallesList($db, $_SESSION['idMaison']);
-  $titre = "Choisissez une maison";
+  $titre = "Choisissez une salle";
   if(isset($_SESSION["nomMaison"])){
-      $titre = "▼ Salles de la maison: ".$_SESSION["nomMaison"];
+      $titre = "▼ Salles de la maison : ".$_SESSION["nomMaison"];
   }
 
 }else{
   $resultat="";
   if(!isset($_SESSION["nomMaison"])){
-    $titre="▼ Salles de la maison: "."pas de maison";
+    $titre="▼ Salles de la maison : "."pas de maison";
   }
 }
 ?>
 
 
+  <div class="dropdown" >
 
-  <div class="n2 left">
-  <div class="dropdown " >
-
-         <button class="boutton"><?php echo($titre); ?></button>
+         <button class="boutton gros"><?php echo($titre); ?></button>
 
             <div class="dropdown-content">
 
@@ -51,14 +50,10 @@ if(isset($_SESSION['idMaison'])){
 
             </div>
     </div>
-
-  </div>
-  <div class="center">
-      <div class="resultat" id="resultat" ></div>
-  </div>
-
+</div>
 
 <!-- EFFECTEURS -->
+<div class="conteneurBloc n2 right">
 <h2> Etat des effecteurs </h2>
 
 <script  async defer src="js/communicationPhp.js"></script>
@@ -68,22 +63,22 @@ include_once("Modele/db-salle-manager.php");
 
 if(isset($_SESSION['idMaison'])){
   $resultat=getSallesList($db, $_SESSION['idMaison']);
-  $titre = "Choisissez une maison";
+  $titre = "Choisissez une salle";
   if(isset($_SESSION["nomMaison"])){
-      $titre = "▼ Salles de la maison: ".$_SESSION["nomMaison"];
+      $titre = "▼ Salles de la maison : ".$_SESSION["nomMaison"];
   }
 
 }else{
   $resultat="";
   if(!isset($_SESSION["nomMaison"])){
-   $titre = "▼ Salles de la maison: "."pas de maison";
+   $titre = "▼ Salles de la maison : "."pas de maison";
   }
 
 }
  ?>
 
 <div class="dropdown" >
-    <span class=center> <button class="boutton gros"><?php echo($titre); ?></button> </span>
+    <button class="boutton gros"><?php echo($titre); ?></button>
         <div class="dropdown-content">
           <?php
           if(!empty($resultat)){
@@ -95,6 +90,14 @@ if(isset($_SESSION['idMaison'])){
           <?php } $resultat->closeCursor();}?>
         </div>
 </div>
+</div>
+
+  <div class="center">
+      <div class="resultat" id="resultat" ></div>
+  </div>
+
+
+
 <div class="conteneur center">
     <h4 id="nomSalle"></h4>
     <div id="resultat" ></div>
