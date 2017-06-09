@@ -37,9 +37,10 @@ function showAll($db,$salle,$nomSalle){
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
           $params = "detailId=".$row['id']."&capteurNom=". $row['type'];
+          $data = getCapteurHistorique($db,$row['id']);
           if($row['etat']==1){
             ?>
-            <div class='boxCapteurElement boxElementMarche' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton">
+            <div class='boxCapteurElement boxElementMarche boutton' onclick= dessin("<?php echo($row['type']);?>","<?php echo($data->fetch())?>") >
 
             <?php
           /*<a class='boxCapteurElement boxElementMarche' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
@@ -50,7 +51,7 @@ dessin("<?php echo($row['type']);?>")
           }else{
             ?>
 
-            <div class='boxCapteurElement boxElementArret' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php') class="boutton">
+            <div class='boxCapteurElement boxElementArret boutton'  onclick= dessin("<?php echo($row['type']);?>") >
 
             <?php echo "<p>Inactif</p>";
           }
