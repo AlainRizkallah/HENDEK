@@ -3,7 +3,7 @@
 
     <section>
         <p>
-           
+
            <div class="image1">
           <img src="http://nsa37.casimages.com/img/2017/05/05/170505124535648744.png" width="100%"/>
            <br />
@@ -14,7 +14,7 @@
         </p>
     </section>
 
-<?php include("Vue/footer.html"); ?>
+<?php include("Vue/footer.php"); ?>
 
   </body>
 </html>

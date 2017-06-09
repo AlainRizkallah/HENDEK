@@ -88,6 +88,9 @@
       else if ($_GET['cible'] == "monespace/monprofil.php"){
       include("Vue/monprofil.php");
 }
+      else if ($_GET['cible'] == "monespace/accessdenied.php"){
+      include("Vue/monespace/accessdenied.php");
+      }
   } else { // affichage par défaut
         echo  ("Bienvenue sur votre espace <br><br>");
   }
@@ -96,7 +99,7 @@
 
 </section>
 
-<?php include("Vue/footer.html"); ?>
+<?php include("Vue/footer.php"); ?>
 <script>
 currpage = $(location).attr('href');
 $('.barre-menu-element').each(function(){

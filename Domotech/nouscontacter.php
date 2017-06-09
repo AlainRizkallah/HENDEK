@@ -7,7 +7,7 @@
       </div>
     </section>
 
-<?php include("Vue/footer.html"); ?>
+<?php include("Vue/footer.php"); ?>
 
   </body>
 </html>

@@ -396,6 +396,10 @@ input[type="password"]:focus {
   width:40%;
 }
 
+.n3{
+  width:70%;
+  margin-left:25%;
+}
 
 .textecentre{
   text-align: center;
