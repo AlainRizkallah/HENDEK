@@ -26,7 +26,7 @@
 
       function addUser($db,$identifiant,$mdp,$email,$nom,$prenom,$tel){
         try{
-      $stmt =   $db->prepare('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`,`email`,`nom`,`prenom`,`tel`) VALUES (:identifiant, :mdp, NULL,:email,:nom,:prenom,:tel) ');
+      $stmt =   $db->prepare('INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`,`email`,`nom`,`prenom`,`tel`,`idGroupe`) VALUES (:identifiant, :mdp, NULL,:email,:nom,:prenom,:tel,:identifiant) ');
       $mdp = MD5($mdp);
       $stmt ->bindParam(':identifiant',$identifiant);
       $stmt ->bindParam(':mdp',$mdp);

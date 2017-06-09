@@ -21,8 +21,8 @@ if(isset($_POST['btnLogin'])){
                 } else { // mot de passe correct, on affiche la page d'accueil
                     $_SESSION["userID"] = $ligne['id'];
                     $_SESSION["name"]=$_POST['userName'];
-
-                    if(!isset($_SESSION["idGroupe"])){
+                    $_SESSION["idGroupe"] = $ligne['idGroupe'];
+                    if(empty($_SESSION["idGroupe"])){
                       updateGroup($db,$_SESSION["userID"],$_SESSION["userID"]);
                       $_SESSION["idGroupe"] = $ligne['id'];
 
