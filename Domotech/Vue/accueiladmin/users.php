@@ -4,7 +4,7 @@
 </p><br>
 
 <?php
-  include("Modele/db-utilisateur-manager.php");
+  include_once("Modele/db-utilisateur-manager.php");
 
   $reponse = $db->query('SELECT * FROM utilisateurs ORDER BY idGroupe');
   while ($donnees = $reponse->fetch()) {?>

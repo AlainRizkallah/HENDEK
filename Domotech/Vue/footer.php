@@ -13,7 +13,7 @@
     <?php include("Controleur/test-statut.php");
 
     if ($ligne['status']=='admin') { // si l'utlisateur est un admin ?>
-      <br> <a href="accueiladmin.php" > Panneau d'administration </a>
+      <br> <a href="accueiladmin.php?cible=accueiladmin/accueil.php" > Panneau d'administration </a>
 
     <?php } }?>
 
