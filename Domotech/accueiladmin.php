@@ -39,7 +39,8 @@ include("Controleur/test-statut.php");
               if ($ligne['status']=='admin') {include("Vue/accueiladmin/users.php");}
               else { echo ("
                 <p class=boxtitle>
-                  Vous n'avez pas accès à cette partie du site
+                  Vous n'avez pas accès à cette partie du site <br>
+                  <img src='Vue/Image/accessdenied.jpg' width=20%></img>
                 </p> "); }
 
               } else if ($_GET['cible'] == "etape1"){
@@ -51,28 +52,32 @@ include("Controleur/test-statut.php");
                 if ($ligne['status']=='admin') {  include("Vue/accueiladmin/news.php"); }
                 else { echo ("
                   <p class=boxtitle>
-                    Vous n'avez pas accès à cette partie du site
+                    Vous n'avez pas accès à cette partie du site <br>
+                    <img src='Vue/Image/accessdenied.jpg' width=20%></img>
                   </p> "); }
 
               } else if ($_GET['cible'] == "accueiladmin/messagerie.php"){
                 if ($ligne['status']=='admin') {  include("Vue/accueiladmin/messagerie.php");}
                 else { echo ("
                   <p class=boxtitle>
-                    Vous n'avez pas accès à cette partie du site
+                    Vous n'avez pas accès à cette partie du site <br>
+                    <img src='Vue/Image/accessdenied.jpg' width=20%></img>
                   </p> "); }
 
               } else if ($_GET['cible'] == "accueiladmin/statistiques.php"){
               if ($ligne['status']=='admin') {    include("Vue/accueiladmin/statistiques.php");}
               else { echo ("
                 <p class=boxtitle>
-                  Vous n'avez pas accès à cette partie du site
+                  Vous n'avez pas accès à cette partie du site <br>
+                  <img src='Vue/Image/accessdenied.jpg' width=20%></img>
                 </p> "); }
 
               } else if ($_GET['cible'] == "accueiladmin/accueil.php"){
               if ($ligne['status']=='admin') {    include("Vue/accueiladmin/accueil.php");}
               else { echo ("
                 <p class=boxtitle>
-                  Vous n'avez pas accès à cette partie du site
+                  Vous n'avez pas accès à cette partie du site <br>
+                  <img src='Vue/Image/accessdenied.jpg' width=20%></img>
                 </p> "); }
               }
 
