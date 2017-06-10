@@ -11,11 +11,13 @@ include_once("Modele/db-effecteur-manager.php");?>
   <h2>
   Liste de vos maisons
   </h2>
-  <div class="conteneurBloc n2 right">
-    <p class=center>
-      <a class="boutton" href ="monespace.php?cible=monespace/mamaison.php" >ajouter/supprimer des maisons</a>
-    </p>
-  </div>
+  <?php if ($ligne['status']=='utilisateur principal'){ ?>
+    <div class="conteneurBloc n2 right">
+      <p class=center>
+        <a class="boutton" href ="monespace.php?cible=monespace/mamaison.php" >ajouter/supprimer des maisons</a>
+      </p>
+    </div>
+  <?php } ?>
   <?php include('Vue/Listes/listemaisons.php');?>
 </div>
 
@@ -25,11 +27,13 @@ include_once("Modele/db-effecteur-manager.php");?>
   <h2>
     Liste de vos pièces
   </h2>
-  <div class="conteneurBloc n2 right">
-    <p class=center>
-      <a class="boutton" href ="monespace.php?cible=monespace/piece.php" >ajouter/supprimer des pièces</a>
-    </p>
-  </div>
+  <?php if ($ligne['status']=='utilisateur principal'){ ?>
+    <div class="conteneurBloc n2 right">
+      <p class=center>
+        <a class="boutton" href ="monespace.php?cible=monespace/piece.php" >ajouter/supprimer des pièces</a>
+      </p>
+    </div>
+  <?php } ?>
     <?php include('Vue/Listes/listepieces.php');?>
 </div>
 
@@ -41,11 +45,13 @@ include_once("Modele/db-effecteur-manager.php");?>
   <h2>
     Liste de vos capteurs
   </h2>
-  <div class="conteneurBloc n2 right">
-    <p class=center>
-      <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des capteurs</a>
-    </p>
-  </div>
+  <?php if ($ligne['status']=='utilisateur principal'){ ?>
+    <div class="conteneurBloc n2 right">
+      <p class=center>
+        <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des capteurs</a>
+      </p>
+    </div>
+  <?php } ?>
     <?php include('Vue/Listes/listecapteurs.php');?>
 </div>
 
@@ -55,10 +61,12 @@ include_once("Modele/db-effecteur-manager.php");?>
     <h2>
       Liste de vos effecteurs
     </h2>
-    <div class="conteneurBloc n2 right">
-      <p class=center>
-        <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des effecteurs</a>
-      </p>
-    </div>
+    <?php if ($ligne['status']=='utilisateur principal'){ ?>
+      <div class="conteneurBloc n2 right">
+        <p class=center>
+          <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des effecteurs</a>
+        </p>
+      </div>
+    <?php } ?>
     <?php include('Vue/Listes/listeeffecteur.php');?>
   </div>

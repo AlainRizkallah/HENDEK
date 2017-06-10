@@ -1,8 +1,4 @@
-<?php $resultat=getCapteurGroupList($db,  $_SESSION["idGroupe"]);
-
-
-
-?>
+<?php $resultat=getCapteurGroupList($db,  $_SESSION["idGroupe"]); ?>
 
 <form method="post" action="Controleur/capteur-manager.php">
   <?php while ($liste=$resultat->fetch()){
