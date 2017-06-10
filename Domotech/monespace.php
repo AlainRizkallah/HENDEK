@@ -40,13 +40,14 @@
   <div class="conteneur-section">
 
 
-  <?php
+  <?php include("Controleur/test-statut.php");
 
   if(isset($_GET['cible'])) { // on regarde la page où il veut aller
 
 
     if($_GET['cible'] == 'monespace/mamaison.php'){// Changer les cibles /mon-espace/ma-maison
-      include("Vue/monespace/mamaison.php");
+      if ($ligne['status']=='utilisateur principal') {include("Vue/monespace/mamaison.php");}
+      else { include("Vue/monespace/accessdenied.php");}
 
 /*
           if (preg_match('#monespace-([0-9-]+)\.php#isU', $_SERVER['REDIRECT_URL'], $match)) {
@@ -63,21 +64,21 @@
           $reponse = utilisateurs($db);
           include("Vue/etape1.php");
 
-      } else if ($_GET['cible'] == "monespace/capteurs.php"){
-          include("Vue/monespace/capteurs.php");
+      } else if ($_GET['cible'] == "monespace/capteurs.php"){ //etat des capteurs
+        include("Vue/monespace/capteurs.php");
 
-      } else if ($_GET['cible'] == "monespace/ajoutcapteurs.php"){
-          include("Vue/monespace/ajoutcapteurs.php");
+      } else if ($_GET['cible'] == "monespace/ajoutcapteurs.php"){ //gerer les capteurs
+            if ($ligne['status']=='utilisateur principal') {include("Vue/monespace/ajoutcapteurs.php");}
+            else { include("Vue/monespace/accessdenied.php");}
       } else if ($_GET['cible'] == "monespace/piece.php"){
-          include("Vue/monespace/piece.php");
+        if ($ligne['status']=='utilisateur principal') {include("Vue/monespace/piece.php");}
+        else { include("Vue/monespace/accessdenied.php");}
      }  else if ($_GET['cible'] == "monespace/accueilclient.php"){
          include("Vue/monespace/accueilclient.php");
     }
         else if ($_GET['cible'] == "monespace/utilisateurs.php"){
-          include("Vue/monespace/utilisateurs.php");
-    }
-        else if ($_GET['cible'] == "monespace/effecteurs.php"){
-          include("Vue/monespace/effecteurs.php");
+          if ($ligne['status']=='utilisateur principal') {include("Vue/monespace/utilisateurs.php");}
+          else { include("Vue/monespace/accessdenied.php");}
     }
       else if ($_GET['cible'] == "monespace/messagerie.php"){
         include("Vue/monespace/messagerie.php");
