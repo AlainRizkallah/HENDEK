@@ -4,14 +4,13 @@
 <?php
 if(isset($_SESSION["userID"])){
 echo('
-        <div class="conteneur">
-          <label>Bienvenue: <b>'.$_SESSION["name"].'</b></label><br>
-          <a href="monespace.php?cible=monespace/monprofil.php">votre profil</a>
-        </div>
+        <div class="dropdown">
+          <label>Bienvenue : <b>'.$_SESSION["name"].'</b></label><br>
+          <a class=bouttonBis href="monespace.php?cible=monespace/monprofil.php">votre profil</a> </div>
+
 ');
 
-?>
-<span class=>Choisissez une maison : </span><?php
+?><?php
 
 include_once 'Vue/menu/selecteur-maison.php';
 include ("Modele/db-message-manager.php");

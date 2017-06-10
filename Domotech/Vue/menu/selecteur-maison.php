@@ -5,7 +5,7 @@ $reponse = getHabitationsList($db,  $_SESSION["idGroupe"]);
 //TODO personnaliser la fonction dans le onClick
 
 if(!isset($_SESSION["nomMaison"])){
-  $nomMaison = "Choix de la Maison ▼";
+  $nomMaison = "▼ Choississez une maison ▼";
 }else{
   $nomMaison = $_SESSION["nomMaison"];
 }
