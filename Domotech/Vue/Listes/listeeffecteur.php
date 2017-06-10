@@ -3,7 +3,7 @@
 <form method="post" action="Controleur/effecteur-manager.php">
   <?php while ($liste=$resultat->fetch()){
 
-    if ($ligne['status']=='utilisateur principal') {?>
+    if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire'){?>
 
       <button class="boutonFantome" type="submit" name="maison"
       onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce capteur ?\nCette action sera définitive.')) return false;"

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 09 juin 2017 à 18:49
+-- Généré le :  Dim 11 juin 2017 à 00:35
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -256,7 +256,7 @@ CREATE TABLE `utilisateurs` (
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'utilisateur principal',
+  `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Utilisateur principal',
   `idGroupe` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -265,11 +265,15 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '158885554', 'zaea.eaz@ere.fr', 'alain', 'al', 'utilisateur principal', 1),
-('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 'tibo', 'tibo', 'utilisateur principal', 2),
+('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '158885554', 'zaea.eaz@ere.fr', 'alain', 'al', 'Utilisateur principal', 1),
+('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 'tibo', 'tibo', 'Utilisateur principal', 2),
 ('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3),
 ('DanielGuichard', '4a8a08f09d37b73795649038408b5f33', 7, '0402030343', 'thibault@gmail.com', 'Guichard', 'Daniel', 'utilisateur principal', 7),
-('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8);
+('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8),
+('a', '0cc175b9c0f1b6a831c399e269772661', 9, '', '', '', '', 'Utilisateur secondaire', 1),
+('alainJunior', '343d9040a671c45832ee5381860e2996', 10, '', '', '', '', 'Enfant', 1),
+('bgo', '09bcc7eb9ba3cff5f477d7f3e53f2bca', 11, '', '', '', '', 'Utilisateur secondaire', 1),
+('dg', 'a6be8a33b7c987f4ffb76d9c9805c7eb', 12, '', '', '', '', 'Enfant', 1);
 
 --
 -- Index pour les tables déchargées
@@ -350,7 +354,7 @@ ALTER TABLE `salle`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

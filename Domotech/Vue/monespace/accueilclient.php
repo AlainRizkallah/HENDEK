@@ -11,7 +11,7 @@ include_once("Modele/db-effecteur-manager.php");?>
   <h2>
   Liste de vos maisons
   </h2>
-  <?php if ($ligne['status']=='utilisateur principal'){ ?>
+  <?php if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire'){ ?>
     <div class="conteneurBloc n2 right">
       <p class=center>
         <a class="boutton" href ="monespace.php?cible=monespace/mamaison.php" >ajouter/supprimer des maisons</a>
@@ -27,7 +27,7 @@ include_once("Modele/db-effecteur-manager.php");?>
   <h2>
     Liste de vos pièces
   </h2>
-  <?php if ($ligne['status']=='utilisateur principal'){ ?>
+  <?php if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire'){ ?>
     <div class="conteneurBloc n2 right">
       <p class=center>
         <a class="boutton" href ="monespace.php?cible=monespace/piece.php" >ajouter/supprimer des pièces</a>
@@ -45,7 +45,7 @@ include_once("Modele/db-effecteur-manager.php");?>
   <h2>
     Liste de vos capteurs
   </h2>
-  <?php if ($ligne['status']=='utilisateur principal'){ ?>
+  <?php if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire'){ ?>
     <div class="conteneurBloc n2 right">
       <p class=center>
         <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des capteurs</a>
@@ -61,7 +61,7 @@ include_once("Modele/db-effecteur-manager.php");?>
     <h2>
       Liste de vos effecteurs
     </h2>
-    <?php if ($ligne['status']=='utilisateur principal'){ ?>
+    <?php if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire'){ ?>
       <div class="conteneurBloc n2 right">
         <p class=center>
           <a class="boutton" href ="monespace.php?cible=monespace/ajoutcapteurs.php" >ajouter/supprimer des effecteurs</a>

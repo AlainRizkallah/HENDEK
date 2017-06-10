@@ -46,7 +46,7 @@
 
 
     if($_GET['cible'] == 'monespace/mamaison.php'){// Changer les cibles /mon-espace/ma-maison
-      if ($ligne['status']=='utilisateur principal') {include("Vue/monespace/mamaison.php");}
+      if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire') {include("Vue/monespace/mamaison.php");}
       else { include("Vue/monespace/accessdenied.php");}
 
 /*
@@ -68,16 +68,16 @@
         include("Vue/monespace/capteurs.php");
 
       } else if ($_GET['cible'] == "monespace/ajoutcapteurs.php"){ //gerer les capteurs
-            if ($ligne['status']=='utilisateur principal') {include("Vue/monespace/ajoutcapteurs.php");}
+            if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire') {include("Vue/monespace/ajoutcapteurs.php");}
             else { include("Vue/monespace/accessdenied.php");}
       } else if ($_GET['cible'] == "monespace/piece.php"){
-        if ($ligne['status']=='utilisateur principal') {include("Vue/monespace/piece.php");}
+        if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire') {include("Vue/monespace/piece.php");}
         else { include("Vue/monespace/accessdenied.php");}
      }  else if ($_GET['cible'] == "monespace/accueilclient.php"){
          include("Vue/monespace/accueilclient.php");
     }
         else if ($_GET['cible'] == "monespace/utilisateurs.php"){
-          if ($ligne['status']=='utilisateur principal') {include("Vue/monespace/utilisateurs.php");}
+          if ($ligne['status']=='Utilisateur principal') {include("Vue/monespace/utilisateurs.php");}
           else { include("Vue/monespace/accessdenied.php");}
     }
       else if ($_GET['cible'] == "monespace/messagerie.php"){

@@ -2,7 +2,7 @@
 
 <form method="post" action="Controleur/maison-manager.php">
   <?php while ($donnees = $reponse->fetch()) {
-    if ($ligne['status']=='utilisateur principal') { ?>
+    if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire'){ ?>
 
     <button class="boutonFantome" type="submit" name="delHabitation"
     onclick="if(!confirm('Êtes vous sur de vouloir supprimer cette maison ?\nCette action sera définitive.')) return false;"

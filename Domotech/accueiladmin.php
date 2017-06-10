@@ -29,7 +29,7 @@
 
           <?php
 include("Controleur/test-statut.php");
- // si l'utlisateur est un admin
+
 
 
           if(isset($_GET['cible'])) { // on regarde la page où il veut aller
