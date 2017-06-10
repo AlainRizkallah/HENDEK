@@ -134,4 +134,11 @@
         $stmt->bindParam(':id',$id);
         $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
       }
+      function setStatut($db, $statut , $id){
+        $stmt = $db->prepare('UPDATE `utilisateurs` SET status = :statut WHERE `id`=:id');
+        $stmt->bindParam(':id',$id);
+        $stmt->bindParam(':statut',$statut);
+        $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+        return $stmt;
+      }
 ?>

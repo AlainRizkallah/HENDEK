@@ -32,7 +32,36 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    }
 }
+
+if(isset($_POST['btnModMdpSec'])){
+  include("../Modele/db-utilisateur-manager.php");
+  session_start();
+  $res = getUserInfos($db, $_POST['btnModMdpSec']);
+  $infos = $res->fetch();
+
+  if(($_POST['newMdp'])!=$_POST['confNewMdp']){
+      $erreur = "La confirmation du mot de passe a échoué";
+      echo($erreur);
+    }
+    else{ // si les mdp sont les memes
+      $password = md5($_POST['newMdp']);
+      $resultat = setMdp($db , $password , $_POST['btnModMdpSec']);
+      echo ($resultat);
+      header ("Location: $_SERVER[HTTP_REFERER]" );
+    }
+
+  }
+
+  if(isset($_POST['btnModStatut'])){
+    include("../Modele/db-utilisateur-manager.php");
+    $resultat = setStatut($db,$_POST['statut'] , $_POST['btnModStatut']) ; }
+    header ("Location: $_SERVER[HTTP_REFERER]" );
 }
+
+
+
+
+
 function majMail(){
   include("../Modele/db-utilisateur-manager.php");
   session_start();

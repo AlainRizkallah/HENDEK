@@ -1,4 +1,5 @@
 <!-- TODO LISTE + SUPPRIMER UTILISATEUR -->
+
 <?php include_once("Modele/db-utilisateur-manager.php"); ?>
 <div class="conteneurBloc n2 left">
   <h2>
@@ -20,7 +21,6 @@
         <option class=formLabel value="" disabled selected></option>
         <option value="Utilisateur secondaire">Utilisateur secondaire</option>
         <option value="Enfant">Enfant</option>
-        <option value="">...</option>
       </select>
     </p>
     <p class=center>
@@ -34,5 +34,5 @@
     Liste des utilisateurs secondaires
   </h2>
   <br>
-  <?php include ('Vue/Listes/listeusers.php') ?>
+  <?php include ('Vue/Listes/listeusers.php'); ?>
 </div>
