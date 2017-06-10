@@ -3,9 +3,11 @@
         <div class="container">
 <?php
 if(isset($_SESSION["userID"])){
+include("Controleur/test-statut.php");
 echo('
         <div class="dropdown">
           <label>Bienvenue : <b>'.$_SESSION["name"].'</b></label><br>
+          <label><i>'.$ligne['status'].'</i></label><br>
           <a class=bouttonBis href="monespace.php?cible=monespace/monprofil.php">votre profil</a> </div>
 
 ');
