@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 11 juin 2017 à 00:35
+-- Généré le :  Dim 11 juin 2017 à 17:19
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -154,7 +154,8 @@ INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALU
 (21, 'dsfs', 0, 'dsgq', 2),
 (22, 'dsfs', 0, 'fdgsf', 2),
 (23, 'aj', 0, 'ACID', 1),
-(24, '12 rue des ..', 230, 'Paris', 1);
+(24, '12 rue des ..', 230, 'Paris', 1),
+(25, 'a', 0, 'A', 8);
 
 -- --------------------------------------------------------
 
@@ -169,8 +170,17 @@ CREATE TABLE `messageext` (
   `tel` int(11) NOT NULL,
   `objet` varchar(30) NOT NULL,
   `message` text NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `ID` int(11) NOT NULL,
+  `lu` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `messageext`
+--
+
+INSERT INTO `messageext` (`nom`, `prenom`, `mail`, `tel`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
+('ngs', 'tibo', 'thibault.hentges@gmail.com', 111111111, 'TEst', 'TEST', '0000-00-00', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -265,12 +275,11 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '158885554', 'zaea.eaz@ere.fr', 'alain', 'al', 'Utilisateur principal', 1),
-('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 'tibo', 'tibo', 'Utilisateur principal', 2),
+('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '0611101213', 'zaea.eaz@ere.fr', 'fdfd', 'a', 'Utilisateur principal', 1),
+('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 't', '', 'Utilisateur principal', 2),
 ('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3),
-('DanielGuichard', '4a8a08f09d37b73795649038408b5f33', 7, '0402030343', 'thibault@gmail.com', 'Guichard', 'Daniel', 'utilisateur principal', 7),
 ('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8),
-('a', '0cc175b9c0f1b6a831c399e269772661', 9, '', '', '', '', 'Utilisateur secondaire', 1),
+('a', '0cc175b9c0f1b6a831c399e269772661', 9, '', '', '', '', 'Enfant', 1),
 ('alainJunior', '343d9040a671c45832ee5381860e2996', 10, '', '', '', '', 'Enfant', 1),
 ('bgo', '09bcc7eb9ba3cff5f477d7f3e53f2bca', 11, '', '', '', '', 'Utilisateur secondaire', 1),
 ('dg', 'a6be8a33b7c987f4ffb76d9c9805c7eb', 12, '', '', '', '', 'Enfant', 1);
@@ -298,6 +307,13 @@ ALTER TABLE `capteur`
 --
 ALTER TABLE `habitation`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `messageext`
+--
+ALTER TABLE `messageext`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ID` (`ID`);
 
 --
 -- Index pour la table `messageint`
@@ -339,7 +355,12 @@ ALTER TABLE `capteur`
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT pour la table `messageext`
+--
+ALTER TABLE `messageext`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `messageint`
 --

@@ -56,6 +56,13 @@ $reponse->execute();
   return $reponse;
 }
 
+function getMessageExtList($db){
+$reponse = $db->prepare('SELECT messageext.ID ID , messageext.objet objet , messageext.message message , messageext.nom nom , lu , messageext.prenom prenom , messageext.tel tel , messageext.mail mail FROM `messageext`
+  ORDER BY ID DESC'
+);
+$reponse->execute();
+  return $reponse;
+}
 
 function delMessageInt($db,$idMessage){
     try{
