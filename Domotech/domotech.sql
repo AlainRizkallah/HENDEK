@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 11 juin 2017 à 18:32
+-- Généré le :  Dim 11 juin 2017 à 20:26
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -237,6 +237,27 @@ INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`, 
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `news`
+--
+
+CREATE TABLE `news` (
+  `titre` text NOT NULL,
+  `contenu` text NOT NULL,
+  `date` date NOT NULL,
+  `ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `news`
+--
+
+INSERT INTO `news` (`titre`, `contenu`, `date`, `ID`) VALUES
+('NEWS 1 ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.\r\n        ', '0000-00-00', 1),
+('NEWS 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.', '0000-00-00', 3);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `salle`
 --
 
@@ -342,6 +363,13 @@ ALTER TABLE `messageint`
   ADD UNIQUE KEY `idMessage` (`ID`);
 
 --
+-- Index pour la table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ID` (`ID`);
+
+--
 -- Index pour la table `salle`
 --
 ALTER TABLE `salle`
@@ -385,6 +413,11 @@ ALTER TABLE `messageext`
 --
 ALTER TABLE `messageint`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+--
+-- AUTO_INCREMENT pour la table `news`
+--
+ALTER TABLE `news`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
