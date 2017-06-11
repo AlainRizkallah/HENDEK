@@ -1,4 +1,4 @@
-<div class="conteneurBloc n3">
+<div class="texte">
 <form method="post" action="">
     <p>
         <label class=formLabel for="titrenews" >Titre :</label>

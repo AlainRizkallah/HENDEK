@@ -13,7 +13,13 @@ header{
   overflow: hidden;
   margin-bottom: 15px;
 }
-
+h2 {
+  font-family: "SB";
+  font-size:35px;
+  text-decoration:underline;
+  padding-left:4px;
+  color: #5680A6;
+}
 footer{
   font-family: 'SB';
   display: inline-flex;

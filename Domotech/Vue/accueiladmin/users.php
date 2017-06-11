@@ -1,5 +1,6 @@
 <script type="text/javascript" src="js/affichermodif_2.js"></script>
 <script type="text/javascript" src="js/showuserseclist.js"></script>
+<div class=texte>
 <h2>
    Liste des utilisateurs
 </h2>
@@ -36,3 +37,4 @@ while ($donnees = $reponse->fetch()) {?>
     <?php }
   $reponse->closeCursor();
   ?>
+</div>

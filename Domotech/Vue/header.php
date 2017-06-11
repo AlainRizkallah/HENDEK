@@ -15,9 +15,9 @@ include('Vue/login.php');?>
 
     <a class="barre-menu-element " href ="." > Accueil </a>
     <a class="barre-menu-element " href ="monespace.php?cible=monespace/accueilclient.php" > Mon espace </a>
-    <a class="barre-menu-element " href =".html" > Offres </a>
+    <a class="barre-menu-element " href ="offres.php" > Offres </a>
     <a class="barre-menu-element " href =".html" > Solutions </a>
-    <a class="barre-menu-element " href =".html" > Actualités </a>
+    <a class="barre-menu-element " href ="actualites.php" > Actualités </a>
     <a class="barre-menu-element " href ="nouscontacter.php" > Nous contacter </a>
     <a class="barre-menu-element " href  ="quisommesnous.php" > Qui sommes nous? </a>
     <?php if(!isset($_SESSION["userID"])){ ?>

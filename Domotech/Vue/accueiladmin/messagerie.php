@@ -3,7 +3,7 @@
 
 include_once("Modele/db-message-manager.php");
 $resultat = getMessageExtList($db);?>
-<div class="conteneurBloc n3">
+<div class="texte">
   <h2> Boite de reception </h2>
 <?php  while ($donnees = $resultat->fetch()){?>
 <form method="post" action="Controleur/message-manager.php">

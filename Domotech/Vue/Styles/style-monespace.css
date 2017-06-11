@@ -31,7 +31,10 @@ h3 {
   border-color:#D1D4D9;
   display: inline-block;
 }
-
+.texte {
+  font-family: 'Montserrat', sans-serif;
+  margin:10%;
+}
 
 .titre{
   text-decoration: none;
