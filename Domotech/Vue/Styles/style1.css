@@ -207,6 +207,24 @@ button {
   cursor: pointer;
   width:  100%;
 }
+.boutonFantome{
+  outline:none;
+  font-size:10px;
+  display: inline-flex;
+  padding: 2px 2px;
+  margin:0px;
+  margin-right:0px;
+  border-radius: 9px;
+  border: none;
+  background-color:inherit;
+  text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+.boutonFantome:hover{
+  background-color:inherit;
+  font-weight:bold;
+}
 
 /* Add a hover effect for buttons */
 button:hover {

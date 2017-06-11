@@ -18,16 +18,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if(isset($_POST['lu'])){
       markUnread();
   }
+  if(isset($_POST['delMsgExt'])){
+      supprExt();
+  }
+  if(isset($_POST['nonluExt'])){
+      markReadExt();
+  }
+  if(isset($_POST['luExt'])){
+      markUnreadExt();
+  }
 }
-if(isset($_POST['delMsgExt'])){
-    supprExt();
-}
-if(isset($_POST['nonluExt'])){
-    markReadExt();
-}
-if(isset($_POST['luExt'])){
-    markUnreadExt();
-}
+
 
 
 
