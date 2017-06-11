@@ -7,7 +7,7 @@ $resultat = getMessageExtList($db);?>
   <h2> Boite de reception </h2>
 <?php  while ($donnees = $resultat->fetch()){?>
 <form method="post" action="Controleur/message-manager.php">
-  <button class="boutonFantome" type="submit" name=delMsgInt
+  <button class="boutonFantome" type="submit" name=delMsgExt
   onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce message ?\nCette action sera définitive.')) return false;"
   value='<?php echo "".$donnees['ID'];?>'/><img src=Vue/Image/domotech_suppr.png width=20px></button>
 
@@ -25,12 +25,12 @@ $resultat = getMessageExtList($db);?>
 <br>
     <?php if ($donnees['lu']==0){
     ?>
-      <button class="boutonFantome vert" type=submit name="nonlu" value='<?php echo "".$donnees['ID'];?>'>marquer comme lu</button>
+      <button class="boutonFantome vert" type=submit name="nonluExt" value='<?php echo "".$donnees['ID'];?>'>marquer comme lu</button>
     <?php } ?>
 
     <?php if ($donnees['lu']==1){
     ?>
-      <button class="boutonFantome rouge" type=submit name="lu" value='<?php echo "".$donnees['ID'];?>'>marquer comme non lu</button>
+      <button class="boutonFantome rouge" type=submit name="luExt" value='<?php echo "".$donnees['ID'];?>'>marquer comme non lu</button>
     <?php } ?>
 
   </form>

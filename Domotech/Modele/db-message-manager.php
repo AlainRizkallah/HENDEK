@@ -78,6 +78,20 @@ function delMessageInt($db,$idMessage){
     }
     return $res;
     }
+function delMessageExt($db,$idMessage){
+        try{
+          $stmt = $db->prepare('DELETE FROM `messageext` WHERE `ID`=:idMessage');
+          $stmt->bindParam(':idMessage',$idMessage);
+          $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+          $res="fait";
+        }
+        catch (Exception $e)
+        {
+          die('Erreur : ' . $e->getMessage());
+          $res= $e->getMessage();
+        }
+        return $res;
+        }
 
 function unreadMsg($db , $idDest){
   $reponse = $db->prepare('SELECT * FROM `messageint` WHERE idDest = :idDest AND `lu` = 0 ');
@@ -95,6 +109,18 @@ function setLuMessage($db , $idMessage){
 
 function setNonluMessage($db , $idMessage){
   $stmt = $db->prepare('UPDATE `messageint` SET lu = 0 WHERE `ID`=:idMessage');
+  $stmt->bindParam(':idMessage',$idMessage);
+  $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+}
+
+function setLuMessageExt($db , $idMessage){
+  $stmt = $db->prepare('UPDATE `messageext` SET lu = 1 WHERE `ID`=:idMessage');
+  $stmt->bindParam(':idMessage',$idMessage);
+  $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+}
+
+function setNonluMessageExt($db , $idMessage){
+  $stmt = $db->prepare('UPDATE `messageext` SET lu = 0 WHERE `ID`=:idMessage');
   $stmt->bindParam(':idMessage',$idMessage);
   $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
 }

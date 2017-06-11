@@ -19,6 +19,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       markUnread();
   }
 }
+if(isset($_POST['delMsgExt'])){
+    supprExt();
+}
+if(isset($_POST['nonluExt'])){
+    markReadExt();
+}
+if(isset($_POST['luExt'])){
+    markUnreadExt();
+}
 
 
 
@@ -51,6 +60,13 @@ function supprInt(){
   header ("Location: $_SERVER[HTTP_REFERER]" );
 }
 
+function supprExt(){
+  include("../Modele/db-message-manager.php");
+  $resultat = delMessageExt($db , $_POST['delMsgExt']);
+  echo ($resultat);
+  header ("Location: $_SERVER[HTTP_REFERER]" );
+}
+
 function markRead(){
   include("../Modele/db-message-manager.php");
   $resultat = setLuMessage($db , $_POST['nonlu']);
@@ -64,4 +80,19 @@ function markUnread(){
   echo ($resultat);
   header ("Location: $_SERVER[HTTP_REFERER]" );
 }
+
+function markReadExt(){
+  include("../Modele/db-message-manager.php");
+  $resultat = setLuMessageExt($db , $_POST['nonluExt']);
+  echo ($resultat);
+  header ("Location: $_SERVER[HTTP_REFERER]" );
+}
+
+function markUnreadExt(){
+  include("../Modele/db-message-manager.php");
+  $resultat = setNonluMessageExt($db , $_POST['luExt']);
+  echo ($resultat);
+  header ("Location: $_SERVER[HTTP_REFERER]" );
+}
+
 ?>
