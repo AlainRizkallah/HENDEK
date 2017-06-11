@@ -3,7 +3,8 @@
 
 include_once("Modele/db-message-manager.php");
 $resultat = getMessageExtList($db);?>
-
+<div class="conteneurBloc n3">
+  <h2> Boite de reception </h2>
 <?php  while ($donnees = $resultat->fetch()){?>
 <form method="post" action="Controleur/message-manager.php">
   <button class="boutonFantome" type="submit" name=delMsgInt
@@ -41,7 +42,7 @@ $resultat = getMessageExtList($db);?>
 
   <b>telephone :</b> <?php echo $donnees['tel'];?> </br>
   <b>email :</b> <?php echo $donnees['mail'];?> </br>
-</div>
+</div></div>
   <br><br><?php //TODO repondre direct par mail
 
   //
