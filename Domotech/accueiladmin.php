@@ -13,11 +13,9 @@
     <div class="barremenu">
 
         <a class="barre-menu-element" href ="." > Accueil du site</a>
-        <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/accueil.php" > Accueil admin</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/users.php" >Gérer les utilisateur</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/news.php" >Ajouter une actualité</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/messagerie.php" >Messagerie</a>
-        <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/statistiques.php" >Statistiques</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/capteffect.php" >Capteurs et effecteurs disponibles</a>
        </div>
     </header>
