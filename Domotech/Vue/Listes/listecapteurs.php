@@ -2,7 +2,7 @@
 
 <form method="post" action="Controleur/capteur-manager.php">
   <?php while ($liste=$resultat->fetch()){
-    if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire'){?>
+    if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire' or $ligne['status']=='admin'){?>
 
       <button class="boutonFantome" type="submit" name="maison"
       onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce capteur ?\nCette action sera définitive.')) return false;"

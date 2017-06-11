@@ -141,4 +141,16 @@
         $stmt->execute() or die(print_r($stmt->errorInfo(), true));
         return $stmt;
       }
+      function setPrenom($db , $prenom , $id){
+        $stmt = $db->prepare('UPDATE `utilisateurs` SET prenom = :prenom WHERE `id`=:id');
+        $stmt->bindParam(':prenom',$prenom);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+      }
+      function setNom($db , $nom , $id){
+        $stmt = $db->prepare('UPDATE `utilisateurs` SET nom = :nom WHERE `id`=:id');
+        $stmt->bindParam(':nom',$nom);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+      }
 ?>

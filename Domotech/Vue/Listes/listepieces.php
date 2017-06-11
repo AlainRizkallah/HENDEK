@@ -2,7 +2,7 @@
 
 <form method="post" action="Controleur/salle-manager.php">
   <?php while ($liste=$resultat->fetch()){
-    if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire'){?>
+    if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire' or $ligne['status']=='admin'){?>
 
     <button class="boutonFantome" type="submit" name="salle"
     onclick="if(!confirm('Êtes vous sur de vouloir supprimer cette pièce ?\nCette action sera définitive.')) return false;"
