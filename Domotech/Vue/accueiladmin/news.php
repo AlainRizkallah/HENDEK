@@ -1,5 +1,5 @@
 <div class="texte">
-<form method="post" action="">
+<form method="post" action="Controleur/news-manager.php">
     <p>
         <label class=formLabel for="titrenews" >Titre :</label>
         <br><br> <input type="text" name="titrenews" placeholder="entrez votre titre" />
@@ -14,7 +14,7 @@
        </textarea>
     </p>
     <p>
-        <button class=boutton type="submit" name=submitNews/>Mettre l'actualité en ligne</button>
+        <button class=boutton type="submit" name="addNews"/>Mettre l'actualité en ligne</button>
     </p>
 </form>
 </div>

@@ -23,3 +23,21 @@ function delNews($db,$idNews){
     }
     return $res;
     }
+
+    function addNews($db, $titre, $contenu){
+    	try{
+    $stmt =   $db->prepare('INSERT INTO `news` (`titre`,`contenu`) VALUES (:titre, :contenu) ');
+    $stmt ->bindParam(':titre',$titre);
+    $stmt ->bindParam(':contenu',$contenu);
+    $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+    $res="fait";
+    }
+    catch (Exception $e)
+    {
+
+    	die('Erreur : ' . $e->getMessage());
+    	$res= $e->getMessage();
+    }
+  }
+
+    ?>
