@@ -79,6 +79,13 @@ include("Controleur/test-statut.php");
                   Vous n'avez pas accès à cette partie du site <br>
                   <img src='Vue/Image/accessdenied.jpg' width=20%></img>
                 </p> "); }
+              } else if ($_GET['cible'] == "accueiladmin/capteffect.php"){
+              if ($ligne['status']=='admin') {    include("Vue/accueiladmin/capteffect.php");}
+              else { echo ("
+                <p class=boxtitle>
+                  Vous n'avez pas accès à cette partie du site <br>
+                  <img src='Vue/Image/accessdenied.jpg' width=20%></img>
+                </p> "); }
               }
 
 

@@ -3,6 +3,7 @@ include_once("Modele/db-capteur-manager.php");
 include_once("Modele/db-effecteur-manager.php");
 include_once("Modele/db-maison-manager.php");
 include_once("Modele/db-salle-manager.php");
+include_once("Modele/db-capteffect-manager.php");
  ?>
 
 <div class="conteneurBloc n2 left">
@@ -29,11 +30,10 @@ include_once("Modele/db-salle-manager.php");
       <p class=formLabel> <label for=type>Type</label> </p>
       <select name="type" required>
         <option class=formLabel value="" disabled selected></option>
-        <option value="Vidéosurveillance">Vidéosurveillance</option>
-        <option value="Luminosité">Luminosité</option>
-        <option value="Présence">Présence</option>
-        <option value="Humidité">Humidité</option>
-        <option value="Température">Température</option>
+        <?php $reponse=getCaptList($db);
+        while ($donnees=$reponse->fetch()){  ?>
+          <option value=<?php echo($donnees['capteurs'])?>><?php echo($donnees['capteurs'])?></option>
+          <?php } $reponse->closeCursor();?>
       </select>
     </p>
     <p class=center>
@@ -66,10 +66,10 @@ include_once("Modele/db-salle-manager.php");
       <p class=formLabel> <label for=type>Type</label> </p>
       <select name="type" required>
         <option class=formLabel value="" disabled selected></option>
-        <option value="Volets">Volets</option>
-        <option value="Fenetres">Fenetres</option>
-        <option value="Lumiere">Lumiere</option>
-        <option value="Porte">Porte</option>
+        <?php $reponse=getEffList($db);
+        while ($donnees=$reponse->fetch()){  ?>
+          <option value=<?php echo($donnees['effecteurs'])?>><?php echo($donnees['effecteurs'])?></option>
+          <?php } $reponse->closeCursor();?>
       </select>
     </p>
     <p class=center>
