@@ -152,6 +152,11 @@ img{
   width:50%;
 }
 
+.texte {
+  font-family: 'Montserrat', sans-serif;
+  margin:10%;
+}
+
 /* Bordered form */
 form {
 

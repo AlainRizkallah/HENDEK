@@ -19,7 +19,7 @@ include('Vue/login.php');?>
     <a class="barre-menu-element " href =".html" > Solutions </a>
     <a class="barre-menu-element " href =".html" > Actualités </a>
     <a class="barre-menu-element " href ="nouscontacter.php" > Nous contacter </a>
-    <a class="barre-menu-element " href  =".html" > Qui sommes nous? </a>
+    <a class="barre-menu-element " href  ="quisommesnous.php" > Qui sommes nous? </a>
     <?php if(!isset($_SESSION["userID"])){ ?>
     <a class="barre-menu-element " href  ="inscription.php" > S'inscrire </a>
     <?php } ?>
