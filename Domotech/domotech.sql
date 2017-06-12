@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 11 juin 2017 à 20:26
+-- Généré le :  lun. 12 juin 2017 à 11:09
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -110,7 +110,6 @@ INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`
 (15, 2, 11, 'Présence', 0, 0, NULL),
 (16, 23, 30, 'Présence', 0, 0, NULL),
 (17, 23, 30, 'Luminosité', 0, 0, NULL),
-(18, 2, 15, 'Présence', 0, 0, NULL),
 (20, 2, 15, 'Luminosité', 0, 0, NULL),
 (21, 2, 15, 'Luminosité', 0, 0, NULL);
 
@@ -172,9 +171,7 @@ INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALU
 (20, 'd', 0, 's', 2),
 (21, 'dsfs', 0, 'dsgq', 2),
 (22, 'dsfs', 0, 'fdgsf', 2),
-(23, 'aj', 0, 'ACID', 1),
-(24, '12 rue des ..', 230, 'Paris', 1),
-(25, 'a', 0, 'A', 8);
+(23, 'aj', 0, 'ACID', 1);
 
 -- --------------------------------------------------------
 
@@ -189,7 +186,7 @@ CREATE TABLE `messageext` (
   `tel` int(11) NOT NULL,
   `objet` varchar(30) NOT NULL,
   `message` text NOT NULL,
-  `date` date NOT NULL,
+  `date` datetime NOT NULL,
   `ID` int(11) NOT NULL,
   `lu` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -199,7 +196,8 @@ CREATE TABLE `messageext` (
 --
 
 INSERT INTO `messageext` (`nom`, `prenom`, `mail`, `tel`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
-('ngs', 'tibo', 'thibault.hentges@gmail.com', 111111111, 'TEst', 'TEST', '0000-00-00', 1, 0);
+('HENTGES', 'Thibault', 'tibo.ngs@live.fr', 2147483647, 'TEST', 'TESTTTTTT tetststs stdts', '2017-06-12 11:01:51', 1, 0),
+('Hentges', 'Thibault', 'tibo.ngs@live.fr', 2147483647, 'agdsg', 'gsdgsgs', '2017-06-12 11:06:00', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -212,7 +210,7 @@ CREATE TABLE `messageint` (
   `idSend` int(11) NOT NULL,
   `objet` varchar(30) NOT NULL,
   `message` text NOT NULL,
-  `date` date NOT NULL,
+  `date` datetime NOT NULL,
   `ID` int(11) NOT NULL,
   `lu` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -222,17 +220,8 @@ CREATE TABLE `messageint` (
 --
 
 INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
-(2, 2, 'Salam', 'Salami', '0000-00-00', 34, 0),
-(2, 2, 'Réponse à : Salam', ' HEOHOHOHO\r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 35, 1),
-(2, 2, 'Réponse à : Salam ', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami ', '0000-00-00', 36, 0),
-(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 37, 0),
-(2, 2, 'Réponse à : Salam', 'Message précédent : Salami', '0000-00-00', 38, 0),
-(2, 2, 'Réponse à : Salam', ' __________ \r\n \r\n Message précédent :Salami', '0000-00-00', 39, 1),
-(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 40, 1),
-(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 41, 0),
-(2, 2, 'Réponse à : Salam', ' \r\n __________ \r\n \r\n Message précédent : \r\n Salami', '0000-00-00', 42, 1),
-(1, 1, 'gdgl', 'bonjour', '0000-00-00', 44, 1),
-(8, 1, 'Bonjour', 'eele', '0000-00-00', 45, 1);
+(8, 8, 'bfb', 'vbdb', '2017-06-12 11:04:43', 47, 0),
+(8, 8, 'gsdgs', 'dsg', '2017-06-12 11:04:48', 48, 0);
 
 -- --------------------------------------------------------
 
@@ -243,7 +232,7 @@ INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`, 
 CREATE TABLE `news` (
   `titre` text NOT NULL,
   `contenu` text NOT NULL,
-  `date` date NOT NULL,
+  `date` datetime NOT NULL,
   `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -252,8 +241,9 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`titre`, `contenu`, `date`, `ID`) VALUES
-('NEWS 1 ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.\r\n        ', '0000-00-00', 1),
-('NEWS 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.', '0000-00-00', 3);
+('NEWS 1 ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.\r\n        ', '0000-00-00 00:00:00', 1),
+('NEWS 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.', '0000-00-00 00:00:00', 3),
+('NEWS 3 (contient une date)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.', '2017-06-12 10:53:41', 4);
 
 -- --------------------------------------------------------
 
@@ -319,10 +309,9 @@ INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `
 ('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 't', '', 'Utilisateur principal', 2),
 ('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3),
 ('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8),
-('a', '0cc175b9c0f1b6a831c399e269772661', 9, '', '', '', '', 'Enfant', 1),
-('alainJunior', '343d9040a671c45832ee5381860e2996', 10, '', '', '', '', 'Enfant', 1),
-('bgo', '09bcc7eb9ba3cff5f477d7f3e53f2bca', 11, '', '', '', '', 'Utilisateur secondaire', 1),
-('dg', 'a6be8a33b7c987f4ffb76d9c9805c7eb', 12, '', '', '', '', 'Enfant', 1);
+('\'', '3590cb8af0bbb9e78c343b52b93773c9', 17, '0654433456', 'tibo.ngs@live.fr', '\'', '\'', 'Utilisateur principal', 17),
+('alainaaa', '0cc175b9c0f1b6a831c399e269772661', 18, '0444443333', 'a@a.com', 'Alain\'s gay house', 'Alain', 'Utilisateur principal', 18),
+('alainJunior', '0cc175b9c0f1b6a831c399e269772661', 20, '', '', '', '', 'Enfant', 1);
 
 --
 -- Index pour les tables déchargées
@@ -407,17 +396,17 @@ ALTER TABLE `habitation`
 -- AUTO_INCREMENT pour la table `messageext`
 --
 ALTER TABLE `messageext`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `messageint`
 --
 ALTER TABLE `messageint`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT pour la table `news`
 --
 ALTER TABLE `news`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
@@ -427,7 +416,7 @@ ALTER TABLE `salle`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
