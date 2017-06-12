@@ -11,12 +11,24 @@
       (<a href=offres.php target="_blank">voir offres</a>)
       <br><br>
       Chez Domotech, nous fondons notre approche sur quatres pilliers :
-      <ul><li>Contrôler son habitation</li>
-        <li>Améliorer son confort</li>
-        <li>Être en sécurité </li>
-        <li>Faire des économies d'energie </li> <!--TODO METTRE DES IMAGES-->
-      </ul>
-      <br>
+      </p>
+      <p>
+      <figure style="float:left;margin-right:20px;text-align:center;">
+        <img src="Vue/Image/control.png" width=120px/>
+        <figcaption >Contrôler son habitation</figcaption>
+      </figure>
+      <figure style="float:left;margin-right:20px;text-align:center;">
+        <img src="Vue/Image/confort.png" width=120px/>
+        <figcaption>Contrôler son habitation</figcaption>
+      </figure>
+      <figure style="float:left;margin-right:20px;text-align:center;">
+        <img src="Vue/Image/safety.png" width=120px/>
+        <figcaption>Être en sécurité</figcaption>
+      </figure>
+      <figure style="float:left;margin-right:20px;text-align:center;">
+        <img src="Vue/Image/energy.png"/ width=120px></img>
+        <figcaption>Faire des économies d'energie</figcaption>
+      </figure>
     </p>
   </div>
     </section>
