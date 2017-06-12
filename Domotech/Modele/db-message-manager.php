@@ -4,7 +4,7 @@ require_once("connexion.php");
 
   function sendMessageExt($db,$mail,$message,$nom, $prenom, $tel, $objet){
     try{
-  $stmt =   $db->prepare('INSERT INTO `messageext` (`mail`,`message`,`nom`, `prenom`, `tel`, `objet`) VALUES (:mail,:message, :nom, :prenom, :tel, :objet) ');
+  $stmt =   $db->prepare('INSERT INTO `messageext` (`mail`,`message`,`nom`, `prenom`, `tel`, `objet` , `date`) VALUES (:mail,:message, :nom, :prenom, :tel, :objet , NOW() ) ');
 
   $stmt ->bindParam(':nom',$nom);
   $stmt ->bindParam(':prenom',$prenom);
@@ -26,7 +26,7 @@ catch (Exception $e)
 
 function sendMessageInt($db,$idSend, $idDest , $objet, $message){
 	try{
-$stmt =   $db->prepare('INSERT INTO `messageint` (`idSend`,`idDest`,`objet`, `message`) VALUES (:idSend, :idDest, :objet, :message) ');
+$stmt =   $db->prepare('INSERT INTO `messageint` (`idSend`,`idDest`,`objet`, `message`, `date`) VALUES (:idSend, :idDest, :objet, :message , NOW() ) ');
 
 
 $stmt ->bindParam(':idSend',$idSend);

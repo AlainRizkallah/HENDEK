@@ -44,6 +44,11 @@ footer ul{
   margin:auto;
   width:50%;
 }
+
+.right{
+  float:right;
+
+}
 header .login{
     float:right;
 }

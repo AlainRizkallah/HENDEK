@@ -2,7 +2,7 @@
 require_once("connexion.php");
 
 function getNews($db){
-$reponse = $db->prepare('SELECT ID , contenu , titre FROM news
+$reponse = $db->prepare('SELECT ID , contenu , titre , news.date datee FROM news
   ORDER BY ID DESC'
 );
 $reponse->execute();
@@ -26,7 +26,7 @@ function delNews($db,$idNews){
 
     function addNews($db, $titre, $contenu){
     	try{
-    $stmt =   $db->prepare('INSERT INTO `news` (`titre`,`contenu`) VALUES (:titre, :contenu) ');
+    $stmt =   $db->prepare('INSERT INTO `news` (`titre`,`contenu` , `date`) VALUES (:titre, :contenu , NOW()) ');
     $stmt ->bindParam(':titre',$titre);
     $stmt ->bindParam(':contenu',$contenu);
     $stmt->execute() or die(print_r($stmt ->errorInfo(), true));

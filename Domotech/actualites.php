@@ -18,8 +18,12 @@ include_once("Modele/db-news-manager.php"); ?>
         value='<?php echo "".$news['ID']?>'/><img src=Vue/Image/domotech_suppr.png width=20px></button> </form><?php }?>
       </h2>
       <p><?php
-        echo $news['contenu'];
-      } ?></p>
+        echo $news['contenu'];?></p><p class=right>
+        <i><?php echo $news['datee'];?></i>
+        </p><br><br><br>
+
+    <?php  } ?>
+
 
       <?php if ($ligne["status"]=="admin"){ // si l'utilisateur est admin ?><br><br><br>
       <p class=textecentre>
@@ -35,8 +39,12 @@ include_once("Modele/db-news-manager.php"); ?>
             <?php echo $news['titre'];?>
           </h2>
           <p><?php
-            echo $news['contenu'];
-          } ?></p>
+            echo $news['contenu'];?></p><p class=right>
+            <i><?php echo $news['datee'];?></i>
+            </p><br><br><br>
+
+        <?php  } ?>
+
 
             <?php }
 
