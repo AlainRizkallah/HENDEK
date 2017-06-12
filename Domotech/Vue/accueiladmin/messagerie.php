@@ -22,7 +22,7 @@ $resultat = getMessageExtList($db);?>
 
 
     <button class="bouttonMSG" type=button onclick="toggle_div(this, '<?php echo "".$donnees['ID']?>');">afficher le message</button>
-<br>
+<span class=right><i><?php echo $donnees['datee'];?></i></span><br>
     <?php if ($donnees['lu']==0){
     ?>
       <button class="boutonFantome vert" type=submit name="nonluExt" value='<?php echo "".$donnees['ID'];?>'>marquer comme lu</button>
@@ -42,11 +42,11 @@ $resultat = getMessageExtList($db);?>
 
   <b>telephone :</b> <?php echo $donnees['tel'];?> </br>
   <b>email :</b> <?php echo $donnees['mail'];?> </br>
-</div></div>
+</div>
   <br><br><?php //TODO repondre direct par mail
 
   //
 
   }
   $resultat->closeCursor();
-     ?>
+     ?></div>

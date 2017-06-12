@@ -46,7 +46,7 @@ return $res;
 }
 
 function getMessagesList($db , $idDest){
-$reponse = $db->prepare('SELECT messageint.ID ID , messageint.objet objet , messageint.message message , utilisateurs.nom nom , lu FROM `messageint`
+$reponse = $db->prepare('SELECT messageint.ID ID , messageint.objet objet , messageint.message message , utilisateurs.nom nom , lu , messageint.date datee FROM `messageint`
   JOIN utilisateurs ON utilisateurs.id=messageint.idSend
   WHERE idDest = :idDest
   ORDER BY ID DESC'
@@ -57,7 +57,7 @@ $reponse->execute();
 }
 
 function getMessageExtList($db){
-$reponse = $db->prepare('SELECT messageext.ID ID , messageext.objet objet , messageext.message message , messageext.nom nom , lu , messageext.prenom prenom , messageext.tel tel , messageext.mail mail FROM `messageext`
+$reponse = $db->prepare('SELECT messageext.ID ID , messageext.objet objet , messageext.message message , messageext.nom nom , lu , messageext.prenom prenom , messageext.tel tel , messageext.mail mail , messageext.date datee FROM `messageext`
   ORDER BY ID DESC'
 );
 $reponse->execute();

@@ -23,6 +23,7 @@ $resultat = getMessagesList($db , $_SESSION['userID']);?>
   <button class="boutonFantome" type="submit" name=delMsgInt
   onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce message ?\nCette action sera définitive.')) return false;"
   value='<?php echo "".$donnees['ID'];?>'/><img src=Vue/Image/domotech_suppr.png width=20px></button>
+  <span class=right><i><?php echo $donnees['datee'];?></i></span>
 
 <?php if ($donnees['lu']==0){?>
   <span class=rouge> <b>NON LU</b> </span> <?php } ?>
