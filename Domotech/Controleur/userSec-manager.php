@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
      dispAddUserSec();
   }
 
-  if((isset($_POST['btnDelUserSec'])) or (isset($_POST['delUserSec'])) ){
+  if((isset($_POST['btnDelUserSec'])) ){
     dispDelUserSec();
  }
 
@@ -23,10 +23,10 @@ function dispAddUserSec(){
 function dispDelUserSec(){
   include("../Modele/db-utilisateur-manager.php");
 
-  $resultat = delUserSec($db, $_POST['delUserSec']) ;
+  $resultat = delUserSec($db, $_POST['btnDelUserSec']) ;
   echo ($resultat);
 
-  header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
+  //header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
 }
 
 
