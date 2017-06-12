@@ -9,7 +9,7 @@ include_once("Modele/db-salle-manager.php");
 
 
 <!-- CAPTEURS -->
-<div class="conteneurBloc n2 left">
+<div class="conteneurBloc n3 n2 left">
 <h2> Etat des capteurs </h2>
 
 <?php

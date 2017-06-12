@@ -204,11 +204,12 @@ float:left;
 width: 100%;
 }
 .login{
+  position:fixed;
   background-color: #E0E2E5;
   width: 230px;
   height: 260px;
   margin-right: 40px;
-  margin-top: 10px;
+  margin-top: -20px;
   margin-bottom: 40px;
   border-radius: 9px;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);

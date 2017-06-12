@@ -21,9 +21,7 @@
     }
 
     function getSallesList($db,$idHabitation){
-      //  $reponse = $db->prepare('SELECT type,valeur,etat,temps FROM capteur WHERE idSalle=:idSalle');
-$reponse = $db->prepare('SELECT nom,ID , salle.nom sal FROM salle WHERE idHabitation=:idHabitation');
-
+      $reponse = $db->prepare('SELECT nom,ID , salle.nom sal FROM salle WHERE idHabitation=:idHabitation');
         $reponse->bindParam(':idHabitation',$idHabitation);
         $reponse->execute();
         return $reponse;

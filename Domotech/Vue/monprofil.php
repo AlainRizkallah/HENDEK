@@ -11,7 +11,7 @@ include_once("Modele/db-utilisateur-manager.php");
 <?php $res = getUserInfos($db, $_SESSION['userID']);
 $infos = $res->fetch();
 
-if ($infos['status']=="utilisateur principal") {?>
+if ($infos['status']=="Utilisateur principal" or $infos['status']=="admin") {?>
 
   <p class=formLabel>Prénom</p>
   <?php echo $infos['prenom'];?>
