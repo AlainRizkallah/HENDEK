@@ -11,8 +11,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if(isset($_POST['addNews'])){
     include("../Modele/db-news-manager.php");
+    include_once("../Modele/nettoyer.php");
     $resultat = addNews($db , $_POST['titrenews'], $_POST['contenunews'] );
-    $dest = "../Vue/Image/news/".$_POST['titrenews'];
+    $image = nettoyer($_POST['titrenews']);
+    $dest = "../Vue/Image/news/".$image ;
     upload('picnews' , $dest , 1048576 , array('png','jpg','jpeg') );
     echo ($resultat);
     header ("Location: $_SERVER[HTTP_REFERER]" );

@@ -1,5 +1,6 @@
 <?php include("Vue/header.php");
-include_once("Modele/db-news-manager.php"); ?>
+include_once("Modele/db-news-manager.php");
+include_once("Modele/nettoyer.php"); ?>
 
 <section>
   <div class=texte>
@@ -17,9 +18,11 @@ include_once("Modele/db-news-manager.php"); ?>
         onclick="if(!confirm('Êtes vous sur de vouloir supprimer cette actualité ?\nCette action sera définitive.')) return false;"
         value='<?php echo "".$news['ID']?>'/><img src=Vue/Image/domotech_suppr.png width=20px></button> </form><?php }?>
       </h2>
-      <?php if (file_exists("Vue/Image/news/".$news['titre'])){?>
+      <?php
+      $image = nettoyer($news['titre']);
+      if (file_exists("Vue/Image/news/".$image)){?>
       <p>
-        <img src=<?php echo "Vue/Image/news/".$news['titre'] ; ?>></img>
+        <img src=<?php echo "Vue/Image/news/".$image ; ?>></img>
       </p> <?php }?>
       <p><?php
         echo $news['contenu'];?></p><p class=right>
