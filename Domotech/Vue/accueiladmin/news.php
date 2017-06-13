@@ -5,7 +5,7 @@
         <br><br> <input type="text" name="titrenews" placeholder="entrez votre titre" required />
     </p>
     <p>
-      <label class=formLabel for="titrenews" >Ajoutez une image : (JPG ou PNG, 1Mo max)</label>
+      <label class=formLabel for="titrenews" >Ajoutez une image (JPG ou PNG, 1Mo max) :</label>
       <br><br> <input type="file" name="picnews"/>
     </p>
     <p>
