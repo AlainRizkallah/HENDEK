@@ -28,9 +28,16 @@ if(isset($_POST['btnLogin'])){
 
                     }
                     //redirige vers la page mon esapce
-                    header('Location:monespace.php?cible=monespace/accueilclient.php ');
-                    die;
-                    echo("connecté");
+                    include_once("Controleur/test-statut.php");
+                    if ($ligne['status']!='admin' ) {
+                      header('Location:monespace.php?cible=monespace/accueilclient.php ');
+                      die;
+                      echo("connecté");}
+                    else {
+                      header('Location:accueiladmin.php?cible=accueiladmin/accueil.php ');
+                      die;
+                      echo("connecté");}
+                    
                 }
             }
         } else { // L'utilisateur n'a pas rempli tous les champs du formulaire
