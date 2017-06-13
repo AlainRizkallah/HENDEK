@@ -25,7 +25,7 @@ include_once("Modele/nettoyer.php"); ?>
         <img src=<?php echo "Vue/Image/news/".$image ; ?>></img>
       </p> <?php }?>
       <p><?php
-        echo $news['contenu'];?></p><p class=right>
+        echo nl2br($news['contenu']);?></p><p class=right>
         <i><?php echo $news['datee'];?></i>
         </p><br><br><br>
 
@@ -52,7 +52,7 @@ include_once("Modele/nettoyer.php"); ?>
             <img src=<?php echo "Vue/Image/news/".$image ; ?>></img>
           </p> <?php }?>
           <p><?php
-            echo $news['contenu'];?></p><p class=right>
+            echo nl2br($news['contenu']);?></p><p class=right>
             <i><?php echo $news['datee'];?></i>
             </p><br><br><br>
 

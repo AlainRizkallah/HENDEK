@@ -17,6 +17,7 @@
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/news.php" >Ajouter une actualité</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/messagerie.php" >Messagerie</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/capteffect.php" >Capteurs et effecteurs disponibles</a>
+        <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/historique.php" >Historique</a>
        </div>
     </header>
 
@@ -62,8 +63,8 @@ include("Controleur/test-statut.php");
                     <img src='Vue/Image/accessdenied.jpg' width=20%></img>
                   </p> "); }
 
-              } else if ($_GET['cible'] == "accueiladmin/statistiques.php"){
-              if ($ligne['status']=='admin') {    include("Vue/accueiladmin/statistiques.php");}
+              } else if ($_GET['cible'] == "accueiladmin/historique.php"){
+              if ($ligne['status']=='admin') {    include("Vue/accueiladmin/historique.php");}
               else { echo ("
                 <p class=boxtitle>
                   Vous n'avez pas accès à cette partie du site <br>

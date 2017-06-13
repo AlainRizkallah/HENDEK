@@ -8,7 +8,7 @@
 <?php
 include_once("Modele/db-utilisateur-manager.php");
 
-$reponse = $db->query('SELECT * FROM utilisateurs WHERE status = "Utilisateur principal"');
+$reponse = $db->query('SELECT * FROM utilisateurs WHERE status = "Utilisateur principal" ORDER BY identifiant');
 while ($donnees = $reponse->fetch()) {?>
   <form method="post" action="Controleur/userSec-manager.php">
     <button class="boutonFantome" type="submit" name="delUserSec"
