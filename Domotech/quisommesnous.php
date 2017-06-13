@@ -7,7 +7,7 @@
 
       connectées pour les particuliers, rassemblant toutes les technologies de
 
-      l'informatique, des télécommunications et de l'électronique et les mettre au service de
+      l'informatique, des télécommunications et de l'électronique afin de les mettre au service de
 
       ses clients, grâce à un traitement optimisé des signaux et des informations. <br><br>
 

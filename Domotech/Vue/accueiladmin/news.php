@@ -1,8 +1,12 @@
 <div class="texte">
-<form method="post" action="Controleur/news-manager.php">
+<form method="post" action="Controleur/news-manager.php" enctype="multipart/form-data">
     <p>
         <label class=formLabel for="titrenews" >Titre :</label>
-        <br><br> <input type="text" name="titrenews" placeholder="entrez votre titre" />
+        <br><br> <input type="text" name="titrenews" placeholder="entrez votre titre" required />
+    </p>
+    <p>
+      <label class=formLabel for="titrenews" >Ajoutez une image :</label>
+      <br><br> <input type="file" name="picnews"/>
     </p>
     <p>
        <label class=formLabel for="contenunews">
@@ -10,7 +14,7 @@
        </label>
        <br /><br />
 
-       <textarea name="contenunews" rows="30" cols="209">Inscrivez ici le texte contenu dans votre actualité
+       <textarea name="contenunews" rows="30" cols="209" required>Inscrivez ici le texte contenu dans votre actualité
        </textarea>
     </p>
     <p>
