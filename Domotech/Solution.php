@@ -19,7 +19,7 @@
       </figure>
       <figure style="float:left;margin-right:20px;text-align:center;">
         <img src="Vue/Image/confort.png" width=120px/>
-        <figcaption>Contrôler son habitation</figcaption>
+        <figcaption>Améliorer son confort</figcaption>
       </figure>
       <figure style="float:left;margin-right:20px;text-align:center;">
         <img src="Vue/Image/safety.png" width=120px/>
