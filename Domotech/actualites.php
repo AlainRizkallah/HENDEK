@@ -21,7 +21,7 @@ include_once("Modele/nettoyer.php"); ?>
       <?php
       $image = nettoyer($news['titre']);
       if (file_exists("Vue/Image/news/".$image)){?>
-      <p>
+      <p class=textecentre>
         <img src=<?php echo "Vue/Image/news/".$image ; ?>></img>
       </p> <?php }?>
       <p><?php
@@ -45,9 +45,11 @@ include_once("Modele/nettoyer.php"); ?>
           <h2>
             <?php echo $news['titre'];?>
           </h2>
-          <?php if (file_exists("Vue/Image/news/".$news['titre'])){?>
-          <p>
-            <img src=<?php echo "Vue/Image/news/".$news['titre'] ; ?>></img>
+          <?php
+          $image = nettoyer($news['titre']);
+          if (file_exists("Vue/Image/news/".$image)){?>
+          <p class=textecentre>
+            <img src=<?php echo "Vue/Image/news/".$image ; ?>></img>
           </p> <?php }?>
           <p><?php
             echo $news['contenu'];?></p><p class=right>
