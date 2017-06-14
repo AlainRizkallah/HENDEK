@@ -1,12 +1,14 @@
-function dessin(titre,data){
+function dessin(titre,donnees){
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart(titre));
 
   function drawChart(titre) {
 
-    var data = google.visualization.arrayToDataTable([data
+    var data = google.visualization.arrayToDataTable(
 
-    ]);
+  donnees
+
+    );
 
     var options = {
       title: titre,
@@ -18,10 +20,3 @@ function dessin(titre,data){
     chart.draw(data, options);
   }
 }
-/*
-["Year", "Sales", "Expenses"],
- ["2013",  1000,      400],
- ["2014",  1170,      460],
- ["2015",  660,       1120],
- ["2016",  1030,      540]
-*/

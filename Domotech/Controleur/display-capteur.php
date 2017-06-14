@@ -4,27 +4,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    if(!empty($_POST['salle'])){
     include("../Modele/db-capteur-manager.php");
     showAll($db,$_POST['salle'],$_POST['salleNom']);
-  }else if (!empty($_POST['detailId'])){
-    include("../Modele/db-capteur-manager.php");
-    showDetail($db,$_POST['detailId'],$_POST['capteurNom']);
-
   }
 }
-function showDetail($db,$id,$nomCapteur){
-  $result = getData($db,$id);
-$result = $result->fetch(PDO::FETCH_ASSOC);
-
-echo '<span class=boxtitle>'.$nomCapteur.'</span class=boxtitle> <br><br>';
-?>
-
-<script  type="text/javascript">
-alert("txtUsername");
-</script>
-
-<?php
-echo '<script type="text/javascript">document.write(myFunction(2,4))';
-}
-
 
 function showAll($db,$salle,$nomSalle){
     $result = getCapteursList($db,$salle);
@@ -37,10 +18,16 @@ function showAll($db,$salle,$nomSalle){
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
           $params = "detailId=".$row['id']."&capteurNom=". $row['type'];
-          $data = getCapteurHistorique($db,$row['id']);
+          $data = getCapteurHistorique($db,$row['id'])->fetch();
+          if(!$data){
+            $data =    [['Date', 'Valeur'],
+ ['0',  0]
+];
+          }
+
           if($row['etat']==1){
             ?>
-            <div class='boxCapteurElement boxElementMarche boutton' onclick= dessin("<?php echo($row['type']);?>","<?php echo($data->fetch())?>") >
+            <div class='boxCapteurElement boxElementMarche boutton' onclick= dessin("<?php echo($row['type']);?>",<?php echo($data)?>) >
 
             <?php
           /*<a class='boxCapteurElement boxElementMarche' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
@@ -51,7 +38,7 @@ dessin("<?php echo($row['type']);?>")
           }else{
             ?>
 
-            <div class='boxCapteurElement boxElementArret boutton'  onclick= dessin("<?php echo($row['type']);?>") >
+            <div class='boxCapteurElement boxElementArret boutton'  onclick= dessin("<?php echo($row['type']);?>",<?php echo (json_encode($data))?>) >
 
             <?php echo "<p>Inactif</p>";
           }
