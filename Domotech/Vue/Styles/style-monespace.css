@@ -204,7 +204,6 @@ float:left;
 width: 100%;
 }
 .login{
-  position:fixed;
   background-color: #E0E2E5;
   width: 230px;
   height: 260px;
@@ -403,12 +402,12 @@ input[type="password"]:focus {
 
 
 .n2{
-  width:40%;
+  width:45%;
 }
 
 .n3{
-  width:70%;
-  margin-left:25%;
+  width:30%;
+
 }
 
 
