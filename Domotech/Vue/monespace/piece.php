@@ -4,7 +4,7 @@ include_once("Modele/db-maison-manager.php");
  ?>
 
 <?php $reponse = getHabitationsList($db, $_SESSION["idGroupe"])?>
-<div class="conteneurBloc n3 n2 left">
+<div class="conteneurBloc n2 left">
   <h2>
     Ajouter une pièce
   </h2>

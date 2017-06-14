@@ -6,7 +6,7 @@ include_once("Modele/db-salle-manager.php");
 include_once("Modele/db-capteffect-manager.php");
  ?>
 
-<div class="conteneurBloc n3 n2 left">
+<div class="conteneurBloc n2 left">
   <h2>
     Ajouter un capteur
   </h2>
