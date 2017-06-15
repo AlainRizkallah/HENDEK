@@ -34,6 +34,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
     $res = getUserInfos($db, $_POST['btnRESETmdp']);
     $infos = $res->fetch();
+    $resultat = setForgetMdp($db , $infos['email'] , 0 ); //reset du token
+    echo($resultat);
 
     if(($_POST['newMdp'])!=$_POST['confNewMdp']){
         $erreur = "La confirmation du mot de passe a échoué";
