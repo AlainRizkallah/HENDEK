@@ -38,7 +38,7 @@ $nombre = unreadMsg($db , $_SESSION['userID']); ?>
           <input type="password" placeholder="Mot de passe" name="psw" required>
           <button type="submit" name="btnLogin">Connexion</button>
           <span class="rmb"><input type="checkbox" checked="checked"> Remember me<br></span>
-          <span class="su"> <a href="#">Mot de passe oublié?</a><br><a href="inscription.php">S\'inscrire</a></span>
+          <span class="su"> <a href="resetmdp.php">Mot de passe oublié?</a><br><a href="inscription.php">S\'inscrire</a></span>
 
 
   ');

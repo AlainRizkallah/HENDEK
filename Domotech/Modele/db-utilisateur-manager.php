@@ -153,4 +153,27 @@
         $stmt->bindParam(':id',$id);
         $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
       }
+
+      function getUser_byMail($db , $email){
+            $reponse=$db->prepare('SELECT * FROM utilisateurs
+            WHERE email=:email');
+            $reponse->bindParam(':email', $email);
+            $reponse->execute();
+            return $reponse;
+      }
+
+      function getUser_byToken($db , $token){
+            $reponse=$db->prepare('SELECT * FROM utilisateurs
+            WHERE forgetmdp=:token');
+            $reponse->bindParam(':token',$token);
+            $reponse->execute();
+            return $reponse;
+      }
+
+      function setForgetMdp($db , $email , $token){
+        $stmt = $db->prepare('UPDATE `utilisateurs` SET forgetmdp = :token WHERE `email`=:email');
+        $stmt->bindParam(':token',$token);
+        $stmt->bindParam(':email',$email);
+        $stmt->execute() or die(print_r($stmt ->errorInfo(), true));
+      }
 ?>
