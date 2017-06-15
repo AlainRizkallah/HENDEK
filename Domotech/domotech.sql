@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  lun. 12 juin 2017 à 11:09
+-- Généré le :  jeu. 15 juin 2017 à 19:20
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -221,7 +221,8 @@ CREATE TABLE `messageint` (
 
 INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
 (8, 8, 'bfb', 'vbdb', '2017-06-12 11:04:43', 47, 0),
-(8, 8, 'gsdgs', 'dsg', '2017-06-12 11:04:48', 48, 0);
+(8, 8, 'gsdgs', 'dsg', '2017-06-12 11:04:48', 48, 1),
+(8, 8, 'Réponse à : gsdgs', ' \r\n __________ \r\n \r\n Message précédent : \r\n dsg', '2017-06-12 11:14:29', 49, 0);
 
 -- --------------------------------------------------------
 
@@ -243,7 +244,8 @@ CREATE TABLE `news` (
 INSERT INTO `news` (`titre`, `contenu`, `date`, `ID`) VALUES
 ('NEWS 1 ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.\r\n        ', '0000-00-00 00:00:00', 1),
 ('NEWS 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.', '0000-00-00 00:00:00', 3),
-('NEWS 3 (contient une date)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.', '2017-06-12 10:53:41', 4);
+('NEWS 3 (contient une date)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu tempor odio, varius fringilla sapien. Suspendisse ex augue, sodales quis sollicitudin ut, dictum at quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vel vestibulum leo. Nullam ante dui, iaculis vitae varius vel, suscipit ut turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat neque vehicula tincidunt rutrum. Proin nunc ligula, vestibulum ac tellus et, venenatis pellentesque nulla. Aenean finibus est nec dapibus sollicitudin. Phasellus diam nisl, scelerisque eu dapibus et, dapibus sit amet eros. Donec euismod nibh est, at ornare massa pellentesque ut. Vivamus nec maximus dui, et sodales dolor. Ut euismod efficitur purus at congue.', '2017-06-12 10:53:41', 4),
+('Un nouveau pakistanais dans l\'équipe !!!!', 'Bienvenue sur PakPakNews, dans cette rubrique nous verrons chaque semaine les\r\n actualités concernant les pakistanais de notre groupe. C\'est avec un immense plaisir que nous rencontrons aujourd\'hui Vikash notre nouvel arrivant. \'Bonjour Vikash, peux tu te présenter ?\' V : bien sur, je m\'appelle vikash et je suis un pakpak. ...', '2017-06-13 18:53:15', 20);
 
 -- --------------------------------------------------------
 
@@ -280,7 +282,8 @@ INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
 (26, 11, 's'),
 (27, 11, 'v'),
 (29, 9, 'dfqfq'),
-(30, 23, 'dgdg');
+(30, 23, 'dgdg'),
+(31, 23, 'Gd');
 
 -- --------------------------------------------------------
 
@@ -297,21 +300,22 @@ CREATE TABLE `utilisateurs` (
   `nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Utilisateur principal',
-  `idGroupe` int(11) DEFAULT NULL
+  `idGroupe` int(11) DEFAULT NULL,
+  `forgetmdp` varchar(13) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '0611101213', 'zaea.eaz@ere.fr', 'fdfd', 'a', 'Utilisateur principal', 1),
-('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 't', '', 'Utilisateur principal', 2),
-('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3),
-('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8),
-('\'', '3590cb8af0bbb9e78c343b52b93773c9', 17, '0654433456', 'tibo.ngs@live.fr', '\'', '\'', 'Utilisateur principal', 17),
-('alainaaa', '0cc175b9c0f1b6a831c399e269772661', 18, '0444443333', 'a@a.com', 'Alain\'s gay house', 'Alain', 'Utilisateur principal', 18),
-('alainJunior', '0cc175b9c0f1b6a831c399e269772661', 20, '', '', '', '', 'Enfant', 1);
+INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`, `forgetmdp`) VALUES
+('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '0611101213', 'thibault.hentges@gmail.com', 'fdfd', 'a', 'Utilisateur principal', 1, '5942bd9005bd6'),
+('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 't', '', 'Utilisateur principal', 2, '0'),
+('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3, '0'),
+('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8, '0'),
+('\'', '3590cb8af0bbb9e78c343b52b93773c9', 17, '0654433456', 'tibo.ngs@live.fr', '\'', '\'', 'Utilisateur principal', 17, '594103dd76fb5'),
+('alainaaa', '0cc175b9c0f1b6a831c399e269772661', 18, '0444443333', 'a@a.com', 'Alain\'s gay house', 'Alain', 'Utilisateur principal', 18, '0'),
+('alainJunior', '0cc175b9c0f1b6a831c399e269772661', 20, '', '', '', '', 'Enfant', 1, '0');
 
 --
 -- Index pour les tables déchargées
@@ -391,7 +395,7 @@ ALTER TABLE `capteur`
 -- AUTO_INCREMENT pour la table `habitation`
 --
 ALTER TABLE `habitation`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT pour la table `messageext`
 --
@@ -401,22 +405,22 @@ ALTER TABLE `messageext`
 -- AUTO_INCREMENT pour la table `messageint`
 --
 ALTER TABLE `messageint`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT pour la table `news`
 --
 ALTER TABLE `news`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
 ALTER TABLE `salle`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
