@@ -23,9 +23,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
        $headers .= 'MIME-Version: 1.0' . "\r\n";
        $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
        mail($to, $subject, $message, $headers);
-       header ("Location: ../mailsent.php" ); //redirige vers une page prévenant l'utilisateur qu'un email lui a été envoyé
+       header ("Location: ../resetmdp.php?cible=mailsent" ); //redirige vers une page prévenant l'utilisateur qu'un email lui a été envoyé
      }else{
-       header ("Location: ../mailnotsent.php" );
+       header ("Location: ../resetmdp.php?cible=mailnotsent" );
      }
   }
 
@@ -34,18 +34,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
     $res = getUserInfos($db, $_POST['btnRESETmdp']);
     $infos = $res->fetch();
-    $resultat = setForgetMdp($db , $infos['email'] , 0 ); //reset du token
-    echo($resultat);
-
     if(($_POST['newMdp'])!=$_POST['confNewMdp']){
-        $erreur = "La confirmation du mot de passe a échoué";
-        echo($erreur);
+      $token = $_GET['token'];
+      header('Location: ../reinitmdp.php?cible=mdpincorrect&token='. $token);
       }
       else{ // si les mdp sont les memes
         $password = md5($_POST['newMdp']);
         $resultat = setMdp($db , $password , $_POST['btnRESETmdp']);
         echo ($resultat);
-        header ("Location: ../mdpreset.php" );
+        $resultat = setForgetMdp($db , $infos['email'] , 0 ); //reset du token
+        echo($resultat);
+        header ("Location: ../resetmdp.php?cible=mdpreset" );
       }
 
  }

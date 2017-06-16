@@ -45,6 +45,11 @@ footer ul{
   width:50%;
 }
 
+.alerte {
+  text-align:center;
+  color:red;
+}
+
 .right{
   float:right;
 
