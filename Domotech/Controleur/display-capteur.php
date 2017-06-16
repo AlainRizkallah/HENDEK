@@ -27,13 +27,10 @@ function showAll($db,$salle,$nomSalle){
 
           if($row['etat']==1){
             ?>
-            <div class='boxCapteurElement boxElementMarche boutton' onclick= dessin("<?php echo($row['type']);?>",<?php echo($data)?>) >
+            <div class='boxCapteurElement boxElementMarche boutton' onclick= dessin("<?php echo($row['type']);?>",<?php echo (json_encode($data))?>) >
 
             <?php
-          /*<a class='boxCapteurElement boxElementMarche' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
-          <a class='boxCapteurElement boxElementArret' onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-capteur.php')>
-dessin("<?php echo($row['type']);?>")
-          */
+
             echo "<p>Actif</p>";
           }else{
             ?>
