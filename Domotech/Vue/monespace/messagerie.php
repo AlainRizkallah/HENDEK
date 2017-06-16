@@ -2,7 +2,16 @@
 include_once("Modele/db-message-manager.php");
 ?>
 <div class="conteneurBloc n3">
+  <?php if (isset($_GET['addel'])) {
+    if ($_GET['addel']=="add"){ ?>
+      <span class="vert"> Le message a été envoyé</span>
+    <?php }
+    if ($_GET['addel']=="del"){ ?>
+      <span class="rouge"> Le message a été supprimé </span>
+    <?php }
+  }?>
 <h2> Envoyer un message </h2>
+
 
 <form method="POST" action= 'Controleur/message-manager.php'>
     <div class="container">

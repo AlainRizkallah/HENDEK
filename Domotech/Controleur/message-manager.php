@@ -51,14 +51,14 @@ function sendInt(){
   $Dest=$rslt->fetch();
   $resultat = sendMessageInt($db, $_SESSION['userID'] , $Dest['id']  , $_POST['objet'], $_POST['message']);
   echo ($resultat);
-  header ("Location: $_SERVER[HTTP_REFERER]" );
+    header ("Location: ../monespace.php?cible=monespace/messagerie.php&addel=add" );
 }
 
 function supprInt(){
   include("../Modele/db-message-manager.php");
   $resultat = delMessageInt($db , $_POST['delMsgInt']);
   echo ($resultat);
-  header ("Location: $_SERVER[HTTP_REFERER]" );
+    header ("Location: ../monespace.php?cible=monespace/messagerie.php&addel=del" );
 }
 
 function supprExt(){
