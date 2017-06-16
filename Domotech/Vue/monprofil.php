@@ -7,6 +7,23 @@ include_once("Modele/db-utilisateur-manager.php");
  <h3> BIENVENUE SUR VOTRE PROFIL
  </h3></div>
 <div class="conteneurBloc n3">
+  <?php if (isset($_GET['addel'])) {
+    if ($_GET['addel']=="mail"){ ?>
+      <span class="vert"> Votre adresse e-mail a été mise à jour </span>
+    <?php }
+    if ($_GET['addel']=="tel"){ ?>
+      <span class="vert"> Votre numéro de téléphone a été mis à jour </span>
+    <?php }
+    if ($_GET['addel']=="mdpOK"){ ?>
+      <span class="vert"> Votre mot de passe a été mis à jour </span>
+    <?php }
+    if ($_GET['addel']=="lastMDP"){ ?>
+      <span class="rouge"> Le mot de passe actuel saisi est incorrect </span>
+    <?php }
+    if ($_GET['addel']=="confMDP"){ ?>
+      <span class="rouge"> La confirmation du mot de passe a échoué </span>
+    <?php }
+  }?>
 
 <?php $res = getUserInfos($db, $_SESSION['userID']);
 $infos = $res->fetch();
@@ -24,7 +41,7 @@ if ($infos['status']=="Utilisateur principal" or $infos['status']=="admin") {?>
 <p class=formLabel>Identifiant</p>
 <?php echo $infos['identifiant'];
 
-if ($infos['status']=="utilisateur principal") {?>
+if ($infos['status']=="Utilisateur principal" or $infos['status']=="admin") {?>
 
   <p class=formLabel>Adresse email</p>
   <?php echo $infos['email'];?>
@@ -69,8 +86,8 @@ if ($infos['status']=="utilisateur principal") {?>
 <div id='modMdp' style="display:none;">
   <br>
   <form method="post" action="Controleur/modifUser.php">
-    <label><b>Entrez votre ancien mot de passe</b></label>
-    <input type=password placeholder="ancien mot de passe" name=prevMdp required><br>
+    <label><b>Entrez votre mot de passe actuel</b></label>
+    <input type=password placeholder="mot de passe actuel" name=prevMdp required><br>
     <label><b>Entrez votre nouveau mot de passe</b></label>
     <input type=password placeholder="nouveau mot de passe" name=newMdp required><br>
     <label><b>Confirmez votre nouveau mot de passe</b></label>
