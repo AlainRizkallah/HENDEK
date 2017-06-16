@@ -18,7 +18,7 @@ function dispAddCapteur(){
   session_start();
   $resultat = addCapteur($db,$_POST['piece'],$_SESSION['idMaison'],$_POST['type']);
   echo ($resultat);
-  header ("Location: $_SERVER[HTTP_REFERER]" );
+  header ("Location: ../monespace.php?cible=monespace/ajoutcapteurs.php&addel=addcapt" );
 }
 function dispSuppCapteur(){
 
@@ -27,7 +27,7 @@ function dispSuppCapteur(){
   $resultat = delCapteur($db, $_POST['maison']) ;
   echo ($resultat);
 
-  header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
+  header ("Location: ../monespace.php?cible=monespace/ajoutcapteurs.php&addel=delcapt" );
 }
 
 ?>

@@ -18,7 +18,7 @@ function dispAddUserSec(){
   session_start();
   $resultat = addUserSec($db, $_POST['username'] ,$_POST['mdp'],$_POST['statut'], $_SESSION['idGroupe']);
   echo ($resultat);
-  header ("Location: $_SERVER[HTTP_REFERER]" );
+    header ("Location: ../monespace.php?cible=monespace/utilisateurs.php&addel=add" );
 }
 function dispDelUserSec(){
   include("../Modele/db-utilisateur-manager.php");
@@ -26,7 +26,7 @@ function dispDelUserSec(){
   $resultat = delUserSec($db, $_POST['btnDelUserSec']) ;
   echo ($resultat);
 
-  header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
+  header ("Location: ../monespace.php?cible=monespace/utilisateurs.php&addel=del" );
 }
 
 

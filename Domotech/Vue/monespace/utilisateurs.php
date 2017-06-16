@@ -2,6 +2,14 @@
 
 <?php include_once("Modele/db-utilisateur-manager.php"); ?>
 <div class="conteneurBloc n2 left">
+  <?php if (isset($_GET['addel'])) {
+    if ($_GET['addel']=="add"){ ?>
+      <span class="vert" style="position:absolute;"> L'utilisateur a été ajouté </span>
+    <?php }
+    if ($_GET['addel']=="del"){ ?>
+      <span class="rouge" style="position:absolute;"> L'utilisateur a été supprimé </span>
+    <?php }
+  }?>
   <h2>
     Ajouter un utilisateur
   </h2>

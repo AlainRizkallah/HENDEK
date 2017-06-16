@@ -17,7 +17,7 @@ function dispAddSalle(){
   include("../Modele/db-salle-manager.php");
   $resultat = addSalle($db,$_POST['maison'],$_POST['nom']);
   echo ($resultat);
-  header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
+  header ("Location: ../monespace.php?cible=monespace/piece.php&addel=add" );
 }
 function dispSuppSalle(){
   include("../Modele/db-salle-manager.php");
@@ -25,7 +25,7 @@ function dispSuppSalle(){
   $resultat = delSalle($db, $_POST['salle']) ;
   echo ($resultat);
 
-  header ("Location: $_SERVER[HTTP_REFERER]" ); // redirige l'utilisateur sur la page précédente
+  header ("Location: ../monespace.php?cible=monespace/piece.php&addel=del" ); 
 }
 
 ?>

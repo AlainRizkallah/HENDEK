@@ -7,6 +7,20 @@ include_once("Modele/db-capteffect-manager.php");
  ?>
 
 <div class="conteneurBloc n2 left">
+  <?php if (isset($_GET['addel'])) {
+    if ($_GET['addel']=="addcapt"){ ?>
+      <span class="vert" style="position:absolute;"> Le capteur a été ajouté </span>
+    <?php }
+    if ($_GET['addel']=="delcapt"){ ?>
+      <span class="rouge" style="position:absolute;"> Le capteur a été supprimé </span>
+    <?php }
+    if ($_GET['addel']=="addeff"){ ?>
+      <span class="vert" style="position:absolute;"> L'effecteur a été ajouté </span>
+    <?php }
+    if ($_GET['addel']=="deleff"){ ?>
+      <span class="rouge" style="position:absolute;"> L'effecteur a été supprimé </span>
+    <?php }
+  }?>
   <h2>
     Ajouter un capteur
   </h2>
