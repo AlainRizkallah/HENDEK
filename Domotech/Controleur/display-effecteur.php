@@ -2,10 +2,20 @@
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
    if(!empty($_POST['salle'])){
-    include("../Modele/db-effecteur-manager.php");
+    include_once("../Modele/db-effecteur-manager.php");
 
 
     showAll($db,$_POST['salle'],$_POST['salleNom']);
+  }
+  if (!empty($_POST['id'])){
+    include_once("../Modele/db-effecteur-manager.php");
+    $result = updateEffecteur($db,$_POST['id'],$_POST['etat']);
+    if ($_POST['etat']==0){
+      $state = "désactivé";
+    }else{
+      $state = "activé";
+    }
+    showAll($db,$_POST['numSalle'],$_POST['nomSalle']);
   }
 }
 
@@ -19,11 +29,18 @@ function showAll($db,$salle,$nomSalle){
       echo "<div class='boxCapteur'>";
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+          $params="id=".$row['ID']."&numSalle=".$salle."&nomSalle=".$nomSalle;
           if($row['etat']==1){
-            echo "<a class='boxCapteurElement boxElementMarche' href='#'>";
+              $params =  $params."&etat=0";
+            ?>
+            <button id="<?php echo($row['id'])?>" onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-effecteur.php') class='boxCapteurElement boxElementMarche'>
+            <?php
             echo "<p>Actif</p>";
           }else{
-            echo "<a class='boxCapteurElement boxElementArret' href='#'>";
+              $params =  $params."&etat=1";
+            ?>
+            <button id="<?php echo($row['id'])?>" onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-effecteur.php') class='boxCapteurElement boxElementArret' >
+            <?php
             echo "<p>Inactif</p>";
           }
 
@@ -42,8 +59,8 @@ function showAll($db,$salle,$nomSalle){
 //            echo "<p>" . $row['valeur'] .$unit. "</p>";
 
 
-//            echo "<p>" . $row['temps'] . "</p>";
-//            echo "</a>";
+
+          echo "</button>";
         }
         echo "</div>";
     } else {

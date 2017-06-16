@@ -35,6 +35,13 @@ $reponse->bindParam(':idGroupe', $idGroupe);
 $reponse->execute();
 return $reponse;
 }
+function updateEffecteur($db,$id,$valeur){
+
+  $reponse = $db->prepare('UPDATE actionneur SET etat=:valeur WHERE ID=:id');
+      $reponse->bindParam(':id',$id);
+      $reponse->bindParam(':valeur',$valeur);
+      $reponse->execute();
+}
 
 function delEffecteur($db,$idEffecteur){
   try{//TODO: ajouter le champs nom ?
