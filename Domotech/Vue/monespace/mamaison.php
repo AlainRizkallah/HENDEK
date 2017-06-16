@@ -3,6 +3,14 @@
 include_once("Modele/db-maison-manager.php"); ?>
 
 <div class="conteneurBloc n2 left">
+  <?php if (isset($_GET['addel'])) {
+    if ($_GET['addel']=="add"){ ?>
+      <span class="vert" style="position:absolute;"> La maison a été ajoutée </span>
+    <?php }
+    if ($_GET['addel']=="del"){ ?>
+      <span class="rouge" style="position:absolute;"> La maison a été supprimée </span>
+    <?php }
+  }?>
   <h2>
     Ajouter une maison
   </h2>
