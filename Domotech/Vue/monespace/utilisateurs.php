@@ -9,6 +9,15 @@
     if ($_GET['addel']=="del"){ ?>
       <span class="rouge" style="position:absolute;"> L'utilisateur a été supprimé </span>
     <?php }
+    if ($_GET['addel']=="mdperreur" ){ ?>
+      <span class="rouge" style="position:absolute;"> La confirmation du mot de passe a échoué</span>
+    <?php }
+    if ($_GET['addel']=="mdp"){ ?>
+      <span class="rouge" style="position:absolute;"> Le mot de passe a été mis à jour </span>
+    <?php }
+    if ($_GET['addel']=="statut"){ ?>
+      <span class="vert" style="position:absolute;"> Le statut a été mis à jour </span>
+    <?php }
   }?>
   <h2>
     Ajouter un utilisateur
