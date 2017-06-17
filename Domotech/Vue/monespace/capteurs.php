@@ -3,8 +3,9 @@ include_once("Modele/db-maison-manager.php");
 include_once("Modele/db-salle-manager.php");
 
  ?>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="js/drawCharts.js"> </script>
+<script async defer type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script async defer type="text/javascript" src="js/drawCharts.js"> </script>
+<script async defer type="text/javascript" src="js/communicationPhp.js"></script>
 
 
 
@@ -17,13 +18,13 @@ if(isset($_SESSION['idMaison'])){
   $resultat=getSallesList($db, $_SESSION['idMaison']);
   $titre = "Choisissez une salle";
   if(isset($_SESSION["nomMaison"])){
-      $titre = "▼ Salles de la maison : ".$_SESSION["nomMaison"];
+      $titre = "▼ Salles de : ".$_SESSION["nomMaison"];
   }
 
 }else{
   $resultat="";
   if(!isset($_SESSION["nomMaison"])){
-    $titre="▼ Salles de la maison : "."pas de maison";
+    $titre="pas encore de maison";
   }
 }
 ?>
@@ -31,7 +32,7 @@ if(isset($_SESSION['idMaison'])){
 
   <div class="dropdown" >
 
-         <button class="boutton gros"><?php echo($titre); ?></button>
+         <button class="boutton "><?php echo($titre); ?></button>
 
             <div class="dropdown-content">
 
@@ -56,29 +57,17 @@ if(isset($_SESSION['idMaison'])){
 <div class="conteneurBloc n2 right">
 <h2> Etat des effecteurs </h2>
 
-<script  async defer src="js/communicationPhp.js"></script>
+
 <?php
 include_once("Modele/db-maison-manager.php");
 include_once("Modele/db-salle-manager.php");
+$resultat= getSallesList($db, $_SESSION['idMaison']);
+;
 
-if(isset($_SESSION['idMaison'])){
-  $resultat=getSallesList($db, $_SESSION['idMaison']);
-  $titre = "Choisissez une salle";
-  if(isset($_SESSION["nomMaison"])){
-      $titre = "▼ Salles de la maison : ".$_SESSION["nomMaison"];
-  }
-
-}else{
-  $resultat="";
-  if(!isset($_SESSION["nomMaison"])){
-   $titre = "▼ Salles de la maison : "."pas de maison";
-  }
-
-}
  ?>
 
 <div class="dropdown" >
-    <button class="boutton gros"><?php echo($titre); ?></button>
+    <button class="boutton "><?php echo($titre); ?></button>
         <div class="dropdown-content">
           <?php
           if(!empty($resultat)){
