@@ -17,7 +17,6 @@
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/news.php" >Ajouter une actualité</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/messagerie.php" >Messagerie</a>
         <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/capteffect.php" >Capteurs et effecteurs disponibles</a>
-        <a class="barre-menu-element" href ="accueiladmin.php?cible=accueiladmin/historique.php" >Historique</a>
        </div>
     </header>
 
