@@ -21,7 +21,7 @@
       <span class="vert"> Le statut de l'utilisateur a été mis à jour </span>
     <?php }
     if ($_GET['addel']=="mdpOK"){ ?>
-      <span class="rouge"> Le mot de passe de l'utilisateur a été changé </span>
+      <span class="vert"> Le mot de passe de l'utilisateur a été changé </span>
     <?php }
     if ($_GET['addel']=="confMDP"){ ?>
       <span class="rouge"> La confirmation du mot de passe a échoué </span>
