@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dest = "../Vue/Image/news/".$image ;
     upload('picnews' , $dest , 1048576 , array('png','jpg','jpeg') );
     echo ($resultat);
-    header ("Location: $_SERVER[HTTP_REFERER]" );
+    header ("Location: ../accueiladmin.php?cible=accueiladmin/news.php&addel=add" );
  }
 
 }

@@ -1,4 +1,9 @@
 <div class="texte">
+  <?php if (isset($_GET['addel'])) {
+    if ($_GET['addel']=="add"){ ?>
+      <span class="vert"> La maison a été ajoutée </span>
+    <?php }
+  }?>
 <form method="post" action="Controleur/news-manager.php" enctype="multipart/form-data">
     <p>
         <label class=formLabel for="titrenews" >Titre :</label>
