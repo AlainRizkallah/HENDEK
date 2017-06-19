@@ -1,9 +1,5 @@
 
-<?php /*
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^([0-9a-zA-Z]+) monespace.php?cible=$1 [NC,L]*/
+<?php
 if(isset($_SESSION["userID"])){ // est connecté
 
 echo('

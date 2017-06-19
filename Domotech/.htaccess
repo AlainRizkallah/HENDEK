@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ monespace.php?params=$1 [NC,QSA]
