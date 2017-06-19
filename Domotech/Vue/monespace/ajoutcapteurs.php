@@ -22,7 +22,9 @@ include_once("Modele/db-capteffect-manager.php");
     <?php }
   }?>
   <h2>
-    Ajouter un capteur
+    Ajouter un capteur <?php if (isset($_SESSION["nomMaison"])){
+      echo("dans: ".$_SESSION["nomMaison"]);
+    }?>
   </h2>
 
   <script  async defer src="js/communicationPhp.js"></script>
