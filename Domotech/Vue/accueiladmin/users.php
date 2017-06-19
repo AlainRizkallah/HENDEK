@@ -5,6 +5,27 @@
     if ($_GET['addel']=="del"){ ?>
       <span class="rouge"> L'utilisateur a été supprimé </span>
     <?php }
+    if ($_GET['addel']=="prenom"){ ?>
+      <span class="vert"> Le prénom de l'utilisateur a été mise à jour </span>
+    <?php }
+    if ($_GET['addel']=="nom"){ ?>
+      <span class="vert"> Le nom de l'utilisateur a été mis à jour </span>
+    <?php }
+    if ($_GET['addel']=="mail"){ ?>
+      <span class="vert"> L'adresse e-mail de l'utilisateur a été mise à jour </span>
+    <?php }
+    if ($_GET['addel']=="tel"){ ?>
+      <span class="vert"> Le numéro de téléphone de l'utilisateur a été mise à jour </span>
+    <?php }
+    if ($_GET['addel']=="statut"){ ?>
+      <span class="vert"> Le statut de l'utilisateur a été mis à jour </span>
+    <?php }
+    if ($_GET['addel']=="mdpOK"){ ?>
+      <span class="rouge"> Le mot de passe de l'utilisateur a été changé </span>
+    <?php }
+    if ($_GET['addel']=="confMDP"){ ?>
+      <span class="rouge"> La confirmation du mot de passe a échoué </span>
+    <?php }
   }?>
 <h2>
    Liste des utilisateurs
