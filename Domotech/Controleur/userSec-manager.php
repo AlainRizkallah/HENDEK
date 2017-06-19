@@ -10,6 +10,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if((isset($_POST['btnDelUserSec'])) ){
     dispDelUserSec();
  }
+ if((isset($_POST['delUserSecBis'])) ){
+   dispDelUserSecBis();
+}
 
 }
 
@@ -27,6 +30,14 @@ function dispDelUserSec(){
   echo ($resultat);
 
   header ("Location: ../monespace.php?cible=monespace/utilisateurs.php&addel=del" );
+}
+function dispDelUserSecBis(){
+  include("../Modele/db-utilisateur-manager.php");
+
+  $resultat = delUserSec($db, $_POST['delUserSecBis']) ;
+  echo ($resultat);
+
+  header ("Location: ../accueiladmin.php?cible=accueiladmin/users.php&addel=del" );
 }
 
 

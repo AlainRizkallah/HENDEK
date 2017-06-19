@@ -4,7 +4,7 @@
   <?php $liste=$resultat->fetch();        // POUR NE PAS QUE L'UTILISATEUR PRINCIPAL S'AFFICHE
   while ($liste=$resultat->fetch()){?>
 <form method="post" action="Controleur/userSec-manager.php">
-        <button class="boutonFantome" type="submit" name="delUserSec"
+        <button class="boutonFantome" type="submit" name="delUserSecBis"
         onclick="if(!confirm('Êtes vous sur de vouloir supprimer cet utilisateur ?\nCette action sera définitive.')) return false;"
         value='<?php echo "".$liste['id']?>'/> <img src=Vue/Image/domotech_suppr.png width=20px> </button>
 
