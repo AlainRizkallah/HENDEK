@@ -33,13 +33,13 @@ function showAll($db,$salle,$nomSalle){
           if($row['etat']==1){
               $params =  $params."&etat=0";
             ?>
-            <button id="<?php echo($row['id'])?>" onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-effecteur.php') class='boxCapteurElement boxElementMarche'>
+            <button id="<?php echo($row['ID'])?>" onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-effecteur.php') class='boxCapteurElement boxElementMarche'>
             <?php
             echo "<p>Actif</p>";
           }else{
               $params =  $params."&etat=1";
             ?>
-            <button id="<?php echo($row['id'])?>" onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-effecteur.php') class='boxCapteurElement boxElementArret' >
+            <button id="<?php echo($row['ID'])?>" onclick= envoiePhP("<?php echo($params)?>",'Controleur/display-effecteur.php') class='boxCapteurElement boxElementArret' >
             <?php
             echo "<p>Inactif</p>";
           }
