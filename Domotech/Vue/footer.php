@@ -25,5 +25,5 @@
   <li> Nos offres </a></li>
   </ul>
 
-
+  <script  src="js/ongletActif.js"></script>
 </footer>

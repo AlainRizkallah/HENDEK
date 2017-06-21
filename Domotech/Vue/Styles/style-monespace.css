@@ -14,7 +14,6 @@
 h2 {
   font-family: "SB";
   font-size:35px;
-  text-decoration:underline;
   padding-left:4px;
   color: #5680A6;
 }
@@ -25,11 +24,16 @@ h3 {
   padding-top:4px;
   padding-bottom:4px;
   padding:5px;
-  background-color:#5680A6;
-  border-style: solid;
-  color: #E0E2E5;
-  border-color:#D1D4D9;
+  color: #5680A6;
   display: inline-block;
+}
+h1 {
+  font-family: "SB";
+  font-size:2.5em;
+  padding-top:4px;
+  padding-bottom:4px;
+  text-align: center;
+  color: #5680A6;
 }
 .texte {
   font-family: 'Montserrat', sans-serif;

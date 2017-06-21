@@ -4,8 +4,8 @@ include_once("Modele/db-capteur-manager.php");
 include_once("Modele/db-effecteur-manager.php");?>
 
 <div class="conteneurBloc center">
-<h3> BIENVENUE SUR VOTRE ESPACE
-</h3></div>
+<h1> Bienvenue sur votre espace <?php echo($_SESSION['name']);?>
+</h1></div>
 
 <div class="conteneurBloc n3">
   <h2>

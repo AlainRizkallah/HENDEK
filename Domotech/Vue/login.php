@@ -3,7 +3,7 @@
         <div class="container">
 <?php
 if(isset($_SESSION["userID"])){
-include("Controleur/test-statut.php");
+include_once("Controleur/test-statut.php");
 echo('
         <div class="dropdown">
           <label>Bienvenue : <b>'.$_SESSION["name"].'</b></label><br>
@@ -15,7 +15,7 @@ echo('
 ?><?php
 
 include_once 'Vue/menu/selecteur-maison.php';
-include ("Modele/db-message-manager.php");
+include_once ("Modele/db-message-manager.php");
 
 $nombre = unreadMsg($db , $_SESSION['userID']); ?>
 
