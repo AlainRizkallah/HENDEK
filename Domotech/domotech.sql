@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  jeu. 15 juin 2017 à 19:33
+-- Client :  127.0.0.1
+-- Généré le :  Jeu 22 Juin 2017 à 10:33
 -- Version du serveur :  10.1.21-MariaDB
--- Version de PHP :  7.1.2
+-- Version de PHP :  7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -37,7 +35,7 @@ CREATE TABLE `actionneur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `actionneur`
+-- Contenu de la table `actionneur`
 --
 
 INSERT INTO `actionneur` (`ID`, `idSalle`, `etat`, `type`, `idMaison`) VALUES
@@ -68,7 +66,7 @@ CREATE TABLE `capteffect` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `capteffect`
+-- Contenu de la table `capteffect`
 --
 
 INSERT INTO `capteffect` (`capteurs`, `effecteurs`) VALUES
@@ -92,7 +90,7 @@ CREATE TABLE `capteur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `capteur`
+-- Contenu de la table `capteur`
 --
 
 INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`, `temps`) VALUES
@@ -152,7 +150,7 @@ CREATE TABLE `habitation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `habitation`
+-- Contenu de la table `habitation`
 --
 
 INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALUES
@@ -192,7 +190,7 @@ CREATE TABLE `messageext` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `messageext`
+-- Contenu de la table `messageext`
 --
 
 INSERT INTO `messageext` (`nom`, `prenom`, `mail`, `tel`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
@@ -216,7 +214,7 @@ CREATE TABLE `messageint` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `messageint`
+-- Contenu de la table `messageint`
 --
 
 INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
@@ -238,7 +236,7 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `news`
+-- Contenu de la table `news`
 --
 
 INSERT INTO `news` (`titre`, `contenu`, `date`, `ID`) VALUES
@@ -260,7 +258,7 @@ CREATE TABLE `salle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `salle`
+-- Contenu de la table `salle`
 --
 
 INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
@@ -301,24 +299,25 @@ CREATE TABLE `utilisateurs` (
   `prenom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `status` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Utilisateur principal',
   `idGroupe` int(11) DEFAULT NULL,
-  `forgetmdp` varchar(13) COLLATE utf8_unicode_ci DEFAULT NULL
+  `forgetmdp` varchar(13) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `abonnement` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `utilisateurs`
+-- Contenu de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`, `forgetmdp`) VALUES
-('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '0611101213', 'thibault.hentges@gmail.com', 'fdfd', 'a', 'Utilisateur principal', 1, '0'),
-('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 't', '', 'Utilisateur principal', 2, '0'),
-('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3, '0'),
-('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8, '0'),
-('\'', '3590cb8af0bbb9e78c343b52b93773c9', 17, '0654433456', 'tibo.ngs@live.fr', '\'', '\'', 'Utilisateur principal', 17, '0'),
-('alainaaa', '0cc175b9c0f1b6a831c399e269772661', 18, '0444443333', 'a@a.com', 'Alain\'s gay house', 'Alain', 'Utilisateur principal', 18, '0'),
-('alainJunior', '0cc175b9c0f1b6a831c399e269772661', 20, '', '', '', '', 'Enfant', 1, '0');
+INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`, `forgetmdp`, `abonnement`) VALUES
+('alain', '0cc175b9c0f1b6a831c399e269772661', 1, '0611101213', 'thibault.hentges@gmail.com', 'fdfd', 'a', 'Utilisateur principal', 1, '0', 0),
+('tibo', '92eb5ffee6ae2fec3ad71c777531578f', 2, '01', 'tibo@tibo', 't', '', 'Utilisateur principal', 2, '0', 0),
+('tebbs', '92eb5ffee6ae2fec3ad71c777531578f', 3, '', '', '', '', 'Enfant', 3, '0', 0),
+('admin', '21232f297a57a5a743894a0e4a801fc3', 8, '0626742891', 't@t.com', 'admin', 'admin', 'admin', 8, '0', 0),
+('\'', '3590cb8af0bbb9e78c343b52b93773c9', 17, '0654433456', 'tibo.ngs@live.fr', '\'', '\'', 'Utilisateur principal', 17, '0', 0),
+('alainaaa', '0cc175b9c0f1b6a831c399e269772661', 18, '0444443333', 'a@a.com', 'Alain\'s gay house', 'Alain', 'Utilisateur principal', 18, '0', 0),
+('alainJunior', '0cc175b9c0f1b6a831c399e269772661', 20, '', '', '', '', 'Enfant', 1, '0', 0);
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -378,7 +377,7 @@ ALTER TABLE `utilisateurs`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
@@ -420,8 +419,7 @@ ALTER TABLE `salle`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
