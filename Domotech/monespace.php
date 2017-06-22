@@ -19,9 +19,9 @@
 
 
 </header>
-<nav>
+
 <?php include("Vue/barremenu.php");?>
-</nav>
+
 <aside>
   <div class="conteneur">
 
@@ -37,7 +37,7 @@
 </aside>
 
 <section>
-  <div class="conteneur-section">
+
 
 
   <?php include("Controleur/test-statut.php");
@@ -101,7 +101,7 @@
         echo  ("Bienvenue sur votre espace <br><br>");
   }
   ?>
-    </div>
+
 
 </section>
 
