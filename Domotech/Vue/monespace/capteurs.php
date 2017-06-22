@@ -61,8 +61,9 @@ if(isset($_SESSION['idMaison'])){
 <?php
 include_once("Modele/db-maison-manager.php");
 include_once("Modele/db-salle-manager.php");
+if(isset($_SESSION['idMaison'])){
 $resultat= getSallesList($db, $_SESSION['idMaison']);
-;
+}
 
  ?>
 
