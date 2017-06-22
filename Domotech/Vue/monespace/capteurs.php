@@ -16,7 +16,7 @@ include_once("Modele/db-salle-manager.php");
 <?php
 if(isset($_SESSION['idMaison'])){
   $resultat=getSallesList($db, $_SESSION['idMaison']);
-  $titre = "Choisissez une salle";
+  $titre = "Choisissez une maison dans le menu déroulant sur votre gauche";
   if(isset($_SESSION["nomMaison"])){
       $titre = "▼ Salles de : ".$_SESSION["nomMaison"];
   }
