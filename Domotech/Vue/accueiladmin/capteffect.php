@@ -17,7 +17,7 @@
   include_once("Modele/db-capteffect-manager.php");
   $resultat=getCaptList($db);
   while ($donnees=$resultat->fetch()){
-    echo $donnees['capteurs'];
+    echo $donnees['capteurs']; ?> <br> <?php 
   } ?>
 
 </div>
@@ -39,6 +39,6 @@
   include_once("Modele/db-capteffect-manager.php");
   $resultat=getEffList($db);
   while ($donnees=$resultat->fetch()){
-    echo $donnees['effecteurs'];
+    echo $donnees['effecteurs']; ?> <br> <?php
   } ?>
 </div>

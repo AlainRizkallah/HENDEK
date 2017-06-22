@@ -12,16 +12,16 @@ if(!$dataEau){
 ];
 }
 if(!isset($_SESSION["nomMaison"])){
-  $titre = "Choisissez une maison pour avoir la consommation";
+  $titre = "Choisissez une maison pour accéder a sa consommation";
 }else{
-  $titre = "Consommation de :".$_SESSION['nomMaison'];
+  $titre = "Consommation de : ".$_SESSION['nomMaison'];
 }
 ?>
 <script  type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script  type="text/javascript" src="js/drawCharts.js"></script>
 
 <div class="center">
-  <h1><?php echo($titre);?></h1>
+  <h2><?php echo($titre);?></h2>
 
   <div class="conteneur">
     <button class="boutton n2" onclick='dessin("Electricité",<?php echo (json_encode($dataElec))?>)'>Electricité</button>

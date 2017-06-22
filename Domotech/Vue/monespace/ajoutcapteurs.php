@@ -23,7 +23,7 @@ include_once("Modele/db-capteffect-manager.php");
   }?>
   <h2>
     Ajouter un capteur <?php if (isset($_SESSION["nomMaison"])){
-      echo("dans: ".$_SESSION["nomMaison"]);
+      echo("dans : ".$_SESSION["nomMaison"]);
     }?>
   </h2>
 
