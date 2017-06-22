@@ -22,22 +22,25 @@ include_once("Modele/db-maison-manager.php");
         <select name="maison" required>
           <?php if(isset($_SESSION["nomMaison"])){
             ?>
-            <option class=formLabel value="<?php echo($_SESSION["idMaison"])?>"><?php echo($_SESSION["nomMaison"])?> </option>
+            <option class=formLabel value="<?php echo($_SESSION["idMaison"])?>" selected><?php echo($_SESSION["nomMaison"])?> </option>
+            <?php while ($donnees = $reponse->fetch()) {?>                                       <!-- affiche les maisons presente dans la BDD -->
+                <?php if(isset($_SESSION["idMaison"]) && $donnees['ID'] != $_SESSION["idMaison"] ){?>
+              <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
 
+              <?php }?>
+              <?php }?>
             <?php
           } else{
             ?>
               <option class=formLabel value="" disabled selected> </option>
+              <?php while ($donnees=$reponse->fetch()){ ?>
+                <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
 
-          <?php }?>
+            <?php  }
+           }?>
 
 
-          <?php while ($donnees = $reponse->fetch()) {?>                                       <!-- affiche les maisons presente dans la BDD -->
-              <?php if(isset($_SESSION["idMaison"]) && $donnees['ID'] != $_SESSION["idMaison"] ){?>
-            <option value=<?php echo($donnees['ID'])?>><?php echo($donnees['nom'])?></option>
 
-            <?php }?>
-            <?php }?>
         </select>
     </p>
     <p>
