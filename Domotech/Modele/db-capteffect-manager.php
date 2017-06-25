@@ -49,4 +49,5 @@ function getEffList($db){
   return $reponse;
 }
 
+
 ?>
