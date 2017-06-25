@@ -46,7 +46,7 @@ return $res;
 }
 
 function getMessagesList($db , $idDest){
-$reponse = $db->prepare('SELECT messageint.ID ID , messageint.objet objet , messageint.message message , utilisateurs.nom nom , lu , messageint.date datee FROM `messageint`
+$reponse = $db->prepare('SELECT messageint.ID ID , messageint.objet objet , messageint.message message , utilisateurs.identifiant nom , lu , messageint.date datee FROM `messageint`
   JOIN utilisateurs ON utilisateurs.id=messageint.idSend
   WHERE idDest = :idDest
   ORDER BY ID DESC'

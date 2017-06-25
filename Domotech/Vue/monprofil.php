@@ -4,7 +4,7 @@
 include_once("Modele/db-utilisateur-manager.php");
  ?>
  <div class="conteneurBloc center">
- <h3> Bienvenue sur votre profile
+ <h3> Bienvenue sur votre profil
  </h3></div>
 <div class="conteneurBloc n3">
   <?php if (isset($_GET['addel'])) {

@@ -37,17 +37,46 @@ catch (Exception $e)
 
   function getCaptList($db){
 
-    $reponse = $db->prepare('SELECT type,prix,unite FROM liste_capteur');
+    $reponse = $db->prepare('SELECT type,prix,unite,ID FROM liste_capteur');
     $reponse->execute();
     return $reponse;
 }
 
 function getEffList($db){
 
-  $reponse = $db->prepare('SELECT type,prix FROM liste_effecteur ');
+  $reponse = $db->prepare('SELECT type,prix,ID FROM liste_effecteur ');
   $reponse->execute();
   return $reponse;
 }
 
+function delCapt($db,$ID){
+    try{
+      $stmt = $db->prepare('DELETE FROM `liste_capteur` WHERE `ID`=:ID');
+      $stmt->bindParam(':ID',$ID);
+      $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+      $res="fait";
+    }
+    catch (Exception $e)
+    {
+      die('Erreur : ' . $e->getMessage());
+      $res= $e->getMessage();
+    }
+    return $res;
+    }
+
+function delEffect($db,$ID){
+    try{
+      $stmt = $db->prepare('DELETE FROM `liste_effecteur` WHERE `ID`=:ID');
+      $stmt->bindParam(':ID',$ID);
+      $stmt->execute() or die(print_r($stmt->errorInfo(), true));
+      $res="fait";
+      }
+      catch (Exception $e)
+      {
+      die('Erreur : ' . $e->getMessage());
+      $res= $e->getMessage();
+      }
+      return $res;
+        }
 
 ?>

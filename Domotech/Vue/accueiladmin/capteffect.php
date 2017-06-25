@@ -4,7 +4,7 @@
     Ajouter un type de capteur
   </h2>
 
-  <form method="post" action="Controleur/add-capteffect.php">
+  <form method="post" action="Controleur/capteffect-manager.php">
     <label class=formLabel>Type du nouveau capteur disponible</label><br><br>
     <input type=text placeholder="" name="type" maxlength="30" required>
 <br><br>
@@ -24,21 +24,26 @@
   </h2>
   <?php
   include_once("Modele/db-capteffect-manager.php");
-  $resultat=getCaptList($db);
+  $resultat=getCaptList($db); ?>
+  <form method=post action="Controleur/capteffect-manager.php">
+  <?php
   while ($donnees=$resultat->fetch()){
     ?>
     <p>
-      <?php echo($donnees['type']) ?>
+      <button class="boutonFantome" type="submit" name="delCapt"
+      onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce type de capteur ?\nCette action sera définitive.')) return false;"
+      value='<?php echo "".$donnees['ID']?>'/> <img src=Vue/Image/domotech_suppr.png width=20px> </button>
+      <b><?php echo($donnees['type']) ?></b>
       <?php
       if ($donnees['unite']!=""){
         echo ("(".$donnees['unite'].")");
-      }?>
-      prix: <?php echo($donnees['prix']) ?> €
+      }?><br>
+      prix : <?php echo($donnees['prix']) ?> €
 
 
     </p>
   <?php
-  } ?>
+} ?></form>
 
 </div>
 <div class="conteneurBloc n2 right">
@@ -46,7 +51,7 @@
     Ajouter un type d'effecteur
   </h2>
 
-  <form method="post" action="Controleur/add-capteffect.php">
+  <form method="post" action="Controleur/capteffect-manager.php">
     <label class=formLabel>Type du nouvel effecteur disponible</label><br><br>
     <input type=text placeholder="" name="type" maxlength="30" required>
     <br><br>
@@ -62,12 +67,16 @@
   </h2>
   <?php
   include_once("Modele/db-capteffect-manager.php");
-  $resultat=getEffList($db);
+  $resultat=getEffList($db); ?>
+  <form method=post action="Controleur/capteffect-manager.php"> <?php
   while ($donnees=$resultat->fetch()){
     ?>
     <p>
-      <?php echo($donnees['type']) ?> prix: <?php echo($donnees['prix']) ?> €
+      <button class="boutonFantome" type="submit" name="delEffect"
+      onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce type de capteur ?\nCette action sera définitive.')) return false;"
+      value='<?php echo "".$donnees['ID']?>'/> <img src=Vue/Image/domotech_suppr.png width=20px> </button>
+    <b>  <?php echo($donnees['type']) ?></b><br>prix : <?php echo($donnees['prix']) ?> €
     </p>
     <?php
-  } ?>
+  } ?></form>
 </div>
