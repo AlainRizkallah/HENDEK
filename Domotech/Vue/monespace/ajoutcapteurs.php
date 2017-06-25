@@ -48,8 +48,8 @@ include_once("Modele/db-capteffect-manager.php");
         <option class=formLabel value="" disabled selected></option>
         <?php $reponse=getCaptList($db);
         while ($donnees=$reponse->fetch()){  ?>
-          <option value=<?php echo($donnees['capteurs'])?>><?php echo($donnees['capteurs'])?></option>
-          <?php } $reponse->closeCursor();?>
+          <option value=<?php echo($donnees['type'])?>><?php echo($donnees['type'])?> (<?php echo($donnees['prix'])?> €)</option>
+            <?php } $reponse->closeCursor();?>
       </select>
     </p>
     <p class=center>
@@ -84,7 +84,7 @@ include_once("Modele/db-capteffect-manager.php");
         <option class=formLabel value="" disabled selected></option>
         <?php $reponse=getEffList($db);
         while ($donnees=$reponse->fetch()){  ?>
-          <option value=<?php echo($donnees['effecteurs'])?>><?php echo($donnees['effecteurs'])?></option>
+          <option value=<?php echo($donnees['type'])?>><?php echo($donnees['type'])?> (<?php echo($donnees['prix'])?> €)</option>
           <?php } $reponse->closeCursor();?>
       </select>
     </p>

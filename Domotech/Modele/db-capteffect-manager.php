@@ -1,10 +1,12 @@
 <?php
     require_once("connexion.php");
 
-    function addCaptToList($db,$capteurs){
+    function addCaptToList($db,$type,$prix,$unite){
       try{//TODO: ajouter le champs nom ?
-      $stmt = $db->prepare('INSERT INTO `capteffect` (`capteurs` , `effecteurs` ) VALUES (:capteurs , "non") ');
-      $stmt->bindParam(':capteurs',$capteurs);
+      $stmt = $db->prepare('INSERT INTO `liste_capteur` (`type` , `prix`,`unite` ) VALUES (:type , :prix,:unite) ');
+      $stmt->bindParam(':type',$type);
+      $stmt->bindParam(':prix',$prix);
+      $stmt->bindParam(':unite',$unite);
       $stmt->execute() or die(print_r($stmt->errorInfo(), true));
       $res="fait";
   }
@@ -17,10 +19,11 @@
   }
 
 
-  function addEffToList($db,$effecteurs){
-    try{//TODO: ajouter le champs nom ?
-    $stmt = $db->prepare('INSERT INTO `capteffect` (`effecteurs` , `capteurs`) VALUES (:effecteurs , "non") ');
-    $stmt->bindParam(':effecteurs',$effecteurs);
+  function addEffToList($db,$type,$prix){
+    try{
+    $stmt = $db->prepare('INSERT INTO `liste_effecteur` (`type` , `prix`) VALUES (:type , :prix) ');
+    $stmt->bindParam(':type',$type);
+    $stmt->bindParam(':prix',$prix);
     $stmt->execute() or die(print_r($stmt->errorInfo(), true));
     $res="fait";
 }
@@ -34,14 +37,14 @@ catch (Exception $e)
 
   function getCaptList($db){
 
-    $reponse = $db->prepare('SELECT capteurs FROM capteffect WHERE effecteurs="non"');
+    $reponse = $db->prepare('SELECT type,prix,unite FROM liste_capteur');
     $reponse->execute();
     return $reponse;
 }
 
 function getEffList($db){
 
-  $reponse = $db->prepare('SELECT effecteurs FROM capteffect WHERE capteurs="non"');
+  $reponse = $db->prepare('SELECT type,prix FROM liste_effecteur ');
   $reponse->execute();
   return $reponse;
 }

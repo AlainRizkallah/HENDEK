@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 22 Juin 2017 à 10:33
+-- Généré le :  Dim 25 Juin 2017 à 19:26
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.1
 
@@ -71,7 +71,8 @@ CREATE TABLE `capteffect` (
 
 INSERT INTO `capteffect` (`capteurs`, `effecteurs`) VALUES
 ('Vidéosurveillance', 'non'),
-('non', 'Lumière');
+('non', 'Lumière'),
+('teste', 'non');
 
 -- --------------------------------------------------------
 
@@ -170,6 +171,29 @@ INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALU
 (21, 'dsfs', 0, 'dsgq', 2),
 (22, 'dsfs', 0, 'fdgsf', 2),
 (23, 'aj', 0, 'ACID', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `liste_capteur`
+--
+
+CREATE TABLE `liste_capteur` (
+  `type` varchar(30) NOT NULL,
+  `unite` varchar(6) DEFAULT NULL,
+  `prix` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `liste_effecteur`
+--
+
+CREATE TABLE `liste_effecteur` (
+  `type` varchar(30) NOT NULL,
+  `prix` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

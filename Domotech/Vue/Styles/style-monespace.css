@@ -394,9 +394,11 @@ input[type="password"]:focus {
 }
 
 
+
 .formLabel {
   text-align: center;
-  padding:5px;
+  margin-bottom: 15px;
+  padding: 5px;
   color: #5680A6;
   background-color:#E0E2E5;
   border-style: solid;
