@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1
--- Généré le :  Dim 25 Juin 2017 à 19:40
+-- Hôte : localhost
+-- Généré le :  Dim 25 juin 2017 à 23:57
 -- Version du serveur :  10.1.21-MariaDB
--- Version de PHP :  7.1.1
+-- Version de PHP :  7.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -35,7 +37,7 @@ CREATE TABLE `actionneur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `actionneur`
+-- Déchargement des données de la table `actionneur`
 --
 
 INSERT INTO `actionneur` (`ID`, `idSalle`, `etat`, `type`, `idMaison`) VALUES
@@ -71,7 +73,7 @@ CREATE TABLE `capteur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `capteur`
+-- Déchargement des données de la table `capteur`
 --
 
 INSERT INTO `capteur` (`ID`, `idHabitation`, `idSalle`, `type`, `valeur`, `etat`, `temps`) VALUES
@@ -131,7 +133,7 @@ CREATE TABLE `habitation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `habitation`
+-- Déchargement des données de la table `habitation`
 --
 
 INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALUES
@@ -161,8 +163,17 @@ INSERT INTO `habitation` (`ID`, `adresse`, `superficie`, `nom`, `idGroupe`) VALU
 CREATE TABLE `liste_capteur` (
   `type` varchar(30) NOT NULL,
   `unite` varchar(6) DEFAULT NULL,
-  `prix` float NOT NULL
+  `prix` float NOT NULL,
+  `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Déchargement des données de la table `liste_capteur`
+--
+
+INSERT INTO `liste_capteur` (`type`, `unite`, `prix`, `ID`) VALUES
+('Vidéosurveillance', '', 420, 2),
+('Température', '°C', 420, 4);
 
 -- --------------------------------------------------------
 
@@ -172,8 +183,16 @@ CREATE TABLE `liste_capteur` (
 
 CREATE TABLE `liste_effecteur` (
   `type` varchar(30) NOT NULL,
-  `prix` float NOT NULL
+  `prix` float NOT NULL,
+  `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `liste_effecteur`
+--
+
+INSERT INTO `liste_effecteur` (`type`, `prix`, `ID`) VALUES
+('Lumière', 120, 1);
 
 -- --------------------------------------------------------
 
@@ -194,7 +213,7 @@ CREATE TABLE `messageext` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `messageext`
+-- Déchargement des données de la table `messageext`
 --
 
 INSERT INTO `messageext` (`nom`, `prenom`, `mail`, `tel`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
@@ -218,7 +237,7 @@ CREATE TABLE `messageint` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `messageint`
+-- Déchargement des données de la table `messageint`
 --
 
 INSERT INTO `messageint` (`idDest`, `idSend`, `objet`, `message`, `date`, `ID`, `lu`) VALUES
@@ -240,7 +259,7 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `news`
+-- Déchargement des données de la table `news`
 --
 
 INSERT INTO `news` (`titre`, `contenu`, `date`, `ID`) VALUES
@@ -262,7 +281,7 @@ CREATE TABLE `salle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `salle`
+-- Déchargement des données de la table `salle`
 --
 
 INSERT INTO `salle` (`ID`, `idHabitation`, `nom`) VALUES
@@ -308,7 +327,7 @@ CREATE TABLE `utilisateurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `utilisateurs`
+-- Déchargement des données de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `prenom`, `status`, `idGroupe`, `forgetmdp`, `abonnement`) VALUES
@@ -321,7 +340,7 @@ INSERT INTO `utilisateurs` (`identifiant`, `mdp`, `id`, `tel`, `email`, `nom`, `
 ('alainJunior', '0cc175b9c0f1b6a831c399e269772661', 20, '', '', '', '', 'Enfant', 1, '0', 0);
 
 --
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
@@ -342,6 +361,18 @@ ALTER TABLE `capteur`
 -- Index pour la table `habitation`
 --
 ALTER TABLE `habitation`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `liste_capteur`
+--
+ALTER TABLE `liste_capteur`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `liste_effecteur`
+--
+ALTER TABLE `liste_effecteur`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -381,7 +412,7 @@ ALTER TABLE `utilisateurs`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
@@ -399,6 +430,16 @@ ALTER TABLE `capteur`
 --
 ALTER TABLE `habitation`
   MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT pour la table `liste_capteur`
+--
+ALTER TABLE `liste_capteur`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT pour la table `liste_effecteur`
+--
+ALTER TABLE `liste_effecteur`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `messageext`
 --
@@ -423,7 +464,8 @@ ALTER TABLE `salle`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
