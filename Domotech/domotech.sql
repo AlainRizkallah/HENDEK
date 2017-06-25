@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 25 Juin 2017 à 19:26
+-- Généré le :  Dim 25 Juin 2017 à 19:40
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.1
 
@@ -53,26 +53,6 @@ CREATE TABLE `administrateur` (
   `nom` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `role` varchar(40) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `capteffect`
---
-
-CREATE TABLE `capteffect` (
-  `capteurs` text NOT NULL,
-  `effecteurs` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `capteffect`
---
-
-INSERT INTO `capteffect` (`capteurs`, `effecteurs`) VALUES
-('Vidéosurveillance', 'non'),
-('non', 'Lumière'),
-('teste', 'non');
 
 -- --------------------------------------------------------
 
