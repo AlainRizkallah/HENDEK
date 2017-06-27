@@ -1,7 +1,7 @@
 <div class="texte">
   <?php if (isset($_GET['addel'])) {
     if ($_GET['addel']=="add"){ ?>
-      <span class="vert"> La maison a été ajoutée </span>
+      <span class="vert"> L'actualité a été ajoutée </span>
     <?php }
   }?>
 <form method="post" action="Controleur/news-manager.php" enctype="multipart/form-data">
