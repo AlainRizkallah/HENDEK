@@ -7,24 +7,15 @@
   <title>Domotech</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script  async defer src="js/communicationPhp.js"></script>
-
-
 </head>
   <body>
     <header>
-
   <?php include ('Controleur/session-manager.php');?>
      <h1 class="titre"><a href=.>Domotech</a> <img src=Vue/Image/logo-domotech.png class="logo"></img></h1>
-
-
-
 </header>
-
 <?php include("Vue/barremenu.php");?>
-
 <aside>
   <div class="conteneur">
-
       <?php include('Vue/login.php');
     if(!isset($_SESSION["userID"])){
       header('Location:login.php ');
@@ -32,10 +23,7 @@
     }
       ?>
   </div>
-
-
 </aside>
-
 <section>
 
 
@@ -49,17 +37,6 @@
       if ($ligne['status']=='Utilisateur principal' or $ligne['status']=='Utilisateur secondaire' or $ligne['status']=='admin' ) {
       include("Vue/monespace/mamaison.php");}
       else { include("Vue/monespace/accessdenied.php");}
-
-/*
-          if (preg_match('#monespace-([0-9-]+)\.php#isU', $_SERVER['REDIRECT_URL'], $match)) {
-            //TODO $_SERVER['REDIRECT_URL'] pas reconnu
-	           // Modification du code retour, pour que les moteurs de recherche indexent nos pages !
-	            header("Status: 200 OK", false, 200);
-
-
-    }*/
-
-
       } else if ($_GET['cible'] == "etape1"){
           include("Modele/utilisateurs.php");
           $reponse = utilisateurs($db);
