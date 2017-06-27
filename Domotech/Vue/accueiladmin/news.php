@@ -19,8 +19,7 @@
        </label>
        <br /><br />
 
-       <textarea name="contenunews" rows="30" cols="209" required>Inscrivez ici le texte contenu dans votre actualité
-       </textarea>
+       <textarea name="contenunews" rows="30" cols="209" placeholder="Inscrivez ici le texte contenu dans votre actualité" required></textarea>
     </p>
     <p>
         <button class=boutton type="submit" name="addNews"/>Mettre l'actualité en ligne</button>
