@@ -16,5 +16,9 @@
           <input type="password" pattern=".{4,}" placeholder="Mot de Passe" name="regMdp" required>
           <button type="submit" name="btnRegister">Créer le compte</button>
         </div>
+        <label><input type="checkbox" id="conditions" value="accept" required>j'accepte les condtions d'utilisations</label>
+        <p>
+          <a href="./cgu.php">Conditions d'utilisation</a>
+        </p>
       </form>
     </div>
