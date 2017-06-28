@@ -13,7 +13,7 @@
       <span class="rouge" style="position:absolute;"> La confirmation du mot de passe a échoué</span>
     <?php }
     if ($_GET['addel']=="mdp"){ ?>
-      <span class="rouge" style="position:absolute;"> Le mot de passe a été mis à jour </span>
+      <span class="vert" style="position:absolute;"> Le mot de passe a été mis à jour </span>
     <?php }
     if ($_GET['addel']=="statut"){ ?>
       <span class="vert" style="position:absolute;"> Le statut a été mis à jour </span>
