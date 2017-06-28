@@ -13,7 +13,7 @@
           <label><b>Identifiant</b></label>
           <input type="text" placeholder="Identifiant" name="regUserName" required>
           <label><b>Mot de Passe</b></label>
-          <input type="password" placeholder="Mot de Passe" name="regMdp" required>
+          <input type="password" pattern=".{4,}" placeholder="Mot de Passe" name="regMdp" required>
           <button type="submit" name="btnRegister">Créer le compte</button>
         </div>
       </form>
