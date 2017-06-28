@@ -2,7 +2,7 @@
 
 
 
-Conditions générales d'utilisation du site domotech.fr
+Conditions générales d'utilisation du site domotech.com
 
 <br><br>ARTICLE 1 : Objet<br><br>
 Les présentes « conditions générales d'utilisation » ont pour objet l'encadrement juridique des modalités de mise à disposition des services du site Domotech et leur utilisation par « l'Utilisateur ».
