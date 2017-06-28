@@ -1,5 +1,18 @@
 
 <div class="conteneurBloc n2 left">
+  <?php if (isset($_GET['addel'])) {
+    if ($_GET['addel']=="delcap"){ ?>
+      <span class="rouge"> Le type de capteur a été supprimé </span>
+    <?php }
+    if ($_GET['addel']=="addcap"){ ?>
+      <span class="vert"> Le type de capteur a été ajouté </span>
+    <?php }
+    if ($_GET['addel']=="deleff"){ ?>
+      <span class="rouge"> Le type d'effecteur a été supprimé </span>
+    <?php }
+    if ($_GET['addel']=="addeff"){ ?>
+      <span class="vert"> Le type d'effecteur a été ajouté </span>
+    <?php } }?>
   <h2>
     Ajouter un type de capteur
   </h2>
@@ -73,7 +86,7 @@
     ?>
     <p>
       <button class="boutonFantome" type="submit" name="delEffect"
-      onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce type de capteur ?\nCette action sera définitive.')) return false;"
+      onclick="if(!confirm('Êtes vous sur de vouloir supprimer ce type d\'effecteur ?\nCette action sera définitive.')) return false;"
       value='<?php echo "".$donnees['ID']?>'/> <img src=Vue/Image/domotech_suppr.png width=20px> </button>
     <b>  <?php echo($donnees['type']) ?></b><br>prix : <?php echo($donnees['prix']) ?> €
     </p>
