@@ -52,13 +52,11 @@ $resultat = getMessagesList($db , $_SESSION['userID']);?>
 <br>
 <div id='<?php echo "".$donnees['ID']?>' style="display:none;">
   <?php $msg = nl2br($donnees['message'])?>
-  <i><?php echo ($msg);
-    $dest = str_replace( '/"/g', '&quot;' , $donnees['message']) ;
-    ?>
+  <i><?php echo ($msg); ?>
   </i><br><br>
 
 
-  <button class="bouttonBis" type=button onclick="rep('<?php echo $donnees['nom'];?>' , '<?php echo $donnees['objet'];?>' ,'<?php echo $dest;?>' )">répondre</button>
+  <button class="bouttonBis" type=button onclick="rep('<?php echo $donnees['nom'];?>' , '<?php echo $donnees['objet'];?>' ,'<?php echo $donnees['message'];?>' )">répondre</button>
 </div>
   <br><br><?php
 
