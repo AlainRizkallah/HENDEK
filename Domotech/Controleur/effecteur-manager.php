@@ -10,7 +10,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if(isset($_POST['maison'])){
     dispSuppEffecteur();
  }
-
+ if(isset($_POST['maisonAdmin'])){
+   dispSuppEffecteurAdmin();
+ }
 }
 
 function dispAddEffecteur(){
@@ -28,6 +30,15 @@ function dispSuppEffecteur(){
   echo ($resultat);
 
   header ("Location: ../monespace.php?cible=monespace/ajoutcapteurs.php&addel=deleff" );
+}
+function dispSuppEffecteurAdmin(){
+
+  include("../Modele/db-effecteur-manager.php");
+
+  $resultat = delEffecteur($db, $_POST['maisonAdmin']) ;
+  echo ($resultat);
+
+    header ("Location: ../accueiladmin.php?cible=accueiladmin/users.php&addel=deleff" );
 }
 
 ?>

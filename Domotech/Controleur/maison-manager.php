@@ -21,6 +21,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if( (isset($_POST['btnSuppMaison'])) or isset($_POST['delHabitation'])  ){
     dispSuppMaison();
  }
+ if(isset($_POST['delHabitationAdmin']) ){
+   dispSuppMaisonAdmin();
+}
 
 }
 
@@ -37,6 +40,13 @@ function dispSuppMaison(){
   $resultat = delHabitation($db, $_POST['delHabitation']) ;
   echo ($resultat);
   header ("Location: ../monespace.php?cible=monespace/mamaison.php&addel=del" );
+}
+function dispSuppMaisonAdmin(){
+  include("../Modele/db-maison-manager.php");
+
+  $resultat = delHabitation($db, $_POST['delHabitationAdmin']) ;
+  echo ($resultat);
+  header ("Location: ../accueiladmin.php?cible=accueiladmin/users.php&addel=delmais" );
 }
 
 ?>

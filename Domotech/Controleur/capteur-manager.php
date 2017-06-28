@@ -10,6 +10,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if(isset($_POST['maison'])){
     dispSuppCapteur();
  }
+ if(isset($_POST['maisonAdmin'])){
+   dispSuppCapteurAdmin();
+}
 
 }
 
@@ -28,6 +31,15 @@ function dispSuppCapteur(){
   echo ($resultat);
 
   header ("Location: ../monespace.php?cible=monespace/ajoutcapteurs.php&addel=delcapt" );
+}
+function dispSuppCapteurAdmin(){
+
+  include("../Modele/db-capteur-manager.php");
+
+  $resultat = delCapteur($db, $_POST['maisonAdmin']) ;
+  echo ($resultat);
+
+  header ("Location: ../accueiladmin.php?cible=accueiladmin/users.php&addel=delcap" );
 }
 
 ?>
