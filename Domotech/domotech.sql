@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mer. 28 juin 2017 à 09:42
+-- Généré le :  mer. 28 juin 2017 à 09:44
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.2
 
@@ -168,6 +168,13 @@ CREATE TABLE `news` (
   `date` datetime NOT NULL,
   `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `news`
+--
+
+INSERT INTO `news` (`titre`, `contenu`, `date`, `ID`) VALUES
+('NEWS 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis enim sit amet nisi gravida ornare. Duis eget tellus a ante maximus gravida sit amet id nunc. Aliquam tincidunt erat eu vehicula accumsan. Morbi volutpat mauris dolor, sed vulputate justo laoreet ac. Sed luctus tempus sem, in bibendum odio pellentesque in. Quisque sagittis sed purus at scelerisque. Quisque dignissim viverra risus, vitae pharetra lectus bibendum quis. Sed porta est non libero feugiat, vitae rhoncus orci feugiat. Integer volutpat leo eros, non placerat justo tempus non. Vivamus at porta sapien, sed tempor magna. In tristique felis vitae nulla auctor tempus. Vivamus at quam vitae libero dignissim sagittis.\r\n\r\nVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam porta ex tempor massa sollicitudin, fringilla rutrum risus gravida. Mauris turpis dui, iaculis sed lectus et, pretium lobortis nisi. Praesent luctus vulputate ante, a eleifend dolor posuere eu. Donec tincidunt dignissim pharetra. Donec finibus purus massa, sit amet fermentum turpis consectetur consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n', '2017-06-28 09:44:17', 2);
 
 -- --------------------------------------------------------
 
@@ -335,7 +342,7 @@ ALTER TABLE `messageint`
 -- AUTO_INCREMENT pour la table `news`
 --
 ALTER TABLE `news`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
